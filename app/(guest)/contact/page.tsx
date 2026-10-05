@@ -117,11 +117,11 @@ export default function ContactPage() {
       </div>
 
       <main>
-        <section className="relative isolate overflow-hidden bg-[#f7f8fc] px-6 pb-20 pt-16 sm:px-10 sm:pb-24 sm:pt-20 lg:px-16 lg:pt-24">
+        <section className="relative isolate w-full overflow-hidden bg-[#f7f8fc] px-6 pb-20 pt-16 sm:px-10 sm:pb-24 sm:pt-20 lg:px-16 lg:pt-24">
           <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:radial-gradient(#aab4c5_0.8px,transparent_0.8px)] [background-size:24px_24px]" />
-          <div className="pointer-events-none absolute -right-40 -top-60 h-[640px] w-[640px] rounded-full border border-orange-200/70" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-            <div className="max-w-2xl">
+          <div className="pointer-events-none absolute -right-40 -top-60 h-[640px] rounded-full border border-orange-200/70" />
+          <div className="relative mx-auto w-full">
+            <div className="w-full">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-slate-600 uppercase">
                 <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
                 Start a conversation
@@ -132,18 +132,35 @@ export default function ContactPage() {
                   On What Matters
                 </span>
               </h1>
-              <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+              <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-base">
                 Tell us where you want to go next. Whether the need is a new product, stronger cloud foundations, smarter use of data, or practical automation, Pinnacle Serve can help shape the next step.
               </p>
 
-              <div className="mt-9 grid grid-cols-2 gap-x-7 gap-y-6 sm:grid-cols-4">
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="#send-message"
+                  className="inline-flex h-12 items-center gap-2 rounded-full bg-[#e87924] px-6 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(232,121,36,0.22)] transition hover:-translate-y-0.5 hover:bg-[#d66d1e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+                >
+                  Tell us about your project
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href="mailto:contact@pinnacleserve.com"
+                  className="inline-flex min-h-11 items-center text-sm font-semibold text-[#142b58] transition hover:text-[#e87924]"
+                >
+                  Or email our team
+                  <ArrowUpRight className="ml-1.5 h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="mt-9 grid grid-cols-2 gap-x-7 gap-y-5 border-t border-slate-200 pt-6 sm:grid-cols-4">
                 <div>
                   <p className="font-serif text-2xl font-semibold text-[#142b58]">&lt; 24h</p>
-                <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Response time</p>
+                  <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Response time</p>
                 </div>
                 <div>
                   <p className="font-serif text-2xl font-semibold text-[#142b58]">50+</p>
-                <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Specialists</p>
+                  <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Specialists</p>
                 </div>
                 <div>
                   <p className="font-serif text-2xl font-semibold text-[#142b58]">Global</p>
@@ -153,32 +170,6 @@ export default function ContactPage() {
                   <p className="font-serif text-2xl font-semibold text-[#142b58]">100%</p>
                   <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Secure engagement</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="relative mx-auto flex aspect-square w-full max-w-[400px] items-center justify-center" aria-label="Contact Pinnacle Serve">
-              <div className="absolute inset-[8%] rounded-full border border-slate-300/80" />
-              <div className="absolute inset-[17%] rounded-full border border-slate-300/70" />
-              <div className="absolute inset-[27%] rounded-full border border-orange-200/80" />
-              <div className="absolute inset-[36%] rounded-full border border-orange-100" />
-              <span className="absolute left-[14%] top-[50%] h-2 w-2 rounded-full bg-orange-500 shadow-[0_0_0_5px_rgba(249,115,22,0.12)]" />
-              <span className="absolute right-[15%] top-[31%] h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_0_5px_rgba(59,130,246,0.12)]" />
-              <span className="absolute bottom-[19%] right-[28%] h-2 w-2 rounded-full bg-orange-400 shadow-[0_0_0_5px_rgba(249,115,22,0.12)]" />
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#e87924] text-white shadow-[0_14px_34px_rgba(232,121,36,0.35)]">
-                <MessageSquare className="h-7 w-7" strokeWidth={1.8} />
-              </div>
-
-              <div className="absolute left-0 top-[13%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <Clock3 className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />Reply within 24 hours
-              </div>
-              <div className="absolute right-0 top-[15%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <ShieldCheck className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />Secure engagement
-              </div>
-              <div className="absolute bottom-[13%] left-[3%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <Globe2 className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />Global delivery
-              </div>
-              <div className="absolute bottom-[12%] right-[1%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <Users className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />50+ specialists
               </div>
             </div>
           </div>
