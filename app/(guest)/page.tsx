@@ -217,6 +217,7 @@ export default function Home() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(5);
   const [totalSlides, setTotalSlides] = useState(5);
+  const [metricProgress, setMetricProgress] = useState(0);
 
   // Active capability state: default to 2 (03 Cloud Engineering as in user screenshot)
   const [activeCapabilityIndex, setActiveCapabilityIndex] = useState(2);
@@ -238,6 +239,30 @@ export default function Home() {
       carouselApi.off("select", onSelect);
     };
   }, [carouselApi]);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setMetricProgress(1);
+      return;
+    }
+
+    const duration = 1600;
+    const startTime = performance.now();
+    let frameId: number;
+
+    const animate = (time: number) => {
+      const progress = Math.min((time - startTime) / duration, 1);
+      setMetricProgress(progress);
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, []);
+
   const scrollToNextSection = () => {
     const section = document.getElementById("about-pinnacle");
     if (section) {
@@ -308,19 +333,20 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
               {[
-                { value: "100+", label: "Team Members" },
-                { value: "20+", label: "Happy Customers" },
-                { value: "25+", label: "Projects Delivered" },
-                { value: "50+", label: "Certified Professionals" },
-                { value: "24X7", label: "Global Time Zone Coverage" },
-                { value: "99.9%", label: "C-SAT Index" },
+                { target: 100, suffix: "+", label: "Team Members" },
+                { target: 20, suffix: "+", label: "Happy Customers" },
+                { target: 25, suffix: "+", label: "Projects Delivered" },
+                { target: 50, suffix: "+", label: "Certified Professionals" },
+                { target: 24, suffix: "X7", label: "Global Time Zone Coverage" },
+                { target: 99.9, suffix: "%", decimals: 1, label: "C-SAT Index" },
               ].map((metric) => (
                 <div
                   key={metric.label}
                   className="min-h-32 rounded-[22px] border border-blue-500 bg-slate-900/80 p-4 sm:p-5"
                 >
                   <p className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                    {metric.value}
+                    {(metric.target * metricProgress).toFixed(metric.decimals ?? 0)}
+                    {metric.suffix}
                   </p>
                   <p className="mt-2 text-sm font-medium leading-snug text-orange-500">
                     {metric.label}
