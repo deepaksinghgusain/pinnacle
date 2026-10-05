@@ -17,11 +17,11 @@ import {
 } from "lucide-react";
 
 const serviceLinks = [
-  { label: "Back Office Operations", href: "/#service-back-office" },
-  { label: "Reporting & Analytics", href: "/#service-reporting" },
-  { label: "Technical Support", href: "/#service-technical-support" },
-  { label: "Process Management", href: "/#service-process-management" },
-  { label: "Banking Finance Support", href: "/#service-banking-finance" },
+  { label: "Intelligent Backoffice Operations", href: "/service/intelligent-backoffice-operations" },
+  { label: "Reporting & Analytics", href: "/service/reporting-analytics" },
+  { label: "Technical Support", href: "/service/technical-support" },
+  { label: "Process Management", href: "/service/process-management" },
+  { label: "Banking Finance Support", href: "/service/banking-finance-support" },
 ];
 
 export default function Header() {

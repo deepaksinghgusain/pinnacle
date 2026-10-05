@@ -100,7 +100,7 @@ const capabilities = [
     description:
       "Build secure, scalable, and enterprise-ready AI capabilities that accelerate innovation and deliver measurable business value.",
     bg: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/ai-services",
+    link: "/service/ai-services",
   },
   {
     num: "02",
@@ -111,7 +111,7 @@ const capabilities = [
     description:
       "End-to-end product engineering — strategy, design, build, and continuous delivery for market-defining digital products and platforms.",
     bg: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/digital-product-engineering",
+    link: "/service/digital-product-engineering",
   },
   {
     num: "03",
@@ -122,7 +122,7 @@ const capabilities = [
     description:
       "Enterprise-grade cloud architecture, migration, platform engineering, and DevSecOps to build resilient, scalable, and intelligent cloud ecosystems.",
     bg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/cloud-engineering",
+    link: "/service/cloud-engineering",
   },
   {
     num: "04",
@@ -133,7 +133,7 @@ const capabilities = [
     description:
       "Build trusted, governed, and scalable enterprise data ecosystems that power analytics, AI, and confident decision-making.",
     bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/data-services",
+    link: "/service/data-services",
   },
   {
     num: "05",
@@ -144,7 +144,7 @@ const capabilities = [
     description:
       "Optimise reimbursement, reduce denials, and improve cash flow with intelligent, scalable, healthcare-focused RCM operations.",
     bg: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/rcm",
+    link: "/service/rcm",
   },
   {
     num: "06",
@@ -155,7 +155,7 @@ const capabilities = [
     description:
       "From RPA and intelligent document processing to AI-driven workflow orchestration — automate complex business processes at scale with governance and resilience.",
     bg: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/automation-services",
+    link: "/service/automation-services",
   },
   {
     num: "07",
@@ -166,7 +166,7 @@ const capabilities = [
     description:
       "From 24/7 monitoring and incident response to cloud and cybersecurity operations — keep your technology estate secure, resilient, and continuously optimised.",
     bg: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/managed-services",
+    link: "/service/managed-services",
   },
   {
     num: "08",
@@ -177,7 +177,7 @@ const capabilities = [
     description:
       "Transform property operations, service delivery, and resident support with intelligent AI agents that orchestrate work across systems.",
     bg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85",
-    link: "/what-we-offer/utilities-management",
+    link: "/service/utilities-management",
   },
 ];
 
