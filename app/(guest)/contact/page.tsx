@@ -39,18 +39,18 @@ const initialValues: EnquiryValues = {
 const processSteps = [
   {
     number: "01",
-    title: "Submit Your Enquiry",
-    copy: "Fill in the form and tell us what you are working on.",
+    title: "Tell Us What You Need",
+    copy: "Share your goals, challenges, and the kind of support you are looking for.",
   },
   {
     number: "02",
-    title: "Discovery Call",
-    copy: "We review your brief and schedule a focused session within 24 hours.",
+    title: "Talk It Through",
+    copy: "Our team reviews your note and arranges a focused conversation within 24 hours.",
   },
   {
     number: "03",
-    title: "Tailored Solution Plan",
-    copy: "We share a practical path with effort, timeline, and team structure.",
+    title: "Agree on a Way Forward",
+    copy: "We outline an approach, expected timeline, and the skills your project may need.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl">
           <Link href="/" className="transition hover:text-white">Home</Link>
           <span className="mx-2 text-white/35">›</span>
-          <span className="text-orange-300">Contact Us</span>
+          <span className="text-orange-300">Let&apos;s Talk</span>
         </div>
       </div>
 
@@ -124,26 +124,26 @@ export default function ContactPage() {
             <div className="max-w-2xl">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-slate-600 uppercase">
                 <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-                Get in touch
+                Start a conversation
               </div>
               <h1 className="font-serif text-4xl leading-[1.05] font-semibold text-[#142b58] sm:text-5xl lg:text-6xl">
-                Let&apos;s Build Something
+                Let&apos;s Make Progress
                 <span className="mt-1 block font-normal text-[#e87924] italic">
-                  Remarkable Together
+                  On What Matters
                 </span>
               </h1>
               <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-                Whether you are planning a new product, modernising legacy infrastructure, or exploring AI and data transformation, our teams are ready to work with you from strategy to delivery.
+                Tell us where you want to go next. Whether the need is a new product, stronger cloud foundations, smarter use of data, or practical automation, Pinnacle Serve can help shape the next step.
               </p>
 
               <div className="mt-9 grid grid-cols-2 gap-x-7 gap-y-6 sm:grid-cols-4">
                 <div>
                   <p className="font-serif text-2xl font-semibold text-[#142b58]">&lt; 24h</p>
-                  <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">First response</p>
+                <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Response time</p>
                 </div>
                 <div>
                   <p className="font-serif text-2xl font-semibold text-[#142b58]">50+</p>
-                  <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Expert specialists</p>
+                <p className="mt-1 text-[10px] leading-4 font-medium tracking-[0.12em] text-slate-500 uppercase">Specialists</p>
                 </div>
                 <div>
                   <p className="font-serif text-2xl font-semibold text-[#142b58]">Global</p>
@@ -169,16 +169,16 @@ export default function ContactPage() {
               </div>
 
               <div className="absolute left-0 top-[13%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <Clock3 className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />&lt; 24h Response
+                <Clock3 className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />Reply within 24 hours
               </div>
               <div className="absolute right-0 top-[15%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <ShieldCheck className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />100% Secure
+                <ShieldCheck className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />Secure engagement
               </div>
               <div className="absolute bottom-[13%] left-[3%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <Globe2 className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />Global Teams
+                <Globe2 className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />Global delivery
               </div>
               <div className="absolute bottom-[12%] right-[1%] rounded-lg border border-slate-100 bg-white px-3 py-2 text-[11px] font-medium text-slate-600 shadow-lg shadow-slate-300/40">
-                <Users className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />50+ Experts
+                <Users className="mr-1.5 inline h-3.5 w-3.5 text-orange-500" />50+ specialists
               </div>
             </div>
           </div>
@@ -187,12 +187,12 @@ export default function ContactPage() {
         <section className="bg-[#111f3b] px-6 py-20 text-white sm:px-10 sm:py-24 lg:px-16">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
             <div>
-              <p className="text-xs font-semibold tracking-[0.18em] text-orange-400 uppercase">Why work with us</p>
+              <p className="text-xs font-semibold tracking-[0.18em] text-orange-400 uppercase">A thoughtful start</p>
               <h2 className="mt-4 font-serif text-4xl leading-tight font-semibold sm:text-5xl">
-                We Deliver.<br />Every Time.
+                Clear Steps.<br />Shared Purpose.
               </h2>
               <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
-                Pinnacle Serve brings enterprise-grade engineering, AI, and cloud expertise to help organisations accelerate their most critical programs. Every engagement begins with listening and ends with measurable outcomes.
+                Good partnerships begin with understanding the work. We listen first, bring the right technical expertise, and keep the focus on outcomes that matter to your organisation.
               </p>
               <div className="mt-9 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:gap-8">
                 <a href="mailto:contact@pinnacleserve.com" className="inline-flex items-center gap-3 text-sm text-slate-200 transition hover:text-orange-300">
@@ -221,35 +221,35 @@ export default function ContactPage() {
         <section id="send-message" className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
           <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
             <div className="lg:sticky lg:top-28">
-              <p className="text-xs font-semibold tracking-[0.18em] text-orange-600 uppercase">Contact us</p>
-              <h2 className="mt-4 font-serif text-4xl leading-tight font-semibold text-[#142b58] sm:text-5xl">Send Us A Message</h2>
+              <p className="text-xs font-semibold tracking-[0.18em] text-orange-600 uppercase">Your next step</p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight font-semibold text-[#142b58] sm:text-5xl">Tell Us About Your Plans</h2>
               <p className="mt-5 text-sm leading-7 text-slate-600">
-                Fields marked * are required. We typically respond within one business day.
+                Complete the required fields and our team will get back to you within one business day.
               </p>
               <div className="mt-8 rounded-xl border border-blue-100 bg-white p-5 shadow-sm">
-                <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase">Your enquiry</p>
+                <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase">Message progress</p>
                 <div className="mt-4 flex items-center justify-between text-sm">
-                  <span className="text-slate-600">Completion</span>
+                  <span className="text-slate-600">Form complete</span>
                   <span className="font-semibold text-[#142b58]">{progress}%</span>
                 </div>
                 <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
                   <div className="h-full rounded-full bg-[#e87924] transition-[width] duration-300" style={{ width: `${progress}%` }} />
                 </div>
-                <p className="mt-3 text-xs text-slate-500">Your details stay secure and are only used to respond to your enquiry.</p>
+                <p className="mt-3 text-xs text-slate-500">We use your details to follow up on this request.</p>
               </div>
             </div>
 
             <form onSubmit={handleSubmit} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] sm:p-9">
               <fieldset>
-                <legend className="text-xs font-semibold tracking-[0.16em] text-[#142b58] uppercase">Your details</legend>
+                <legend className="text-xs font-semibold tracking-[0.16em] text-[#142b58] uppercase">How to reach you</legend>
                 <div className="mt-5 grid gap-5 sm:grid-cols-2">
                   <label className="text-sm font-medium text-slate-700">
                     Full Name <span className="text-orange-600">*</span>
-                    <input className={inputClassName} name="fullName" autoComplete="name" placeholder="Your name" value={values.fullName} onChange={handleChange} required />
+                    <input className={inputClassName} name="fullName" autoComplete="name" placeholder="Name" value={values.fullName} onChange={handleChange} required />
                   </label>
                   <label className="text-sm font-medium text-slate-700">
                     Organisation <span className="text-orange-600">*</span>
-                    <input className={inputClassName} name="organisation" autoComplete="organization" placeholder="Company or organisation" value={values.organisation} onChange={handleChange} required />
+                    <input className={inputClassName} name="organisation" autoComplete="organization" placeholder="Organisation name" value={values.organisation} onChange={handleChange} required />
                   </label>
                   <label className="text-sm font-medium text-slate-700">
                     Phone Number <span className="text-orange-600">*</span>
@@ -263,7 +263,7 @@ export default function ContactPage() {
               </fieldset>
 
               <fieldset className="mt-9 border-t border-slate-100 pt-7">
-                <legend className="text-xs font-semibold tracking-[0.16em] text-[#142b58] uppercase">Project info</legend>
+                <legend className="text-xs font-semibold tracking-[0.16em] text-[#142b58] uppercase">What you have in mind</legend>
                 <div className="mt-5 grid gap-5 sm:grid-cols-2">
                   <label className="text-sm font-medium text-slate-700">
                     Service Interest <span className="text-orange-600">*</span>
@@ -293,10 +293,10 @@ export default function ContactPage() {
               </fieldset>
 
               <fieldset className="mt-9 border-t border-slate-100 pt-7">
-                <legend className="text-xs font-semibold tracking-[0.16em] text-[#142b58] uppercase">Your message</legend>
+                <legend className="text-xs font-semibold tracking-[0.16em] text-[#142b58] uppercase">A few more details</legend>
                 <label className="mt-5 block text-sm font-medium text-slate-700">
                   Message <span className="text-orange-600">*</span>
-                  <textarea className="mt-2 min-h-36 w-full resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10" name="message" maxLength={1000} placeholder="Tell us a little about your project and what you would like to achieve..." value={values.message} onChange={handleChange} required />
+                  <textarea className="mt-2 min-h-36 w-full resize-y rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10" name="message" maxLength={1000} placeholder="What would you like to work on together?" value={values.message} onChange={handleChange} required />
                   <span className="mt-1 block text-right text-xs text-slate-400">{values.message.length} / 1000</span>
                 </label>
               </fieldset>
@@ -307,9 +307,9 @@ export default function ContactPage() {
               </label>
 
               <div className="mt-7 flex flex-col gap-3 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-xs leading-5 text-slate-500">Submitting opens a pre-filled email to our team.</p>
+                <p className="text-xs leading-5 text-slate-500">Your email app will open with these details ready to send.</p>
                 <button type="submit" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#e87924] px-7 text-sm font-semibold text-white shadow-md shadow-orange-900/15 transition hover:bg-[#d66d1e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
-                  Send Message
+                  Continue by Email
                   <ArrowUpRight className="h-4 w-4" />
                 </button>
               </div>

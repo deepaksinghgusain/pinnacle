@@ -116,16 +116,16 @@ export default function CustomerDelightPage() {
                 <div className="mx-auto max-w-4xl pt-8">
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[11px] font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-sm">
                         <span className="h-2 w-2 rounded-full bg-orange-400 shadow-[0_0_12px_rgba(251,146,60,0.9)]" />
-                        Customer Delight
+                        Client Outcomes
                     </div>
                     <h1 className="mt-7 font-serif text-4xl leading-[1.06] font-semibold text-white sm:text-5xl lg:text-6xl">
-                        Real outcomes for the
+                        Better work, built for the
                         <span className="mt-1 block font-normal italic text-[#f2a276]">
-                            enterprises we serve
+                            industries we know
                         </span>
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/85 sm:text-base">
-                        From healthcare to manufacturing, our partners rely on Pinnacle Serve to turn complex operations into intelligent, resilient, and more efficient experiences, measured in real business impact.
+                        Across healthcare, banking, telecom, retail, and manufacturing, we help teams address complex challenges with technology shaped around their work and goals.
                     </p>
                 </div>
             </section>
@@ -138,13 +138,13 @@ export default function CustomerDelightPage() {
                 <div className="relative mx-auto max-w-7xl">
                     <div className="mb-10 max-w-2xl sm:mb-12">
                         <span className="inline-flex rounded-full border border-orange-200 bg-orange-50 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.14em] text-orange-700 uppercase">
-                            By Industry
+                            Industry experience
                         </span>
                         <h2 className="mt-5 font-serif text-4xl leading-tight font-semibold text-[#142b58] sm:text-5xl">
-                            Where our clients find <em className="font-normal text-[#e87924]">delight</em>
+                            Practical progress across <em className="font-normal text-[#e87924]">industries</em>
                         </h2>
                         <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-                            Every industry has its own definition of success. Explore how we create measurable customer delight across the sectors we serve.
+                            See the kinds of operational challenges our teams help address in the sectors we serve.
                         </p>
                     </div>
 
@@ -190,7 +190,7 @@ export default function CustomerDelightPage() {
                                             </p>
                                         </div>
                                         <span className="inline-flex items-center gap-1.5 pb-1 text-xs font-semibold text-[#142b58] transition group-hover:text-orange-700">
-                                            Read the story
+                                            Explore this sector
                                             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                         </span>
                                     </div>
@@ -210,13 +210,13 @@ export default function CustomerDelightPage() {
                     <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
                         <div className="max-w-2xl">
                             <p className="text-xs font-semibold tracking-[0.16em] text-orange-200 uppercase">
-                                Let&apos;s create impact
+                                Start with your challenge
                             </p>
                             <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold sm:text-4xl">
-                                Ready to become our next delight story?
+                                Have a goal you are working toward?
                             </h2>
                             <p className="mt-4 text-sm leading-6 text-white/80 sm:text-base">
-                                Let&apos;s design outcomes worth talking about, measurable, scalable, and engineered for your industry.
+                                Talk with Pinnacle Serve about your priorities and the next step for your organisation.
                             </p>
                         </div>
                         <Link

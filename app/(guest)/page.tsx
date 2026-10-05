@@ -610,7 +610,7 @@ export default function Home() {
               href="/services"
               className="group inline-flex items-center gap-2.5 bg-[#e36a1e] hover:bg-[#cc5c15] active:scale-[0.98] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg shadow-orange-950/40 hover:shadow-orange-500/30 transition-all duration-200 cursor-pointer"
             >
-              <span>Explore Our Services</span>
+              <span>See How We Can Help</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
@@ -630,7 +630,7 @@ export default function Home() {
               Why Pinnacle Serve
             </p>
             <h2 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-white">
-              Why Clients Choose Us
+              Built Around Your Priorities
             </h2>
           </div>
 
@@ -682,13 +682,13 @@ export default function Home() {
           {/* Section Heading */}
           <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-[#f06425] text-xs font-semibold tracking-wider uppercase mb-5">
-              TESTIMONIALS
+              CLIENT PERSPECTIVES
             </div>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-              From Strategy to <span className="text-[#f06425] italic font-serif">Success</span>
+              Partnerships That <span className="text-[#f06425] italic font-serif">Move Work Forward</span>
             </h2>
             <p className="mt-4 text-slate-400 text-sm sm:text-base max-w-xl font-light">
-              Trusted by enterprise leaders across financial services, healthcare, telecom, and retail.
+              Hear from leaders working across financial services, healthcare, telecom, and retail.
             </p>
           </div>
 
