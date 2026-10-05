@@ -103,7 +103,7 @@ export default function ContactPage() {
       ].join("\n"),
     );
 
-    window.location.href = `mailto:contact@everlumesolutions.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contact@pinnacleserve.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -156,7 +156,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="relative mx-auto flex aspect-square w-full max-w-[400px] items-center justify-center" aria-label="Contact Everlume Solutions">
+            <div className="relative mx-auto flex aspect-square w-full max-w-[400px] items-center justify-center" aria-label="Contact Pinnacle Serve">
               <div className="absolute inset-[8%] rounded-full border border-slate-300/80" />
               <div className="absolute inset-[17%] rounded-full border border-slate-300/70" />
               <div className="absolute inset-[27%] rounded-full border border-orange-200/80" />
@@ -192,11 +192,11 @@ export default function ContactPage() {
                 We Deliver.<br />Every Time.
               </h2>
               <p className="mt-6 max-w-md text-sm leading-7 text-slate-300">
-                Everlume brings enterprise-grade engineering, AI, and cloud expertise to help organisations accelerate their most critical programs. Every engagement begins with listening and ends with measurable outcomes.
+                Pinnacle Serve brings enterprise-grade engineering, AI, and cloud expertise to help organisations accelerate their most critical programs. Every engagement begins with listening and ends with measurable outcomes.
               </p>
               <div className="mt-9 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:gap-8">
-                <a href="mailto:contact@everlumesolutions.com" className="inline-flex items-center gap-3 text-sm text-slate-200 transition hover:text-orange-300">
-                  <Mail className="h-4 w-4 text-orange-400" />contact@everlumesolutions.com
+                <a href="mailto:contact@pinnacleserve.com" className="inline-flex items-center gap-3 text-sm text-slate-200 transition hover:text-orange-300">
+                  <Mail className="h-4 w-4 text-orange-400" />contact@pinnacleserve.com
                 </a>
                 <div className="inline-flex items-start gap-3 text-sm leading-5 text-slate-300">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-400" />
@@ -303,7 +303,7 @@ export default function ContactPage() {
 
               <label className="mt-6 flex items-start gap-3 text-sm leading-6 text-slate-600">
                 <input className="mt-1 h-4 w-4 shrink-0 accent-orange-600" name="consent" type="checkbox" checked={values.consent} onChange={handleChange} required />
-                <span>I agree to be contacted by Everlume Solutions regarding this enquiry.</span>
+                <span>I agree to be contacted by Pinnacle Serve regarding this enquiry.</span>
               </label>
 
               <div className="mt-7 flex flex-col gap-3 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">

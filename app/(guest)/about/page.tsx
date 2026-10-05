@@ -16,21 +16,21 @@ import {
 
 const storyPoints = [
     {
-        title: "More than technology",
+        title: "Technology with a purpose",
         description:
-            "Whether the goal is to improve customer experience, reduce manual effort, strengthen governance, or unlock new efficiencies, we design services that connect technology to measurable business value.",
+            "We connect technology to the work that matters: better service, less manual effort, stronger controls, and more efficient operations.",
         Icon: Layers,
     },
     {
-        title: "Ambitious & usable",
+        title: "Built for real teams",
         description:
-            "Transformation should be both bold and practical. We create systems that are modern, reliable, and secure, solutions that teams can actually adopt, manage, and improve over time.",
+            "Good change is ambitious and usable. We build reliable, secure systems that teams can adopt, manage, and keep improving.",
         Icon: Sparkles,
     },
     {
-        title: "Outcome-led",
+        title: "Focused on results",
         description:
-            "Our approach is practical and tailored to the realities of each industry we serve. Every engagement is grounded in the outcomes that matter most to your business.",
+            "We shape each engagement around the needs of its industry and the results that matter most to the organization.",
         Icon: CheckCircle2,
     },
 ];
@@ -39,18 +39,16 @@ const leaders = [
     {
         name: "Sartaj Rekhi",
         role: "Chairman",
-        image: "https://www.everlumesolutions.com/Images/Sartaj.jpg",
         paragraphs: [
             "A young, dynamic, and visionary serial entrepreneur, Sartaj Rekhi brings a proven track record of building, scaling, and transforming technology businesses. Combining entrepreneurial drive with strategic discipline and a deep understanding of evolving markets, he has consistently delivered sustainable growth and long-term value.",
             "As a Founder and business leader, Sartaj successfully guided a technology company through its public listing and IPO, and subsequently led its expansion to more than USD 200 million in revenue, significantly strengthening its market position.",
-            "His leadership style combines empathy and inclusiveness with a strong focus on execution and measurable outcomes. As the Founder of EverLume Solutions, Sartaj brings together entrepreneurial experience, public-market insight, technology expertise, and a strong commitment to responsible innovation.",
+            "His leadership style combines empathy and inclusiveness with a strong focus on execution and measurable outcomes. As the Founder of Pinnacle Serve, Sartaj brings together entrepreneurial experience, public-market insight, technology expertise, and a strong commitment to responsible innovation.",
             "Sartaj is a graduate from American River College and San Jose State University and has also completed advanced management programs from UC Berkeley. In his free time, he loves traveling and watching boxing.",
         ],
     },
     {
         name: "Sidhartha Dubey",
         role: "CEO",
-        image: "https://www.everlumesolutions.com/Images/ceo_Sidhartha_dubey.jpg",
         paragraphs: [
             "A seasoned technology and transformation leader, Sidhartha brings over two decades of experience managing global engagements and leading complex, multi-location transformation initiatives across industries, geographies, and diverse technology stacks. He has worked closely with clients to develop technology strategies that optimize IT spend, modernize legacy environments, and build scalable, future-ready technology foundations.",
             "A strong believer in people-centric transformation, Sidhartha recognizes that sustainable change is ultimately driven by engaged and empowered people. He focuses on creating environments that encourage participation, collaboration, innovation, and employee satisfaction.",
@@ -61,7 +59,6 @@ const leaders = [
     {
         name: "Sanjeev Sethi",
         role: "CFO",
-        image: "https://www.everlumesolutions.com/Images/SanjeevSethi.jpg",
         paragraphs: [
             "Sanjeev is a senior finance leader and Chartered Accountant with around 40 years of extensive experience across industry and consulting organizations. Over the course of his distinguished career, he has advised and led organizations across corporate finance, fund raising, IPOs, investor relations, financial management, accounting, audit, and direct and indirect taxation.",
             "With deep expertise in financial strategy, corporate governance, regulatory compliance, and stakeholder management, Sanjeev brings a strong commercial perspective to business leadership.",
@@ -71,7 +68,6 @@ const leaders = [
     {
         name: "Vikram Jolly",
         role: "Vice President, Tech Infra",
-        image: "https://www.everlumesolutions.com/Images/VikramJolly.jpg",
         paragraphs: [
             "Vikram Jolly is a seasoned technology leader with 25+ years of experience driving enterprise technology strategy, transformation, and operations across IT Infrastructure, Cybersecurity, Networks, Data Centers, Service Delivery, and Digital Transformation.",
             "He brings a strong business-oriented approach to technology leadership, with a focus on building secure, resilient, scalable, and high-performing technology environments that enable business growth and operational excellence.",
@@ -147,7 +143,7 @@ export default function AboutPage() {
         <main className="w-full bg-white text-slate-900">
             <section className="relative isolate flex min-h-[560px] items-center justify-center overflow-hidden px-6 py-28 text-center text-white sm:min-h-[620px] sm:px-10 lg:px-16">
                 <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2400&q=85"
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=85"
                     alt="A team collaborating on digital transformation"
                     fill
                     priority
@@ -160,14 +156,14 @@ export default function AboutPage() {
                 <div className="relative mx-auto max-w-4xl pt-8">
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold tracking-[0.16em] text-white/90 uppercase backdrop-blur-sm">
                         <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
-                        Who we are
+                        About Pinnacle Serve
                     </div>
                     <h1 className="mt-7 font-serif text-4xl leading-[1.08] font-semibold text-white sm:text-5xl lg:text-6xl">
-                        Illuminating the path to
-                        <span className="mt-1 block font-normal text-[#f0a16d] italic">digital transformation</span>
+                        Practical change for
+                        <span className="mt-1 block font-normal text-[#f0a16d] italic">complex operations</span>
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/85 sm:text-base">
-                        We help enterprises turn complex operations into smarter, faster, and more scalable digital outcomes, where strategy, engineering, automation, and intelligence converge.
+                        We bring operational support and modern technology together to help organizations improve service, simplify work, and grow with confidence.
                     </p>
                 </div>
             </section>
@@ -178,10 +174,10 @@ export default function AboutPage() {
                     <div className="max-w-3xl">
                         <p className="text-xs font-semibold tracking-[0.18em] text-orange-600 uppercase">Our Story</p>
                         <h2 className="mt-4 font-serif text-4xl leading-tight font-semibold text-[#142b58] sm:text-5xl">
-                            Built for ambitious enterprises
+                            A partner for meaningful progress
                         </h2>
                         <p className="mt-6 text-base leading-7 text-slate-600">
-                            Our work sits at the intersection of strategy, engineering, automation, and intelligence, helping organizations modernize the way they serve customers, run operations, and grow with confidence.
+                            Founded in 2024, Pinnacle Serve helps global clients connect reliable operations with practical technology delivery.
                         </p>
                     </div>
 
@@ -199,19 +195,19 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section id="everlume-way" className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
+            <section id="pinnacle-approach" className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                         <div>
-                            <p className="text-xs font-semibold tracking-[0.18em] text-orange-600 uppercase">Explore</p>
-                            <h2 className="mt-4 font-serif text-4xl font-semibold text-[#142b58] sm:text-5xl">The Everlume way</h2>
+                            <p className="text-xs font-semibold tracking-[0.18em] text-orange-600 uppercase">How We Work</p>
+                            <h2 className="mt-4 font-serif text-4xl font-semibold text-[#142b58] sm:text-5xl">The Pinnacle Serve approach</h2>
                         </div>
                         <p className="max-w-md text-sm leading-6 text-slate-600">
-                            Learn about the people, capabilities, and principles that shape our work.
+                            Get to know our leadership, services, and the principles behind each engagement.
                         </p>
                     </div>
 
-                    <div role="tablist" aria-label="About Everlume" className="flex gap-2 overflow-x-auto border-b border-slate-200 pb-3">
+                    <div role="tablist" aria-label="About Pinnacle Serve" className="flex gap-2 overflow-x-auto border-b border-slate-200 pb-3">
                         {approachTabs.map(({ id, label, Icon }) => (
                             <button
                                 key={id}
@@ -233,12 +229,12 @@ export default function AboutPage() {
                     <div id={`about-panel-${selectedTab.id}`} role="tabpanel" aria-labelledby={`about-tab-${selectedTab.id}`} className="pt-8">
                         {selectedTab.id === "founder" ? (
                             <div>
-                                <h3 className="font-serif text-2xl font-semibold text-[#142b58]">Founder &amp; Leadership</h3>
+                                <h3 className="font-serif text-2xl font-semibold text-[#142b58]">Leadership</h3>
                                 <div className="mt-6 grid gap-5 lg:grid-cols-2">
                                     {leaders.map((leader) => (
                                         <article key={leader.name} className="overflow-hidden border border-slate-200 bg-white shadow-sm sm:flex">
-                                            <div className="relative h-64 shrink-0 bg-slate-100 sm:h-auto sm:min-h-[300px] sm:w-44 lg:w-52">
-                                                <Image src={leader.image} alt={leader.name} fill sizes="(max-width: 640px) 100vw, 208px" className="object-cover object-top" />
+                                            <div aria-hidden="true" className="flex h-40 shrink-0 items-center justify-center bg-gradient-to-br from-[#142b58] via-[#1d477d] to-[#e87924] text-5xl font-semibold tracking-wide text-white sm:h-auto sm:min-h-[300px] sm:w-44 lg:w-52">
+                                                {leader.name.split(" ").map((part) => part[0]).join("")}
                                             </div>
                                             <div className="p-5 sm:p-6">
                                                 <p className="text-[10px] font-semibold tracking-[0.15em] text-orange-600 uppercase">{leader.role}</p>
@@ -271,14 +267,14 @@ export default function AboutPage() {
             <section className="px-6 pb-20 sm:px-10 sm:pb-24 lg:px-16">
                 <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-2xl bg-[#142b58] px-7 py-10 text-white sm:px-10 sm:py-12 lg:flex-row lg:items-center">
                     <div>
-                        <p className="text-xs font-semibold tracking-[0.16em] text-orange-300 uppercase">Build what&apos;s next</p>
-                        <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Ready to illuminate your next move?</h2>
+                        <p className="text-xs font-semibold tracking-[0.16em] text-orange-300 uppercase">Take the next step</p>
+                        <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">Let&apos;s make progress together.</h2>
                         <p className="mt-3 max-w-2xl text-sm leading-6 text-white/75">
-                            Let&apos;s turn complexity into clarity with services that combine engineering excellence and operational intelligence.
+                            Tell us what you&apos;re working toward. We&apos;ll help you find a practical way forward.
                         </p>
                     </div>
                     <Link href="/contact" className="inline-flex h-12 shrink-0 items-center gap-2 rounded-full bg-[#e87924] px-6 text-sm font-semibold text-white transition hover:bg-[#d66d1e]">
-                        Talk to an expert <ArrowUpRight className="h-4 w-4" />
+                        Start a conversation <ArrowUpRight className="h-4 w-4" />
                     </Link>
                 </div>
             </section>

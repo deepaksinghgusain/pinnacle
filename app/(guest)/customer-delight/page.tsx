@@ -18,7 +18,7 @@ const industries = [
             "Agentic AI orchestrating claims, coding, prior auth, and human-in-the-loop review, with the governance clinicians and payers demand.",
         metric: "3.4×",
         metricLabel: "faster claims turnaround",
-        href: "https://www.everlumesolutions.com/who-we-serve/healthcare",
+        href: "#",
         icon: HeartPulse,
         accent: "from-rose-500 to-blue-800",
         iconColor: "text-rose-600 bg-rose-50",
@@ -32,7 +32,7 @@ const industries = [
             "Unified underwriting, fraud, and compliance workflows across core banking systems, with explainable, audit-ready AI decisioning.",
         metric: "62%",
         metricLabel: "lower manual review effort",
-        href: "https://www.everlumesolutions.com/who-we-serve/banking",
+        href: "#",
         icon: Landmark,
         accent: "from-blue-700 to-blue-900",
         iconColor: "text-blue-700 bg-blue-50",
@@ -46,7 +46,7 @@ const industries = [
             "From field service to customer care, Agentic AI keeps networks resilient, service SLAs green, and every subscriber interaction personalised.",
         metric: "48%",
         metricLabel: "faster ticket resolution",
-        href: "https://www.everlumesolutions.com/who-we-serve/telecom",
+        href: "",
         icon: Radio,
         accent: "from-sky-500 to-blue-800",
         iconColor: "text-sky-700 bg-sky-50",
@@ -60,7 +60,7 @@ const industries = [
             "Intelligent orchestration across inventory, storefronts, and support, turning every touchpoint into a moment of measurable delight.",
         metric: "2.1×",
         metricLabel: "lift in repeat purchases",
-        href: "https://www.everlumesolutions.com/who-we-serve/retail",
+        href: "#",
         icon: ShoppingBag,
         accent: "from-orange-500 to-blue-800",
         iconColor: "text-orange-600 bg-orange-50",
@@ -74,7 +74,7 @@ const industries = [
             "Agentic AI keeps production lines humming with predictive maintenance, quality assurance, and planning that adapts in real time.",
         metric: "31%",
         metricLabel: "reduction in downtime",
-        href: "https://www.everlumesolutions.com/who-we-serve/manufacturing",
+        href: "#",
         icon: Factory,
         accent: "from-emerald-600 to-blue-800",
         iconColor: "text-emerald-700 bg-emerald-50",
@@ -95,11 +95,11 @@ export default function CustomerDelightPage() {
                         loop
                         playsInline
                         preload="metadata"
-                        poster="https://www.everlumesolutions.com/Images/image_056.jpg"
+                        poster="/welcoming-moments.png"
                         className="h-full w-full object-cover object-center"
                     >
                         <source
-                            src="https://www.everlumesolutions.com/VIdeos/customerdelight.mov"
+                            src="/office.mp4"
                             type="video/mp4"
                         />
                     </video>
@@ -125,7 +125,7 @@ export default function CustomerDelightPage() {
                         </span>
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/85 sm:text-base">
-                        From healthcare to manufacturing, our partners rely on Everlume to turn complex operations into intelligent, resilient, and delightfully efficient experiences, measured in real business impact.
+                        From healthcare to manufacturing, our partners rely on Pinnacle Serve to turn complex operations into intelligent, resilient, and more efficient experiences, measured in real business impact.
                     </p>
                 </div>
             </section>

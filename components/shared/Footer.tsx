@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, FileText, MessageSquare } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
     return (
@@ -13,7 +14,7 @@ export default function Footer() {
                     className="group inline-flex items-center gap-2.5 bg-[#e36a1e] hover:bg-[#cc5c15] active:scale-[0.98] text-white font-semibold text-sm sm:text-base px-6 py-3 rounded-full shadow-xl shadow-orange-950/50 hover:shadow-orange-500/30 transition-all duration-200 cursor-pointer"
                 >
                     <MessageSquare className="w-5 h-5 fill-white/10" strokeWidth={2.2} />
-                    <span>Talk To Us</span>
+                    <span>Start a Conversation</span>
                 </Link>
             </div>
 
@@ -27,18 +28,18 @@ export default function Footer() {
                     <div className="flex flex-col items-center text-center pb-20 border-b border-slate-800/80">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-[#f06425] text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
                             <span className="w-2 h-2 rounded-full bg-[#f06425] animate-pulse" />
-                            <span>Let&apos;s Build Together</span>
+                            <span>Make the Next Move</span>
                         </div>
 
                         <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.12]">
-                            Ready to illuminate your <br />
+                            Ready to move your business forward? <br />
                             <span className="bg-gradient-to-r from-[#f06425] via-amber-400 to-[#38bdf8] bg-clip-text text-transparent">
-                                digital future?
+                                Let&apos;s get to work.
                             </span>
                         </h2>
 
                         <p className="mt-6 text-slate-400 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
-                            Join hundreds of enterprises that have accelerated their digital transformation with LOGO.
+                            Bring us a complex challenge. We&apos;ll help turn it into a clear, workable plan.
                         </p>
 
                         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -46,7 +47,7 @@ export default function Footer() {
                                 href="/contact"
                                 className="group inline-flex items-center gap-2 bg-[#e36a1e] hover:bg-[#cc5c15] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg shadow-orange-950/50 hover:shadow-orange-500/30 transition-all duration-200"
                             >
-                                <span>Schedule a Consultation</span>
+                                <span>Talk with our team</span>
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                             </Link>
                         </div>
@@ -57,42 +58,26 @@ export default function Footer() {
                         {/* Brand info */}
                         <div className="lg:col-span-2 flex flex-col items-start pr-4">
                             <Link href="/" className="flex items-center gap-3 select-none mb-5">
-                                <div className="relative w-9 h-9 flex-shrink-0">
-                                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-white">
-                                        <g stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" opacity="0.9">
-                                            {Array.from({ length: 16 }).map((_, i) => (
-                                                <path
-                                                    key={i}
-                                                    d="M 50 20 Q 70 35 75 60"
-                                                    strokeDasharray="2 3"
-                                                    transform={`rotate(${i * 22.5} 50 50)`}
-                                                />
-                                            ))}
-                                        </g>
-                                        <circle cx="50" cy="50" r="3.5" fill="#f06425" />
-                                    </svg>
-                                </div>
-                                <div className="flex flex-col">
-                                    <span className="text-xl font-bold tracking-tight text-white font-sans">
-                                        LOGO <span className="font-light text-slate-300">LOGO</span>
-                                    </span>
-                                    <span className="text-[8px] tracking-[0.25em] font-medium text-slate-400 uppercase">
-                                        LOGO
-                                    </span>
-                                </div>
+                                <Image
+                                    src="/pinnacle-logo.jpeg"
+                                    alt="Pinnacle Serve"
+                                    width={875}
+                                    height={980}
+                                    className="h-20 w-20 rounded-md bg-white p-1 object-contain"
+                                />
                             </Link>
                             <p className="text-slate-400 text-sm leading-relaxed max-w-sm font-light">
-                                Illuminating the path to digital excellence through AI, cloud, and modern engineering.
+                                Practical operations and technology support for organizations ready to work smarter.
                             </p>
                         </div>
 
                         {/* Company */}
                         <div className="flex flex-col gap-3">
-                            <h4 className="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">Company</h4>
-                            <Link href="/about" className="text-slate-400 hover:text-white text-sm transition">About Us</Link>
+                            <h4 className="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">Explore</h4>
+                            <Link href="/about" className="text-slate-400 hover:text-white text-sm transition">Our Company</Link>
                             <Link href="/career" className="text-slate-400 hover:text-white text-sm transition">Careers</Link>
                             <Link href="/contact" className="text-slate-400 hover:text-white text-sm transition">Contact</Link>
-                            <Link href="/customer-delight" className="text-slate-400 hover:text-white text-sm transition">Customer Delight</Link>
+                            <Link href="/customer-delight" className="text-slate-400 hover:text-white text-sm transition">Client Outcomes</Link>
                         </div>
 
                         {/* Services */}
@@ -144,17 +129,18 @@ export default function Footer() {
                                 </a>
                             </div>
                             <a
-                                href="mailto:contact@logo.com"
+                                href="mailto:contact@pinnacleserve.com"
                                 className="text-slate-300 hover:text-orange-400 text-xs sm:text-sm transition font-mono"
                             >
-                                contact@logo.com
+                                contact@pinnacleserve.com
                             </a>
                         </div>
+
                     </div>
 
                     {/* Bottom copyright & legal */}
                     <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-light">
-                        <p>© 2026 LOGO. All rights reserved.</p>
+                        <p>© 2026 Pinnacle Serve. All rights reserved.</p>
                         <div className="flex items-center gap-6">
                             <Link href="/terms-and-conditions" className="hover:text-slate-300 transition">Terms &amp; Conditions</Link>
                             <Link href="/privacy-policy" className="hover:text-slate-300 transition">Privacy Policy</Link>

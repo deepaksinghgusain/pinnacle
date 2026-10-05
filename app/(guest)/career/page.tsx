@@ -50,7 +50,7 @@ const roles = [
     {
         title: "UI / UX Designer",
         description:
-            "Design intuitive interfaces, user journeys, and interactive prototypes for Everlume's AI-powered products and enterprise client solutions.",
+            "Design intuitive interfaces, user journeys, and interactive prototypes for Pinnacle Serve's AI-powered products and enterprise client solutions.",
         team: "Design",
         location: "Hybrid",
         type: "Full-time",
@@ -74,7 +74,7 @@ const roles = [
     {
         title: "AI Product Manager",
         description:
-            "Define strategy and roadmaps for Everlume's AI agent portfolio, translating complex AI capabilities into measurable business outcomes.",
+            "Define strategy and roadmaps for Pinnacle Serve's AI agent portfolio, translating complex AI capabilities into measurable business outcomes.",
         team: "Product",
         location: "Hybrid",
         type: "Full-time",
@@ -210,7 +210,7 @@ export default function CareerPage() {
             ].join("\n"),
         );
 
-        window.location.href = `mailto:contact@everlumesolutions.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:contact@pinnacleserve.com?subject=${subject}&body=${body}`;
     };
 
     return (
@@ -226,7 +226,7 @@ export default function CareerPage() {
             <main>
                 <section className="relative isolate flex min-h-[520px] items-center justify-center overflow-hidden px-6 py-24 text-center text-white sm:min-h-[570px] sm:px-10 lg:px-16">
                     <Image
-                        src="https://www.everlumesolutions.com/Images/image_056.jpg"
+                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2400&q=85"
                         alt="Colleagues celebrating a successful collaboration"
                         fill
                         priority
@@ -264,12 +264,12 @@ export default function CareerPage() {
                     <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-orange-100/50 blur-[120px]" />
                     <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
                         <div>
-                            <p className="text-xs font-semibold tracking-[0.18em] text-orange-600 uppercase">Why Everlume</p>
+                            <p className="text-xs font-semibold tracking-[0.18em] text-orange-600 uppercase">Why Pinnacle Serve</p>
                             <h2 className="mt-4 font-serif text-4xl leading-tight font-semibold text-[#142b58] sm:text-5xl">
                                 Where <em className="font-normal text-[#e87924]">innovation</em> meets purpose
                             </h2>
                             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-                                At Everlume, we build AI systems that transform how enterprises operate. Work on agentic reasoning, multi-system orchestration, and responsible AI, and create measurable impact for clients across banking, healthcare, and retail.
+                                At Pinnacle Serve, we build AI systems that transform how enterprises operate. Work on agentic reasoning, multi-system orchestration, and responsible AI, and create measurable impact for clients across banking, healthcare, and retail.
                             </p>
 
                             <div className="mt-9 grid grid-cols-2 gap-x-7 gap-y-6 sm:grid-cols-4">
@@ -294,8 +294,8 @@ export default function CareerPage() {
 
                         <div className="relative min-h-[330px] overflow-hidden rounded-2xl bg-slate-200 shadow-[0_24px_70px_rgba(20,43,88,0.13)] sm:min-h-[400px]">
                             <Image
-                                src="https://www.everlumesolutions.com/Images/image_019.jpg"
-                                alt="Everlume team collaborating around a table"
+                                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85"
+                                alt="Pinnacle Serve team collaborating around a table"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 45vw"
                                 className="object-cover"
@@ -409,7 +409,7 @@ export default function CareerPage() {
                                     Why you&apos;ll <em className="font-normal text-[#e87924]">love it here</em>
                                 </h2>
                                 <p className="mt-5 max-w-md text-sm leading-7 text-slate-600">
-                                    We invest in the people who build the future. Here&apos;s what working at Everlume looks like.
+                                    We invest in the people who build the future. Here&apos;s what working at Pinnacle Serve looks like.
                                 </p>
                                 <div className="mt-7 flex gap-8">
                                     <div><strong className="block font-serif text-3xl text-[#142b58]">6</strong><span className="text-[10px] font-semibold tracking-[0.12em] text-slate-500 uppercase">Core perks</span></div>
@@ -541,7 +541,7 @@ export default function CareerPage() {
                                     <textarea
                                         className="mt-2 min-h-32 w-full resize-y rounded-xl border border-[#d6ddec] bg-[#f8f9fd] px-4 py-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-500 focus:border-[#1d3d91] focus:ring-4 focus:ring-blue-900/10"
                                         name="fit"
-                                        placeholder="Tell us about your experience and why you&apos;d like to join Everlume..."
+                                        placeholder="Tell us about your experience and why you&apos;d like to join Pinnacle Serve..."
                                         value={applicant.fit}
                                         onChange={updateApplicant}
                                         required

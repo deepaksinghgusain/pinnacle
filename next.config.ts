@@ -7,14 +7,6 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
-      {
-        protocol: "https",
-        hostname: "www.everlumesolutions.com",
-      },
-      {
-        protocol: "https",
-        hostname: "everlumesolutions.com",
-      },
     ],
   },
 };

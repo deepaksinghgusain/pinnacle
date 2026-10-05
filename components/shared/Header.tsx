@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -14,6 +15,14 @@ import {
   Menu,
   X,
 } from "lucide-react";
+
+const serviceLinks = [
+  { label: "Back Office Operations", href: "/#service-back-office" },
+  { label: "Reporting & Analytics", href: "/#service-reporting" },
+  { label: "Technical Support", href: "/#service-technical-support" },
+  { label: "Process Management", href: "/#service-process-management" },
+  { label: "Banking Finance Support", href: "/#service-banking-finance" },
+];
 
 export default function Header() {
   const pathname = usePathname();
@@ -57,109 +66,59 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" className="group flex items-center gap-3 select-none">
-          {/* Spiral Galaxy / Vortex Logo Icon matching image */}
-          <div className="relative w-10 h-10 md:w-11 md:h-11 flex-shrink-0 flex items-center justify-center">
-            <svg
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-full group-hover:rotate-45 transition-transform duration-700 ease-out"
-            >
-              <defs>
-                <linearGradient id="spiralOrange" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#ea580c" />
-                  <stop offset="100%" stopColor="#f97316" />
-                </linearGradient>
-                <linearGradient id="spiralBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#1e3a8a" />
-                  <stop offset="100%" stopColor="#3b82f6" />
-                </linearGradient>
-              </defs>
+        
 
-              {/* Outer spiral dots and curved rays */}
-              <g strokeLinecap="round">
-                {Array.from({ length: 24 }).map((_, i) => {
-                  const angle = (i * 15 * Math.PI) / 180;
-                  const cos = Math.cos(angle);
-                  const sin = Math.sin(angle);
-                  const r1 = 10;
-                  const r2 = 38;
-                  const x1 = (50 + r1 * cos).toFixed(2);
-                  const y1 = (50 + r1 * sin).toFixed(2);
-                  const cx = (50 + 26 * Math.cos(angle + 0.6)).toFixed(2);
-                  const cy = (50 + 26 * Math.sin(angle + 0.6)).toFixed(2);
-                  const x2 = (50 + r2 * Math.cos(angle + 1.15)).toFixed(2);
-                  const y2 = (50 + r2 * Math.sin(angle + 1.15)).toFixed(2);
-
-                  const isWarm = i < 12;
-                  const strokeColor = isScrolled
-                    ? isWarm
-                      ? "url(#spiralOrange)"
-                      : "url(#spiralBlue)"
-                    : isWarm
-                    ? "#f97316"
-                    : "#ffffff";
-
-                  return (
-                    <path
-                      key={i}
-                      d={`M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`}
-                      stroke={strokeColor}
-                      strokeDasharray={`${(i % 3) + 1.5} ${(i % 2) + 2.5}`}
-                      strokeWidth={1.6 + (i % 3) * 0.6}
-                      opacity={Number((0.75 + (i / 24) * 0.25).toFixed(2))}
-                    />
-                  );
-                })}
-              </g>
-              <circle
-                cx="50"
-                cy="50"
-                r="3.5"
-                fill={isScrolled ? "#1e3a8a" : "#ffffff"}
-                opacity="0.9"
-              />
-            </svg>
-          </div>
-
-          {/* Brand Name & Subtitle */}
-          <div className="flex flex-col">
-            <span
-              className={`text-xl md:text-2xl font-bold tracking-tight font-sans transition-colors ${
-                isScrolled ? "text-slate-900" : "text-white"
-              }`}
-            >
-              LOGO{" "}
-              <span
-                className={`font-light tracking-normal ${
-                  isScrolled ? "text-slate-600" : "text-white/90"
-                }`}
-              >
-                LOGO
-              </span>
-            </span>
-            <div
-              className={`flex items-center gap-1.5 text-[9px] tracking-[0.28em] font-medium uppercase transition-colors ${
-                isScrolled ? "text-slate-500" : "text-white/75"
-              }`}
-            >
-              <span
-                className={`w-3.5 h-[1px] ${
-                  isScrolled ? "bg-slate-300" : "bg-white/50"
-                }`}
-              />
-              <span>LOGO</span>
-              <span
-                className={`w-3.5 h-[1px] ${
-                  isScrolled ? "bg-slate-300" : "bg-white/50"
-                }`}
-              />
-            </div>
-          </div>
+          <Image
+            src="/pinnacle-logo.jpeg"
+            alt="Pinnacle Serve"
+            width={875}
+            height={980}
+            priority
+            className="h-16 w-16 object-contain mix-blend-multiply"
+          />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveDropdown("services")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button
+              type="button"
+              aria-haspopup="true"
+              aria-expanded={activeDropdown === "services"}
+              onClick={() => toggleDropdown("services")}
+              onKeyDown={(event) => {
+                if (event.key === "Escape") setActiveDropdown(null);
+              }}
+              className={`flex items-center gap-2 py-2 text-sm font-medium transition-colors ${
+                isScrolled
+                  ? "text-slate-700 hover:text-slate-950"
+                  : "text-white/90 hover:text-white"
+              }`}
+            >
+              <Layers className={`h-4 w-4 ${isScrolled ? "text-slate-600" : "text-white/80"}`} />
+              <span>Services</span>
+              <ChevronDown className={`h-4 w-4 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
+            </button>
+            {activeDropdown === "services" && (
+              <div className="absolute left-0 top-full z-50 w-64 rounded-xl border border-slate-200 bg-white p-2 text-slate-800 shadow-xl">
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    onClick={() => setActiveDropdown(null)}
+                    className="block rounded-lg px-3 py-2.5 text-sm transition hover:bg-orange-50 hover:text-orange-700"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Customer Delight */}
           <Link
@@ -176,7 +135,7 @@ export default function Header() {
               }`}
               strokeWidth={2}
             />
-            <span>Customer Delight</span>
+            <span>Client Outcomes</span>
           </Link>
 
           {/* Career */}
@@ -194,7 +153,7 @@ export default function Header() {
               }`}
               strokeWidth={2}
             />
-            <span>Career</span>
+            <span>Careers</span>
           </Link>
 
           {/* About Us */}
@@ -212,7 +171,7 @@ export default function Header() {
               }`}
               strokeWidth={2}
             />
-            <span>About Us</span>
+            <span>Our Company</span>
           </Link>
 
           {/* Contact Us */}
@@ -230,7 +189,7 @@ export default function Header() {
               }`}
               strokeWidth={2}
             />
-            <span>Contact Us</span>
+            <span>Contact</span>
           </Link>
         </nav>
 
@@ -258,6 +217,46 @@ export default function Header() {
           }`}
         >
 
+          <div>
+            <button
+              type="button"
+              aria-expanded={activeDropdown === "mobile-services"}
+              onClick={() => toggleDropdown("mobile-services")}
+              className={`flex w-full items-center justify-between gap-2 py-2 text-sm font-medium transition ${
+                isScrolled
+                  ? "text-slate-800 hover:text-orange-600"
+                  : "text-white hover:text-amber-400"
+              }`}
+            >
+              <span className="flex items-center gap-2.5">
+                <Layers className={`w-4 h-4 ${isScrolled ? "text-slate-600" : "text-white/70"}`} />
+                Services
+              </span>
+              <ChevronDown className={`h-4 w-4 transition-transform ${activeDropdown === "mobile-services" ? "rotate-180" : ""}`} />
+            </button>
+            {activeDropdown === "mobile-services" && (
+              <div className="ml-7 flex flex-col border-l border-current/15 pl-3">
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setActiveDropdown(null);
+                    }}
+                    className={`py-2 text-sm transition ${
+                      isScrolled
+                        ? "text-slate-600 hover:text-orange-600"
+                        : "text-white/75 hover:text-amber-400"
+                    }`}
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <Link
             href="/customer-delight"
             onClick={() => setMobileMenuOpen(false)}
@@ -272,7 +271,7 @@ export default function Header() {
                 isScrolled ? "text-slate-600" : "text-white/70"
               }`}
             />
-            <span>Customer Delight</span>
+            <span>Client Outcomes</span>
           </Link>
 
           <Link
@@ -289,7 +288,7 @@ export default function Header() {
                 isScrolled ? "text-slate-600" : "text-white/70"
               }`}
             />
-            <span>Career</span>
+            <span>Careers</span>
           </Link>
 
           <Link
@@ -306,7 +305,7 @@ export default function Header() {
                 isScrolled ? "text-slate-600" : "text-white/70"
               }`}
             />
-            <span>About Us</span>
+            <span>Our Company</span>
           </Link>
 
           <Link
@@ -323,7 +322,7 @@ export default function Header() {
                 isScrolled ? "text-slate-600" : "text-white/70"
               }`}
             />
-            <span>Contact Us</span>
+            <span>Contact</span>
           </Link>
         </div>
       )}

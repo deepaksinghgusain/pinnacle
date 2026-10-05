@@ -27,9 +27,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Everlume Solutions — Simplify Complexity, Unlock Measurable Value",
+  title: "Pinnacle Serve — Operations and Technology, Working as One",
   description:
-    "We are a digital services partner for organizations that need more than technology delivery. We connect strategy, engineering, automation, and intelligence to help businesses modernize, serve customers, and grow.",
+    "Pinnacle Serve brings operational support and modern technology together to help organizations improve service, simplify work, and grow with confidence.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

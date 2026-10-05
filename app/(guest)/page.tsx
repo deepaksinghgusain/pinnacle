@@ -30,7 +30,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-// Industries data matching live Everlume Solutions
+// Industry examples for Pinnacle Serve
 const industries = [
   {
     title: "Healthcare",
@@ -40,7 +40,7 @@ const industries = [
     description:
       "Autonomous AI workflows that streamline patient engagement, optimise operations, and deliver measurable outcomes across the care continuum.",
     tag: "PATIENT CARE",
-    image: "https://www.everlumesolutions.com/Images/image_059.jpg",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
     alt: "Healthcare professionals analyzing clinical patient data",
   },
   {
@@ -51,7 +51,7 @@ const industries = [
     description:
       "Autonomous AI workflows that streamline customer engagement, optimize operations, and deliver measurable outcomes across the financial services lifecycle.",
     tag: "FINANCIAL SERVICES",
-    image: "https://www.everlumesolutions.com/Images/image_033.jpg",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=85",
     alt: "Financial documents, tax forms and banking tools",
   },
   {
@@ -62,7 +62,7 @@ const industries = [
     description:
       "Modernize complex, always-on telecom networks with 5G, network operations, and customer experience — engineering, automation, and AI built for scale.",
     tag: "NETWORK OPS",
-    image: "https://www.everlumesolutions.com/Images/image_015.jpg",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85",
     alt: "High performance telecom terminal code and data streams",
   },
   {
@@ -73,7 +73,7 @@ const industries = [
     description:
       "Intelligent AI agents that orchestrate customer engagement, merchandising, inventory, and omnichannel fulfilment to transform retail operations.",
     tag: "COMMERCE",
-    image: "https://www.everlumesolutions.com/Images/image_036.jpg",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=85",
     alt: "Modern retail and commerce merchandising store",
   },
   {
@@ -84,12 +84,12 @@ const industries = [
     description:
       "AI agents for production, supply chain, quality management, and maintenance — driving operational excellence across the plant floor.",
     tag: "OPERATIONS",
-    image: "https://www.everlumesolutions.com/Images/image_051.jpg",
+    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1400&q=85",
     alt: "Advanced precision manufacturing assembly and robotics",
   },
 ];
 
-// 8 Capabilities from Everlume Solutions (Index 2 is Cloud Engineering matching user screenshot)
+// Pinnacle Serve capability areas
 const capabilities = [
   {
     num: "01",
@@ -99,7 +99,7 @@ const capabilities = [
     titleLine2: "Services",
     description:
       "Build secure, scalable, and enterprise-ready AI capabilities that accelerate innovation and deliver measurable business value.",
-    bg: "https://www.everlumesolutions.com/Images/image_060.jpg",
+    bg: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/ai-services",
   },
   {
@@ -110,7 +110,7 @@ const capabilities = [
     titleLine2: "Engineering",
     description:
       "End-to-end product engineering — strategy, design, build, and continuous delivery for market-defining digital products and platforms.",
-    bg: "https://www.everlumesolutions.com/Images/image_005.jpg",
+    bg: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/digital-product-engineering",
   },
   {
@@ -121,7 +121,7 @@ const capabilities = [
     titleLine2: "Engineering",
     description:
       "Enterprise-grade cloud architecture, migration, platform engineering, and DevSecOps to build resilient, scalable, and intelligent cloud ecosystems.",
-    bg: "https://www.everlumesolutions.com/Images/image_003.jpg",
+    bg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/cloud-engineering",
   },
   {
@@ -132,7 +132,7 @@ const capabilities = [
     titleLine2: "Services",
     description:
       "Build trusted, governed, and scalable enterprise data ecosystems that power analytics, AI, and confident decision-making.",
-    bg: "https://www.everlumesolutions.com/Images/image_030.jpg",
+    bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/data-services",
   },
   {
@@ -143,7 +143,7 @@ const capabilities = [
     titleLine2: "Service",
     description:
       "Optimise reimbursement, reduce denials, and improve cash flow with intelligent, scalable, healthcare-focused RCM operations.",
-    bg: "https://www.everlumesolutions.com/Images/image_055.jpg",
+    bg: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/rcm",
   },
   {
@@ -154,7 +154,7 @@ const capabilities = [
     titleLine2: "Services",
     description:
       "From RPA and intelligent document processing to AI-driven workflow orchestration — automate complex business processes at scale with governance and resilience.",
-    bg: "https://www.everlumesolutions.com/Images/image_049.jpg",
+    bg: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/automation-services",
   },
   {
@@ -165,7 +165,7 @@ const capabilities = [
     titleLine2: "Services",
     description:
       "From 24/7 monitoring and incident response to cloud and cybersecurity operations — keep your technology estate secure, resilient, and continuously optimised.",
-    bg: "https://www.everlumesolutions.com/Images/image_025.jpg",
+    bg: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/managed-services",
   },
   {
@@ -176,40 +176,40 @@ const capabilities = [
     titleLine2: "Operations",
     description:
       "Transform property operations, service delivery, and resident support with intelligent AI agents that orchestrate work across systems.",
-    bg: "https://www.everlumesolutions.com/Images/image_020.jpg",
+    bg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85",
     link: "/what-we-offer/utilities-management",
   },
 ];
 
-// Client Testimonials from Everlume
+// Client testimonials
 const testimonials = [
   {
     quote:
-      "Everlume's AI solution reduced our manual processing time by 80%. Their team truly understands enterprise needs.",
+      "Pinnacle Serve's AI solution reduced our manual processing time by 80%. Their team truly understands enterprise needs.",
     role: "VP of Technology",
     company: "Global Healthcare Network",
-    avatar: "https://www.everlumesolutions.com/Images/image_009.jpg",
+    initials: "VP",
   },
   {
     quote:
       "Our cloud migration was seamless. Zero downtime, 40% cost reduction, and incredible ongoing support.",
     role: "Head of Infrastructure",
     company: "Fintech Enterprise",
-    avatar: "https://www.everlumesolutions.com/Images/image_026.jpg",
+    initials: "HI",
   },
   {
     quote:
-      "Working with Everlume for 3 years now. They're not just a vendor — they're a true technology partner committed to our growth.",
+      "Working with Pinnacle Serve for 3 years now. They're not just a vendor — they're a true technology partner committed to our growth.",
     role: "Chief Digital Officer",
     company: "Retail Group",
-    avatar: "https://www.everlumesolutions.com/Images/image_028.jpg",
+    initials: "CD",
   },
   {
     quote:
       "Their DevOps team transformed our deployment pipeline. We ship 10x faster with complete confidence now.",
     role: "Director of Engineering",
     company: "Telecom Innovations",
-    avatar: "https://www.everlumesolutions.com/Images/image_036.jpg",
+    initials: "DE",
   },
 ];
 
@@ -255,8 +255,8 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           {/* Office collaboration photo with warm/cool lighting */}
           <Image
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2850&q=80"
-            alt="Everlume modern collaborative workspace"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2850&q=85"
+            alt="A collaborative team working in a modern office"
             fill
             priority
             sizes="100vw"
@@ -278,24 +278,24 @@ export default function Home() {
           <div className="mx-auto flex flex-col items-center">
             {/* Main Headline */}
             <h1 className="font-serif font-bold text-white tracking-tight leading-[1.08] text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] xl:text-[6.2rem] drop-shadow-md">
-              Simplify complexity,
+              Make complex work
               <span className="block mt-1 sm:mt-2">
                 <span className="text-[#e36a1e] italic font-serif font-bold inline-block mr-3 md:mr-5 drop-shadow-[0_2px_10px_rgba(227,106,30,0.35)]">
-                  Unlock
+                  simpler
                 </span>
-                measurable value
+                and more effective
               </span>
             </h1>
 
             {/* Subtitle Paragraph */}
             <p className="mt-8 sm:mt-10 text-slate-200/90 text-sm sm:text-base md:text-lg font-light leading-relaxed tracking-wide drop-shadow max-w-4xl">
-              We are a digital services partner for organizations that need more than
-              technology delivery.
+              Pinnacle Serve helps organizations improve how work gets done through
+              practical operational and technology support.
               <span className="block sm:mt-1">
-                We connect strategy, engineering, automation, and intelligence
+                Our teams bring together people, processes, and technology
               </span>
               <span className="block sm:mt-1">
-                to help businesses modernize, serve customers, and grow.
+                to strengthen service, efficiency, and growth.
               </span>
             </p>
           </div>
@@ -306,7 +306,7 @@ export default function Home() {
           <button
             onClick={scrollToNextSection}
             className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors cursor-pointer animate-bounce mr-6"
-            aria-label="Scroll down to About Pinnacle"
+            aria-label="Explore how Pinnacle Serve works"
           >
             <ArrowDown className="w-5 h-5" strokeWidth={2.5} />
           </button>
@@ -337,23 +337,23 @@ export default function Home() {
 
               {/* Heading */}
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white tracking-tight leading-[1.12]">
-                Building <span className="text-[#f06425] italic font-serif font-normal">Operational Excellence</span>
+                Better operations. <span className="text-[#f06425] italic font-serif font-normal">Stronger outcomes.</span>
               </h2>
 
               {/* Short Company Story */}
               <p className="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-                Founded in 2024, Pinnacle Serve was established to bridge the gap between backoffice operations and high-impact technology delivery, empowering global clients with agile, resilient, and scalable execution.
+                Founded in 2024, Pinnacle Serve brings dependable operations and modern technology together, helping global clients make change practical, resilient, and ready to scale.
               </p>
 
               {/* Story Highlights */}
               <div className="grid grid-cols-2 gap-4 my-8 w-full">
                 <div className="p-4 rounded-xl bg-[#091526]/80 border border-slate-800/80">
                   <span className="text-2xl font-bold font-serif text-[#f06425]">2024</span>
-                  <p className="text-xs text-slate-400 mt-1 font-medium">Founded &amp; Established</p>
+                  <p className="text-xs text-slate-400 mt-1 font-medium">Founded</p>
                 </div>
                 <div className="p-4 rounded-xl bg-[#091526]/80 border border-slate-800/80">
                   <span className="text-2xl font-bold font-serif text-white">Global</span>
-                  <p className="text-xs text-slate-400 mt-1 font-medium">Client Operations</p>
+                  <p className="text-xs text-slate-400 mt-1 font-medium">Global delivery</p>
                 </div>
               </div>
 
@@ -362,7 +362,7 @@ export default function Home() {
                 href="/about"
                 className="group inline-flex items-center gap-2.5 bg-[#e36a1e] hover:bg-[#cc5c15] active:scale-[0.98] text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-orange-950/40 hover:shadow-orange-500/30 transition-all duration-200 cursor-pointer"
               >
-                <span>Learn More About Us</span>
+                <span>Meet Pinnacle Serve</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
@@ -376,10 +376,10 @@ export default function Home() {
                     <Globe className="w-5 h-5" />
                   </div>
                   <h3 className="text-white font-semibold text-base mb-1.5 group-hover:text-amber-400 transition-colors">
-                    Supporting Global Clients
+                    Global Client Support
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
-                    Providing round-the-clock operational coverage and global delivery standards for distributed international teams.
+                    Reliable operational coverage and consistent delivery for teams working across regions and time zones.
                   </p>
                 </div>
 
@@ -389,10 +389,10 @@ export default function Home() {
                     <Building2 className="w-5 h-5" />
                   </div>
                   <h3 className="text-white font-semibold text-base mb-1.5 group-hover:text-amber-400 transition-colors">
-                    Backoffice Operations &amp; IT Consulting
+                    Operations &amp; IT Consulting
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
-                    Full-spectrum backoffice support paired with enterprise IT consulting, process automation, and technology maintenance.
+                    Connect back-office support with IT guidance, process automation, and ongoing technology care.
                   </p>
                 </div>
 
@@ -402,10 +402,10 @@ export default function Home() {
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
                   <h3 className="text-white font-semibold text-base mb-1.5 group-hover:text-amber-400 transition-colors">
-                    Specialized Transition Team
+                    Smooth Transitions
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
-                    Structured knowledge transfer, standard operating procedures (SOPs), and zero-disruption project onboarding.
+                    Start new engagements with clear knowledge transfer, documented procedures, and a careful handover.
                   </p>
                 </div>
 
@@ -415,10 +415,10 @@ export default function Home() {
                     <Users className="w-5 h-5" />
                   </div>
                   <h3 className="text-white font-semibold text-base mb-1.5 group-hover:text-amber-400 transition-colors">
-                    Specialized Operational Support
+                    Dedicated Operations Teams
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
-                    Dedicated domain-focused teams managing complex day-to-day operations with strict SLA commitments.
+                    Skilled teams take ownership of daily work and keep service commitments visible and on track.
                   </p>
                 </div>
 
@@ -428,10 +428,10 @@ export default function Home() {
                     <GraduationCap className="w-5 h-5" />
                   </div>
                   <h3 className="text-white font-semibold text-base mb-1.5 group-hover:text-amber-400 transition-colors">
-                    Training &amp; Development Team
+                    Training &amp; Development
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
-                    Continuous learning programs and certification frameworks ensuring talent remains ahead of industry trends.
+                    Ongoing learning and certification help our people keep their skills current.
                   </p>
                 </div>
 
@@ -441,10 +441,10 @@ export default function Home() {
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <h3 className="text-white font-semibold text-base mb-1.5 group-hover:text-amber-400 transition-colors">
-                    Trained Agents (Factory Model)
+                    Flexible, Trained Teams
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
-                    Plug-and-play trained professionals ready on demand with a relentless focus on quality and rapid scalability.
+                    Add trained specialists as needs change, with quality and consistent delivery built into the model.
                   </p>
                 </div>
               </div>
@@ -470,21 +470,21 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#f06425]/40 bg-[#f06425]/10 text-[#f06425] text-xs font-semibold tracking-wider uppercase mb-5 shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#f06425]" />
-                <span>Our Services</span>
+                <span>How We Help</span>
               </div>
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-white tracking-tight leading-[1.12]">
-                Services We <span className="text-[#f06425] italic font-serif font-normal">Deliver</span>
+                Support for <span className="text-[#f06425] italic font-serif font-normal">Everyday Progress</span>
               </h2>
             </div>
             <p className="text-slate-300 text-sm sm:text-base max-w-md font-light leading-relaxed">
-              End-to-end operational and technology execution tailored to drive accuracy, agility, and sustainable enterprise scale.
+              Practical services that help teams work accurately, respond faster, and grow with confidence.
             </p>
           </div>
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card 1: Back Office Operations */}
-            <div className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
+            <div id="service-back-office" className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-[#f06425] group-hover:scale-105 transition-transform">
@@ -498,17 +498,17 @@ export default function Home() {
                   Back Office Operations
                 </h3>
                 <p className="text-slate-400 text-sm sm:text-[15px] leading-relaxed font-light">
-                  Administrative processing, documentation management, workflow support.
+                  Dependable processing, organized records, and hands-on workflow support for essential business tasks.
                 </p>
               </div>
               <div className="pt-8 flex items-center text-xs font-medium text-slate-400 group-hover:text-[#f06425] transition-colors">
-                <span>Explore processing workflows</span>
+                <span>Improve day-to-day processing</span>
                 <span className="ml-1.5 group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
 
             {/* Card 2: Reporting & Analytics */}
-            <div className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
+            <div id="service-reporting" className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
@@ -522,17 +522,17 @@ export default function Home() {
                   Reporting &amp; Analytics
                 </h3>
                 <p className="text-slate-400 text-sm sm:text-[15px] leading-relaxed font-light">
-                  Operational dashboards, performance reporting, data analysis.
+                  Clear dashboards and useful analysis give teams a better view of performance and next steps.
                 </p>
               </div>
               <div className="pt-8 flex items-center text-xs font-medium text-slate-400 group-hover:text-[#f06425] transition-colors">
-                <span>Explore reporting models</span>
+                <span>Turn reporting into action</span>
                 <span className="ml-1.5 group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
 
             {/* Card 3: Technical Support */}
-            <div className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
+            <div id="service-technical-support" className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:scale-105 transition-transform">
@@ -546,17 +546,17 @@ export default function Home() {
                   Technical Support
                 </h3>
                 <p className="text-slate-400 text-sm sm:text-[15px] leading-relaxed font-light">
-                  IT Consulting, IT Implementation, Support &amp; Managed Services, AI &amp; Automations.
+                  Guidance, implementation, managed support, and automation to keep technology useful and dependable.
                 </p>
               </div>
               <div className="pt-8 flex items-center text-xs font-medium text-slate-400 group-hover:text-[#f06425] transition-colors">
-                <span>Explore technical solutions</span>
+                <span>Get practical technical support</span>
                 <span className="ml-1.5 group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
 
             {/* Card 4: Process Management */}
-            <div className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
+            <div id="service-process-management" className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-105 transition-transform">
@@ -570,17 +570,17 @@ export default function Home() {
                   Process Management
                 </h3>
                 <p className="text-slate-400 text-sm sm:text-[15px] leading-relaxed font-light">
-                  Process execution, quality assurance, operational governance.
+                  Documented processes and quality checks make work easier to repeat, review, and improve.
                 </p>
               </div>
               <div className="pt-8 flex items-center text-xs font-medium text-slate-400 group-hover:text-[#f06425] transition-colors">
-                <span>Explore governance frameworks</span>
+                <span>Build consistent ways of working</span>
                 <span className="ml-1.5 group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
 
             {/* Card 5: Banking Finance Support Services */}
-            <div className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+            <div id="service-banking-finance" className="group relative rounded-2xl bg-[#091526]/85 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700/80 p-7 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/30 flex flex-col justify-between md:col-span-2 lg:col-span-2">
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
@@ -594,11 +594,11 @@ export default function Home() {
                   Banking Finance Support Services
                 </h3>
                 <p className="text-slate-400 text-sm sm:text-[15px] leading-relaxed font-light max-w-2xl">
-                  Specialized operational support for recovery and repossession industry.
+                  Dedicated operational support for organizations working in recovery and repossession.
                 </p>
               </div>
               <div className="pt-8 flex items-center text-xs font-medium text-slate-400 group-hover:text-[#f06425] transition-colors">
-                <span>Explore banking &amp; recovery support</span>
+                <span>Support finance and recovery work</span>
                 <span className="ml-1.5 group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
@@ -610,7 +610,7 @@ export default function Home() {
               href="/services"
               className="group inline-flex items-center gap-2.5 bg-[#e36a1e] hover:bg-[#cc5c15] active:scale-[0.98] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg shadow-orange-950/40 hover:shadow-orange-500/30 transition-all duration-200 cursor-pointer"
             >
-              <span>View All Services</span>
+              <span>Explore Our Services</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
@@ -707,14 +707,8 @@ export default function Home() {
                 </div>
 
                 <div className="flex items-center gap-4 pt-4 border-t border-slate-800/60">
-                  <div className="relative w-11 h-11 rounded-full overflow-hidden border border-slate-700 flex-shrink-0">
-                    <Image
-                      src={t.avatar}
-                      alt={t.role}
-                      fill
-                      sizes="44px"
-                      className="object-cover"
-                    />
+                  <div aria-hidden="true" className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-orange-400/30 bg-gradient-to-br from-orange-400/25 to-blue-500/25 text-xs font-semibold tracking-wide text-orange-100">
+                    {t.initials}
                   </div>
                   <div>
                     <h5 className="text-white font-semibold text-sm sm:text-base">
