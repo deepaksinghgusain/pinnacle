@@ -37,41 +37,17 @@ const storyPoints = [
 
 const leaders = [
     {
-        name: "Sartaj Rekhi",
+        name: "Jhon Doe",
         role: "Chairman",
         paragraphs: [
-            "Sartaj Rekhi is a serial entrepreneur who has built, grown, and transformed technology companies. He pairs an entrepreneurial mindset with strategic discipline and a practical understanding of changing markets.",
-            "He guided a technology company through its public listing and IPO, then led its expansion to more than USD 200 million in revenue.",
-            "As Founder of Pinnacle Serve, Sartaj brings experience in entrepreneurship, public markets, and technology. His leadership emphasizes inclusion, focused execution, and responsible innovation.",
-            "Sartaj studied at American River College and San Jose State University and completed advanced management programs at UC Berkeley. He enjoys traveling and watching boxing.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum."
         ],
     },
     {
-        name: "Sidhartha Dubey",
+        name: "Jhon",
         role: "CEO",
         paragraphs: [
-            "Sidhartha Dubey has more than two decades of experience leading global technology and transformation programs across industries and regions. He helps clients modernize legacy environments, make better use of IT investment, and build technology foundations that can scale.",
-            "He believes lasting change is driven by people. His leadership makes room for participation, collaboration, and new ideas.",
-            "Sidhartha combines strategic planning with disciplined delivery, helping organizations apply AI and automation, simplify complex environments, and strengthen their technology operations.",
-            "Sidhartha graduated from Delhi University and completed the Advanced Management Programme at IIM Bangalore. He enjoys reading Indian and Western philosophy.",
-        ],
-    },
-    {
-        name: "Sanjeev Sethi",
-        role: "CFO",
-        paragraphs: [
-            "A Chartered Accountant, Sanjeev Sethi brings around 40 years of experience across finance, industry, and consulting. His work includes corporate finance, fundraising, IPOs, investor relations, accounting, audit, and taxation.",
-            "His background in financial strategy, governance, compliance, and stakeholder management brings a strong commercial perspective to leadership.",
-            "As CFO, Sanjeev supports the company’s financial health, growth plans, and governance.",
-        ],
-    },
-    {
-        name: "Vikram Jolly",
-        role: "Vice President, Tech Infra",
-        paragraphs: [
-            "Vikram Jolly has more than 25 years of experience in enterprise technology strategy and operations, including infrastructure, cybersecurity, networks, data centers, service delivery, and digital transformation.",
-            "He focuses on secure, resilient, and scalable technology environments that support business needs and reliable operations.",
-            "A graduate of the University of Delhi and IIM Lucknow, Vikram brings technology and business leadership together. His interests include cybersecurity, AI-led change, and digital infrastructure.",
+         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum."
         ],
     },
 ];
