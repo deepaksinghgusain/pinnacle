@@ -274,7 +274,7 @@ export default function Home() {
         </div>
 
         {/* Main Hero Content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center pt-32 pb-2">
           <div className="mx-auto flex flex-col items-center">
             {/* Main Headline */}
             <h1 className="font-serif font-bold text-white tracking-tight leading-[1.08] text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] xl:text-[6.2rem] drop-shadow-md">
@@ -298,6 +298,36 @@ export default function Home() {
                 to strengthen service, efficiency, and growth.
               </span>
             </p>
+          </div>
+        </div>
+
+        <div className="relative z-10 w-full px-6 pb-8 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-7xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-300/80">
+              Trust Metrics
+            </p>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+              {[
+                { value: "100+", label: "Team Members" },
+                { value: "20+", label: "Happy Customers" },
+                { value: "25+", label: "Projects Delivered" },
+                { value: "50+", label: "Certified Professionals" },
+                { value: "24X7", label: "Global Time Zone Coverage" },
+                { value: "99.9%", label: "C-SAT Index" },
+              ].map((metric) => (
+                <div
+                  key={metric.label}
+                  className="min-h-32 rounded-[22px] border border-blue-500 bg-slate-900/80 p-4 sm:p-5"
+                >
+                  <p className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                    {metric.value}
+                  </p>
+                  <p className="mt-2 text-sm font-medium leading-snug text-orange-500">
+                    {metric.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
