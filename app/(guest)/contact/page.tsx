@@ -122,7 +122,7 @@ export default function ContactPage() {
           <div className="pointer-events-none absolute -right-40 -top-60 h-[640px] rounded-full border border-orange-200/70" />
           <div className="relative mx-auto w-full">
             <div className="w-full">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-slate-600 uppercase">
+              <div className="mb-5 mt-4inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-slate-600 uppercase">
                 <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
                 Start a conversation
               </div>
