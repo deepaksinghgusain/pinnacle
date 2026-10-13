@@ -59,11 +59,11 @@ export default function Footer() {
                         <div className="lg:col-span-2 flex flex-col items-start pr-4">
                             <Link href="/" className="flex items-center gap-3 select-none mb-5">
                                 <Image
-                                    src="/pinnacle-logo.jpeg"
+                                    src="/logo-white.png"
                                     alt="Pinnacle Serve"
                                     width={875}
                                     height={980}
-                                    className="h-20 w-20 rounded-md bg-white p-1 object-contain"
+                                    className="h-40 w-60 rounded-md p-1 object-contain"
                                 />
                             </Link>
                             <p className="text-slate-400 text-sm leading-relaxed max-w-sm font-light">

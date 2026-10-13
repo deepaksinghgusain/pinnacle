@@ -59,22 +59,20 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-3.5 px-6 md:px-10 lg:px-12"
-          : "bg-transparent py-6 px-6 md:px-10 lg:px-12"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-3 px-6 md:px-10 lg:px-12"
+          : "bg-transparent py-4 px-6 md:px-10 lg:px-12"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Section */}
-        <Link href="/" className="group flex items-center gap-3 select-none">
-        
-
+        <Link href="/" className="group flex shrink-0 items-center gap-3 select-none">
           <Image
-            src="/pinnacle-logo.jpeg"
+            src={isScrolled ? "/logo-black.png" : "/logo-white.png"}
             alt="Pinnacle Serve"
             width={875}
             height={980}
             priority
-            className="h-16 w-16 object-contain mix-blend-multiply"
+            className="h-28 w-auto shrink-0 object-contain"
           />
         </Link>
 
