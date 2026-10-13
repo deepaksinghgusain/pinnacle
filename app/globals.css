@@ -4,6 +4,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.running-underline {
+  background: linear-gradient(90deg, #a855f7, #3b82f6, #a855f7);
+  background-size: 200% 100%;
+  animation: running-underline 2.5s linear infinite;
+}
+
+@keyframes running-underline {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .running-underline {
+    animation: none;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -127,5 +145,47 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+.animated-gradient-line {
+  background: linear-gradient(90deg,
+      #06b6d4 0%,
+      #3b82f6 25%,
+      #8b5cf6 50%,
+      #3b82f6 75%,
+      #06b6d4 100%);
+  background-size: 300% 100%;
+  animation: gradientMove 3s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.45));
+}
+
+.shine-effect {
+  left: -35%;
+  width: 35%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.95),
+      transparent);
+  animation: shineMove 2s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes shineMove {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(450%);
   }
 }

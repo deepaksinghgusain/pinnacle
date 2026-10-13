@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   MessageSquare,
@@ -278,15 +277,18 @@ export default function Home() {
       <section className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden">
         {/* Background with layered atmospheric lighting matching the image */}
         <div className="absolute inset-0 z-0">
-          {/* Office collaboration photo with warm/cool lighting */}
-          <Image
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2850&q=85"
-            alt="A collaborative team working in a modern office"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center filter brightness-[0.45] contrast-[1.1] scale-105"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/welcoming-moments.png"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center brightness-[0.45] contrast-[1.1]"
+          >
+            <source src="/office.mp4" type="video/mp4" />
+          </video>
 
           {/* Left warm amber/cognac lighting overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#d97706]/25 via-slate-950/60 to-[#1e3a8a]/40 mix-blend-screen pointer-events-none" />
@@ -302,9 +304,9 @@ export default function Home() {
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center pt-32 pb-2">
           <div className="mx-auto flex flex-col items-center">
             {/* Main Headline */}
-            <h1 className="font-serif font-bold text-white tracking-tight leading-[1.08] text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] xl:text-[6.2rem] drop-shadow-md">
+            <h1 className="font-serif font-bold text-white tracking-tight leading-[1.08] text-3xl sm:text-5xl md:text-8xl drop-shadow-md">
               Make complex work
-              <span className="block mt-1 sm:mt-2">
+              <span className="block">
                 <span className="text-[#e36a1e] italic font-serif font-bold inline-block mr-3 md:mr-5 drop-shadow-[0_2px_10px_rgba(227,106,30,0.35)]">
                   simpler
                 </span>
@@ -313,21 +315,26 @@ export default function Home() {
             </h1>
 
             {/* Subtitle Paragraph */}
-            <p className="mt-8 sm:mt-10 text-slate-200/90 text-sm sm:text-base md:text-lg font-light leading-relaxed tracking-wide drop-shadow max-w-4xl">
+            <p className="mt-2 sm:mt-5 text-slate-200/90 text-sm sm:text-base md:text-lg font-light leading-relaxed tracking-wide drop-shadow max-w-4xl">
               Pinnacle Serve helps organizations improve how work gets done through
               practical operational and technology support.
-              <span className="block sm:mt-1">
                 Our teams bring together people, processes, and technology
-              </span>
-              <span className="block sm:mt-1">
                 to strengthen service, efficiency, and growth.
-              </span>
-            </p>
+               </p>
           </div>
         </div>
 
         <div className="relative z-10 w-full px-6 pb-8 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
+            <div className="mb-6 flex justify-center">
+              <Link
+                href="#our-services"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-[#e36a1e] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-950/40 transition-all duration-200 hover:bg-[#cc5c15] hover:shadow-orange-500/30 sm:text-base"
+              >
+                <span>Explore Services</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-300/80">
               Trust Metrics
             </p>
@@ -385,19 +392,21 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Story & CTA */}
             <div className="lg:col-span-5 flex flex-col items-start">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#f06425]/40 bg-[#f06425]/10 text-[#f06425] text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#f06425]" />
-                <span>About Pinnacle Serve</span>
+              <h2 className="font-sans text-3xl lg:text-5xl font-bold text-[#f06425] leading-tight">
+                About Pinnacle Serve
+              </h2>
+             
+              <div className="relative mt-4 h-[5px] w-full overflow-hidden rounded-full bg-slate-200">
+                <div className="absolute inset-0 animated-gradient-line" />
+                <div className="absolute inset-y-0 shine-effect" />
               </div>
 
-              {/* Heading */}
-              <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white tracking-tight leading-[1.12]">
+              <h3 className="mt-6 font-serif text-3xl sm:text-4xl font-bold text-white leading-[1.12]">
                 Better operations. <span className="text-[#f06425] italic font-serif font-normal">Stronger outcomes.</span>
-              </h2>
+              </h3>
 
               {/* Short Company Story */}
-              <p className="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+              <p className="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed font-light">
                 Founded in 2024, Pinnacle Serve brings dependable operations and modern technology together, helping global clients make change practical, resilient, and ready to scale.
               </p>
 
@@ -528,7 +537,7 @@ export default function Home() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#f06425]" />
                 <span>How We Help</span>
               </div>
-              <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-white tracking-tight leading-[1.12]">
+              <h2 className="font-serif text-3xl lg:text-5xl font-bold text-white tracking-tight leading-[1.12]">
                 Support for <span className="text-[#f06425] italic font-serif font-normal">Everyday Progress</span>
               </h2>
             </div>
@@ -685,7 +694,7 @@ export default function Home() {
             <p className="text-xs font-semibold tracking-[0.2em] text-[#f06425] uppercase mb-3">
               Why Pinnacle Serve
             </p>
-            <h2 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="font-serif text-3xl lg:text-5xl font-bold tracking-tight text-white">
               Built Around Your Priorities
             </h2>
           </div>
@@ -740,7 +749,7 @@ export default function Home() {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-[#f06425] text-xs font-semibold tracking-wider uppercase mb-5">
               CLIENT PERSPECTIVES
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+            <h2 className="font-serif text-3xl lg:text-5xl font-bold tracking-tight text-white">
               Partnerships That <span className="text-[#f06425] italic font-serif">Move Work Forward</span>
             </h2>
             <p className="mt-4 text-slate-400 text-sm sm:text-base max-w-xl font-light">

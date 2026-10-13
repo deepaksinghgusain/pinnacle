@@ -31,7 +31,7 @@ export default function Footer() {
                             <span>Make the Next Move</span>
                         </div>
 
-                        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.12]">
+                        <h2 className="font-serif text-3xl lg:text-5xl font-bold tracking-tight text-white max-w-3xl leading-[1.12]">
                             Ready to move your business forward? <br />
                             <span className="bg-gradient-to-r from-[#f06425] via-amber-400 to-[#38bdf8] bg-clip-text text-transparent">
                                 Let&apos;s get to work.
