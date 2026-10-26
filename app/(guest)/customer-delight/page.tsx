@@ -11,6 +11,7 @@ import {
 const industries = [
     {
         number: "01",
+        slug: "healthcare",
         segment: "Provider · Payer",
         name: "Healthcare",
         headline: "Faster care, cleaner revenue cycles.",
@@ -25,6 +26,7 @@ const industries = [
     },
     {
         number: "02",
+        slug: "banking",
         segment: "Risk · Compliance",
         name: "Banking",
         headline: "Confident decisions at enterprise scale.",
@@ -39,6 +41,7 @@ const industries = [
     },
     {
         number: "03",
+        slug: "telecom",
         segment: "Network · CX",
         name: "Telecom",
         headline: "Networks that anticipate, not just react.",
@@ -53,6 +56,7 @@ const industries = [
     },
     {
         number: "04",
+        slug: "retail",
         segment: "Commerce · Loyalty",
         name: "Retail",
         headline: "Effortless journeys, joyful shoppers.",
@@ -67,6 +71,7 @@ const industries = [
     },
     {
         number: "05",
+        slug: "manufacturing",
         segment: "Operations · Quality",
         name: "Manufacturing",
         headline: "Smarter plants, uncompromising quality.",
@@ -148,13 +153,14 @@ export default function CustomerDelightPage() {
                         </p>
                     </div>
 
-                    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                    <div id="case-studies" className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                         {industries.map((industry) => {
                             const Icon = industry.icon;
                             return (
                                 <Link
                                     key={industry.number}
                                     href={industry.href}
+                                    id={`industry-${industry.slug}`}
                                     className="group relative flex min-h-[390px] flex-col overflow-hidden rounded-[18px] border border-slate-200 bg-gradient-to-b from-white to-[#fafbff] p-6 shadow-[0_14px_42px_rgba(20,43,88,0.06)] transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_22px_54px_rgba(20,43,88,0.12)] sm:p-7"
                                 >
                                     <span className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${industry.accent}`} />

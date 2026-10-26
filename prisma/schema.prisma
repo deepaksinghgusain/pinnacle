@@ -1,0 +1,395 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+}
+
+enum UpcomingEventStatus {
+  COMPLETED
+  NEW
+  ACTIVE
+  INACTIVE
+}
+
+enum EmploymentType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  FREELANCE
+  INTERNSHIP
+}
+
+enum WorkMode {
+  REMOTE
+  HYBRID
+  ONSITE
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWING
+  SHORTLISTED
+  REJECTED
+  HIRED
+}
+
+model User {
+  id       String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name     String?
+  email    String    @unique(map: "user_email_idx")
+  image    String?
+  password String
+  accounts Account[]
+  sessions Session[]
+  status   Status    @default(ACTIVE)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model Account {
+  userId            String  @db.Uuid
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @id
+  userId       String   @db.Uuid
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model Banner {
+  id          String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  tagline     String
+  image       String?
+  title       String
+  description String  @db.Text
+  status      Status  @default(ACTIVE)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model Enquiry {
+  id          String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  fullName    String
+  email       String
+  phoneNumber String
+  companyName String?
+  subject     String
+  message     String  @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("enquiries")
+}
+
+model SiteSettings {
+  id String @id @default("site-settings")
+
+  siteName                   String
+  legalName                  String?
+  primaryEmail               String?
+  primaryPhone               String?
+  websiteUrl                 String?
+  timezone                   String?
+  officeAddress              String? @db.Text
+  officeHours                String?
+  logoPath                   String?
+  faviconPath                String?
+  metaTitle                  String?
+  metaDescription            String? @db.Text
+  metaKeywords               String?
+  gstNumber                  String?
+  cinNumber                  String?
+  mapUrl                     String?
+  teamMembers                String?
+  happyCustomers             String?
+  operationalSupport         String?
+  heroTrustTags              String? @db.Text
+  heroTagline                String?
+  heroTitle                  String?
+  heroDescription            String? @db.Text
+  heroBackgroundImagePath    String?
+  aboutTagline               String?
+  aboutTitle                 String?
+  aboutDescription           String? @db.Text
+  aboutButtons               String? @db.Text
+  deliveryModelTitle         String?
+  deliveryModelItems         String? @db.Text
+  whyClientsTagline          String?
+  whyClientsTitle            String?
+  whyClientsDescription      String? @db.Text
+  whyClientsCards            String? @db.Text
+  globalDeliveryTagline      String?
+  globalDeliveryTitle        String?
+  globalDeliveryDescription  String? @db.Text
+  globalDeliveryImagePath    String?
+  serviceHeroTitle           String?
+  serviceHeroDescription     String? @db.Text
+  serviceDeliveryTagline     String?
+  serviceDeliveryTitle       String?
+  serviceDeliveryDescription String? @db.Text
+  serviceDeliveryCards       String? @db.Text
+  showPhone                  Boolean @default(true)
+  showEmail                  Boolean @default(true)
+
+  eventHeroTagline             String?
+  eventHeroTitle               String?
+  eventHeroDescription         String? @db.Text
+  eventHeroBackgroundImagePath String?
+  
+  eventUpcommingTagline             String?
+  eventUpcommingTitle               String?
+  eventUpcommingDescription         String? @db.Text
+
+  eventGalleryTagline             String?
+  eventGalleryTitle               String?
+  eventGalleryDescription         String? @db.Text
+  
+  eventContactTitle            String?
+  eventContactDescription      String?
+
+
+  smtpHost            String?
+  smtpPort            String?
+  smtpUsername        String?
+  smtpPassword        String?
+  fromName            String?
+  fromEmail           String?
+  replyToEmail        String?
+  supportInbox        String?
+  emailSignature      String? @db.Text
+  enableNotifications Boolean @default(true)
+  storeDrafts         Boolean @default(false)
+
+  facebookUrl     String?
+  instagramUrl    String?
+  linkedinUrl     String?
+  youtubeUrl      String?
+  whatsappUrl     String?
+  messengerUrl    String?
+  socialBio       String?
+  showSocialIcons Boolean @default(true)
+  openLinksNewTab Boolean @default(true)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model ServiceCategory {
+  id       String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name     String
+  status   Status     @default(ACTIVE)
+  services Services[]
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model Services {
+  id               String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title            String
+  shortDescription String
+  description      String  @db.Text
+  image            String?
+  status           Status  @default(ACTIVE)
+  categoryId       String  @db.Uuid
+
+  category ServiceCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  serviceBenefits ServiceBenefits?
+  capabilities    Capabilities?
+  deliveryProcess DeliveryProcess?
+  outcomeFocuses  OutcomeFocus?
+  contactSection  ContactSection?
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model ServiceBenefits {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  items       String[]
+  description String?
+
+  serviceId String @unique @db.Uuid
+
+  service Services @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model Capabilities {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  items       String[]
+  description String?
+
+  serviceId String @unique @db.Uuid
+
+  service Services @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model DeliveryProcess {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  items       String[]
+  description String?
+
+  serviceId String @unique @db.Uuid
+
+  service Services @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model OutcomeFocus {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  items       String[]
+  description String?
+
+  serviceId String @unique @db.Uuid
+
+  service Services @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model ContactSection {
+  id          String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  description String? @db.Text
+  status      Status  @default(ACTIVE)
+
+  serviceId String @unique @db.Uuid
+
+  service Services @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model NewsletterSubscription {
+  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email  String @unique
+  status Status @default(ACTIVE)
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model Testimonial {
+  id          String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  designation String
+  company     String
+  tag         String
+  content     String  @db.Text
+  image       String?
+  status      Status  @default(ACTIVE)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Job {
+  id               String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title            String
+  shortDescription String         @db.Text
+  description      String?        @db.Text
+  employmentType   EmploymentType
+  workMode         WorkMode
+  experience       String?
+  location         String?
+  vacancies        Int?
+  status           Status         @default(ACTIVE)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  career CareerApplication[]
+}
+
+model CareerApplication {
+  id         String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  fullName   String
+  email      String
+  phone      String
+  role       String
+  experience String
+  location   String
+  resume     String
+  message    String            @db.Text
+  jobId      String            @db.Uuid
+  status     ApplicationStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  job Job? @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model UpcommingEvents {
+  id              String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title           String
+  description     String              @db.Text
+  category        String
+  imageUrl        String?
+  eventDate       DateTime
+  startTime       String
+  endTime         String
+  location        String
+  showSaveTheDate Boolean             @default(true)
+  saveTheDateText String              @default("SAVE THE DATE")
+  status          UpcomingEventStatus @default(NEW)
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  images          EventImage[]
+}
+
+model EventImage {
+  id        String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  eventId   String          @db.Uuid
+  url       String
+  sortOrder Int             @default(0)
+  event     UpcommingEvents @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@index([eventId, sortOrder])
+}

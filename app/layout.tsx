@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
+import { SERVER_URL } from "@/lib/constants";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,9 +29,25 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SERVER_URL),
   title: "Pinnacle Serve — Operations and Technology, Working as One",
   description:
     "Pinnacle Serve brings operational support and modern technology together to help organizations improve service, simplify work, and grow with confidence.",
+  openGraph: {
+    type: "website",
+    siteName: "Pinnacle Serve",
+    title: "Pinnacle Serve — Operations and Technology, Working as One",
+    description:
+      "Pinnacle Serve brings operational support and modern technology together to help organizations improve service, simplify work, and grow with confidence.",
+    images: [{ url: "/squaread.png", alt: "Pinnacle Serve" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pinnacle Serve — Operations and Technology, Working as One",
+    description:
+      "Pinnacle Serve brings operational support and modern technology together to help organizations improve service, simplify work, and grow with confidence.",
+    images: [{ url: "/squaread.png", alt: "Pinnacle Serve" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -41,6 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         {children}
+        <Toaster />
       </body>
     </html>
   );
