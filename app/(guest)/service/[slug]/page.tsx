@@ -302,6 +302,10 @@ const deliverySteps = [
   },
 ];
 
+export function generateStaticParams() {
+  return Object.keys(services).map((slug) => ({ slug }));
+}
+
 export default async function ServiceDetailPage({
   params,
 }: {
