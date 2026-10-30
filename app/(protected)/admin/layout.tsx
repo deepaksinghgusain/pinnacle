@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next"
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+import { getRequestSession } from "@/lib/auth-session";
 import { getCachedSettings } from "@/lib/cached-settings";
 import { AppSidebar } from "@/components/app-sidebar"
 import { SiteHeader } from "@/components/site-header"
@@ -66,7 +65,7 @@ async function AuthenticatedAdminLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const session = await getServerSession(authOptions);
+    const session = await getRequestSession();
 
     if (!session?.user) {
         redirect("/login");

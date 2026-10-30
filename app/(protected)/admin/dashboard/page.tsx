@@ -10,8 +10,7 @@ import {
   User,
 } from "lucide-react"
 
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+import { getRequestSession } from "@/lib/auth-session";
 
 import { Card, CardContent } from "@/components/ui/card"
 import { getUsers } from "@/lib/actions/user-action";
@@ -46,7 +45,7 @@ export default function AdminDashboardPage() {
 
 async function DashboardContent() {
   const [session, users, banners, testimonials, newsletters, careerApplications, jobs, leads, services, serviceCategory] = await Promise.all([
-    getServerSession(authOptions),
+    getRequestSession(),
     getUsers(),
     getBanner(),
     getTestimonials(),
