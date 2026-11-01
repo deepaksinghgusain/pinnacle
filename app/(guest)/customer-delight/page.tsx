@@ -17,9 +17,8 @@ const industries = [
         headline: "Faster care, cleaner revenue cycles.",
         description:
             "Agentic AI orchestrating claims, coding, prior auth, and human-in-the-loop review, with the governance clinicians and payers demand.",
-        metric: "3.4×",
-        metricLabel: "faster claims turnaround",
-        href: "#",
+        focus: "Claims · Coding · Prior authorization",
+        href: "/industries/healthcare",
         icon: HeartPulse,
         accent: "from-rose-500 to-blue-800",
         iconColor: "text-rose-600 bg-rose-50",
@@ -32,9 +31,8 @@ const industries = [
         headline: "Confident decisions at enterprise scale.",
         description:
             "Unified underwriting, fraud, and compliance workflows across core banking systems, with explainable, audit-ready AI decisioning.",
-        metric: "62%",
-        metricLabel: "lower manual review effort",
-        href: "#",
+        focus: "Underwriting · Fraud · Compliance",
+        href: "/industries/banking",
         icon: Landmark,
         accent: "from-blue-700 to-blue-900",
         iconColor: "text-blue-700 bg-blue-50",
@@ -47,9 +45,8 @@ const industries = [
         headline: "Networks that anticipate, not just react.",
         description:
             "From field service to customer care, Agentic AI keeps networks resilient, service SLAs green, and every subscriber interaction personalised.",
-        metric: "48%",
-        metricLabel: "faster ticket resolution",
-        href: "",
+        focus: "Network operations · Field service · Customer care",
+        href: "/industries/telecom",
         icon: Radio,
         accent: "from-sky-500 to-blue-800",
         iconColor: "text-sky-700 bg-sky-50",
@@ -62,9 +59,8 @@ const industries = [
         headline: "Effortless journeys, joyful shoppers.",
         description:
             "Intelligent orchestration across inventory, storefronts, and support, turning every touchpoint into a moment of measurable delight.",
-        metric: "2.1×",
-        metricLabel: "lift in repeat purchases",
-        href: "#",
+        focus: "Inventory · Commerce · Customer experience",
+        href: "/industries/retail",
         icon: ShoppingBag,
         accent: "from-orange-500 to-blue-800",
         iconColor: "text-orange-600 bg-orange-50",
@@ -77,9 +73,8 @@ const industries = [
         headline: "Smarter plants, uncompromising quality.",
         description:
             "Agentic AI keeps production lines humming with predictive maintenance, quality assurance, and planning that adapts in real time.",
-        metric: "31%",
-        metricLabel: "reduction in downtime",
-        href: "#",
+        focus: "Production · Quality · Predictive maintenance",
+        href: "/industries/manufacturing",
         icon: Factory,
         accent: "from-emerald-600 to-blue-800",
         iconColor: "text-emerald-700 bg-emerald-50",
@@ -188,11 +183,11 @@ export default function CustomerDelightPage() {
 
                                     <div className="mt-auto flex items-end justify-between gap-4 pt-6">
                                         <div className="rounded-lg border border-orange-100 bg-gradient-to-br from-orange-50/90 to-blue-50/70 px-4 py-3">
-                                            <p className={`bg-gradient-to-r ${industry.accent} bg-clip-text font-serif text-2xl font-semibold text-transparent`}>
-                                                {industry.metric}
+                                            <p className="text-[10px] font-semibold tracking-[0.12em] text-orange-700 uppercase">
+                                                Areas of focus
                                             </p>
-                                            <p className="mt-0.5 text-[11px] leading-4 text-slate-600">
-                                                {industry.metricLabel}
+                                            <p className="mt-1 text-xs leading-5 text-slate-700">
+                                                {industry.focus}
                                             </p>
                                         </div>
                                         <span className="inline-flex items-center gap-1.5 pb-1 text-xs font-semibold text-[#142b58] transition group-hover:text-orange-700">

@@ -40,70 +40,70 @@ const serviceLinks: MenuLink[] = [
 ];
 
 const industryLinks: MenuLink[] = [
-  { label: "Healthcare", href: "/customer-delight#industry-healthcare" },
-  { label: "Banking", href: "/customer-delight#industry-banking" },
-  { label: "Telecom", href: "/customer-delight#industry-telecom" },
-  { label: "Retail", href: "/customer-delight#industry-retail" },
-  { label: "Manufacturing", href: "/customer-delight#industry-manufacturing" },
+  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Banking", href: "/industries/banking" },
+  { label: "Telecom", href: "/industries/telecom" },
+  { label: "Retail", href: "/industries/retail" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
 ];
 
 const caseStudyLinks: MenuLink[] = [
-  { label: "Healthcare outcomes", href: "/customer-delight#industry-healthcare" },
-  { label: "Banking outcomes", href: "/customer-delight#industry-banking" },
-  { label: "Telecom outcomes", href: "/customer-delight#industry-telecom" },
-  { label: "Retail outcomes", href: "/customer-delight#industry-retail" },
-  { label: "Manufacturing outcomes", href: "/customer-delight#industry-manufacturing" },
+  { label: "Healthcare outcomes", href: "/case-studies/healthcare" },
+  { label: "Banking outcomes", href: "/case-studies/banking" },
+  { label: "Telecom outcomes", href: "/case-studies/telecom" },
+  { label: "Retail outcomes", href: "/case-studies/retail" },
+  { label: "Manufacturing outcomes", href: "/case-studies/manufacturing" },
 ];
 
 const megaMenus: MegaMenu[] = [
-  {
-    label: "Who we are",
-    href: "/about",
-    categories: [
-      {
-        label: "Purpose & Values",
-        links: [
-          { label: "What we believe in", href: "/about" },
-          { label: "Future vision", href: "/about#pinnacle-approach" },
-        ],
-      },
-      {
-        label: "Our People",
-        links: [
-          { label: "Meet our team", href: "/about" },
-          { label: "Careers at Pinnacle", href: "/career" },
-        ],
-      },
-      {
-        label: "Governance",
-        links: [
-          { label: "Responsible technology", href: "/about#pinnacle-approach" },
-          { label: "Privacy & security", href: "/contact" },
-        ],
-      },
-      {
-        label: "Recognition",
-        links: [
-          { label: "Client outcomes", href: "/customer-delight" },
-          { label: "Our work", href: "/customer-delight#case-studies" },
-        ],
-      },
-      {
-        label: "Press room",
-        links: [{ label: "Latest updates", href: "/customer-delight" }],
-      },
-      {
-        label: "Contact Us",
-        links: [{ label: "Get in touch", href: "/contact" }],
-      },
-    ],
-    featured: {
-      eyebrow: "About Us",
-      title: "Together makes progress",
-      href: "/about",
-      image: "/welcoming-moments.png",
-    },
-  },
+  // {
+  //   label: "Who we are",
+  //   href: "/about",
+  //   categories: [
+  //     {
+  //       label: "Purpose & Values",
+  //       links: [
+  //         { label: "What we believe in", href: "/about/beliefs" },
+  //         { label: "Future vision", href: "/about/future-vision" },
+  //       ],
+  //     },
+  //     {
+  //       label: "Our People",
+  //       links: [
+  //         { label: "Meet our team", href: "/about/team" },
+  //         { label: "Careers at Pinnacle", href: "/career" },
+  //       ],
+  //     },
+  //     {
+  //       label: "Governance",
+  //       links: [
+  //         { label: "Responsible technology", href: "/about/responsible-technology" },
+  //         { label: "Privacy & security", href: "/about/privacy-security" },
+  //       ],
+  //     },
+  //     {
+  //       label: "Recognition",
+  //       links: [
+  //         { label: "Client outcomes", href: "/customer-delight" },
+  //         { label: "Our work", href: "/customer-delight#case-studies" },
+  //       ],
+  //     },
+  //     {
+  //       label: "Press room",
+  //       links: [{ label: "Latest updates", href: "/insights/latest-updates" }],
+  //     },
+  //     {
+  //       label: "Contact Us",
+  //       links: [{ label: "Get in touch", href: "/contact" }],
+  //     },
+  //   ],
+  //   featured: {
+  //     eyebrow: "About Us",
+  //     title: "Together makes progress",
+  //     href: "/about",
+  //     image: "/welcoming-moments.png",
+  //   },
+  // },
   {
     label: "What we do",
     href: "/#our-services",
@@ -134,9 +134,9 @@ const megaMenus: MegaMenu[] = [
       {
         label: "Insights",
         links: [
-          { label: "AI and automation", href: "/service/ai-services" },
-          { label: "Digital transformation", href: "/service/digital-product-engineering" },
-          { label: "Cloud and data", href: "/service/cloud-engineering" },
+          { label: "AI and automation", href: "/insights/ai-and-automation" },
+          { label: "Digital transformation", href: "/insights/digital-transformation" },
+          { label: "Cloud and data", href: "/insights/cloud-and-data" },
         ],
       },
     ],
@@ -154,8 +154,8 @@ const megaMenus: MegaMenu[] = [
       {
         label: "Life at Pinnacle",
         links: [
-          { label: "Our culture", href: "/career" },
-          { label: "Growth and learning", href: "/career" },
+          { label: "Our culture", href: "/career/culture" },
+          { label: "Growth and learning", href: "/career/growth-and-learning" },
         ],
       },
       {

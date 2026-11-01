@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { LoginForm } from "@/components/login-form";
-import { getCachedSettings } from "@/lib/cached-settings";
+import { getSiteSettings } from "@/lib/site-settings";
 import { getRequestSession } from "@/lib/auth-session";
 import { redirect } from "next/navigation";
 
@@ -24,7 +24,7 @@ export default function LoginPage() {
 
 async function LoginContent() {
   const [settings, session] = await Promise.all([
-    getCachedSettings(),
+    getSiteSettings(),
     getRequestSession(),
   ]);
 

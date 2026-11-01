@@ -12,6 +12,7 @@ import { Loader2, Save } from "lucide-react";
 import { saveGeneralSettings } from "@/lib/actions/settings-action";
 import { toast } from "sonner";
 import Image from "next/image";
+import type { SiteSettings } from "@/lib/generated/prisma";
 
 function getPreviewSrc(value: string | null | undefined) {
   if (!value) {
@@ -26,58 +27,101 @@ function getPreviewSrc(value: string | null | undefined) {
 
   if (
     normalized.startsWith("blob:") ||
-    normalized.startsWith("/") ||
     normalized.startsWith("http://") ||
-    normalized.startsWith("https://")
+    normalized.startsWith("https://") ||
+    normalized.startsWith("/api/")
   ) {
     return normalized;
   }
 
+  if (normalized.startsWith("/uploads/")) {
+    return `/api${normalized}`;
+  }
+
   if (normalized.startsWith("uploads/")) {
-    return `/${normalized}`;
+    return `/api/${normalized}`;
+  }
+
+  if (normalized.startsWith("/")) {
+    return normalized;
   }
 
   return null;
 }
 
-export default function GeneralComponent({ setting }: { setting?: any }) {
+export default function GeneralComponent({
+  setting,
+}: {
+  setting?: Partial<SiteSettings>;
+}) {
   const [pending, startTransition] = useTransition();
   const [configuration, setConfiguration] = useState(setting);
-  const [logoPreview, setLogoPreview] = useState<string | null>(
-    getPreviewSrc(typeof setting?.logoPath === "string" ? setting.logoPath : null),
+  const [headerLogoPreview, setHeaderLogoPreview] = useState<string | null>(
+    getPreviewSrc(
+      typeof setting?.headerLogoPath === "string"
+        ? setting.headerLogoPath
+        : typeof setting?.logoPath === "string"
+          ? setting.logoPath
+          : null,
+    ),
+  );
+  const [footerLogoPreview, setFooterLogoPreview] = useState<string | null>(
+    getPreviewSrc(
+      typeof setting?.footerLogoPath === "string"
+        ? setting.footerLogoPath
+        : typeof setting?.logoPath === "string"
+          ? setting.logoPath
+          : null,
+    ),
   );
   const [faviconPreview, setFaviconPreview] = useState<string | null>(
     getPreviewSrc(typeof setting?.faviconPath === "string" ? setting.faviconPath : null),
   );
 
-  const logoPathPrev = setting?.logoPath;
-  const faviconPathPrev = setting?.faviconPath;
-
   useEffect(() => {
     return () => {
-      if (logoPreview?.startsWith("blob:")) {
-        URL.revokeObjectURL(logoPreview);
+      if (headerLogoPreview?.startsWith("blob:")) {
+        URL.revokeObjectURL(headerLogoPreview);
+      }
+      if (footerLogoPreview?.startsWith("blob:")) {
+        URL.revokeObjectURL(footerLogoPreview);
       }
       if (faviconPreview?.startsWith("blob:")) {
         URL.revokeObjectURL(faviconPreview);
       }
     };
-  }, [logoPreview, faviconPreview]);
+  }, [headerLogoPreview, footerLogoPreview, faviconPreview]);
 
   const handleFilePreview = (
     event: ChangeEvent<HTMLInputElement>,
-    type: "logo" | "favicon",
+    type: "headerLogo" | "footerLogo" | "favicon",
   ) => {
     const file = event.target.files?.[0];
 
     if (!file) {
-      if (type === "logo") {
-        setLogoPreview(
-          getPreviewSrc(typeof setting?.logoPath === "string" ? setting.logoPath : null),
+      if (type === "headerLogo") {
+        setHeaderLogoPreview(
+          getPreviewSrc(
+            typeof configuration?.headerLogoPath === "string"
+              ? configuration.headerLogoPath
+              : typeof configuration?.logoPath === "string"
+                ? configuration.logoPath
+                : null,
+          ),
+        );
+      } else if (type === "footerLogo") {
+        setFooterLogoPreview(
+          getPreviewSrc(
+            typeof configuration?.footerLogoPath === "string"
+              ? configuration.footerLogoPath
+              : typeof configuration?.logoPath === "string"
+                ? configuration.logoPath
+                : null,
+          ),
         );
       } else {
         setFaviconPreview(
-          getPreviewSrc(typeof setting?.faviconPath === "string" ? setting.faviconPath : null),
+          getPreviewSrc(typeof configuration?.faviconPath === "string" ? configuration.faviconPath : null),
         );
       }
       return;
@@ -89,8 +133,10 @@ export default function GeneralComponent({ setting }: { setting?: any }) {
     }
 
     const previewUrl = URL.createObjectURL(file);
-    if (type === "logo") {
-      setLogoPreview(previewUrl);
+    if (type === "headerLogo") {
+      setHeaderLogoPreview(previewUrl);
+    } else if (type === "footerLogo") {
+      setFooterLogoPreview(previewUrl);
     } else {
       setFaviconPreview(previewUrl);
     }
@@ -99,12 +145,13 @@ export default function GeneralComponent({ setting }: { setting?: any }) {
   const onSubmit = async (formData: FormData) => {
     startTransition(async () => {
       try {
-        const logoFile = formData.get("logoPath");
+        const headerLogoFile = formData.get("headerLogoPath");
+        const footerLogoFile = formData.get("footerLogoPath");
         const faviconFile = formData.get("faviconPath");
 
-        if (logoFile instanceof File && logoFile.size > 0 && logoFile.name !== "") {
+        const uploadImage = async (file: File, field: string) => {
           const uploadFormData = new FormData();
-          uploadFormData.append("image", logoFile);
+          uploadFormData.append("image", file);
 
           const fileUploadRes = await fetch("/api/upload", {
             method: "POST",
@@ -117,29 +164,31 @@ export default function GeneralComponent({ setting }: { setting?: any }) {
             throw new Error(uploadData?.message || "Image upload failed");
           }
 
-          formData.set("logoPath", uploadData.url);
-        }else {
-          formData.set("logoPath", logoPathPrev || "");
+          formData.set(field, uploadData.url);
+        };
+
+        if (headerLogoFile instanceof File && headerLogoFile.size > 0 && headerLogoFile.name !== "") {
+          await uploadImage(headerLogoFile, "headerLogoPath");
+        } else {
+          formData.set(
+            "headerLogoPath",
+            configuration?.headerLogoPath || configuration?.logoPath || "",
+          );
+        }
+
+        if (footerLogoFile instanceof File && footerLogoFile.size > 0 && footerLogoFile.name !== "") {
+          await uploadImage(footerLogoFile, "footerLogoPath");
+        } else {
+          formData.set(
+            "footerLogoPath",
+            configuration?.footerLogoPath || configuration?.logoPath || "",
+          );
         }
 
         if (faviconFile instanceof File && faviconFile.size > 0 && faviconFile.name !== "") {
-          const uploadFormData = new FormData();
-          uploadFormData.append("image", faviconFile);
-
-          const fileUploadRes = await fetch("/api/upload", {
-            method: "POST",
-            body: uploadFormData,
-          });
-
-          const uploadData = await fileUploadRes.json();
-
-          if (!fileUploadRes.ok) {
-            throw new Error(uploadData?.message || "Image upload failed");
-          }
-
-          formData.set("faviconPath", uploadData.url);
+          await uploadImage(faviconFile, "faviconPath");
         }else {
-          formData.set("faviconPath", faviconPathPrev || "");
+          formData.set("faviconPath", configuration?.faviconPath || "");
         }
 
         const res = await saveGeneralSettings(formData);
@@ -153,7 +202,15 @@ export default function GeneralComponent({ setting }: { setting?: any }) {
 
         toast.success("Settings saved successfully");
 
-        setConfiguration({ ...(res.data ?? {}) })
+        const savedSettings = res.data as Partial<SiteSettings>;
+        setConfiguration(savedSettings);
+        setHeaderLogoPreview(
+          getPreviewSrc(savedSettings.headerLogoPath || savedSettings.logoPath),
+        );
+        setFooterLogoPreview(
+          getPreviewSrc(savedSettings.footerLogoPath || savedSettings.logoPath),
+        );
+        setFaviconPreview(getPreviewSrc(savedSettings.faviconPath));
       } catch (error) {
         toast.error("Upload failed", {
           description:
@@ -237,23 +294,56 @@ export default function GeneralComponent({ setting }: { setting?: any }) {
             />
             <div className="space-y-3">
               <Field
-                label="Logo path"
-                id="logoPath"
+                label="Header logo"
+                id="headerLogoPath"
                 type="file"
-                onChange={(event) => handleFilePreview(event, "logo")}
+                onChange={(event) => handleFilePreview(event, "headerLogo")}
               />
               {(() => {
                 const src = getPreviewSrc(
-                  logoPreview || (typeof configuration?.logoPath === "string" ? "/api" + configuration.logoPath : null),
+                  headerLogoPreview ||
+                    (typeof configuration?.headerLogoPath === "string"
+                      ? configuration.headerLogoPath
+                      : typeof configuration?.logoPath === "string"
+                        ? configuration.logoPath
+                        : null),
                 );
 
                 return src ? (
                   <Image
                     src={src}
-                    alt="Logo preview"
-                    width={64}
+                    alt="Header logo preview"
+                    width={160}
                     height={64}
-                    className="h-16 w-16 rounded-lg border border-slate-200 object-cover"
+                    className="h-16 w-auto max-w-48 rounded-lg border border-slate-200 object-contain"
+                  />
+                ) : null;
+              })()}
+            </div>
+            <div className="space-y-3">
+              <Field
+                label="Footer logo"
+                id="footerLogoPath"
+                type="file"
+                onChange={(event) => handleFilePreview(event, "footerLogo")}
+              />
+              {(() => {
+                const src = getPreviewSrc(
+                  footerLogoPreview ||
+                    (typeof configuration?.footerLogoPath === "string"
+                      ? configuration.footerLogoPath
+                      : typeof configuration?.logoPath === "string"
+                        ? configuration.logoPath
+                        : null),
+                );
+
+                return src ? (
+                  <Image
+                    src={src}
+                    alt="Footer logo preview"
+                    width={160}
+                    height={64}
+                    className="h-16 w-auto max-w-48 rounded-lg border border-slate-200 object-contain"
                   />
                 ) : null;
               })()}
@@ -267,7 +357,7 @@ export default function GeneralComponent({ setting }: { setting?: any }) {
               />
               {(() => {
                 const src = getPreviewSrc(
-                  faviconPreview || (typeof configuration?.faviconPath === "string" ? "/api" + configuration.faviconPath : null),
+                  faviconPreview || (typeof configuration?.faviconPath === "string" ? configuration.faviconPath : null),
                 );
 
                 return src ? (
@@ -336,7 +426,7 @@ function Field({
   label: string;
   id: string;
   type?: string;
-  defaultValue?: string;
+  defaultValue?: string | null;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
@@ -346,7 +436,7 @@ function Field({
         id={id}
         name={id}
         type={type}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue ?? ""}
         onChange={onChange}
         className="h-10 rounded-xl"
       />
@@ -363,7 +453,7 @@ function TextAreaField({
 }: {
   label: string;
   id: string;
-  defaultValue?: string;
+  defaultValue?: string | null;
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   rows?: number;
 }) {
@@ -373,7 +463,7 @@ function TextAreaField({
       <Textarea
         id={id}
         name={id}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue ?? ""}
         onChange={onChange}
         rows={rows}
         className="rounded-xl h-[100px]"

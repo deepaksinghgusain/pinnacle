@@ -50,6 +50,8 @@ export const generalSettingsSchema = z.object({
   officeAddress: nullableOptionalString,
   officeHours: nullableOptionalString,
   logoPath: nullableOptionalString,
+  headerLogoPath: nullableOptionalString,
+  footerLogoPath: nullableOptionalString,
   faviconPath: nullableOptionalString,
   mapUrl: nullableOptionalString,
   showPhone: z.boolean().default(true),

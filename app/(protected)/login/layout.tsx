@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
-import { getCachedSettings } from "@/lib/cached-settings"
+import { getSiteSettings } from "@/lib/site-settings"
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = await getCachedSettings();
+  const settings = await getSiteSettings();
 
   return {
     title: settings?.siteName || "Pinnacle",

@@ -101,6 +101,8 @@ export async function saveGeneralSettings(formData: FormData): Promise<ActionRes
     officeAddress: getOptionalString(formData, "officeAddress"),
     officeHours: getOptionalString(formData, "officeHours"),
     logoPath: getOptionalString(formData, "logoPath"),
+    headerLogoPath: getOptionalString(formData, "headerLogoPath"),
+    footerLogoPath: getOptionalString(formData, "footerLogoPath"),
     faviconPath: getOptionalString(formData, "faviconPath"),
     mapUrl: getOptionalString(formData, "mapUrl"),
     showPhone: formData.get("showPhone") === "on",
@@ -223,5 +225,4 @@ export async function saveEventPageSettings(formData: FormData): Promise<ActionR
 
   return upsertSiteSettings(payload)
 }
-
 

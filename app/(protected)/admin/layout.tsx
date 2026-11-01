@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next"
 import { getRequestSession } from "@/lib/auth-session";
-import { getCachedSettings } from "@/lib/cached-settings";
+import { getSiteSettings } from "@/lib/site-settings";
 import { AppSidebar } from "@/components/app-sidebar"
 import { SiteHeader } from "@/components/site-header"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
@@ -9,7 +9,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { redirect } from "next/navigation";
 
 export async function generateMetadata(): Promise<Metadata> {
-    const settings = await getCachedSettings();
+    const settings = await getSiteSettings();
 
   return {
     title: settings?.siteName || "Pinnacle",

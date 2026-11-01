@@ -8256,6 +8256,8 @@ export namespace Prisma {
     officeAddress: string | null
     officeHours: string | null
     logoPath: string | null
+    headerLogoPath: string | null
+    footerLogoPath: string | null
     faviconPath: string | null
     metaTitle: string | null
     metaDescription: string | null
@@ -8340,6 +8342,8 @@ export namespace Prisma {
     officeAddress: string | null
     officeHours: string | null
     logoPath: string | null
+    headerLogoPath: string | null
+    footerLogoPath: string | null
     faviconPath: string | null
     metaTitle: string | null
     metaDescription: string | null
@@ -8424,6 +8428,8 @@ export namespace Prisma {
     officeAddress: number
     officeHours: number
     logoPath: number
+    headerLogoPath: number
+    footerLogoPath: number
     faviconPath: number
     metaTitle: number
     metaDescription: number
@@ -8510,6 +8516,8 @@ export namespace Prisma {
     officeAddress?: true
     officeHours?: true
     logoPath?: true
+    headerLogoPath?: true
+    footerLogoPath?: true
     faviconPath?: true
     metaTitle?: true
     metaDescription?: true
@@ -8594,6 +8602,8 @@ export namespace Prisma {
     officeAddress?: true
     officeHours?: true
     logoPath?: true
+    headerLogoPath?: true
+    footerLogoPath?: true
     faviconPath?: true
     metaTitle?: true
     metaDescription?: true
@@ -8678,6 +8688,8 @@ export namespace Prisma {
     officeAddress?: true
     officeHours?: true
     logoPath?: true
+    headerLogoPath?: true
+    footerLogoPath?: true
     faviconPath?: true
     metaTitle?: true
     metaDescription?: true
@@ -8835,6 +8847,8 @@ export namespace Prisma {
     officeAddress: string | null
     officeHours: string | null
     logoPath: string | null
+    headerLogoPath: string | null
+    footerLogoPath: string | null
     faviconPath: string | null
     metaTitle: string | null
     metaDescription: string | null
@@ -8936,6 +8950,8 @@ export namespace Prisma {
     officeAddress?: boolean
     officeHours?: boolean
     logoPath?: boolean
+    headerLogoPath?: boolean
+    footerLogoPath?: boolean
     faviconPath?: boolean
     metaTitle?: boolean
     metaDescription?: boolean
@@ -9020,6 +9036,8 @@ export namespace Prisma {
     officeAddress?: boolean
     officeHours?: boolean
     logoPath?: boolean
+    headerLogoPath?: boolean
+    footerLogoPath?: boolean
     faviconPath?: boolean
     metaTitle?: boolean
     metaDescription?: boolean
@@ -9104,6 +9122,8 @@ export namespace Prisma {
     officeAddress?: boolean
     officeHours?: boolean
     logoPath?: boolean
+    headerLogoPath?: boolean
+    footerLogoPath?: boolean
     faviconPath?: boolean
     metaTitle?: boolean
     metaDescription?: boolean
@@ -9188,6 +9208,8 @@ export namespace Prisma {
     officeAddress?: boolean
     officeHours?: boolean
     logoPath?: boolean
+    headerLogoPath?: boolean
+    footerLogoPath?: boolean
     faviconPath?: boolean
     metaTitle?: boolean
     metaDescription?: boolean
@@ -9261,7 +9283,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type SiteSettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "siteName" | "legalName" | "primaryEmail" | "primaryPhone" | "websiteUrl" | "timezone" | "officeAddress" | "officeHours" | "logoPath" | "faviconPath" | "metaTitle" | "metaDescription" | "metaKeywords" | "gstNumber" | "cinNumber" | "mapUrl" | "teamMembers" | "happyCustomers" | "operationalSupport" | "heroTrustTags" | "heroTagline" | "heroTitle" | "heroDescription" | "heroBackgroundImagePath" | "aboutTagline" | "aboutTitle" | "aboutDescription" | "aboutButtons" | "deliveryModelTitle" | "deliveryModelItems" | "whyClientsTagline" | "whyClientsTitle" | "whyClientsDescription" | "whyClientsCards" | "globalDeliveryTagline" | "globalDeliveryTitle" | "globalDeliveryDescription" | "globalDeliveryImagePath" | "serviceHeroTitle" | "serviceHeroDescription" | "serviceDeliveryTagline" | "serviceDeliveryTitle" | "serviceDeliveryDescription" | "serviceDeliveryCards" | "showPhone" | "showEmail" | "eventHeroTagline" | "eventHeroTitle" | "eventHeroDescription" | "eventHeroBackgroundImagePath" | "eventUpcommingTagline" | "eventUpcommingTitle" | "eventUpcommingDescription" | "eventGalleryTagline" | "eventGalleryTitle" | "eventGalleryDescription" | "eventContactTitle" | "eventContactDescription" | "smtpHost" | "smtpPort" | "smtpUsername" | "smtpPassword" | "fromName" | "fromEmail" | "replyToEmail" | "supportInbox" | "emailSignature" | "enableNotifications" | "storeDrafts" | "facebookUrl" | "instagramUrl" | "linkedinUrl" | "youtubeUrl" | "whatsappUrl" | "messengerUrl" | "socialBio" | "showSocialIcons" | "openLinksNewTab" | "createdAt" | "updatedAt", ExtArgs["result"]["siteSettings"]>
+  export type SiteSettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "siteName" | "legalName" | "primaryEmail" | "primaryPhone" | "websiteUrl" | "timezone" | "officeAddress" | "officeHours" | "logoPath" | "headerLogoPath" | "footerLogoPath" | "faviconPath" | "metaTitle" | "metaDescription" | "metaKeywords" | "gstNumber" | "cinNumber" | "mapUrl" | "teamMembers" | "happyCustomers" | "operationalSupport" | "heroTrustTags" | "heroTagline" | "heroTitle" | "heroDescription" | "heroBackgroundImagePath" | "aboutTagline" | "aboutTitle" | "aboutDescription" | "aboutButtons" | "deliveryModelTitle" | "deliveryModelItems" | "whyClientsTagline" | "whyClientsTitle" | "whyClientsDescription" | "whyClientsCards" | "globalDeliveryTagline" | "globalDeliveryTitle" | "globalDeliveryDescription" | "globalDeliveryImagePath" | "serviceHeroTitle" | "serviceHeroDescription" | "serviceDeliveryTagline" | "serviceDeliveryTitle" | "serviceDeliveryDescription" | "serviceDeliveryCards" | "showPhone" | "showEmail" | "eventHeroTagline" | "eventHeroTitle" | "eventHeroDescription" | "eventHeroBackgroundImagePath" | "eventUpcommingTagline" | "eventUpcommingTitle" | "eventUpcommingDescription" | "eventGalleryTagline" | "eventGalleryTitle" | "eventGalleryDescription" | "eventContactTitle" | "eventContactDescription" | "smtpHost" | "smtpPort" | "smtpUsername" | "smtpPassword" | "fromName" | "fromEmail" | "replyToEmail" | "supportInbox" | "emailSignature" | "enableNotifications" | "storeDrafts" | "facebookUrl" | "instagramUrl" | "linkedinUrl" | "youtubeUrl" | "whatsappUrl" | "messengerUrl" | "socialBio" | "showSocialIcons" | "openLinksNewTab" | "createdAt" | "updatedAt", ExtArgs["result"]["siteSettings"]>
 
   export type $SiteSettingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "SiteSettings"
@@ -9277,6 +9299,8 @@ export namespace Prisma {
       officeAddress: string | null
       officeHours: string | null
       logoPath: string | null
+      headerLogoPath: string | null
+      footerLogoPath: string | null
       faviconPath: string | null
       metaTitle: string | null
       metaDescription: string | null
@@ -9781,6 +9805,8 @@ export namespace Prisma {
     readonly officeAddress: FieldRef<"SiteSettings", 'String'>
     readonly officeHours: FieldRef<"SiteSettings", 'String'>
     readonly logoPath: FieldRef<"SiteSettings", 'String'>
+    readonly headerLogoPath: FieldRef<"SiteSettings", 'String'>
+    readonly footerLogoPath: FieldRef<"SiteSettings", 'String'>
     readonly faviconPath: FieldRef<"SiteSettings", 'String'>
     readonly metaTitle: FieldRef<"SiteSettings", 'String'>
     readonly metaDescription: FieldRef<"SiteSettings", 'String'>
@@ -24782,6 +24808,8 @@ export namespace Prisma {
     officeAddress: 'officeAddress',
     officeHours: 'officeHours',
     logoPath: 'logoPath',
+    headerLogoPath: 'headerLogoPath',
+    footerLogoPath: 'footerLogoPath',
     faviconPath: 'faviconPath',
     metaTitle: 'metaTitle',
     metaDescription: 'metaDescription',
@@ -25587,6 +25615,8 @@ export namespace Prisma {
     officeAddress?: StringNullableFilter<"SiteSettings"> | string | null
     officeHours?: StringNullableFilter<"SiteSettings"> | string | null
     logoPath?: StringNullableFilter<"SiteSettings"> | string | null
+    headerLogoPath?: StringNullableFilter<"SiteSettings"> | string | null
+    footerLogoPath?: StringNullableFilter<"SiteSettings"> | string | null
     faviconPath?: StringNullableFilter<"SiteSettings"> | string | null
     metaTitle?: StringNullableFilter<"SiteSettings"> | string | null
     metaDescription?: StringNullableFilter<"SiteSettings"> | string | null
@@ -25671,6 +25701,8 @@ export namespace Prisma {
     officeAddress?: SortOrderInput | SortOrder
     officeHours?: SortOrderInput | SortOrder
     logoPath?: SortOrderInput | SortOrder
+    headerLogoPath?: SortOrderInput | SortOrder
+    footerLogoPath?: SortOrderInput | SortOrder
     faviconPath?: SortOrderInput | SortOrder
     metaTitle?: SortOrderInput | SortOrder
     metaDescription?: SortOrderInput | SortOrder
@@ -25758,6 +25790,8 @@ export namespace Prisma {
     officeAddress?: StringNullableFilter<"SiteSettings"> | string | null
     officeHours?: StringNullableFilter<"SiteSettings"> | string | null
     logoPath?: StringNullableFilter<"SiteSettings"> | string | null
+    headerLogoPath?: StringNullableFilter<"SiteSettings"> | string | null
+    footerLogoPath?: StringNullableFilter<"SiteSettings"> | string | null
     faviconPath?: StringNullableFilter<"SiteSettings"> | string | null
     metaTitle?: StringNullableFilter<"SiteSettings"> | string | null
     metaDescription?: StringNullableFilter<"SiteSettings"> | string | null
@@ -25842,6 +25876,8 @@ export namespace Prisma {
     officeAddress?: SortOrderInput | SortOrder
     officeHours?: SortOrderInput | SortOrder
     logoPath?: SortOrderInput | SortOrder
+    headerLogoPath?: SortOrderInput | SortOrder
+    footerLogoPath?: SortOrderInput | SortOrder
     faviconPath?: SortOrderInput | SortOrder
     metaTitle?: SortOrderInput | SortOrder
     metaDescription?: SortOrderInput | SortOrder
@@ -25932,6 +25968,8 @@ export namespace Prisma {
     officeAddress?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     officeHours?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     logoPath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    headerLogoPath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    footerLogoPath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     faviconPath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     metaTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     metaDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
@@ -27366,6 +27404,8 @@ export namespace Prisma {
     officeAddress?: string | null
     officeHours?: string | null
     logoPath?: string | null
+    headerLogoPath?: string | null
+    footerLogoPath?: string | null
     faviconPath?: string | null
     metaTitle?: string | null
     metaDescription?: string | null
@@ -27450,6 +27490,8 @@ export namespace Prisma {
     officeAddress?: string | null
     officeHours?: string | null
     logoPath?: string | null
+    headerLogoPath?: string | null
+    footerLogoPath?: string | null
     faviconPath?: string | null
     metaTitle?: string | null
     metaDescription?: string | null
@@ -27534,6 +27576,8 @@ export namespace Prisma {
     officeAddress?: NullableStringFieldUpdateOperationsInput | string | null
     officeHours?: NullableStringFieldUpdateOperationsInput | string | null
     logoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    headerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    footerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
     faviconPath?: NullableStringFieldUpdateOperationsInput | string | null
     metaTitle?: NullableStringFieldUpdateOperationsInput | string | null
     metaDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27618,6 +27662,8 @@ export namespace Prisma {
     officeAddress?: NullableStringFieldUpdateOperationsInput | string | null
     officeHours?: NullableStringFieldUpdateOperationsInput | string | null
     logoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    headerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    footerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
     faviconPath?: NullableStringFieldUpdateOperationsInput | string | null
     metaTitle?: NullableStringFieldUpdateOperationsInput | string | null
     metaDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27702,6 +27748,8 @@ export namespace Prisma {
     officeAddress?: string | null
     officeHours?: string | null
     logoPath?: string | null
+    headerLogoPath?: string | null
+    footerLogoPath?: string | null
     faviconPath?: string | null
     metaTitle?: string | null
     metaDescription?: string | null
@@ -27786,6 +27834,8 @@ export namespace Prisma {
     officeAddress?: NullableStringFieldUpdateOperationsInput | string | null
     officeHours?: NullableStringFieldUpdateOperationsInput | string | null
     logoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    headerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    footerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
     faviconPath?: NullableStringFieldUpdateOperationsInput | string | null
     metaTitle?: NullableStringFieldUpdateOperationsInput | string | null
     metaDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27870,6 +27920,8 @@ export namespace Prisma {
     officeAddress?: NullableStringFieldUpdateOperationsInput | string | null
     officeHours?: NullableStringFieldUpdateOperationsInput | string | null
     logoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    headerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
+    footerLogoPath?: NullableStringFieldUpdateOperationsInput | string | null
     faviconPath?: NullableStringFieldUpdateOperationsInput | string | null
     metaTitle?: NullableStringFieldUpdateOperationsInput | string | null
     metaDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29384,6 +29436,8 @@ export namespace Prisma {
     officeAddress?: SortOrder
     officeHours?: SortOrder
     logoPath?: SortOrder
+    headerLogoPath?: SortOrder
+    footerLogoPath?: SortOrder
     faviconPath?: SortOrder
     metaTitle?: SortOrder
     metaDescription?: SortOrder
@@ -29468,6 +29522,8 @@ export namespace Prisma {
     officeAddress?: SortOrder
     officeHours?: SortOrder
     logoPath?: SortOrder
+    headerLogoPath?: SortOrder
+    footerLogoPath?: SortOrder
     faviconPath?: SortOrder
     metaTitle?: SortOrder
     metaDescription?: SortOrder
@@ -29552,6 +29608,8 @@ export namespace Prisma {
     officeAddress?: SortOrder
     officeHours?: SortOrder
     logoPath?: SortOrder
+    headerLogoPath?: SortOrder
+    footerLogoPath?: SortOrder
     faviconPath?: SortOrder
     metaTitle?: SortOrder
     metaDescription?: SortOrder

@@ -83,7 +83,11 @@ export function GuestNavbar({ settings }: { settings: any }) {
           onClick={() => setMobileOpen(false)}
         >
           <Image
-            src={settings?.logoPath ? "/api" + settings.logoPath : logo}
+            src={
+              settings?.headerLogoPath || settings?.logoPath
+                ? "/api" + (settings.headerLogoPath || settings.logoPath)
+                : logo
+            }
             alt="Pinnacle logo"
             width={300}
             height={120}
@@ -120,7 +124,11 @@ export function GuestNavbar({ settings }: { settings: any }) {
                     onClick={() => setMobileOpen(false)}
                   >
                     <Image
-                      src={settings?.logoPath ? "/api" + settings.logoPath : logo}
+                      src={
+                        settings?.headerLogoPath || settings?.logoPath
+                          ? "/api" + (settings.headerLogoPath || settings.logoPath)
+                          : logo
+                      }
                       alt="Pinnacle logo"
                       width={160}
                       height={64}

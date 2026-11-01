@@ -125,6 +125,8 @@ model SiteSettings {
   officeAddress              String? @db.Text
   officeHours                String?
   logoPath                   String?
+  headerLogoPath             String?
+  footerLogoPath             String?
   faviconPath                String?
   metaTitle                  String?
   metaDescription            String? @db.Text

@@ -96,7 +96,11 @@ export function GuestFooter({
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center">
               <Image
-                src={settings?.logoPath ? "/api" + settings.logoPath : logo}
+                src={
+                  settings?.footerLogoPath || settings?.logoPath
+                    ? "/api" + (settings.footerLogoPath || settings.logoPath)
+                    : logo
+                }
                 alt={settings?.siteName ?? "Pinnacle Logo"}
                 width={220}
                 height={100}
