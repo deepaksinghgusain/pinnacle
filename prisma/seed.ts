@@ -1,14 +1,18 @@
-const fs = require("node:fs");
-const path = require("node:path");
-
-const bcrypt = require("bcrypt");
-const { PrismaPg } = require("@prisma/adapter-pg");
-const {
+import fs from "node:fs";
+import path from "node:path";
+import { createHash } from "node:crypto";
+import bcrypt from "bcrypt";
+import { PrismaPg } from "@prisma/adapter-pg";
+import {
   PrismaClient,
   Status,
   EmploymentType,
   WorkMode,
-} = require("../lib/generated/prisma/client");
+  ApplicationStatus,
+  UpcomingEventStatus,
+} from "../lib/generated/prisma/client";
+import { defaultGrowthLearningContent } from "../lib/growth-learning-content";
+import { defaultCultureContent } from "../lib/culture-content";
 
 function parseEnvFile(content: string) {
   const values: Record<string, string> = {};
@@ -66,6 +70,186 @@ const prisma = new PrismaClient({
 });
 
 const active = Status.ACTIVE;
+
+function seedUuid(table: string, key: string): string {
+  const bytes = Buffer.from(
+    createHash("sha256").update(`pinnacle-seed:${table}:${key}`).digest().subarray(0, 16),
+  );
+  bytes[6] = (bytes[6] & 0x0f) | 0x50;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = bytes.toString("hex");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
+const seedPageSettings = {
+  headerLogoPath: "/logo-white.png",
+  footerLogoPath: "/logo-white.png",
+  heroTagline: "Technology with a purpose",
+  heroTitle: "Make complex work",
+  heroTitleAccent: "simpler",
+  heroTitleSuffix: "and more effective",
+  heroDescription:
+    "We connect technology to the work that matters: better service, less manual effort, stronger controls, and more efficient operations.",
+  heroBackgroundImagePath: "/hero-bg.svg",
+  heroButtonLabel: "Explore Services",
+  heroButtonHref: "#our-services",
+  aboutTitleAccent: "Better operations.",
+  aboutButtonLabel: "Meet Pinnacle Serve",
+  aboutButtonHref: "/about",
+  aboutHighlights: JSON.stringify([
+    { title: "Technology with a purpose", description: "We connect technology to the work that matters: better service, less manual effort, stronger controls, and more efficient operations." },
+    { title: "Built for real teams", description: "Good change is ambitious and usable. We build reliable, secure systems that teams can adopt, manage, and keep improving." },
+    { title: "Focused on results", description: "We shape each engagement around the needs of its industry and the results that matter most to the organization." },
+  ]),
+  aboutFeatureCards: JSON.stringify([
+    { title: "Clear ownership", description: "Teams know what to do, when to do it, and how success is measured." },
+    { title: "Practical delivery", description: "Solutions are designed around real workflows and measurable outcomes." },
+    { title: "Built to improve", description: "We stay engaged to support adoption and continuous improvement." },
+  ]),
+  serviceSectionTagline: "How We Help",
+  serviceSectionTitle: "Support for",
+  serviceSectionAccent: "Everyday Progress",
+  serviceSectionDescription:
+    "From discovery and design through implementation and operations, we help organizations build platforms, automate processes, and apply AI where it can make a difference.",
+  serviceSectionCtaLabel: "See How We Can Help",
+  serviceSectionCtaHref: "/contact",
+  homeTestimonialsTagline: "Client Perspectives",
+  homeTestimonialsTitle: "Partnerships That",
+  homeTestimonialsAccent: "Move Work Forward",
+  homeTestimonialsDescription:
+    "Practical partnerships, clear communication, and outcomes that matter to the teams we support.",
+  homeCtaTagline: "Make the Next Move",
+  homeCtaTitle: "Ready to move your business",
+  homeCtaAccent: "forward? Let’s get to work.",
+  homeCtaDescription:
+    "Bring us a complex challenge. We’ll help turn it into a clear, workable plan.",
+  homeCtaButtonLabel: "Talk with our team",
+  homeCtaButtonHref: "/contact",
+  aboutPageHeroTagline: "About Pinnacle Serve",
+  aboutPageHeroTitle: "Technology and operations",
+  aboutPageHeroAccent: "working better together",
+  aboutPageHeroDescription:
+    "We help organizations connect practical engineering with the day-to-day work that keeps their business moving.",
+  aboutPageHeroImagePath: "/hero-bg.svg",
+  aboutStoryTagline: "Who We Are",
+  aboutStoryTitle: "Built around the work that matters",
+  aboutStoryDescription:
+    "From discovery and design through implementation and operations, we help clients spot opportunities, build platforms, automate processes, and apply AI where it can make a difference.",
+  aboutStoryCards: JSON.stringify([
+    { title: "Technology with a purpose", description: "We connect technology to better service, less manual effort, stronger controls, and more efficient operations." },
+    { title: "Built for real teams", description: "We build reliable systems that teams can adopt, manage, and keep improving." },
+    { title: "Focused on results", description: "Each engagement is shaped around industry needs and measurable outcomes." },
+  ]),
+  aboutApproachTagline: "Our Approach",
+  aboutApproachTitle: "A clear path from idea to impact",
+  aboutApproachDescription:
+    "We learn how the business works today, make a plan that fits its needs, then deliver and improve with the team.",
+  aboutApproachTabs: JSON.stringify([
+    { id: "founder", label: "Founder", paragraphs: ["Our founders bring a practical understanding of the people, processes, and technology that make organizations work."] },
+    { id: "what-we-do", label: "Our Services", paragraphs: ["From discovery and design through implementation and operations, we help clients build platforms, automate processes, and apply AI where it can make a difference."] },
+    { id: "our-approach", label: "How We Work", paragraphs: ["We begin by learning how the business works today, then build a plan that addresses immediate needs and supports long-term progress."] },
+    { id: "our-strengths", label: "Industry Experience", paragraphs: ["Our work supports healthcare, banking, telecom, property, retail, and manufacturing operations."] },
+    { id: "why-clients", label: "Why Pinnacle Serve", paragraphs: ["Our teams coordinate product, cloud, data, automation, AI, and support around shared goals."] },
+    { id: "our-commitment", label: "Our Promise", paragraphs: ["We design for reliability, security, scale, and maintainability, then stay involved to support ongoing improvement."] },
+  ]),
+  aboutLeadershipTitle: "Meet Our Leadership",
+  aboutLeaders: JSON.stringify([
+    { name: "Jordan Doe", role: "Chairman", paragraphs: ["Our leadership brings a practical understanding of the people, processes, and technology that make organizations work."] },
+    { name: "Alex Doe", role: "CEO", paragraphs: ["We bring operational support and modern technology together to help organizations improve service, simplify work, and grow with confidence."] },
+  ]),
+  aboutPageCtaTagline: "Let’s work together",
+  aboutPageCtaTitle: "Make your next move with confidence",
+  aboutPageCtaDescription:
+    "Tell us what you are working toward. We’ll help shape a practical path forward.",
+  aboutPageCtaButtonLabel: "Talk with our team",
+  aboutPageCtaButtonHref: "/contact",
+  contactHeroTagline: "Start a conversation",
+  contactHeroTitle: "Let's Make Progress",
+  contactHeroAccent: "On What Matters",
+  contactHeroDescription:
+    "Tell us about your goals, operational challenges, or technology plans. Our team will help you find a practical next step.",
+  contactHeroPrimaryButtonLabel: "Send an Enquiry",
+  contactHeroSecondaryButtonLabel: "Email Our Team",
+  contactPageEmail: "info@pinnacleserve.example",
+  contactPageAddress: "Kolkata, India",
+  contactMetrics: JSON.stringify([
+    { value: "24/7", label: "Operational Support" },
+    { value: "120+", label: "Clients Supported" },
+    { value: "48+", label: "Team Members" },
+  ]),
+  contactStepsTagline: "What to Expect",
+  contactStepsTitle: "A straightforward path to getting started",
+  contactStepsDescription:
+    "We keep the first conversation focused on your needs, priorities, and the next useful action.",
+  contactProcessSteps: JSON.stringify([
+    { title: "Tell us about your needs", description: "Share the goals, constraints, and outcomes that matter to your team." },
+    { title: "Meet with our team", description: "We’ll ask questions and identify where we can help." },
+    { title: "Plan the next step", description: "Together, we’ll outline a practical approach and clear ownership." },
+  ]),
+  careerHeroTagline: "Build what matters",
+  careerHeroTitle: "Do meaningful work",
+  careerHeroAccent: "with good people",
+  careerHeroDescription:
+    "Join a team that brings practical technology and operations together to solve real business challenges.",
+  careerHeroImagePath: "/hero-bg.svg",
+  careerHeroButtonLabel: "Explore Opportunities",
+  careerHeroButtonHref: "#opportunities",
+  careerLifeTagline: "Life at Pinnacle",
+  careerLifeTitle: "Grow through meaningful work",
+  careerLifeAccent: "and shared progress",
+  careerLifeDescription:
+    "We value curiosity, thoughtful collaboration, and dependable delivery. People have room to learn while doing work that makes a difference.",
+  careerLifeImagePath: "/hero-support.svg",
+  careerLifeCalloutTitle: "A team that learns together",
+  careerLifeCalloutDescription:
+    "Share ideas, build new skills, and help make everyday work better.",
+  careerMetrics: JSON.stringify([
+    { value: "48+", label: "Team Members" },
+    { value: "24/7", label: "Client Support" },
+    { value: "6+", label: "Industries Served" },
+  ]),
+  careerOpportunitiesTagline: "Open Positions",
+  careerOpportunitiesTitle: "Find your next opportunity",
+  careerOpportunitiesAccent: "at Pinnacle",
+  careerOpportunitiesDescription:
+    "Explore current roles and find a place to contribute, learn, and grow.",
+  careerBenefitsTagline: "Why Join Us",
+  careerBenefitsTitle: "Good work, backed by",
+  careerBenefitsAccent: "a supportive team",
+  careerBenefitsDescription:
+    "We want people to have the tools, guidance, and opportunity to do their best work.",
+  careerBenefits: JSON.stringify([
+    { title: "Meaningful work", description: "Contribute to projects that improve real business operations." },
+    { title: "Continuous learning", description: "Build skills through collaboration, feedback, and new challenges." },
+    { title: "Supportive teams", description: "Work with people who share knowledge and own outcomes together." },
+  ]),
+  careerBenefitStats: JSON.stringify([
+    { value: "24/7", label: "Client operations" },
+    { value: "6+", label: "Industries" },
+    { value: "100%", label: "Team commitment" },
+  ]),
+  careerCtaTagline: "Your next step",
+  careerCtaTitle: "Let’s build better work together",
+  careerCtaDescription:
+    "Explore our open roles and bring your perspective to the team.",
+  careerCtaButtonLabel: "View Open Positions",
+  careerCtaButtonHref: "#opportunities",
+  eventHeroTagline: "Connect and learn",
+  eventHeroTitle: "Ideas in action",
+  eventHeroDescription:
+    "Join our team and partners for practical conversations about better operations and technology.",
+  eventHeroBackgroundImagePath: "/hero-bg.svg",
+  eventUpcommingTagline: "What’s Next",
+  eventUpcommingTitle: "Upcoming events",
+  eventUpcommingDescription: "Meet our team and explore ideas that move work forward.",
+  eventGalleryTagline: "Past Highlights",
+  eventGalleryTitle: "A look back",
+  eventGalleryDescription: "Highlights from our recent conversations and community events.",
+  eventContactTitle: "Join the conversation",
+  eventContactDescription: "Get in touch to learn more about our upcoming events.",
+  growthLearningContent: JSON.stringify(defaultGrowthLearningContent),
+  cultureContent: JSON.stringify(defaultCultureContent),
+};
 
 const seedBanners = [
   {
@@ -503,13 +687,76 @@ const seedNewsletter = [
   { email: "ops@bridgewaytech.example", status: active },
 ];
 
+const seedEnquiries = [
+  {
+    fullName: "Morgan Example",
+    email: "morgan@example.com",
+    phoneNumber: "+1 202 555 0142",
+    companyName: "Northstar Logistics",
+    subject: "Operations workflow support",
+    message:
+      "We are exploring ways to improve our recurring operations and reporting workflows.",
+  },
+];
+
+const seedEvents = [
+  {
+    key: "operations-forum",
+    title: "Operations and Technology Forum",
+    description:
+      "A practical discussion on connecting technology investments with day-to-day operations.",
+    category: "Industry Forum",
+    imageUrl: "/hero-analytics.svg",
+    eventDate: new Date("2027-03-18T00:00:00.000Z"),
+    startTime: "10:00 AM",
+    endTime: "1:00 PM",
+    location: "Kolkata, India",
+    images: ["/hero-analytics.svg", "/hero-support.svg"],
+  },
+  {
+    key: "responsible-ai-workshop",
+    title: "Responsible AI in Business Workflows",
+    description:
+      "A workshop covering practical use cases, governance, and human oversight for AI-enabled work.",
+    category: "Workshop",
+    imageUrl: "/hero-consulting.svg",
+    eventDate: new Date("2027-05-22T00:00:00.000Z"),
+    startTime: "2:00 PM",
+    endTime: "4:30 PM",
+    location: "Online",
+    images: ["/hero-consulting.svg"],
+  },
+];
+
 async function seedSettings() {
+  const existing = await prisma.siteSettings.findUnique({
+    where: { id: "site-settings" },
+  });
+
+  if (existing) {
+    const missingSettings: Record<string, string | boolean> = {};
+    for (const [key, value] of Object.entries(seedPageSettings)) {
+      if (existing[key as keyof typeof existing] == null) {
+        missingSettings[key] = value;
+      }
+    }
+
+    if (Object.keys(missingSettings).length > 0) {
+      await prisma.siteSettings.update({
+        where: { id: "site-settings" },
+        data: missingSettings,
+      });
+    }
+    return;
+  }
+
   await prisma.siteSettings.upsert({
     where: { id: "site-settings" },
     create: {
       id: "site-settings",
       siteName: "Pinnacle",
       legalName: "Global Business Support Services Delivered from India",
+      ...seedPageSettings,
       aboutTagline: "About Pinnacle",
       aboutTitle:
         "A focused operating model built for scale, quality, and steady delivery.",
@@ -597,6 +844,7 @@ async function seedSettings() {
     update: {
       siteName: "Pinnacle",
       legalName: "Global Business Support Services Delivered from India",
+      ...seedPageSettings,
       aboutTagline: "About Pinnacle",
       aboutTitle:
         "A focused operating model built for scale, quality, and steady delivery.",
@@ -706,44 +954,36 @@ async function seedUsers() {
 }
 
 async function seedContent() {
-  await prisma.careerApplication.deleteMany();
-  await prisma.contactSection.deleteMany();
-  await prisma.outcomeFocus.deleteMany();
-  await prisma.deliveryProcess.deleteMany();
-  await prisma.capabilities.deleteMany();
-  await prisma.serviceBenefits.deleteMany();
-  await prisma.services.deleteMany();
-  await prisma.serviceCategory.deleteMany();
-  await prisma.banner.deleteMany();
-  await prisma.testimonial.deleteMany();
-  await prisma.job.deleteMany();
-  await prisma.newsletterSubscription.deleteMany();
-
+  // Account and Session records are managed by authentication flows, not static fixtures.
   await seedSettings();
   await seedUsers();
 
   for (const banner of seedBanners) {
-    await prisma.banner.create({
-      data: {
-        tagline: banner.tagline,
-        title: banner.title,
-        description: banner.description,
-        image: banner.image,
-        status: active,
-      },
+    const data = {
+      tagline: banner.tagline,
+      title: banner.title,
+      description: banner.description,
+      image: banner.image,
+      status: active,
+    };
+    await prisma.banner.upsert({
+      where: { id: seedUuid("banner", banner.title) },
+      create: { id: seedUuid("banner", banner.title), ...data },
+      update: data,
     });
   }
 
-  const categoryByName = new Map();
+  const categoryByName = new Map<string, { id: string }>();
   for (const category of seedCategories) {
-    const created = await prisma.serviceCategory.create({
-      data: {
-        name: category.name,
-        status: active,
-      },
+    const id = seedUuid("service-category", category.name);
+    const data = { name: category.name, status: active };
+    await prisma.serviceCategory.upsert({
+      where: { id },
+      create: { id, ...data },
+      update: data,
     });
 
-    categoryByName.set(category.name, created);
+    categoryByName.set(category.name, { id });
   }
 
   for (const service of seedServices) {
@@ -752,100 +992,166 @@ async function seedContent() {
       throw new Error(`Missing category for service: ${service.title}`);
     }
 
-    const createdService = await prisma.services.create({
-      data: {
-        title: service.title,
-        shortDescription: service.shortDescription,
-        description: service.description,
-        image: service.image,
-        status: active,
-        categoryId: category.id,
-      },
+    const id = seedUuid("service", service.key);
+    const data = {
+      title: service.title,
+      shortDescription: service.shortDescription,
+      description: service.description,
+      image: service.image,
+      status: active,
+      categoryId: category.id,
+    };
+    await prisma.services.upsert({
+      where: { id },
+      create: { id, ...data },
+      update: data,
     });
 
-    await prisma.serviceBenefits.create({
-      data: {
-        serviceId: createdService.id,
-        title: service.benefits.title,
-        description: service.benefits.description,
-        items: service.benefits.items,
-      },
+    await prisma.serviceBenefits.upsert({
+      where: { serviceId: id },
+      create: { serviceId: id, ...service.benefits },
+      update: service.benefits,
     });
 
-    await prisma.capabilities.create({
-      data: {
-        serviceId: createdService.id,
-        title: service.capabilities.title,
-        description: service.capabilities.description,
-        items: service.capabilities.items,
-      },
+    await prisma.capabilities.upsert({
+      where: { serviceId: id },
+      create: { serviceId: id, ...service.capabilities },
+      update: service.capabilities,
     });
 
-    await prisma.deliveryProcess.create({
-      data: {
-        serviceId: createdService.id,
-        title: service.deliveryProcess.title,
-        description: service.deliveryProcess.description,
-        items: service.deliveryProcess.items,
-      },
+    await prisma.deliveryProcess.upsert({
+      where: { serviceId: id },
+      create: { serviceId: id, ...service.deliveryProcess },
+      update: service.deliveryProcess,
     });
 
-    await prisma.outcomeFocus.create({
-      data: {
-        serviceId: createdService.id,
-        title: service.outcomeFocuses.title,
-        description: service.outcomeFocuses.description,
-        items: service.outcomeFocuses.items,
-      },
+    await prisma.outcomeFocus.upsert({
+      where: { serviceId: id },
+      create: { serviceId: id, ...service.outcomeFocuses },
+      update: service.outcomeFocuses,
     });
 
-    await prisma.contactSection.create({
-      data: {
-        serviceId: createdService.id,
-        title: service.contactSection.title,
-        description: service.contactSection.description,
-        status: active,
-      },
+    await prisma.contactSection.upsert({
+      where: { serviceId: id },
+      create: { serviceId: id, ...service.contactSection, status: active },
+      update: { ...service.contactSection, status: active },
     });
   }
 
   for (const testimonial of seedTestimonials) {
-    await prisma.testimonial.create({
-      data: {
-        name: testimonial.name,
-        designation: testimonial.designation,
-        company: testimonial.company,
-        tag: testimonial.tag,
-        content: testimonial.content,
-        image: testimonial.image,
-        status: active,
-      },
+    const id = seedUuid("testimonial", testimonial.name);
+    const data = {
+      name: testimonial.name,
+      designation: testimonial.designation,
+      company: testimonial.company,
+      tag: testimonial.tag,
+      content: testimonial.content,
+      image: testimonial.image,
+      status: active,
+    };
+    await prisma.testimonial.upsert({
+      where: { id },
+      create: { id, ...data },
+      update: data,
     });
   }
 
   for (const job of seedJobs) {
-    await prisma.job.create({
-      data: {
-        title: job.title,
-        shortDescription: job.shortDescription,
-        description: job.description,
-        employmentType: job.employmentType,
-        workMode: job.workMode,
-        experience: job.experience,
-        location: job.location,
-        vacancies: job.vacancies,
-        status: active,
-      },
+    const id = seedUuid("job", job.title);
+    const data = {
+      title: job.title,
+      shortDescription: job.shortDescription,
+      description: job.description,
+      employmentType: job.employmentType,
+      workMode: job.workMode,
+      experience: job.experience,
+      location: job.location,
+      vacancies: job.vacancies,
+      status: active,
+    };
+    await prisma.job.upsert({
+      where: { id },
+      create: { id, ...data },
+      update: data,
     });
   }
 
   for (const item of seedNewsletter) {
-    await prisma.newsletterSubscription.create({
-      data: {
-        email: item.email,
-        status: item.status,
-      },
+    await prisma.newsletterSubscription.upsert({
+      where: { email: item.email },
+      create: item,
+      update: { status: item.status },
     });
+  }
+
+  for (const enquiry of seedEnquiries) {
+    const id = seedUuid("enquiry", enquiry.email);
+    await prisma.enquiry.upsert({
+      where: { id },
+      create: { id, ...enquiry },
+      update: enquiry,
+    });
+  }
+
+  const applicationId = seedUuid("career-application", "operations-associate-example");
+  await prisma.careerApplication.upsert({
+    where: { id: applicationId },
+    create: {
+      id: applicationId,
+      fullName: "Taylor Example",
+      email: "taylor@example.com",
+      phone: "+1 202 555 0186",
+      role: "Operations Associate",
+      experience: "2 years",
+      location: "Kolkata, India",
+      resume: "https://example.com/sample-resume.pdf",
+      message: "I am interested in process improvement and reliable operations.",
+      jobId: seedUuid("job", "Operations Associate"),
+      status: ApplicationStatus.PENDING,
+    },
+    update: {
+      fullName: "Taylor Example",
+      email: "taylor@example.com",
+      phone: "+1 202 555 0186",
+      role: "Operations Associate",
+      experience: "2 years",
+      location: "Kolkata, India",
+      resume: "https://example.com/sample-resume.pdf",
+      message: "I am interested in process improvement and reliable operations.",
+      jobId: seedUuid("job", "Operations Associate"),
+      status: ApplicationStatus.PENDING,
+    },
+  });
+
+  for (const event of seedEvents) {
+    const id = seedUuid("event", event.key);
+    const data = {
+      title: event.title,
+      description: event.description,
+      category: event.category,
+      imageUrl: event.imageUrl,
+      eventDate: event.eventDate,
+      startTime: event.startTime,
+      endTime: event.endTime,
+      location: event.location,
+      showSaveTheDate: true,
+      saveTheDateText: "SAVE THE DATE",
+      status: UpcomingEventStatus.ACTIVE,
+    };
+    await prisma.upcommingEvents.upsert({
+      where: { id },
+      create: { id, ...data },
+      update: data,
+    });
+
+    for (const [sortOrder, url] of event.images.entries()) {
+      const imageId = seedUuid("event-image", `${event.key}:${sortOrder}`);
+      await prisma.eventImage.upsert({
+        where: { id: imageId },
+        create: { id: imageId, eventId: id, url, sortOrder },
+        update: { eventId: id, url, sortOrder },
+      });
+    }
   }
 }
 

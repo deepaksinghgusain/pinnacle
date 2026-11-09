@@ -8271,18 +8271,43 @@ export namespace Prisma {
     heroTrustTags: string | null
     heroTagline: string | null
     heroTitle: string | null
+    heroTitleAccent: string | null
+    heroTitleSuffix: string | null
     heroDescription: string | null
     heroBackgroundImagePath: string | null
+    heroButtonLabel: string | null
+    heroButtonHref: string | null
     aboutTagline: string | null
     aboutTitle: string | null
+    aboutTitleAccent: string | null
     aboutDescription: string | null
     aboutButtons: string | null
+    aboutButtonLabel: string | null
+    aboutButtonHref: string | null
+    aboutHighlights: string | null
+    aboutFeatureCards: string | null
     deliveryModelTitle: string | null
     deliveryModelItems: string | null
+    serviceSectionTagline: string | null
+    serviceSectionTitle: string | null
+    serviceSectionAccent: string | null
+    serviceSectionDescription: string | null
+    serviceSectionCtaLabel: string | null
+    serviceSectionCtaHref: string | null
     whyClientsTagline: string | null
     whyClientsTitle: string | null
     whyClientsDescription: string | null
     whyClientsCards: string | null
+    homeTestimonialsTagline: string | null
+    homeTestimonialsTitle: string | null
+    homeTestimonialsAccent: string | null
+    homeTestimonialsDescription: string | null
+    homeCtaTagline: string | null
+    homeCtaTitle: string | null
+    homeCtaAccent: string | null
+    homeCtaDescription: string | null
+    homeCtaButtonLabel: string | null
+    homeCtaButtonHref: string | null
     globalDeliveryTagline: string | null
     globalDeliveryTitle: string | null
     globalDeliveryDescription: string | null
@@ -8307,6 +8332,71 @@ export namespace Prisma {
     eventGalleryDescription: string | null
     eventContactTitle: string | null
     eventContactDescription: string | null
+    aboutPageHeroTagline: string | null
+    aboutPageHeroTitle: string | null
+    aboutPageHeroAccent: string | null
+    aboutPageHeroDescription: string | null
+    aboutPageHeroImagePath: string | null
+    aboutStoryTagline: string | null
+    aboutStoryTitle: string | null
+    aboutStoryDescription: string | null
+    aboutStoryCards: string | null
+    aboutApproachTagline: string | null
+    aboutApproachTitle: string | null
+    aboutApproachDescription: string | null
+    aboutApproachTabs: string | null
+    aboutLeadershipTitle: string | null
+    aboutLeaders: string | null
+    aboutPageCtaTagline: string | null
+    aboutPageCtaTitle: string | null
+    aboutPageCtaDescription: string | null
+    aboutPageCtaButtonLabel: string | null
+    aboutPageCtaButtonHref: string | null
+    contactHeroTagline: string | null
+    contactHeroTitle: string | null
+    contactHeroAccent: string | null
+    contactHeroDescription: string | null
+    contactHeroPrimaryButtonLabel: string | null
+    contactHeroSecondaryButtonLabel: string | null
+    contactPageEmail: string | null
+    contactPageAddress: string | null
+    contactMetrics: string | null
+    contactStepsTagline: string | null
+    contactStepsTitle: string | null
+    contactStepsDescription: string | null
+    contactProcessSteps: string | null
+    careerHeroTagline: string | null
+    careerHeroTitle: string | null
+    careerHeroAccent: string | null
+    careerHeroDescription: string | null
+    careerHeroImagePath: string | null
+    careerHeroButtonLabel: string | null
+    careerHeroButtonHref: string | null
+    careerLifeTagline: string | null
+    careerLifeTitle: string | null
+    careerLifeAccent: string | null
+    careerLifeDescription: string | null
+    careerLifeImagePath: string | null
+    careerLifeCalloutTitle: string | null
+    careerLifeCalloutDescription: string | null
+    careerMetrics: string | null
+    careerOpportunitiesTagline: string | null
+    careerOpportunitiesTitle: string | null
+    careerOpportunitiesAccent: string | null
+    careerOpportunitiesDescription: string | null
+    careerBenefitsTagline: string | null
+    careerBenefitsTitle: string | null
+    careerBenefitsAccent: string | null
+    careerBenefitsDescription: string | null
+    careerBenefits: string | null
+    careerBenefitStats: string | null
+    careerCtaTagline: string | null
+    careerCtaTitle: string | null
+    careerCtaDescription: string | null
+    careerCtaButtonLabel: string | null
+    careerCtaButtonHref: string | null
+    growthLearningContent: string | null
+    cultureContent: string | null
     smtpHost: string | null
     smtpPort: string | null
     smtpUsername: string | null
@@ -8357,18 +8447,43 @@ export namespace Prisma {
     heroTrustTags: string | null
     heroTagline: string | null
     heroTitle: string | null
+    heroTitleAccent: string | null
+    heroTitleSuffix: string | null
     heroDescription: string | null
     heroBackgroundImagePath: string | null
+    heroButtonLabel: string | null
+    heroButtonHref: string | null
     aboutTagline: string | null
     aboutTitle: string | null
+    aboutTitleAccent: string | null
     aboutDescription: string | null
     aboutButtons: string | null
+    aboutButtonLabel: string | null
+    aboutButtonHref: string | null
+    aboutHighlights: string | null
+    aboutFeatureCards: string | null
     deliveryModelTitle: string | null
     deliveryModelItems: string | null
+    serviceSectionTagline: string | null
+    serviceSectionTitle: string | null
+    serviceSectionAccent: string | null
+    serviceSectionDescription: string | null
+    serviceSectionCtaLabel: string | null
+    serviceSectionCtaHref: string | null
     whyClientsTagline: string | null
     whyClientsTitle: string | null
     whyClientsDescription: string | null
     whyClientsCards: string | null
+    homeTestimonialsTagline: string | null
+    homeTestimonialsTitle: string | null
+    homeTestimonialsAccent: string | null
+    homeTestimonialsDescription: string | null
+    homeCtaTagline: string | null
+    homeCtaTitle: string | null
+    homeCtaAccent: string | null
+    homeCtaDescription: string | null
+    homeCtaButtonLabel: string | null
+    homeCtaButtonHref: string | null
     globalDeliveryTagline: string | null
     globalDeliveryTitle: string | null
     globalDeliveryDescription: string | null
@@ -8393,6 +8508,71 @@ export namespace Prisma {
     eventGalleryDescription: string | null
     eventContactTitle: string | null
     eventContactDescription: string | null
+    aboutPageHeroTagline: string | null
+    aboutPageHeroTitle: string | null
+    aboutPageHeroAccent: string | null
+    aboutPageHeroDescription: string | null
+    aboutPageHeroImagePath: string | null
+    aboutStoryTagline: string | null
+    aboutStoryTitle: string | null
+    aboutStoryDescription: string | null
+    aboutStoryCards: string | null
+    aboutApproachTagline: string | null
+    aboutApproachTitle: string | null
+    aboutApproachDescription: string | null
+    aboutApproachTabs: string | null
+    aboutLeadershipTitle: string | null
+    aboutLeaders: string | null
+    aboutPageCtaTagline: string | null
+    aboutPageCtaTitle: string | null
+    aboutPageCtaDescription: string | null
+    aboutPageCtaButtonLabel: string | null
+    aboutPageCtaButtonHref: string | null
+    contactHeroTagline: string | null
+    contactHeroTitle: string | null
+    contactHeroAccent: string | null
+    contactHeroDescription: string | null
+    contactHeroPrimaryButtonLabel: string | null
+    contactHeroSecondaryButtonLabel: string | null
+    contactPageEmail: string | null
+    contactPageAddress: string | null
+    contactMetrics: string | null
+    contactStepsTagline: string | null
+    contactStepsTitle: string | null
+    contactStepsDescription: string | null
+    contactProcessSteps: string | null
+    careerHeroTagline: string | null
+    careerHeroTitle: string | null
+    careerHeroAccent: string | null
+    careerHeroDescription: string | null
+    careerHeroImagePath: string | null
+    careerHeroButtonLabel: string | null
+    careerHeroButtonHref: string | null
+    careerLifeTagline: string | null
+    careerLifeTitle: string | null
+    careerLifeAccent: string | null
+    careerLifeDescription: string | null
+    careerLifeImagePath: string | null
+    careerLifeCalloutTitle: string | null
+    careerLifeCalloutDescription: string | null
+    careerMetrics: string | null
+    careerOpportunitiesTagline: string | null
+    careerOpportunitiesTitle: string | null
+    careerOpportunitiesAccent: string | null
+    careerOpportunitiesDescription: string | null
+    careerBenefitsTagline: string | null
+    careerBenefitsTitle: string | null
+    careerBenefitsAccent: string | null
+    careerBenefitsDescription: string | null
+    careerBenefits: string | null
+    careerBenefitStats: string | null
+    careerCtaTagline: string | null
+    careerCtaTitle: string | null
+    careerCtaDescription: string | null
+    careerCtaButtonLabel: string | null
+    careerCtaButtonHref: string | null
+    growthLearningContent: string | null
+    cultureContent: string | null
     smtpHost: string | null
     smtpPort: string | null
     smtpUsername: string | null
@@ -8443,18 +8623,43 @@ export namespace Prisma {
     heroTrustTags: number
     heroTagline: number
     heroTitle: number
+    heroTitleAccent: number
+    heroTitleSuffix: number
     heroDescription: number
     heroBackgroundImagePath: number
+    heroButtonLabel: number
+    heroButtonHref: number
     aboutTagline: number
     aboutTitle: number
+    aboutTitleAccent: number
     aboutDescription: number
     aboutButtons: number
+    aboutButtonLabel: number
+    aboutButtonHref: number
+    aboutHighlights: number
+    aboutFeatureCards: number
     deliveryModelTitle: number
     deliveryModelItems: number
+    serviceSectionTagline: number
+    serviceSectionTitle: number
+    serviceSectionAccent: number
+    serviceSectionDescription: number
+    serviceSectionCtaLabel: number
+    serviceSectionCtaHref: number
     whyClientsTagline: number
     whyClientsTitle: number
     whyClientsDescription: number
     whyClientsCards: number
+    homeTestimonialsTagline: number
+    homeTestimonialsTitle: number
+    homeTestimonialsAccent: number
+    homeTestimonialsDescription: number
+    homeCtaTagline: number
+    homeCtaTitle: number
+    homeCtaAccent: number
+    homeCtaDescription: number
+    homeCtaButtonLabel: number
+    homeCtaButtonHref: number
     globalDeliveryTagline: number
     globalDeliveryTitle: number
     globalDeliveryDescription: number
@@ -8479,6 +8684,71 @@ export namespace Prisma {
     eventGalleryDescription: number
     eventContactTitle: number
     eventContactDescription: number
+    aboutPageHeroTagline: number
+    aboutPageHeroTitle: number
+    aboutPageHeroAccent: number
+    aboutPageHeroDescription: number
+    aboutPageHeroImagePath: number
+    aboutStoryTagline: number
+    aboutStoryTitle: number
+    aboutStoryDescription: number
+    aboutStoryCards: number
+    aboutApproachTagline: number
+    aboutApproachTitle: number
+    aboutApproachDescription: number
+    aboutApproachTabs: number
+    aboutLeadershipTitle: number
+    aboutLeaders: number
+    aboutPageCtaTagline: number
+    aboutPageCtaTitle: number
+    aboutPageCtaDescription: number
+    aboutPageCtaButtonLabel: number
+    aboutPageCtaButtonHref: number
+    contactHeroTagline: number
+    contactHeroTitle: number
+    contactHeroAccent: number
+    contactHeroDescription: number
+    contactHeroPrimaryButtonLabel: number
+    contactHeroSecondaryButtonLabel: number
+    contactPageEmail: number
+    contactPageAddress: number
+    contactMetrics: number
+    contactStepsTagline: number
+    contactStepsTitle: number
+    contactStepsDescription: number
+    contactProcessSteps: number
+    careerHeroTagline: number
+    careerHeroTitle: number
+    careerHeroAccent: number
+    careerHeroDescription: number
+    careerHeroImagePath: number
+    careerHeroButtonLabel: number
+    careerHeroButtonHref: number
+    careerLifeTagline: number
+    careerLifeTitle: number
+    careerLifeAccent: number
+    careerLifeDescription: number
+    careerLifeImagePath: number
+    careerLifeCalloutTitle: number
+    careerLifeCalloutDescription: number
+    careerMetrics: number
+    careerOpportunitiesTagline: number
+    careerOpportunitiesTitle: number
+    careerOpportunitiesAccent: number
+    careerOpportunitiesDescription: number
+    careerBenefitsTagline: number
+    careerBenefitsTitle: number
+    careerBenefitsAccent: number
+    careerBenefitsDescription: number
+    careerBenefits: number
+    careerBenefitStats: number
+    careerCtaTagline: number
+    careerCtaTitle: number
+    careerCtaDescription: number
+    careerCtaButtonLabel: number
+    careerCtaButtonHref: number
+    growthLearningContent: number
+    cultureContent: number
     smtpHost: number
     smtpPort: number
     smtpUsername: number
@@ -8531,18 +8801,43 @@ export namespace Prisma {
     heroTrustTags?: true
     heroTagline?: true
     heroTitle?: true
+    heroTitleAccent?: true
+    heroTitleSuffix?: true
     heroDescription?: true
     heroBackgroundImagePath?: true
+    heroButtonLabel?: true
+    heroButtonHref?: true
     aboutTagline?: true
     aboutTitle?: true
+    aboutTitleAccent?: true
     aboutDescription?: true
     aboutButtons?: true
+    aboutButtonLabel?: true
+    aboutButtonHref?: true
+    aboutHighlights?: true
+    aboutFeatureCards?: true
     deliveryModelTitle?: true
     deliveryModelItems?: true
+    serviceSectionTagline?: true
+    serviceSectionTitle?: true
+    serviceSectionAccent?: true
+    serviceSectionDescription?: true
+    serviceSectionCtaLabel?: true
+    serviceSectionCtaHref?: true
     whyClientsTagline?: true
     whyClientsTitle?: true
     whyClientsDescription?: true
     whyClientsCards?: true
+    homeTestimonialsTagline?: true
+    homeTestimonialsTitle?: true
+    homeTestimonialsAccent?: true
+    homeTestimonialsDescription?: true
+    homeCtaTagline?: true
+    homeCtaTitle?: true
+    homeCtaAccent?: true
+    homeCtaDescription?: true
+    homeCtaButtonLabel?: true
+    homeCtaButtonHref?: true
     globalDeliveryTagline?: true
     globalDeliveryTitle?: true
     globalDeliveryDescription?: true
@@ -8567,6 +8862,71 @@ export namespace Prisma {
     eventGalleryDescription?: true
     eventContactTitle?: true
     eventContactDescription?: true
+    aboutPageHeroTagline?: true
+    aboutPageHeroTitle?: true
+    aboutPageHeroAccent?: true
+    aboutPageHeroDescription?: true
+    aboutPageHeroImagePath?: true
+    aboutStoryTagline?: true
+    aboutStoryTitle?: true
+    aboutStoryDescription?: true
+    aboutStoryCards?: true
+    aboutApproachTagline?: true
+    aboutApproachTitle?: true
+    aboutApproachDescription?: true
+    aboutApproachTabs?: true
+    aboutLeadershipTitle?: true
+    aboutLeaders?: true
+    aboutPageCtaTagline?: true
+    aboutPageCtaTitle?: true
+    aboutPageCtaDescription?: true
+    aboutPageCtaButtonLabel?: true
+    aboutPageCtaButtonHref?: true
+    contactHeroTagline?: true
+    contactHeroTitle?: true
+    contactHeroAccent?: true
+    contactHeroDescription?: true
+    contactHeroPrimaryButtonLabel?: true
+    contactHeroSecondaryButtonLabel?: true
+    contactPageEmail?: true
+    contactPageAddress?: true
+    contactMetrics?: true
+    contactStepsTagline?: true
+    contactStepsTitle?: true
+    contactStepsDescription?: true
+    contactProcessSteps?: true
+    careerHeroTagline?: true
+    careerHeroTitle?: true
+    careerHeroAccent?: true
+    careerHeroDescription?: true
+    careerHeroImagePath?: true
+    careerHeroButtonLabel?: true
+    careerHeroButtonHref?: true
+    careerLifeTagline?: true
+    careerLifeTitle?: true
+    careerLifeAccent?: true
+    careerLifeDescription?: true
+    careerLifeImagePath?: true
+    careerLifeCalloutTitle?: true
+    careerLifeCalloutDescription?: true
+    careerMetrics?: true
+    careerOpportunitiesTagline?: true
+    careerOpportunitiesTitle?: true
+    careerOpportunitiesAccent?: true
+    careerOpportunitiesDescription?: true
+    careerBenefitsTagline?: true
+    careerBenefitsTitle?: true
+    careerBenefitsAccent?: true
+    careerBenefitsDescription?: true
+    careerBenefits?: true
+    careerBenefitStats?: true
+    careerCtaTagline?: true
+    careerCtaTitle?: true
+    careerCtaDescription?: true
+    careerCtaButtonLabel?: true
+    careerCtaButtonHref?: true
+    growthLearningContent?: true
+    cultureContent?: true
     smtpHost?: true
     smtpPort?: true
     smtpUsername?: true
@@ -8617,18 +8977,43 @@ export namespace Prisma {
     heroTrustTags?: true
     heroTagline?: true
     heroTitle?: true
+    heroTitleAccent?: true
+    heroTitleSuffix?: true
     heroDescription?: true
     heroBackgroundImagePath?: true
+    heroButtonLabel?: true
+    heroButtonHref?: true
     aboutTagline?: true
     aboutTitle?: true
+    aboutTitleAccent?: true
     aboutDescription?: true
     aboutButtons?: true
+    aboutButtonLabel?: true
+    aboutButtonHref?: true
+    aboutHighlights?: true
+    aboutFeatureCards?: true
     deliveryModelTitle?: true
     deliveryModelItems?: true
+    serviceSectionTagline?: true
+    serviceSectionTitle?: true
+    serviceSectionAccent?: true
+    serviceSectionDescription?: true
+    serviceSectionCtaLabel?: true
+    serviceSectionCtaHref?: true
     whyClientsTagline?: true
     whyClientsTitle?: true
     whyClientsDescription?: true
     whyClientsCards?: true
+    homeTestimonialsTagline?: true
+    homeTestimonialsTitle?: true
+    homeTestimonialsAccent?: true
+    homeTestimonialsDescription?: true
+    homeCtaTagline?: true
+    homeCtaTitle?: true
+    homeCtaAccent?: true
+    homeCtaDescription?: true
+    homeCtaButtonLabel?: true
+    homeCtaButtonHref?: true
     globalDeliveryTagline?: true
     globalDeliveryTitle?: true
     globalDeliveryDescription?: true
@@ -8653,6 +9038,71 @@ export namespace Prisma {
     eventGalleryDescription?: true
     eventContactTitle?: true
     eventContactDescription?: true
+    aboutPageHeroTagline?: true
+    aboutPageHeroTitle?: true
+    aboutPageHeroAccent?: true
+    aboutPageHeroDescription?: true
+    aboutPageHeroImagePath?: true
+    aboutStoryTagline?: true
+    aboutStoryTitle?: true
+    aboutStoryDescription?: true
+    aboutStoryCards?: true
+    aboutApproachTagline?: true
+    aboutApproachTitle?: true
+    aboutApproachDescription?: true
+    aboutApproachTabs?: true
+    aboutLeadershipTitle?: true
+    aboutLeaders?: true
+    aboutPageCtaTagline?: true
+    aboutPageCtaTitle?: true
+    aboutPageCtaDescription?: true
+    aboutPageCtaButtonLabel?: true
+    aboutPageCtaButtonHref?: true
+    contactHeroTagline?: true
+    contactHeroTitle?: true
+    contactHeroAccent?: true
+    contactHeroDescription?: true
+    contactHeroPrimaryButtonLabel?: true
+    contactHeroSecondaryButtonLabel?: true
+    contactPageEmail?: true
+    contactPageAddress?: true
+    contactMetrics?: true
+    contactStepsTagline?: true
+    contactStepsTitle?: true
+    contactStepsDescription?: true
+    contactProcessSteps?: true
+    careerHeroTagline?: true
+    careerHeroTitle?: true
+    careerHeroAccent?: true
+    careerHeroDescription?: true
+    careerHeroImagePath?: true
+    careerHeroButtonLabel?: true
+    careerHeroButtonHref?: true
+    careerLifeTagline?: true
+    careerLifeTitle?: true
+    careerLifeAccent?: true
+    careerLifeDescription?: true
+    careerLifeImagePath?: true
+    careerLifeCalloutTitle?: true
+    careerLifeCalloutDescription?: true
+    careerMetrics?: true
+    careerOpportunitiesTagline?: true
+    careerOpportunitiesTitle?: true
+    careerOpportunitiesAccent?: true
+    careerOpportunitiesDescription?: true
+    careerBenefitsTagline?: true
+    careerBenefitsTitle?: true
+    careerBenefitsAccent?: true
+    careerBenefitsDescription?: true
+    careerBenefits?: true
+    careerBenefitStats?: true
+    careerCtaTagline?: true
+    careerCtaTitle?: true
+    careerCtaDescription?: true
+    careerCtaButtonLabel?: true
+    careerCtaButtonHref?: true
+    growthLearningContent?: true
+    cultureContent?: true
     smtpHost?: true
     smtpPort?: true
     smtpUsername?: true
@@ -8703,18 +9153,43 @@ export namespace Prisma {
     heroTrustTags?: true
     heroTagline?: true
     heroTitle?: true
+    heroTitleAccent?: true
+    heroTitleSuffix?: true
     heroDescription?: true
     heroBackgroundImagePath?: true
+    heroButtonLabel?: true
+    heroButtonHref?: true
     aboutTagline?: true
     aboutTitle?: true
+    aboutTitleAccent?: true
     aboutDescription?: true
     aboutButtons?: true
+    aboutButtonLabel?: true
+    aboutButtonHref?: true
+    aboutHighlights?: true
+    aboutFeatureCards?: true
     deliveryModelTitle?: true
     deliveryModelItems?: true
+    serviceSectionTagline?: true
+    serviceSectionTitle?: true
+    serviceSectionAccent?: true
+    serviceSectionDescription?: true
+    serviceSectionCtaLabel?: true
+    serviceSectionCtaHref?: true
     whyClientsTagline?: true
     whyClientsTitle?: true
     whyClientsDescription?: true
     whyClientsCards?: true
+    homeTestimonialsTagline?: true
+    homeTestimonialsTitle?: true
+    homeTestimonialsAccent?: true
+    homeTestimonialsDescription?: true
+    homeCtaTagline?: true
+    homeCtaTitle?: true
+    homeCtaAccent?: true
+    homeCtaDescription?: true
+    homeCtaButtonLabel?: true
+    homeCtaButtonHref?: true
     globalDeliveryTagline?: true
     globalDeliveryTitle?: true
     globalDeliveryDescription?: true
@@ -8739,6 +9214,71 @@ export namespace Prisma {
     eventGalleryDescription?: true
     eventContactTitle?: true
     eventContactDescription?: true
+    aboutPageHeroTagline?: true
+    aboutPageHeroTitle?: true
+    aboutPageHeroAccent?: true
+    aboutPageHeroDescription?: true
+    aboutPageHeroImagePath?: true
+    aboutStoryTagline?: true
+    aboutStoryTitle?: true
+    aboutStoryDescription?: true
+    aboutStoryCards?: true
+    aboutApproachTagline?: true
+    aboutApproachTitle?: true
+    aboutApproachDescription?: true
+    aboutApproachTabs?: true
+    aboutLeadershipTitle?: true
+    aboutLeaders?: true
+    aboutPageCtaTagline?: true
+    aboutPageCtaTitle?: true
+    aboutPageCtaDescription?: true
+    aboutPageCtaButtonLabel?: true
+    aboutPageCtaButtonHref?: true
+    contactHeroTagline?: true
+    contactHeroTitle?: true
+    contactHeroAccent?: true
+    contactHeroDescription?: true
+    contactHeroPrimaryButtonLabel?: true
+    contactHeroSecondaryButtonLabel?: true
+    contactPageEmail?: true
+    contactPageAddress?: true
+    contactMetrics?: true
+    contactStepsTagline?: true
+    contactStepsTitle?: true
+    contactStepsDescription?: true
+    contactProcessSteps?: true
+    careerHeroTagline?: true
+    careerHeroTitle?: true
+    careerHeroAccent?: true
+    careerHeroDescription?: true
+    careerHeroImagePath?: true
+    careerHeroButtonLabel?: true
+    careerHeroButtonHref?: true
+    careerLifeTagline?: true
+    careerLifeTitle?: true
+    careerLifeAccent?: true
+    careerLifeDescription?: true
+    careerLifeImagePath?: true
+    careerLifeCalloutTitle?: true
+    careerLifeCalloutDescription?: true
+    careerMetrics?: true
+    careerOpportunitiesTagline?: true
+    careerOpportunitiesTitle?: true
+    careerOpportunitiesAccent?: true
+    careerOpportunitiesDescription?: true
+    careerBenefitsTagline?: true
+    careerBenefitsTitle?: true
+    careerBenefitsAccent?: true
+    careerBenefitsDescription?: true
+    careerBenefits?: true
+    careerBenefitStats?: true
+    careerCtaTagline?: true
+    careerCtaTitle?: true
+    careerCtaDescription?: true
+    careerCtaButtonLabel?: true
+    careerCtaButtonHref?: true
+    growthLearningContent?: true
+    cultureContent?: true
     smtpHost?: true
     smtpPort?: true
     smtpUsername?: true
@@ -8862,18 +9402,43 @@ export namespace Prisma {
     heroTrustTags: string | null
     heroTagline: string | null
     heroTitle: string | null
+    heroTitleAccent: string | null
+    heroTitleSuffix: string | null
     heroDescription: string | null
     heroBackgroundImagePath: string | null
+    heroButtonLabel: string | null
+    heroButtonHref: string | null
     aboutTagline: string | null
     aboutTitle: string | null
+    aboutTitleAccent: string | null
     aboutDescription: string | null
     aboutButtons: string | null
+    aboutButtonLabel: string | null
+    aboutButtonHref: string | null
+    aboutHighlights: string | null
+    aboutFeatureCards: string | null
     deliveryModelTitle: string | null
     deliveryModelItems: string | null
+    serviceSectionTagline: string | null
+    serviceSectionTitle: string | null
+    serviceSectionAccent: string | null
+    serviceSectionDescription: string | null
+    serviceSectionCtaLabel: string | null
+    serviceSectionCtaHref: string | null
     whyClientsTagline: string | null
     whyClientsTitle: string | null
     whyClientsDescription: string | null
     whyClientsCards: string | null
+    homeTestimonialsTagline: string | null
+    homeTestimonialsTitle: string | null
+    homeTestimonialsAccent: string | null
+    homeTestimonialsDescription: string | null
+    homeCtaTagline: string | null
+    homeCtaTitle: string | null
+    homeCtaAccent: string | null
+    homeCtaDescription: string | null
+    homeCtaButtonLabel: string | null
+    homeCtaButtonHref: string | null
     globalDeliveryTagline: string | null
     globalDeliveryTitle: string | null
     globalDeliveryDescription: string | null
@@ -8898,6 +9463,71 @@ export namespace Prisma {
     eventGalleryDescription: string | null
     eventContactTitle: string | null
     eventContactDescription: string | null
+    aboutPageHeroTagline: string | null
+    aboutPageHeroTitle: string | null
+    aboutPageHeroAccent: string | null
+    aboutPageHeroDescription: string | null
+    aboutPageHeroImagePath: string | null
+    aboutStoryTagline: string | null
+    aboutStoryTitle: string | null
+    aboutStoryDescription: string | null
+    aboutStoryCards: string | null
+    aboutApproachTagline: string | null
+    aboutApproachTitle: string | null
+    aboutApproachDescription: string | null
+    aboutApproachTabs: string | null
+    aboutLeadershipTitle: string | null
+    aboutLeaders: string | null
+    aboutPageCtaTagline: string | null
+    aboutPageCtaTitle: string | null
+    aboutPageCtaDescription: string | null
+    aboutPageCtaButtonLabel: string | null
+    aboutPageCtaButtonHref: string | null
+    contactHeroTagline: string | null
+    contactHeroTitle: string | null
+    contactHeroAccent: string | null
+    contactHeroDescription: string | null
+    contactHeroPrimaryButtonLabel: string | null
+    contactHeroSecondaryButtonLabel: string | null
+    contactPageEmail: string | null
+    contactPageAddress: string | null
+    contactMetrics: string | null
+    contactStepsTagline: string | null
+    contactStepsTitle: string | null
+    contactStepsDescription: string | null
+    contactProcessSteps: string | null
+    careerHeroTagline: string | null
+    careerHeroTitle: string | null
+    careerHeroAccent: string | null
+    careerHeroDescription: string | null
+    careerHeroImagePath: string | null
+    careerHeroButtonLabel: string | null
+    careerHeroButtonHref: string | null
+    careerLifeTagline: string | null
+    careerLifeTitle: string | null
+    careerLifeAccent: string | null
+    careerLifeDescription: string | null
+    careerLifeImagePath: string | null
+    careerLifeCalloutTitle: string | null
+    careerLifeCalloutDescription: string | null
+    careerMetrics: string | null
+    careerOpportunitiesTagline: string | null
+    careerOpportunitiesTitle: string | null
+    careerOpportunitiesAccent: string | null
+    careerOpportunitiesDescription: string | null
+    careerBenefitsTagline: string | null
+    careerBenefitsTitle: string | null
+    careerBenefitsAccent: string | null
+    careerBenefitsDescription: string | null
+    careerBenefits: string | null
+    careerBenefitStats: string | null
+    careerCtaTagline: string | null
+    careerCtaTitle: string | null
+    careerCtaDescription: string | null
+    careerCtaButtonLabel: string | null
+    careerCtaButtonHref: string | null
+    growthLearningContent: string | null
+    cultureContent: string | null
     smtpHost: string | null
     smtpPort: string | null
     smtpUsername: string | null
@@ -8965,18 +9595,43 @@ export namespace Prisma {
     heroTrustTags?: boolean
     heroTagline?: boolean
     heroTitle?: boolean
+    heroTitleAccent?: boolean
+    heroTitleSuffix?: boolean
     heroDescription?: boolean
     heroBackgroundImagePath?: boolean
+    heroButtonLabel?: boolean
+    heroButtonHref?: boolean
     aboutTagline?: boolean
     aboutTitle?: boolean
+    aboutTitleAccent?: boolean
     aboutDescription?: boolean
     aboutButtons?: boolean
+    aboutButtonLabel?: boolean
+    aboutButtonHref?: boolean
+    aboutHighlights?: boolean
+    aboutFeatureCards?: boolean
     deliveryModelTitle?: boolean
     deliveryModelItems?: boolean
+    serviceSectionTagline?: boolean
+    serviceSectionTitle?: boolean
+    serviceSectionAccent?: boolean
+    serviceSectionDescription?: boolean
+    serviceSectionCtaLabel?: boolean
+    serviceSectionCtaHref?: boolean
     whyClientsTagline?: boolean
     whyClientsTitle?: boolean
     whyClientsDescription?: boolean
     whyClientsCards?: boolean
+    homeTestimonialsTagline?: boolean
+    homeTestimonialsTitle?: boolean
+    homeTestimonialsAccent?: boolean
+    homeTestimonialsDescription?: boolean
+    homeCtaTagline?: boolean
+    homeCtaTitle?: boolean
+    homeCtaAccent?: boolean
+    homeCtaDescription?: boolean
+    homeCtaButtonLabel?: boolean
+    homeCtaButtonHref?: boolean
     globalDeliveryTagline?: boolean
     globalDeliveryTitle?: boolean
     globalDeliveryDescription?: boolean
@@ -9001,6 +9656,71 @@ export namespace Prisma {
     eventGalleryDescription?: boolean
     eventContactTitle?: boolean
     eventContactDescription?: boolean
+    aboutPageHeroTagline?: boolean
+    aboutPageHeroTitle?: boolean
+    aboutPageHeroAccent?: boolean
+    aboutPageHeroDescription?: boolean
+    aboutPageHeroImagePath?: boolean
+    aboutStoryTagline?: boolean
+    aboutStoryTitle?: boolean
+    aboutStoryDescription?: boolean
+    aboutStoryCards?: boolean
+    aboutApproachTagline?: boolean
+    aboutApproachTitle?: boolean
+    aboutApproachDescription?: boolean
+    aboutApproachTabs?: boolean
+    aboutLeadershipTitle?: boolean
+    aboutLeaders?: boolean
+    aboutPageCtaTagline?: boolean
+    aboutPageCtaTitle?: boolean
+    aboutPageCtaDescription?: boolean
+    aboutPageCtaButtonLabel?: boolean
+    aboutPageCtaButtonHref?: boolean
+    contactHeroTagline?: boolean
+    contactHeroTitle?: boolean
+    contactHeroAccent?: boolean
+    contactHeroDescription?: boolean
+    contactHeroPrimaryButtonLabel?: boolean
+    contactHeroSecondaryButtonLabel?: boolean
+    contactPageEmail?: boolean
+    contactPageAddress?: boolean
+    contactMetrics?: boolean
+    contactStepsTagline?: boolean
+    contactStepsTitle?: boolean
+    contactStepsDescription?: boolean
+    contactProcessSteps?: boolean
+    careerHeroTagline?: boolean
+    careerHeroTitle?: boolean
+    careerHeroAccent?: boolean
+    careerHeroDescription?: boolean
+    careerHeroImagePath?: boolean
+    careerHeroButtonLabel?: boolean
+    careerHeroButtonHref?: boolean
+    careerLifeTagline?: boolean
+    careerLifeTitle?: boolean
+    careerLifeAccent?: boolean
+    careerLifeDescription?: boolean
+    careerLifeImagePath?: boolean
+    careerLifeCalloutTitle?: boolean
+    careerLifeCalloutDescription?: boolean
+    careerMetrics?: boolean
+    careerOpportunitiesTagline?: boolean
+    careerOpportunitiesTitle?: boolean
+    careerOpportunitiesAccent?: boolean
+    careerOpportunitiesDescription?: boolean
+    careerBenefitsTagline?: boolean
+    careerBenefitsTitle?: boolean
+    careerBenefitsAccent?: boolean
+    careerBenefitsDescription?: boolean
+    careerBenefits?: boolean
+    careerBenefitStats?: boolean
+    careerCtaTagline?: boolean
+    careerCtaTitle?: boolean
+    careerCtaDescription?: boolean
+    careerCtaButtonLabel?: boolean
+    careerCtaButtonHref?: boolean
+    growthLearningContent?: boolean
+    cultureContent?: boolean
     smtpHost?: boolean
     smtpPort?: boolean
     smtpUsername?: boolean
@@ -9051,18 +9771,43 @@ export namespace Prisma {
     heroTrustTags?: boolean
     heroTagline?: boolean
     heroTitle?: boolean
+    heroTitleAccent?: boolean
+    heroTitleSuffix?: boolean
     heroDescription?: boolean
     heroBackgroundImagePath?: boolean
+    heroButtonLabel?: boolean
+    heroButtonHref?: boolean
     aboutTagline?: boolean
     aboutTitle?: boolean
+    aboutTitleAccent?: boolean
     aboutDescription?: boolean
     aboutButtons?: boolean
+    aboutButtonLabel?: boolean
+    aboutButtonHref?: boolean
+    aboutHighlights?: boolean
+    aboutFeatureCards?: boolean
     deliveryModelTitle?: boolean
     deliveryModelItems?: boolean
+    serviceSectionTagline?: boolean
+    serviceSectionTitle?: boolean
+    serviceSectionAccent?: boolean
+    serviceSectionDescription?: boolean
+    serviceSectionCtaLabel?: boolean
+    serviceSectionCtaHref?: boolean
     whyClientsTagline?: boolean
     whyClientsTitle?: boolean
     whyClientsDescription?: boolean
     whyClientsCards?: boolean
+    homeTestimonialsTagline?: boolean
+    homeTestimonialsTitle?: boolean
+    homeTestimonialsAccent?: boolean
+    homeTestimonialsDescription?: boolean
+    homeCtaTagline?: boolean
+    homeCtaTitle?: boolean
+    homeCtaAccent?: boolean
+    homeCtaDescription?: boolean
+    homeCtaButtonLabel?: boolean
+    homeCtaButtonHref?: boolean
     globalDeliveryTagline?: boolean
     globalDeliveryTitle?: boolean
     globalDeliveryDescription?: boolean
@@ -9087,6 +9832,71 @@ export namespace Prisma {
     eventGalleryDescription?: boolean
     eventContactTitle?: boolean
     eventContactDescription?: boolean
+    aboutPageHeroTagline?: boolean
+    aboutPageHeroTitle?: boolean
+    aboutPageHeroAccent?: boolean
+    aboutPageHeroDescription?: boolean
+    aboutPageHeroImagePath?: boolean
+    aboutStoryTagline?: boolean
+    aboutStoryTitle?: boolean
+    aboutStoryDescription?: boolean
+    aboutStoryCards?: boolean
+    aboutApproachTagline?: boolean
+    aboutApproachTitle?: boolean
+    aboutApproachDescription?: boolean
+    aboutApproachTabs?: boolean
+    aboutLeadershipTitle?: boolean
+    aboutLeaders?: boolean
+    aboutPageCtaTagline?: boolean
+    aboutPageCtaTitle?: boolean
+    aboutPageCtaDescription?: boolean
+    aboutPageCtaButtonLabel?: boolean
+    aboutPageCtaButtonHref?: boolean
+    contactHeroTagline?: boolean
+    contactHeroTitle?: boolean
+    contactHeroAccent?: boolean
+    contactHeroDescription?: boolean
+    contactHeroPrimaryButtonLabel?: boolean
+    contactHeroSecondaryButtonLabel?: boolean
+    contactPageEmail?: boolean
+    contactPageAddress?: boolean
+    contactMetrics?: boolean
+    contactStepsTagline?: boolean
+    contactStepsTitle?: boolean
+    contactStepsDescription?: boolean
+    contactProcessSteps?: boolean
+    careerHeroTagline?: boolean
+    careerHeroTitle?: boolean
+    careerHeroAccent?: boolean
+    careerHeroDescription?: boolean
+    careerHeroImagePath?: boolean
+    careerHeroButtonLabel?: boolean
+    careerHeroButtonHref?: boolean
+    careerLifeTagline?: boolean
+    careerLifeTitle?: boolean
+    careerLifeAccent?: boolean
+    careerLifeDescription?: boolean
+    careerLifeImagePath?: boolean
+    careerLifeCalloutTitle?: boolean
+    careerLifeCalloutDescription?: boolean
+    careerMetrics?: boolean
+    careerOpportunitiesTagline?: boolean
+    careerOpportunitiesTitle?: boolean
+    careerOpportunitiesAccent?: boolean
+    careerOpportunitiesDescription?: boolean
+    careerBenefitsTagline?: boolean
+    careerBenefitsTitle?: boolean
+    careerBenefitsAccent?: boolean
+    careerBenefitsDescription?: boolean
+    careerBenefits?: boolean
+    careerBenefitStats?: boolean
+    careerCtaTagline?: boolean
+    careerCtaTitle?: boolean
+    careerCtaDescription?: boolean
+    careerCtaButtonLabel?: boolean
+    careerCtaButtonHref?: boolean
+    growthLearningContent?: boolean
+    cultureContent?: boolean
     smtpHost?: boolean
     smtpPort?: boolean
     smtpUsername?: boolean
@@ -9137,18 +9947,43 @@ export namespace Prisma {
     heroTrustTags?: boolean
     heroTagline?: boolean
     heroTitle?: boolean
+    heroTitleAccent?: boolean
+    heroTitleSuffix?: boolean
     heroDescription?: boolean
     heroBackgroundImagePath?: boolean
+    heroButtonLabel?: boolean
+    heroButtonHref?: boolean
     aboutTagline?: boolean
     aboutTitle?: boolean
+    aboutTitleAccent?: boolean
     aboutDescription?: boolean
     aboutButtons?: boolean
+    aboutButtonLabel?: boolean
+    aboutButtonHref?: boolean
+    aboutHighlights?: boolean
+    aboutFeatureCards?: boolean
     deliveryModelTitle?: boolean
     deliveryModelItems?: boolean
+    serviceSectionTagline?: boolean
+    serviceSectionTitle?: boolean
+    serviceSectionAccent?: boolean
+    serviceSectionDescription?: boolean
+    serviceSectionCtaLabel?: boolean
+    serviceSectionCtaHref?: boolean
     whyClientsTagline?: boolean
     whyClientsTitle?: boolean
     whyClientsDescription?: boolean
     whyClientsCards?: boolean
+    homeTestimonialsTagline?: boolean
+    homeTestimonialsTitle?: boolean
+    homeTestimonialsAccent?: boolean
+    homeTestimonialsDescription?: boolean
+    homeCtaTagline?: boolean
+    homeCtaTitle?: boolean
+    homeCtaAccent?: boolean
+    homeCtaDescription?: boolean
+    homeCtaButtonLabel?: boolean
+    homeCtaButtonHref?: boolean
     globalDeliveryTagline?: boolean
     globalDeliveryTitle?: boolean
     globalDeliveryDescription?: boolean
@@ -9173,6 +10008,71 @@ export namespace Prisma {
     eventGalleryDescription?: boolean
     eventContactTitle?: boolean
     eventContactDescription?: boolean
+    aboutPageHeroTagline?: boolean
+    aboutPageHeroTitle?: boolean
+    aboutPageHeroAccent?: boolean
+    aboutPageHeroDescription?: boolean
+    aboutPageHeroImagePath?: boolean
+    aboutStoryTagline?: boolean
+    aboutStoryTitle?: boolean
+    aboutStoryDescription?: boolean
+    aboutStoryCards?: boolean
+    aboutApproachTagline?: boolean
+    aboutApproachTitle?: boolean
+    aboutApproachDescription?: boolean
+    aboutApproachTabs?: boolean
+    aboutLeadershipTitle?: boolean
+    aboutLeaders?: boolean
+    aboutPageCtaTagline?: boolean
+    aboutPageCtaTitle?: boolean
+    aboutPageCtaDescription?: boolean
+    aboutPageCtaButtonLabel?: boolean
+    aboutPageCtaButtonHref?: boolean
+    contactHeroTagline?: boolean
+    contactHeroTitle?: boolean
+    contactHeroAccent?: boolean
+    contactHeroDescription?: boolean
+    contactHeroPrimaryButtonLabel?: boolean
+    contactHeroSecondaryButtonLabel?: boolean
+    contactPageEmail?: boolean
+    contactPageAddress?: boolean
+    contactMetrics?: boolean
+    contactStepsTagline?: boolean
+    contactStepsTitle?: boolean
+    contactStepsDescription?: boolean
+    contactProcessSteps?: boolean
+    careerHeroTagline?: boolean
+    careerHeroTitle?: boolean
+    careerHeroAccent?: boolean
+    careerHeroDescription?: boolean
+    careerHeroImagePath?: boolean
+    careerHeroButtonLabel?: boolean
+    careerHeroButtonHref?: boolean
+    careerLifeTagline?: boolean
+    careerLifeTitle?: boolean
+    careerLifeAccent?: boolean
+    careerLifeDescription?: boolean
+    careerLifeImagePath?: boolean
+    careerLifeCalloutTitle?: boolean
+    careerLifeCalloutDescription?: boolean
+    careerMetrics?: boolean
+    careerOpportunitiesTagline?: boolean
+    careerOpportunitiesTitle?: boolean
+    careerOpportunitiesAccent?: boolean
+    careerOpportunitiesDescription?: boolean
+    careerBenefitsTagline?: boolean
+    careerBenefitsTitle?: boolean
+    careerBenefitsAccent?: boolean
+    careerBenefitsDescription?: boolean
+    careerBenefits?: boolean
+    careerBenefitStats?: boolean
+    careerCtaTagline?: boolean
+    careerCtaTitle?: boolean
+    careerCtaDescription?: boolean
+    careerCtaButtonLabel?: boolean
+    careerCtaButtonHref?: boolean
+    growthLearningContent?: boolean
+    cultureContent?: boolean
     smtpHost?: boolean
     smtpPort?: boolean
     smtpUsername?: boolean
@@ -9223,18 +10123,43 @@ export namespace Prisma {
     heroTrustTags?: boolean
     heroTagline?: boolean
     heroTitle?: boolean
+    heroTitleAccent?: boolean
+    heroTitleSuffix?: boolean
     heroDescription?: boolean
     heroBackgroundImagePath?: boolean
+    heroButtonLabel?: boolean
+    heroButtonHref?: boolean
     aboutTagline?: boolean
     aboutTitle?: boolean
+    aboutTitleAccent?: boolean
     aboutDescription?: boolean
     aboutButtons?: boolean
+    aboutButtonLabel?: boolean
+    aboutButtonHref?: boolean
+    aboutHighlights?: boolean
+    aboutFeatureCards?: boolean
     deliveryModelTitle?: boolean
     deliveryModelItems?: boolean
+    serviceSectionTagline?: boolean
+    serviceSectionTitle?: boolean
+    serviceSectionAccent?: boolean
+    serviceSectionDescription?: boolean
+    serviceSectionCtaLabel?: boolean
+    serviceSectionCtaHref?: boolean
     whyClientsTagline?: boolean
     whyClientsTitle?: boolean
     whyClientsDescription?: boolean
     whyClientsCards?: boolean
+    homeTestimonialsTagline?: boolean
+    homeTestimonialsTitle?: boolean
+    homeTestimonialsAccent?: boolean
+    homeTestimonialsDescription?: boolean
+    homeCtaTagline?: boolean
+    homeCtaTitle?: boolean
+    homeCtaAccent?: boolean
+    homeCtaDescription?: boolean
+    homeCtaButtonLabel?: boolean
+    homeCtaButtonHref?: boolean
     globalDeliveryTagline?: boolean
     globalDeliveryTitle?: boolean
     globalDeliveryDescription?: boolean
@@ -9259,6 +10184,71 @@ export namespace Prisma {
     eventGalleryDescription?: boolean
     eventContactTitle?: boolean
     eventContactDescription?: boolean
+    aboutPageHeroTagline?: boolean
+    aboutPageHeroTitle?: boolean
+    aboutPageHeroAccent?: boolean
+    aboutPageHeroDescription?: boolean
+    aboutPageHeroImagePath?: boolean
+    aboutStoryTagline?: boolean
+    aboutStoryTitle?: boolean
+    aboutStoryDescription?: boolean
+    aboutStoryCards?: boolean
+    aboutApproachTagline?: boolean
+    aboutApproachTitle?: boolean
+    aboutApproachDescription?: boolean
+    aboutApproachTabs?: boolean
+    aboutLeadershipTitle?: boolean
+    aboutLeaders?: boolean
+    aboutPageCtaTagline?: boolean
+    aboutPageCtaTitle?: boolean
+    aboutPageCtaDescription?: boolean
+    aboutPageCtaButtonLabel?: boolean
+    aboutPageCtaButtonHref?: boolean
+    contactHeroTagline?: boolean
+    contactHeroTitle?: boolean
+    contactHeroAccent?: boolean
+    contactHeroDescription?: boolean
+    contactHeroPrimaryButtonLabel?: boolean
+    contactHeroSecondaryButtonLabel?: boolean
+    contactPageEmail?: boolean
+    contactPageAddress?: boolean
+    contactMetrics?: boolean
+    contactStepsTagline?: boolean
+    contactStepsTitle?: boolean
+    contactStepsDescription?: boolean
+    contactProcessSteps?: boolean
+    careerHeroTagline?: boolean
+    careerHeroTitle?: boolean
+    careerHeroAccent?: boolean
+    careerHeroDescription?: boolean
+    careerHeroImagePath?: boolean
+    careerHeroButtonLabel?: boolean
+    careerHeroButtonHref?: boolean
+    careerLifeTagline?: boolean
+    careerLifeTitle?: boolean
+    careerLifeAccent?: boolean
+    careerLifeDescription?: boolean
+    careerLifeImagePath?: boolean
+    careerLifeCalloutTitle?: boolean
+    careerLifeCalloutDescription?: boolean
+    careerMetrics?: boolean
+    careerOpportunitiesTagline?: boolean
+    careerOpportunitiesTitle?: boolean
+    careerOpportunitiesAccent?: boolean
+    careerOpportunitiesDescription?: boolean
+    careerBenefitsTagline?: boolean
+    careerBenefitsTitle?: boolean
+    careerBenefitsAccent?: boolean
+    careerBenefitsDescription?: boolean
+    careerBenefits?: boolean
+    careerBenefitStats?: boolean
+    careerCtaTagline?: boolean
+    careerCtaTitle?: boolean
+    careerCtaDescription?: boolean
+    careerCtaButtonLabel?: boolean
+    careerCtaButtonHref?: boolean
+    growthLearningContent?: boolean
+    cultureContent?: boolean
     smtpHost?: boolean
     smtpPort?: boolean
     smtpUsername?: boolean
@@ -9283,7 +10273,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type SiteSettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "siteName" | "legalName" | "primaryEmail" | "primaryPhone" | "websiteUrl" | "timezone" | "officeAddress" | "officeHours" | "logoPath" | "headerLogoPath" | "footerLogoPath" | "faviconPath" | "metaTitle" | "metaDescription" | "metaKeywords" | "gstNumber" | "cinNumber" | "mapUrl" | "teamMembers" | "happyCustomers" | "operationalSupport" | "heroTrustTags" | "heroTagline" | "heroTitle" | "heroDescription" | "heroBackgroundImagePath" | "aboutTagline" | "aboutTitle" | "aboutDescription" | "aboutButtons" | "deliveryModelTitle" | "deliveryModelItems" | "whyClientsTagline" | "whyClientsTitle" | "whyClientsDescription" | "whyClientsCards" | "globalDeliveryTagline" | "globalDeliveryTitle" | "globalDeliveryDescription" | "globalDeliveryImagePath" | "serviceHeroTitle" | "serviceHeroDescription" | "serviceDeliveryTagline" | "serviceDeliveryTitle" | "serviceDeliveryDescription" | "serviceDeliveryCards" | "showPhone" | "showEmail" | "eventHeroTagline" | "eventHeroTitle" | "eventHeroDescription" | "eventHeroBackgroundImagePath" | "eventUpcommingTagline" | "eventUpcommingTitle" | "eventUpcommingDescription" | "eventGalleryTagline" | "eventGalleryTitle" | "eventGalleryDescription" | "eventContactTitle" | "eventContactDescription" | "smtpHost" | "smtpPort" | "smtpUsername" | "smtpPassword" | "fromName" | "fromEmail" | "replyToEmail" | "supportInbox" | "emailSignature" | "enableNotifications" | "storeDrafts" | "facebookUrl" | "instagramUrl" | "linkedinUrl" | "youtubeUrl" | "whatsappUrl" | "messengerUrl" | "socialBio" | "showSocialIcons" | "openLinksNewTab" | "createdAt" | "updatedAt", ExtArgs["result"]["siteSettings"]>
+  export type SiteSettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "siteName" | "legalName" | "primaryEmail" | "primaryPhone" | "websiteUrl" | "timezone" | "officeAddress" | "officeHours" | "logoPath" | "headerLogoPath" | "footerLogoPath" | "faviconPath" | "metaTitle" | "metaDescription" | "metaKeywords" | "gstNumber" | "cinNumber" | "mapUrl" | "teamMembers" | "happyCustomers" | "operationalSupport" | "heroTrustTags" | "heroTagline" | "heroTitle" | "heroTitleAccent" | "heroTitleSuffix" | "heroDescription" | "heroBackgroundImagePath" | "heroButtonLabel" | "heroButtonHref" | "aboutTagline" | "aboutTitle" | "aboutTitleAccent" | "aboutDescription" | "aboutButtons" | "aboutButtonLabel" | "aboutButtonHref" | "aboutHighlights" | "aboutFeatureCards" | "deliveryModelTitle" | "deliveryModelItems" | "serviceSectionTagline" | "serviceSectionTitle" | "serviceSectionAccent" | "serviceSectionDescription" | "serviceSectionCtaLabel" | "serviceSectionCtaHref" | "whyClientsTagline" | "whyClientsTitle" | "whyClientsDescription" | "whyClientsCards" | "homeTestimonialsTagline" | "homeTestimonialsTitle" | "homeTestimonialsAccent" | "homeTestimonialsDescription" | "homeCtaTagline" | "homeCtaTitle" | "homeCtaAccent" | "homeCtaDescription" | "homeCtaButtonLabel" | "homeCtaButtonHref" | "globalDeliveryTagline" | "globalDeliveryTitle" | "globalDeliveryDescription" | "globalDeliveryImagePath" | "serviceHeroTitle" | "serviceHeroDescription" | "serviceDeliveryTagline" | "serviceDeliveryTitle" | "serviceDeliveryDescription" | "serviceDeliveryCards" | "showPhone" | "showEmail" | "eventHeroTagline" | "eventHeroTitle" | "eventHeroDescription" | "eventHeroBackgroundImagePath" | "eventUpcommingTagline" | "eventUpcommingTitle" | "eventUpcommingDescription" | "eventGalleryTagline" | "eventGalleryTitle" | "eventGalleryDescription" | "eventContactTitle" | "eventContactDescription" | "aboutPageHeroTagline" | "aboutPageHeroTitle" | "aboutPageHeroAccent" | "aboutPageHeroDescription" | "aboutPageHeroImagePath" | "aboutStoryTagline" | "aboutStoryTitle" | "aboutStoryDescription" | "aboutStoryCards" | "aboutApproachTagline" | "aboutApproachTitle" | "aboutApproachDescription" | "aboutApproachTabs" | "aboutLeadershipTitle" | "aboutLeaders" | "aboutPageCtaTagline" | "aboutPageCtaTitle" | "aboutPageCtaDescription" | "aboutPageCtaButtonLabel" | "aboutPageCtaButtonHref" | "contactHeroTagline" | "contactHeroTitle" | "contactHeroAccent" | "contactHeroDescription" | "contactHeroPrimaryButtonLabel" | "contactHeroSecondaryButtonLabel" | "contactPageEmail" | "contactPageAddress" | "contactMetrics" | "contactStepsTagline" | "contactStepsTitle" | "contactStepsDescription" | "contactProcessSteps" | "careerHeroTagline" | "careerHeroTitle" | "careerHeroAccent" | "careerHeroDescription" | "careerHeroImagePath" | "careerHeroButtonLabel" | "careerHeroButtonHref" | "careerLifeTagline" | "careerLifeTitle" | "careerLifeAccent" | "careerLifeDescription" | "careerLifeImagePath" | "careerLifeCalloutTitle" | "careerLifeCalloutDescription" | "careerMetrics" | "careerOpportunitiesTagline" | "careerOpportunitiesTitle" | "careerOpportunitiesAccent" | "careerOpportunitiesDescription" | "careerBenefitsTagline" | "careerBenefitsTitle" | "careerBenefitsAccent" | "careerBenefitsDescription" | "careerBenefits" | "careerBenefitStats" | "careerCtaTagline" | "careerCtaTitle" | "careerCtaDescription" | "careerCtaButtonLabel" | "careerCtaButtonHref" | "growthLearningContent" | "cultureContent" | "smtpHost" | "smtpPort" | "smtpUsername" | "smtpPassword" | "fromName" | "fromEmail" | "replyToEmail" | "supportInbox" | "emailSignature" | "enableNotifications" | "storeDrafts" | "facebookUrl" | "instagramUrl" | "linkedinUrl" | "youtubeUrl" | "whatsappUrl" | "messengerUrl" | "socialBio" | "showSocialIcons" | "openLinksNewTab" | "createdAt" | "updatedAt", ExtArgs["result"]["siteSettings"]>
 
   export type $SiteSettingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "SiteSettings"
@@ -9314,18 +10304,43 @@ export namespace Prisma {
       heroTrustTags: string | null
       heroTagline: string | null
       heroTitle: string | null
+      heroTitleAccent: string | null
+      heroTitleSuffix: string | null
       heroDescription: string | null
       heroBackgroundImagePath: string | null
+      heroButtonLabel: string | null
+      heroButtonHref: string | null
       aboutTagline: string | null
       aboutTitle: string | null
+      aboutTitleAccent: string | null
       aboutDescription: string | null
       aboutButtons: string | null
+      aboutButtonLabel: string | null
+      aboutButtonHref: string | null
+      aboutHighlights: string | null
+      aboutFeatureCards: string | null
       deliveryModelTitle: string | null
       deliveryModelItems: string | null
+      serviceSectionTagline: string | null
+      serviceSectionTitle: string | null
+      serviceSectionAccent: string | null
+      serviceSectionDescription: string | null
+      serviceSectionCtaLabel: string | null
+      serviceSectionCtaHref: string | null
       whyClientsTagline: string | null
       whyClientsTitle: string | null
       whyClientsDescription: string | null
       whyClientsCards: string | null
+      homeTestimonialsTagline: string | null
+      homeTestimonialsTitle: string | null
+      homeTestimonialsAccent: string | null
+      homeTestimonialsDescription: string | null
+      homeCtaTagline: string | null
+      homeCtaTitle: string | null
+      homeCtaAccent: string | null
+      homeCtaDescription: string | null
+      homeCtaButtonLabel: string | null
+      homeCtaButtonHref: string | null
       globalDeliveryTagline: string | null
       globalDeliveryTitle: string | null
       globalDeliveryDescription: string | null
@@ -9350,6 +10365,71 @@ export namespace Prisma {
       eventGalleryDescription: string | null
       eventContactTitle: string | null
       eventContactDescription: string | null
+      aboutPageHeroTagline: string | null
+      aboutPageHeroTitle: string | null
+      aboutPageHeroAccent: string | null
+      aboutPageHeroDescription: string | null
+      aboutPageHeroImagePath: string | null
+      aboutStoryTagline: string | null
+      aboutStoryTitle: string | null
+      aboutStoryDescription: string | null
+      aboutStoryCards: string | null
+      aboutApproachTagline: string | null
+      aboutApproachTitle: string | null
+      aboutApproachDescription: string | null
+      aboutApproachTabs: string | null
+      aboutLeadershipTitle: string | null
+      aboutLeaders: string | null
+      aboutPageCtaTagline: string | null
+      aboutPageCtaTitle: string | null
+      aboutPageCtaDescription: string | null
+      aboutPageCtaButtonLabel: string | null
+      aboutPageCtaButtonHref: string | null
+      contactHeroTagline: string | null
+      contactHeroTitle: string | null
+      contactHeroAccent: string | null
+      contactHeroDescription: string | null
+      contactHeroPrimaryButtonLabel: string | null
+      contactHeroSecondaryButtonLabel: string | null
+      contactPageEmail: string | null
+      contactPageAddress: string | null
+      contactMetrics: string | null
+      contactStepsTagline: string | null
+      contactStepsTitle: string | null
+      contactStepsDescription: string | null
+      contactProcessSteps: string | null
+      careerHeroTagline: string | null
+      careerHeroTitle: string | null
+      careerHeroAccent: string | null
+      careerHeroDescription: string | null
+      careerHeroImagePath: string | null
+      careerHeroButtonLabel: string | null
+      careerHeroButtonHref: string | null
+      careerLifeTagline: string | null
+      careerLifeTitle: string | null
+      careerLifeAccent: string | null
+      careerLifeDescription: string | null
+      careerLifeImagePath: string | null
+      careerLifeCalloutTitle: string | null
+      careerLifeCalloutDescription: string | null
+      careerMetrics: string | null
+      careerOpportunitiesTagline: string | null
+      careerOpportunitiesTitle: string | null
+      careerOpportunitiesAccent: string | null
+      careerOpportunitiesDescription: string | null
+      careerBenefitsTagline: string | null
+      careerBenefitsTitle: string | null
+      careerBenefitsAccent: string | null
+      careerBenefitsDescription: string | null
+      careerBenefits: string | null
+      careerBenefitStats: string | null
+      careerCtaTagline: string | null
+      careerCtaTitle: string | null
+      careerCtaDescription: string | null
+      careerCtaButtonLabel: string | null
+      careerCtaButtonHref: string | null
+      growthLearningContent: string | null
+      cultureContent: string | null
       smtpHost: string | null
       smtpPort: string | null
       smtpUsername: string | null
@@ -9820,18 +10900,43 @@ export namespace Prisma {
     readonly heroTrustTags: FieldRef<"SiteSettings", 'String'>
     readonly heroTagline: FieldRef<"SiteSettings", 'String'>
     readonly heroTitle: FieldRef<"SiteSettings", 'String'>
+    readonly heroTitleAccent: FieldRef<"SiteSettings", 'String'>
+    readonly heroTitleSuffix: FieldRef<"SiteSettings", 'String'>
     readonly heroDescription: FieldRef<"SiteSettings", 'String'>
     readonly heroBackgroundImagePath: FieldRef<"SiteSettings", 'String'>
+    readonly heroButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly heroButtonHref: FieldRef<"SiteSettings", 'String'>
     readonly aboutTagline: FieldRef<"SiteSettings", 'String'>
     readonly aboutTitle: FieldRef<"SiteSettings", 'String'>
+    readonly aboutTitleAccent: FieldRef<"SiteSettings", 'String'>
     readonly aboutDescription: FieldRef<"SiteSettings", 'String'>
     readonly aboutButtons: FieldRef<"SiteSettings", 'String'>
+    readonly aboutButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly aboutButtonHref: FieldRef<"SiteSettings", 'String'>
+    readonly aboutHighlights: FieldRef<"SiteSettings", 'String'>
+    readonly aboutFeatureCards: FieldRef<"SiteSettings", 'String'>
     readonly deliveryModelTitle: FieldRef<"SiteSettings", 'String'>
     readonly deliveryModelItems: FieldRef<"SiteSettings", 'String'>
+    readonly serviceSectionTagline: FieldRef<"SiteSettings", 'String'>
+    readonly serviceSectionTitle: FieldRef<"SiteSettings", 'String'>
+    readonly serviceSectionAccent: FieldRef<"SiteSettings", 'String'>
+    readonly serviceSectionDescription: FieldRef<"SiteSettings", 'String'>
+    readonly serviceSectionCtaLabel: FieldRef<"SiteSettings", 'String'>
+    readonly serviceSectionCtaHref: FieldRef<"SiteSettings", 'String'>
     readonly whyClientsTagline: FieldRef<"SiteSettings", 'String'>
     readonly whyClientsTitle: FieldRef<"SiteSettings", 'String'>
     readonly whyClientsDescription: FieldRef<"SiteSettings", 'String'>
     readonly whyClientsCards: FieldRef<"SiteSettings", 'String'>
+    readonly homeTestimonialsTagline: FieldRef<"SiteSettings", 'String'>
+    readonly homeTestimonialsTitle: FieldRef<"SiteSettings", 'String'>
+    readonly homeTestimonialsAccent: FieldRef<"SiteSettings", 'String'>
+    readonly homeTestimonialsDescription: FieldRef<"SiteSettings", 'String'>
+    readonly homeCtaTagline: FieldRef<"SiteSettings", 'String'>
+    readonly homeCtaTitle: FieldRef<"SiteSettings", 'String'>
+    readonly homeCtaAccent: FieldRef<"SiteSettings", 'String'>
+    readonly homeCtaDescription: FieldRef<"SiteSettings", 'String'>
+    readonly homeCtaButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly homeCtaButtonHref: FieldRef<"SiteSettings", 'String'>
     readonly globalDeliveryTagline: FieldRef<"SiteSettings", 'String'>
     readonly globalDeliveryTitle: FieldRef<"SiteSettings", 'String'>
     readonly globalDeliveryDescription: FieldRef<"SiteSettings", 'String'>
@@ -9856,6 +10961,71 @@ export namespace Prisma {
     readonly eventGalleryDescription: FieldRef<"SiteSettings", 'String'>
     readonly eventContactTitle: FieldRef<"SiteSettings", 'String'>
     readonly eventContactDescription: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageHeroTagline: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageHeroTitle: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageHeroAccent: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageHeroDescription: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageHeroImagePath: FieldRef<"SiteSettings", 'String'>
+    readonly aboutStoryTagline: FieldRef<"SiteSettings", 'String'>
+    readonly aboutStoryTitle: FieldRef<"SiteSettings", 'String'>
+    readonly aboutStoryDescription: FieldRef<"SiteSettings", 'String'>
+    readonly aboutStoryCards: FieldRef<"SiteSettings", 'String'>
+    readonly aboutApproachTagline: FieldRef<"SiteSettings", 'String'>
+    readonly aboutApproachTitle: FieldRef<"SiteSettings", 'String'>
+    readonly aboutApproachDescription: FieldRef<"SiteSettings", 'String'>
+    readonly aboutApproachTabs: FieldRef<"SiteSettings", 'String'>
+    readonly aboutLeadershipTitle: FieldRef<"SiteSettings", 'String'>
+    readonly aboutLeaders: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageCtaTagline: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageCtaTitle: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageCtaDescription: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageCtaButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly aboutPageCtaButtonHref: FieldRef<"SiteSettings", 'String'>
+    readonly contactHeroTagline: FieldRef<"SiteSettings", 'String'>
+    readonly contactHeroTitle: FieldRef<"SiteSettings", 'String'>
+    readonly contactHeroAccent: FieldRef<"SiteSettings", 'String'>
+    readonly contactHeroDescription: FieldRef<"SiteSettings", 'String'>
+    readonly contactHeroPrimaryButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly contactHeroSecondaryButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly contactPageEmail: FieldRef<"SiteSettings", 'String'>
+    readonly contactPageAddress: FieldRef<"SiteSettings", 'String'>
+    readonly contactMetrics: FieldRef<"SiteSettings", 'String'>
+    readonly contactStepsTagline: FieldRef<"SiteSettings", 'String'>
+    readonly contactStepsTitle: FieldRef<"SiteSettings", 'String'>
+    readonly contactStepsDescription: FieldRef<"SiteSettings", 'String'>
+    readonly contactProcessSteps: FieldRef<"SiteSettings", 'String'>
+    readonly careerHeroTagline: FieldRef<"SiteSettings", 'String'>
+    readonly careerHeroTitle: FieldRef<"SiteSettings", 'String'>
+    readonly careerHeroAccent: FieldRef<"SiteSettings", 'String'>
+    readonly careerHeroDescription: FieldRef<"SiteSettings", 'String'>
+    readonly careerHeroImagePath: FieldRef<"SiteSettings", 'String'>
+    readonly careerHeroButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly careerHeroButtonHref: FieldRef<"SiteSettings", 'String'>
+    readonly careerLifeTagline: FieldRef<"SiteSettings", 'String'>
+    readonly careerLifeTitle: FieldRef<"SiteSettings", 'String'>
+    readonly careerLifeAccent: FieldRef<"SiteSettings", 'String'>
+    readonly careerLifeDescription: FieldRef<"SiteSettings", 'String'>
+    readonly careerLifeImagePath: FieldRef<"SiteSettings", 'String'>
+    readonly careerLifeCalloutTitle: FieldRef<"SiteSettings", 'String'>
+    readonly careerLifeCalloutDescription: FieldRef<"SiteSettings", 'String'>
+    readonly careerMetrics: FieldRef<"SiteSettings", 'String'>
+    readonly careerOpportunitiesTagline: FieldRef<"SiteSettings", 'String'>
+    readonly careerOpportunitiesTitle: FieldRef<"SiteSettings", 'String'>
+    readonly careerOpportunitiesAccent: FieldRef<"SiteSettings", 'String'>
+    readonly careerOpportunitiesDescription: FieldRef<"SiteSettings", 'String'>
+    readonly careerBenefitsTagline: FieldRef<"SiteSettings", 'String'>
+    readonly careerBenefitsTitle: FieldRef<"SiteSettings", 'String'>
+    readonly careerBenefitsAccent: FieldRef<"SiteSettings", 'String'>
+    readonly careerBenefitsDescription: FieldRef<"SiteSettings", 'String'>
+    readonly careerBenefits: FieldRef<"SiteSettings", 'String'>
+    readonly careerBenefitStats: FieldRef<"SiteSettings", 'String'>
+    readonly careerCtaTagline: FieldRef<"SiteSettings", 'String'>
+    readonly careerCtaTitle: FieldRef<"SiteSettings", 'String'>
+    readonly careerCtaDescription: FieldRef<"SiteSettings", 'String'>
+    readonly careerCtaButtonLabel: FieldRef<"SiteSettings", 'String'>
+    readonly careerCtaButtonHref: FieldRef<"SiteSettings", 'String'>
+    readonly growthLearningContent: FieldRef<"SiteSettings", 'String'>
+    readonly cultureContent: FieldRef<"SiteSettings", 'String'>
     readonly smtpHost: FieldRef<"SiteSettings", 'String'>
     readonly smtpPort: FieldRef<"SiteSettings", 'String'>
     readonly smtpUsername: FieldRef<"SiteSettings", 'String'>
@@ -24823,18 +25993,43 @@ export namespace Prisma {
     heroTrustTags: 'heroTrustTags',
     heroTagline: 'heroTagline',
     heroTitle: 'heroTitle',
+    heroTitleAccent: 'heroTitleAccent',
+    heroTitleSuffix: 'heroTitleSuffix',
     heroDescription: 'heroDescription',
     heroBackgroundImagePath: 'heroBackgroundImagePath',
+    heroButtonLabel: 'heroButtonLabel',
+    heroButtonHref: 'heroButtonHref',
     aboutTagline: 'aboutTagline',
     aboutTitle: 'aboutTitle',
+    aboutTitleAccent: 'aboutTitleAccent',
     aboutDescription: 'aboutDescription',
     aboutButtons: 'aboutButtons',
+    aboutButtonLabel: 'aboutButtonLabel',
+    aboutButtonHref: 'aboutButtonHref',
+    aboutHighlights: 'aboutHighlights',
+    aboutFeatureCards: 'aboutFeatureCards',
     deliveryModelTitle: 'deliveryModelTitle',
     deliveryModelItems: 'deliveryModelItems',
+    serviceSectionTagline: 'serviceSectionTagline',
+    serviceSectionTitle: 'serviceSectionTitle',
+    serviceSectionAccent: 'serviceSectionAccent',
+    serviceSectionDescription: 'serviceSectionDescription',
+    serviceSectionCtaLabel: 'serviceSectionCtaLabel',
+    serviceSectionCtaHref: 'serviceSectionCtaHref',
     whyClientsTagline: 'whyClientsTagline',
     whyClientsTitle: 'whyClientsTitle',
     whyClientsDescription: 'whyClientsDescription',
     whyClientsCards: 'whyClientsCards',
+    homeTestimonialsTagline: 'homeTestimonialsTagline',
+    homeTestimonialsTitle: 'homeTestimonialsTitle',
+    homeTestimonialsAccent: 'homeTestimonialsAccent',
+    homeTestimonialsDescription: 'homeTestimonialsDescription',
+    homeCtaTagline: 'homeCtaTagline',
+    homeCtaTitle: 'homeCtaTitle',
+    homeCtaAccent: 'homeCtaAccent',
+    homeCtaDescription: 'homeCtaDescription',
+    homeCtaButtonLabel: 'homeCtaButtonLabel',
+    homeCtaButtonHref: 'homeCtaButtonHref',
     globalDeliveryTagline: 'globalDeliveryTagline',
     globalDeliveryTitle: 'globalDeliveryTitle',
     globalDeliveryDescription: 'globalDeliveryDescription',
@@ -24859,6 +26054,71 @@ export namespace Prisma {
     eventGalleryDescription: 'eventGalleryDescription',
     eventContactTitle: 'eventContactTitle',
     eventContactDescription: 'eventContactDescription',
+    aboutPageHeroTagline: 'aboutPageHeroTagline',
+    aboutPageHeroTitle: 'aboutPageHeroTitle',
+    aboutPageHeroAccent: 'aboutPageHeroAccent',
+    aboutPageHeroDescription: 'aboutPageHeroDescription',
+    aboutPageHeroImagePath: 'aboutPageHeroImagePath',
+    aboutStoryTagline: 'aboutStoryTagline',
+    aboutStoryTitle: 'aboutStoryTitle',
+    aboutStoryDescription: 'aboutStoryDescription',
+    aboutStoryCards: 'aboutStoryCards',
+    aboutApproachTagline: 'aboutApproachTagline',
+    aboutApproachTitle: 'aboutApproachTitle',
+    aboutApproachDescription: 'aboutApproachDescription',
+    aboutApproachTabs: 'aboutApproachTabs',
+    aboutLeadershipTitle: 'aboutLeadershipTitle',
+    aboutLeaders: 'aboutLeaders',
+    aboutPageCtaTagline: 'aboutPageCtaTagline',
+    aboutPageCtaTitle: 'aboutPageCtaTitle',
+    aboutPageCtaDescription: 'aboutPageCtaDescription',
+    aboutPageCtaButtonLabel: 'aboutPageCtaButtonLabel',
+    aboutPageCtaButtonHref: 'aboutPageCtaButtonHref',
+    contactHeroTagline: 'contactHeroTagline',
+    contactHeroTitle: 'contactHeroTitle',
+    contactHeroAccent: 'contactHeroAccent',
+    contactHeroDescription: 'contactHeroDescription',
+    contactHeroPrimaryButtonLabel: 'contactHeroPrimaryButtonLabel',
+    contactHeroSecondaryButtonLabel: 'contactHeroSecondaryButtonLabel',
+    contactPageEmail: 'contactPageEmail',
+    contactPageAddress: 'contactPageAddress',
+    contactMetrics: 'contactMetrics',
+    contactStepsTagline: 'contactStepsTagline',
+    contactStepsTitle: 'contactStepsTitle',
+    contactStepsDescription: 'contactStepsDescription',
+    contactProcessSteps: 'contactProcessSteps',
+    careerHeroTagline: 'careerHeroTagline',
+    careerHeroTitle: 'careerHeroTitle',
+    careerHeroAccent: 'careerHeroAccent',
+    careerHeroDescription: 'careerHeroDescription',
+    careerHeroImagePath: 'careerHeroImagePath',
+    careerHeroButtonLabel: 'careerHeroButtonLabel',
+    careerHeroButtonHref: 'careerHeroButtonHref',
+    careerLifeTagline: 'careerLifeTagline',
+    careerLifeTitle: 'careerLifeTitle',
+    careerLifeAccent: 'careerLifeAccent',
+    careerLifeDescription: 'careerLifeDescription',
+    careerLifeImagePath: 'careerLifeImagePath',
+    careerLifeCalloutTitle: 'careerLifeCalloutTitle',
+    careerLifeCalloutDescription: 'careerLifeCalloutDescription',
+    careerMetrics: 'careerMetrics',
+    careerOpportunitiesTagline: 'careerOpportunitiesTagline',
+    careerOpportunitiesTitle: 'careerOpportunitiesTitle',
+    careerOpportunitiesAccent: 'careerOpportunitiesAccent',
+    careerOpportunitiesDescription: 'careerOpportunitiesDescription',
+    careerBenefitsTagline: 'careerBenefitsTagline',
+    careerBenefitsTitle: 'careerBenefitsTitle',
+    careerBenefitsAccent: 'careerBenefitsAccent',
+    careerBenefitsDescription: 'careerBenefitsDescription',
+    careerBenefits: 'careerBenefits',
+    careerBenefitStats: 'careerBenefitStats',
+    careerCtaTagline: 'careerCtaTagline',
+    careerCtaTitle: 'careerCtaTitle',
+    careerCtaDescription: 'careerCtaDescription',
+    careerCtaButtonLabel: 'careerCtaButtonLabel',
+    careerCtaButtonHref: 'careerCtaButtonHref',
+    growthLearningContent: 'growthLearningContent',
+    cultureContent: 'cultureContent',
     smtpHost: 'smtpHost',
     smtpPort: 'smtpPort',
     smtpUsername: 'smtpUsername',
@@ -25630,18 +26890,43 @@ export namespace Prisma {
     heroTrustTags?: StringNullableFilter<"SiteSettings"> | string | null
     heroTagline?: StringNullableFilter<"SiteSettings"> | string | null
     heroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    heroTitleAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    heroTitleSuffix?: StringNullableFilter<"SiteSettings"> | string | null
     heroDescription?: StringNullableFilter<"SiteSettings"> | string | null
     heroBackgroundImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    heroButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    heroButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
     aboutTagline?: StringNullableFilter<"SiteSettings"> | string | null
     aboutTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutTitleAccent?: StringNullableFilter<"SiteSettings"> | string | null
     aboutDescription?: StringNullableFilter<"SiteSettings"> | string | null
     aboutButtons?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutHighlights?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutFeatureCards?: StringNullableFilter<"SiteSettings"> | string | null
     deliveryModelTitle?: StringNullableFilter<"SiteSettings"> | string | null
     deliveryModelItems?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionCtaLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionCtaHref?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsTagline?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsTitle?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsDescription?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsCards?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
     globalDeliveryTagline?: StringNullableFilter<"SiteSettings"> | string | null
     globalDeliveryTitle?: StringNullableFilter<"SiteSettings"> | string | null
     globalDeliveryDescription?: StringNullableFilter<"SiteSettings"> | string | null
@@ -25666,6 +26951,71 @@ export namespace Prisma {
     eventGalleryDescription?: StringNullableFilter<"SiteSettings"> | string | null
     eventContactTitle?: StringNullableFilter<"SiteSettings"> | string | null
     eventContactDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryCards?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachTabs?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutLeadershipTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutLeaders?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroPrimaryButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroSecondaryButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    contactPageEmail?: StringNullableFilter<"SiteSettings"> | string | null
+    contactPageAddress?: StringNullableFilter<"SiteSettings"> | string | null
+    contactMetrics?: StringNullableFilter<"SiteSettings"> | string | null
+    contactStepsTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    contactStepsTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    contactStepsDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    contactProcessSteps?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeCalloutTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeCalloutDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerMetrics?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefits?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitStats?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    growthLearningContent?: StringNullableFilter<"SiteSettings"> | string | null
+    cultureContent?: StringNullableFilter<"SiteSettings"> | string | null
     smtpHost?: StringNullableFilter<"SiteSettings"> | string | null
     smtpPort?: StringNullableFilter<"SiteSettings"> | string | null
     smtpUsername?: StringNullableFilter<"SiteSettings"> | string | null
@@ -25716,18 +27066,43 @@ export namespace Prisma {
     heroTrustTags?: SortOrderInput | SortOrder
     heroTagline?: SortOrderInput | SortOrder
     heroTitle?: SortOrderInput | SortOrder
+    heroTitleAccent?: SortOrderInput | SortOrder
+    heroTitleSuffix?: SortOrderInput | SortOrder
     heroDescription?: SortOrderInput | SortOrder
     heroBackgroundImagePath?: SortOrderInput | SortOrder
+    heroButtonLabel?: SortOrderInput | SortOrder
+    heroButtonHref?: SortOrderInput | SortOrder
     aboutTagline?: SortOrderInput | SortOrder
     aboutTitle?: SortOrderInput | SortOrder
+    aboutTitleAccent?: SortOrderInput | SortOrder
     aboutDescription?: SortOrderInput | SortOrder
     aboutButtons?: SortOrderInput | SortOrder
+    aboutButtonLabel?: SortOrderInput | SortOrder
+    aboutButtonHref?: SortOrderInput | SortOrder
+    aboutHighlights?: SortOrderInput | SortOrder
+    aboutFeatureCards?: SortOrderInput | SortOrder
     deliveryModelTitle?: SortOrderInput | SortOrder
     deliveryModelItems?: SortOrderInput | SortOrder
+    serviceSectionTagline?: SortOrderInput | SortOrder
+    serviceSectionTitle?: SortOrderInput | SortOrder
+    serviceSectionAccent?: SortOrderInput | SortOrder
+    serviceSectionDescription?: SortOrderInput | SortOrder
+    serviceSectionCtaLabel?: SortOrderInput | SortOrder
+    serviceSectionCtaHref?: SortOrderInput | SortOrder
     whyClientsTagline?: SortOrderInput | SortOrder
     whyClientsTitle?: SortOrderInput | SortOrder
     whyClientsDescription?: SortOrderInput | SortOrder
     whyClientsCards?: SortOrderInput | SortOrder
+    homeTestimonialsTagline?: SortOrderInput | SortOrder
+    homeTestimonialsTitle?: SortOrderInput | SortOrder
+    homeTestimonialsAccent?: SortOrderInput | SortOrder
+    homeTestimonialsDescription?: SortOrderInput | SortOrder
+    homeCtaTagline?: SortOrderInput | SortOrder
+    homeCtaTitle?: SortOrderInput | SortOrder
+    homeCtaAccent?: SortOrderInput | SortOrder
+    homeCtaDescription?: SortOrderInput | SortOrder
+    homeCtaButtonLabel?: SortOrderInput | SortOrder
+    homeCtaButtonHref?: SortOrderInput | SortOrder
     globalDeliveryTagline?: SortOrderInput | SortOrder
     globalDeliveryTitle?: SortOrderInput | SortOrder
     globalDeliveryDescription?: SortOrderInput | SortOrder
@@ -25752,6 +27127,71 @@ export namespace Prisma {
     eventGalleryDescription?: SortOrderInput | SortOrder
     eventContactTitle?: SortOrderInput | SortOrder
     eventContactDescription?: SortOrderInput | SortOrder
+    aboutPageHeroTagline?: SortOrderInput | SortOrder
+    aboutPageHeroTitle?: SortOrderInput | SortOrder
+    aboutPageHeroAccent?: SortOrderInput | SortOrder
+    aboutPageHeroDescription?: SortOrderInput | SortOrder
+    aboutPageHeroImagePath?: SortOrderInput | SortOrder
+    aboutStoryTagline?: SortOrderInput | SortOrder
+    aboutStoryTitle?: SortOrderInput | SortOrder
+    aboutStoryDescription?: SortOrderInput | SortOrder
+    aboutStoryCards?: SortOrderInput | SortOrder
+    aboutApproachTagline?: SortOrderInput | SortOrder
+    aboutApproachTitle?: SortOrderInput | SortOrder
+    aboutApproachDescription?: SortOrderInput | SortOrder
+    aboutApproachTabs?: SortOrderInput | SortOrder
+    aboutLeadershipTitle?: SortOrderInput | SortOrder
+    aboutLeaders?: SortOrderInput | SortOrder
+    aboutPageCtaTagline?: SortOrderInput | SortOrder
+    aboutPageCtaTitle?: SortOrderInput | SortOrder
+    aboutPageCtaDescription?: SortOrderInput | SortOrder
+    aboutPageCtaButtonLabel?: SortOrderInput | SortOrder
+    aboutPageCtaButtonHref?: SortOrderInput | SortOrder
+    contactHeroTagline?: SortOrderInput | SortOrder
+    contactHeroTitle?: SortOrderInput | SortOrder
+    contactHeroAccent?: SortOrderInput | SortOrder
+    contactHeroDescription?: SortOrderInput | SortOrder
+    contactHeroPrimaryButtonLabel?: SortOrderInput | SortOrder
+    contactHeroSecondaryButtonLabel?: SortOrderInput | SortOrder
+    contactPageEmail?: SortOrderInput | SortOrder
+    contactPageAddress?: SortOrderInput | SortOrder
+    contactMetrics?: SortOrderInput | SortOrder
+    contactStepsTagline?: SortOrderInput | SortOrder
+    contactStepsTitle?: SortOrderInput | SortOrder
+    contactStepsDescription?: SortOrderInput | SortOrder
+    contactProcessSteps?: SortOrderInput | SortOrder
+    careerHeroTagline?: SortOrderInput | SortOrder
+    careerHeroTitle?: SortOrderInput | SortOrder
+    careerHeroAccent?: SortOrderInput | SortOrder
+    careerHeroDescription?: SortOrderInput | SortOrder
+    careerHeroImagePath?: SortOrderInput | SortOrder
+    careerHeroButtonLabel?: SortOrderInput | SortOrder
+    careerHeroButtonHref?: SortOrderInput | SortOrder
+    careerLifeTagline?: SortOrderInput | SortOrder
+    careerLifeTitle?: SortOrderInput | SortOrder
+    careerLifeAccent?: SortOrderInput | SortOrder
+    careerLifeDescription?: SortOrderInput | SortOrder
+    careerLifeImagePath?: SortOrderInput | SortOrder
+    careerLifeCalloutTitle?: SortOrderInput | SortOrder
+    careerLifeCalloutDescription?: SortOrderInput | SortOrder
+    careerMetrics?: SortOrderInput | SortOrder
+    careerOpportunitiesTagline?: SortOrderInput | SortOrder
+    careerOpportunitiesTitle?: SortOrderInput | SortOrder
+    careerOpportunitiesAccent?: SortOrderInput | SortOrder
+    careerOpportunitiesDescription?: SortOrderInput | SortOrder
+    careerBenefitsTagline?: SortOrderInput | SortOrder
+    careerBenefitsTitle?: SortOrderInput | SortOrder
+    careerBenefitsAccent?: SortOrderInput | SortOrder
+    careerBenefitsDescription?: SortOrderInput | SortOrder
+    careerBenefits?: SortOrderInput | SortOrder
+    careerBenefitStats?: SortOrderInput | SortOrder
+    careerCtaTagline?: SortOrderInput | SortOrder
+    careerCtaTitle?: SortOrderInput | SortOrder
+    careerCtaDescription?: SortOrderInput | SortOrder
+    careerCtaButtonLabel?: SortOrderInput | SortOrder
+    careerCtaButtonHref?: SortOrderInput | SortOrder
+    growthLearningContent?: SortOrderInput | SortOrder
+    cultureContent?: SortOrderInput | SortOrder
     smtpHost?: SortOrderInput | SortOrder
     smtpPort?: SortOrderInput | SortOrder
     smtpUsername?: SortOrderInput | SortOrder
@@ -25805,18 +27245,43 @@ export namespace Prisma {
     heroTrustTags?: StringNullableFilter<"SiteSettings"> | string | null
     heroTagline?: StringNullableFilter<"SiteSettings"> | string | null
     heroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    heroTitleAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    heroTitleSuffix?: StringNullableFilter<"SiteSettings"> | string | null
     heroDescription?: StringNullableFilter<"SiteSettings"> | string | null
     heroBackgroundImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    heroButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    heroButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
     aboutTagline?: StringNullableFilter<"SiteSettings"> | string | null
     aboutTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutTitleAccent?: StringNullableFilter<"SiteSettings"> | string | null
     aboutDescription?: StringNullableFilter<"SiteSettings"> | string | null
     aboutButtons?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutHighlights?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutFeatureCards?: StringNullableFilter<"SiteSettings"> | string | null
     deliveryModelTitle?: StringNullableFilter<"SiteSettings"> | string | null
     deliveryModelItems?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionCtaLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceSectionCtaHref?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsTagline?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsTitle?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsDescription?: StringNullableFilter<"SiteSettings"> | string | null
     whyClientsCards?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    homeTestimonialsDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    homeCtaButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
     globalDeliveryTagline?: StringNullableFilter<"SiteSettings"> | string | null
     globalDeliveryTitle?: StringNullableFilter<"SiteSettings"> | string | null
     globalDeliveryDescription?: StringNullableFilter<"SiteSettings"> | string | null
@@ -25841,6 +27306,71 @@ export namespace Prisma {
     eventGalleryDescription?: StringNullableFilter<"SiteSettings"> | string | null
     eventContactTitle?: StringNullableFilter<"SiteSettings"> | string | null
     eventContactDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageHeroImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutStoryCards?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutApproachTabs?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutLeadershipTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutLeaders?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    aboutPageCtaButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroPrimaryButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    contactHeroSecondaryButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    contactPageEmail?: StringNullableFilter<"SiteSettings"> | string | null
+    contactPageAddress?: StringNullableFilter<"SiteSettings"> | string | null
+    contactMetrics?: StringNullableFilter<"SiteSettings"> | string | null
+    contactStepsTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    contactStepsTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    contactStepsDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    contactProcessSteps?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    careerHeroButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeImagePath?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeCalloutTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerLifeCalloutDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerMetrics?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerOpportunitiesDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsAccent?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitsDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefits?: StringNullableFilter<"SiteSettings"> | string | null
+    careerBenefitStats?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaTagline?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaTitle?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaButtonLabel?: StringNullableFilter<"SiteSettings"> | string | null
+    careerCtaButtonHref?: StringNullableFilter<"SiteSettings"> | string | null
+    growthLearningContent?: StringNullableFilter<"SiteSettings"> | string | null
+    cultureContent?: StringNullableFilter<"SiteSettings"> | string | null
     smtpHost?: StringNullableFilter<"SiteSettings"> | string | null
     smtpPort?: StringNullableFilter<"SiteSettings"> | string | null
     smtpUsername?: StringNullableFilter<"SiteSettings"> | string | null
@@ -25891,18 +27421,43 @@ export namespace Prisma {
     heroTrustTags?: SortOrderInput | SortOrder
     heroTagline?: SortOrderInput | SortOrder
     heroTitle?: SortOrderInput | SortOrder
+    heroTitleAccent?: SortOrderInput | SortOrder
+    heroTitleSuffix?: SortOrderInput | SortOrder
     heroDescription?: SortOrderInput | SortOrder
     heroBackgroundImagePath?: SortOrderInput | SortOrder
+    heroButtonLabel?: SortOrderInput | SortOrder
+    heroButtonHref?: SortOrderInput | SortOrder
     aboutTagline?: SortOrderInput | SortOrder
     aboutTitle?: SortOrderInput | SortOrder
+    aboutTitleAccent?: SortOrderInput | SortOrder
     aboutDescription?: SortOrderInput | SortOrder
     aboutButtons?: SortOrderInput | SortOrder
+    aboutButtonLabel?: SortOrderInput | SortOrder
+    aboutButtonHref?: SortOrderInput | SortOrder
+    aboutHighlights?: SortOrderInput | SortOrder
+    aboutFeatureCards?: SortOrderInput | SortOrder
     deliveryModelTitle?: SortOrderInput | SortOrder
     deliveryModelItems?: SortOrderInput | SortOrder
+    serviceSectionTagline?: SortOrderInput | SortOrder
+    serviceSectionTitle?: SortOrderInput | SortOrder
+    serviceSectionAccent?: SortOrderInput | SortOrder
+    serviceSectionDescription?: SortOrderInput | SortOrder
+    serviceSectionCtaLabel?: SortOrderInput | SortOrder
+    serviceSectionCtaHref?: SortOrderInput | SortOrder
     whyClientsTagline?: SortOrderInput | SortOrder
     whyClientsTitle?: SortOrderInput | SortOrder
     whyClientsDescription?: SortOrderInput | SortOrder
     whyClientsCards?: SortOrderInput | SortOrder
+    homeTestimonialsTagline?: SortOrderInput | SortOrder
+    homeTestimonialsTitle?: SortOrderInput | SortOrder
+    homeTestimonialsAccent?: SortOrderInput | SortOrder
+    homeTestimonialsDescription?: SortOrderInput | SortOrder
+    homeCtaTagline?: SortOrderInput | SortOrder
+    homeCtaTitle?: SortOrderInput | SortOrder
+    homeCtaAccent?: SortOrderInput | SortOrder
+    homeCtaDescription?: SortOrderInput | SortOrder
+    homeCtaButtonLabel?: SortOrderInput | SortOrder
+    homeCtaButtonHref?: SortOrderInput | SortOrder
     globalDeliveryTagline?: SortOrderInput | SortOrder
     globalDeliveryTitle?: SortOrderInput | SortOrder
     globalDeliveryDescription?: SortOrderInput | SortOrder
@@ -25927,6 +27482,71 @@ export namespace Prisma {
     eventGalleryDescription?: SortOrderInput | SortOrder
     eventContactTitle?: SortOrderInput | SortOrder
     eventContactDescription?: SortOrderInput | SortOrder
+    aboutPageHeroTagline?: SortOrderInput | SortOrder
+    aboutPageHeroTitle?: SortOrderInput | SortOrder
+    aboutPageHeroAccent?: SortOrderInput | SortOrder
+    aboutPageHeroDescription?: SortOrderInput | SortOrder
+    aboutPageHeroImagePath?: SortOrderInput | SortOrder
+    aboutStoryTagline?: SortOrderInput | SortOrder
+    aboutStoryTitle?: SortOrderInput | SortOrder
+    aboutStoryDescription?: SortOrderInput | SortOrder
+    aboutStoryCards?: SortOrderInput | SortOrder
+    aboutApproachTagline?: SortOrderInput | SortOrder
+    aboutApproachTitle?: SortOrderInput | SortOrder
+    aboutApproachDescription?: SortOrderInput | SortOrder
+    aboutApproachTabs?: SortOrderInput | SortOrder
+    aboutLeadershipTitle?: SortOrderInput | SortOrder
+    aboutLeaders?: SortOrderInput | SortOrder
+    aboutPageCtaTagline?: SortOrderInput | SortOrder
+    aboutPageCtaTitle?: SortOrderInput | SortOrder
+    aboutPageCtaDescription?: SortOrderInput | SortOrder
+    aboutPageCtaButtonLabel?: SortOrderInput | SortOrder
+    aboutPageCtaButtonHref?: SortOrderInput | SortOrder
+    contactHeroTagline?: SortOrderInput | SortOrder
+    contactHeroTitle?: SortOrderInput | SortOrder
+    contactHeroAccent?: SortOrderInput | SortOrder
+    contactHeroDescription?: SortOrderInput | SortOrder
+    contactHeroPrimaryButtonLabel?: SortOrderInput | SortOrder
+    contactHeroSecondaryButtonLabel?: SortOrderInput | SortOrder
+    contactPageEmail?: SortOrderInput | SortOrder
+    contactPageAddress?: SortOrderInput | SortOrder
+    contactMetrics?: SortOrderInput | SortOrder
+    contactStepsTagline?: SortOrderInput | SortOrder
+    contactStepsTitle?: SortOrderInput | SortOrder
+    contactStepsDescription?: SortOrderInput | SortOrder
+    contactProcessSteps?: SortOrderInput | SortOrder
+    careerHeroTagline?: SortOrderInput | SortOrder
+    careerHeroTitle?: SortOrderInput | SortOrder
+    careerHeroAccent?: SortOrderInput | SortOrder
+    careerHeroDescription?: SortOrderInput | SortOrder
+    careerHeroImagePath?: SortOrderInput | SortOrder
+    careerHeroButtonLabel?: SortOrderInput | SortOrder
+    careerHeroButtonHref?: SortOrderInput | SortOrder
+    careerLifeTagline?: SortOrderInput | SortOrder
+    careerLifeTitle?: SortOrderInput | SortOrder
+    careerLifeAccent?: SortOrderInput | SortOrder
+    careerLifeDescription?: SortOrderInput | SortOrder
+    careerLifeImagePath?: SortOrderInput | SortOrder
+    careerLifeCalloutTitle?: SortOrderInput | SortOrder
+    careerLifeCalloutDescription?: SortOrderInput | SortOrder
+    careerMetrics?: SortOrderInput | SortOrder
+    careerOpportunitiesTagline?: SortOrderInput | SortOrder
+    careerOpportunitiesTitle?: SortOrderInput | SortOrder
+    careerOpportunitiesAccent?: SortOrderInput | SortOrder
+    careerOpportunitiesDescription?: SortOrderInput | SortOrder
+    careerBenefitsTagline?: SortOrderInput | SortOrder
+    careerBenefitsTitle?: SortOrderInput | SortOrder
+    careerBenefitsAccent?: SortOrderInput | SortOrder
+    careerBenefitsDescription?: SortOrderInput | SortOrder
+    careerBenefits?: SortOrderInput | SortOrder
+    careerBenefitStats?: SortOrderInput | SortOrder
+    careerCtaTagline?: SortOrderInput | SortOrder
+    careerCtaTitle?: SortOrderInput | SortOrder
+    careerCtaDescription?: SortOrderInput | SortOrder
+    careerCtaButtonLabel?: SortOrderInput | SortOrder
+    careerCtaButtonHref?: SortOrderInput | SortOrder
+    growthLearningContent?: SortOrderInput | SortOrder
+    cultureContent?: SortOrderInput | SortOrder
     smtpHost?: SortOrderInput | SortOrder
     smtpPort?: SortOrderInput | SortOrder
     smtpUsername?: SortOrderInput | SortOrder
@@ -25983,18 +27603,43 @@ export namespace Prisma {
     heroTrustTags?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     heroTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     heroTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    heroTitleAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    heroTitleSuffix?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     heroDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     heroBackgroundImagePath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    heroButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    heroButtonHref?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     aboutTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     aboutTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutTitleAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     aboutDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     aboutButtons?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutButtonHref?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutHighlights?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutFeatureCards?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     deliveryModelTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     deliveryModelItems?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    serviceSectionTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    serviceSectionTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    serviceSectionAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    serviceSectionDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    serviceSectionCtaLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    serviceSectionCtaHref?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     whyClientsTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     whyClientsTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     whyClientsDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     whyClientsCards?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeTestimonialsTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeTestimonialsTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeTestimonialsAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeTestimonialsDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeCtaTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeCtaTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeCtaAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeCtaDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeCtaButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    homeCtaButtonHref?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     globalDeliveryTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     globalDeliveryTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     globalDeliveryDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
@@ -26019,6 +27664,71 @@ export namespace Prisma {
     eventGalleryDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     eventContactTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     eventContactDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageHeroTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageHeroTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageHeroAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageHeroDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageHeroImagePath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutStoryTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutStoryTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutStoryDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutStoryCards?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutApproachTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutApproachTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutApproachDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutApproachTabs?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutLeadershipTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutLeaders?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageCtaTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageCtaTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageCtaDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageCtaButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    aboutPageCtaButtonHref?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactHeroTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactHeroTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactHeroAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactHeroDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactHeroPrimaryButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactHeroSecondaryButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactPageEmail?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactPageAddress?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactMetrics?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactStepsTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactStepsTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactStepsDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    contactProcessSteps?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerHeroTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerHeroTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerHeroAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerHeroDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerHeroImagePath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerHeroButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerHeroButtonHref?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerLifeTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerLifeTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerLifeAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerLifeDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerLifeImagePath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerLifeCalloutTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerLifeCalloutDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerMetrics?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerOpportunitiesTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerOpportunitiesTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerOpportunitiesAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerOpportunitiesDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerBenefitsTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerBenefitsTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerBenefitsAccent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerBenefitsDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerBenefits?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerBenefitStats?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerCtaTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerCtaTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerCtaDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerCtaButtonLabel?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    careerCtaButtonHref?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    growthLearningContent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    cultureContent?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     smtpHost?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     smtpPort?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     smtpUsername?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
@@ -27419,18 +29129,43 @@ export namespace Prisma {
     heroTrustTags?: string | null
     heroTagline?: string | null
     heroTitle?: string | null
+    heroTitleAccent?: string | null
+    heroTitleSuffix?: string | null
     heroDescription?: string | null
     heroBackgroundImagePath?: string | null
+    heroButtonLabel?: string | null
+    heroButtonHref?: string | null
     aboutTagline?: string | null
     aboutTitle?: string | null
+    aboutTitleAccent?: string | null
     aboutDescription?: string | null
     aboutButtons?: string | null
+    aboutButtonLabel?: string | null
+    aboutButtonHref?: string | null
+    aboutHighlights?: string | null
+    aboutFeatureCards?: string | null
     deliveryModelTitle?: string | null
     deliveryModelItems?: string | null
+    serviceSectionTagline?: string | null
+    serviceSectionTitle?: string | null
+    serviceSectionAccent?: string | null
+    serviceSectionDescription?: string | null
+    serviceSectionCtaLabel?: string | null
+    serviceSectionCtaHref?: string | null
     whyClientsTagline?: string | null
     whyClientsTitle?: string | null
     whyClientsDescription?: string | null
     whyClientsCards?: string | null
+    homeTestimonialsTagline?: string | null
+    homeTestimonialsTitle?: string | null
+    homeTestimonialsAccent?: string | null
+    homeTestimonialsDescription?: string | null
+    homeCtaTagline?: string | null
+    homeCtaTitle?: string | null
+    homeCtaAccent?: string | null
+    homeCtaDescription?: string | null
+    homeCtaButtonLabel?: string | null
+    homeCtaButtonHref?: string | null
     globalDeliveryTagline?: string | null
     globalDeliveryTitle?: string | null
     globalDeliveryDescription?: string | null
@@ -27455,6 +29190,71 @@ export namespace Prisma {
     eventGalleryDescription?: string | null
     eventContactTitle?: string | null
     eventContactDescription?: string | null
+    aboutPageHeroTagline?: string | null
+    aboutPageHeroTitle?: string | null
+    aboutPageHeroAccent?: string | null
+    aboutPageHeroDescription?: string | null
+    aboutPageHeroImagePath?: string | null
+    aboutStoryTagline?: string | null
+    aboutStoryTitle?: string | null
+    aboutStoryDescription?: string | null
+    aboutStoryCards?: string | null
+    aboutApproachTagline?: string | null
+    aboutApproachTitle?: string | null
+    aboutApproachDescription?: string | null
+    aboutApproachTabs?: string | null
+    aboutLeadershipTitle?: string | null
+    aboutLeaders?: string | null
+    aboutPageCtaTagline?: string | null
+    aboutPageCtaTitle?: string | null
+    aboutPageCtaDescription?: string | null
+    aboutPageCtaButtonLabel?: string | null
+    aboutPageCtaButtonHref?: string | null
+    contactHeroTagline?: string | null
+    contactHeroTitle?: string | null
+    contactHeroAccent?: string | null
+    contactHeroDescription?: string | null
+    contactHeroPrimaryButtonLabel?: string | null
+    contactHeroSecondaryButtonLabel?: string | null
+    contactPageEmail?: string | null
+    contactPageAddress?: string | null
+    contactMetrics?: string | null
+    contactStepsTagline?: string | null
+    contactStepsTitle?: string | null
+    contactStepsDescription?: string | null
+    contactProcessSteps?: string | null
+    careerHeroTagline?: string | null
+    careerHeroTitle?: string | null
+    careerHeroAccent?: string | null
+    careerHeroDescription?: string | null
+    careerHeroImagePath?: string | null
+    careerHeroButtonLabel?: string | null
+    careerHeroButtonHref?: string | null
+    careerLifeTagline?: string | null
+    careerLifeTitle?: string | null
+    careerLifeAccent?: string | null
+    careerLifeDescription?: string | null
+    careerLifeImagePath?: string | null
+    careerLifeCalloutTitle?: string | null
+    careerLifeCalloutDescription?: string | null
+    careerMetrics?: string | null
+    careerOpportunitiesTagline?: string | null
+    careerOpportunitiesTitle?: string | null
+    careerOpportunitiesAccent?: string | null
+    careerOpportunitiesDescription?: string | null
+    careerBenefitsTagline?: string | null
+    careerBenefitsTitle?: string | null
+    careerBenefitsAccent?: string | null
+    careerBenefitsDescription?: string | null
+    careerBenefits?: string | null
+    careerBenefitStats?: string | null
+    careerCtaTagline?: string | null
+    careerCtaTitle?: string | null
+    careerCtaDescription?: string | null
+    careerCtaButtonLabel?: string | null
+    careerCtaButtonHref?: string | null
+    growthLearningContent?: string | null
+    cultureContent?: string | null
     smtpHost?: string | null
     smtpPort?: string | null
     smtpUsername?: string | null
@@ -27505,18 +29305,43 @@ export namespace Prisma {
     heroTrustTags?: string | null
     heroTagline?: string | null
     heroTitle?: string | null
+    heroTitleAccent?: string | null
+    heroTitleSuffix?: string | null
     heroDescription?: string | null
     heroBackgroundImagePath?: string | null
+    heroButtonLabel?: string | null
+    heroButtonHref?: string | null
     aboutTagline?: string | null
     aboutTitle?: string | null
+    aboutTitleAccent?: string | null
     aboutDescription?: string | null
     aboutButtons?: string | null
+    aboutButtonLabel?: string | null
+    aboutButtonHref?: string | null
+    aboutHighlights?: string | null
+    aboutFeatureCards?: string | null
     deliveryModelTitle?: string | null
     deliveryModelItems?: string | null
+    serviceSectionTagline?: string | null
+    serviceSectionTitle?: string | null
+    serviceSectionAccent?: string | null
+    serviceSectionDescription?: string | null
+    serviceSectionCtaLabel?: string | null
+    serviceSectionCtaHref?: string | null
     whyClientsTagline?: string | null
     whyClientsTitle?: string | null
     whyClientsDescription?: string | null
     whyClientsCards?: string | null
+    homeTestimonialsTagline?: string | null
+    homeTestimonialsTitle?: string | null
+    homeTestimonialsAccent?: string | null
+    homeTestimonialsDescription?: string | null
+    homeCtaTagline?: string | null
+    homeCtaTitle?: string | null
+    homeCtaAccent?: string | null
+    homeCtaDescription?: string | null
+    homeCtaButtonLabel?: string | null
+    homeCtaButtonHref?: string | null
     globalDeliveryTagline?: string | null
     globalDeliveryTitle?: string | null
     globalDeliveryDescription?: string | null
@@ -27541,6 +29366,71 @@ export namespace Prisma {
     eventGalleryDescription?: string | null
     eventContactTitle?: string | null
     eventContactDescription?: string | null
+    aboutPageHeroTagline?: string | null
+    aboutPageHeroTitle?: string | null
+    aboutPageHeroAccent?: string | null
+    aboutPageHeroDescription?: string | null
+    aboutPageHeroImagePath?: string | null
+    aboutStoryTagline?: string | null
+    aboutStoryTitle?: string | null
+    aboutStoryDescription?: string | null
+    aboutStoryCards?: string | null
+    aboutApproachTagline?: string | null
+    aboutApproachTitle?: string | null
+    aboutApproachDescription?: string | null
+    aboutApproachTabs?: string | null
+    aboutLeadershipTitle?: string | null
+    aboutLeaders?: string | null
+    aboutPageCtaTagline?: string | null
+    aboutPageCtaTitle?: string | null
+    aboutPageCtaDescription?: string | null
+    aboutPageCtaButtonLabel?: string | null
+    aboutPageCtaButtonHref?: string | null
+    contactHeroTagline?: string | null
+    contactHeroTitle?: string | null
+    contactHeroAccent?: string | null
+    contactHeroDescription?: string | null
+    contactHeroPrimaryButtonLabel?: string | null
+    contactHeroSecondaryButtonLabel?: string | null
+    contactPageEmail?: string | null
+    contactPageAddress?: string | null
+    contactMetrics?: string | null
+    contactStepsTagline?: string | null
+    contactStepsTitle?: string | null
+    contactStepsDescription?: string | null
+    contactProcessSteps?: string | null
+    careerHeroTagline?: string | null
+    careerHeroTitle?: string | null
+    careerHeroAccent?: string | null
+    careerHeroDescription?: string | null
+    careerHeroImagePath?: string | null
+    careerHeroButtonLabel?: string | null
+    careerHeroButtonHref?: string | null
+    careerLifeTagline?: string | null
+    careerLifeTitle?: string | null
+    careerLifeAccent?: string | null
+    careerLifeDescription?: string | null
+    careerLifeImagePath?: string | null
+    careerLifeCalloutTitle?: string | null
+    careerLifeCalloutDescription?: string | null
+    careerMetrics?: string | null
+    careerOpportunitiesTagline?: string | null
+    careerOpportunitiesTitle?: string | null
+    careerOpportunitiesAccent?: string | null
+    careerOpportunitiesDescription?: string | null
+    careerBenefitsTagline?: string | null
+    careerBenefitsTitle?: string | null
+    careerBenefitsAccent?: string | null
+    careerBenefitsDescription?: string | null
+    careerBenefits?: string | null
+    careerBenefitStats?: string | null
+    careerCtaTagline?: string | null
+    careerCtaTitle?: string | null
+    careerCtaDescription?: string | null
+    careerCtaButtonLabel?: string | null
+    careerCtaButtonHref?: string | null
+    growthLearningContent?: string | null
+    cultureContent?: string | null
     smtpHost?: string | null
     smtpPort?: string | null
     smtpUsername?: string | null
@@ -27591,18 +29481,43 @@ export namespace Prisma {
     heroTrustTags?: NullableStringFieldUpdateOperationsInput | string | null
     heroTagline?: NullableStringFieldUpdateOperationsInput | string | null
     heroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleSuffix?: NullableStringFieldUpdateOperationsInput | string | null
     heroDescription?: NullableStringFieldUpdateOperationsInput | string | null
     heroBackgroundImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTagline?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
     aboutDescription?: NullableStringFieldUpdateOperationsInput | string | null
     aboutButtons?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutHighlights?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutFeatureCards?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelTitle?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelItems?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaHref?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTagline?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTitle?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsDescription?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsCards?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27627,6 +29542,71 @@ export namespace Prisma {
     eventGalleryDescription?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactTitle?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryCards?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTabs?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeadershipTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeaders?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroPrimaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroSecondaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    contactMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactProcessSteps?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefits?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitStats?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    growthLearningContent?: NullableStringFieldUpdateOperationsInput | string | null
+    cultureContent?: NullableStringFieldUpdateOperationsInput | string | null
     smtpHost?: NullableStringFieldUpdateOperationsInput | string | null
     smtpPort?: NullableStringFieldUpdateOperationsInput | string | null
     smtpUsername?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27677,18 +29657,43 @@ export namespace Prisma {
     heroTrustTags?: NullableStringFieldUpdateOperationsInput | string | null
     heroTagline?: NullableStringFieldUpdateOperationsInput | string | null
     heroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleSuffix?: NullableStringFieldUpdateOperationsInput | string | null
     heroDescription?: NullableStringFieldUpdateOperationsInput | string | null
     heroBackgroundImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTagline?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
     aboutDescription?: NullableStringFieldUpdateOperationsInput | string | null
     aboutButtons?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutHighlights?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutFeatureCards?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelTitle?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelItems?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaHref?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTagline?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTitle?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsDescription?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsCards?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27713,6 +29718,71 @@ export namespace Prisma {
     eventGalleryDescription?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactTitle?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryCards?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTabs?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeadershipTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeaders?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroPrimaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroSecondaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    contactMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactProcessSteps?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefits?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitStats?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    growthLearningContent?: NullableStringFieldUpdateOperationsInput | string | null
+    cultureContent?: NullableStringFieldUpdateOperationsInput | string | null
     smtpHost?: NullableStringFieldUpdateOperationsInput | string | null
     smtpPort?: NullableStringFieldUpdateOperationsInput | string | null
     smtpUsername?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27763,18 +29833,43 @@ export namespace Prisma {
     heroTrustTags?: string | null
     heroTagline?: string | null
     heroTitle?: string | null
+    heroTitleAccent?: string | null
+    heroTitleSuffix?: string | null
     heroDescription?: string | null
     heroBackgroundImagePath?: string | null
+    heroButtonLabel?: string | null
+    heroButtonHref?: string | null
     aboutTagline?: string | null
     aboutTitle?: string | null
+    aboutTitleAccent?: string | null
     aboutDescription?: string | null
     aboutButtons?: string | null
+    aboutButtonLabel?: string | null
+    aboutButtonHref?: string | null
+    aboutHighlights?: string | null
+    aboutFeatureCards?: string | null
     deliveryModelTitle?: string | null
     deliveryModelItems?: string | null
+    serviceSectionTagline?: string | null
+    serviceSectionTitle?: string | null
+    serviceSectionAccent?: string | null
+    serviceSectionDescription?: string | null
+    serviceSectionCtaLabel?: string | null
+    serviceSectionCtaHref?: string | null
     whyClientsTagline?: string | null
     whyClientsTitle?: string | null
     whyClientsDescription?: string | null
     whyClientsCards?: string | null
+    homeTestimonialsTagline?: string | null
+    homeTestimonialsTitle?: string | null
+    homeTestimonialsAccent?: string | null
+    homeTestimonialsDescription?: string | null
+    homeCtaTagline?: string | null
+    homeCtaTitle?: string | null
+    homeCtaAccent?: string | null
+    homeCtaDescription?: string | null
+    homeCtaButtonLabel?: string | null
+    homeCtaButtonHref?: string | null
     globalDeliveryTagline?: string | null
     globalDeliveryTitle?: string | null
     globalDeliveryDescription?: string | null
@@ -27799,6 +29894,71 @@ export namespace Prisma {
     eventGalleryDescription?: string | null
     eventContactTitle?: string | null
     eventContactDescription?: string | null
+    aboutPageHeroTagline?: string | null
+    aboutPageHeroTitle?: string | null
+    aboutPageHeroAccent?: string | null
+    aboutPageHeroDescription?: string | null
+    aboutPageHeroImagePath?: string | null
+    aboutStoryTagline?: string | null
+    aboutStoryTitle?: string | null
+    aboutStoryDescription?: string | null
+    aboutStoryCards?: string | null
+    aboutApproachTagline?: string | null
+    aboutApproachTitle?: string | null
+    aboutApproachDescription?: string | null
+    aboutApproachTabs?: string | null
+    aboutLeadershipTitle?: string | null
+    aboutLeaders?: string | null
+    aboutPageCtaTagline?: string | null
+    aboutPageCtaTitle?: string | null
+    aboutPageCtaDescription?: string | null
+    aboutPageCtaButtonLabel?: string | null
+    aboutPageCtaButtonHref?: string | null
+    contactHeroTagline?: string | null
+    contactHeroTitle?: string | null
+    contactHeroAccent?: string | null
+    contactHeroDescription?: string | null
+    contactHeroPrimaryButtonLabel?: string | null
+    contactHeroSecondaryButtonLabel?: string | null
+    contactPageEmail?: string | null
+    contactPageAddress?: string | null
+    contactMetrics?: string | null
+    contactStepsTagline?: string | null
+    contactStepsTitle?: string | null
+    contactStepsDescription?: string | null
+    contactProcessSteps?: string | null
+    careerHeroTagline?: string | null
+    careerHeroTitle?: string | null
+    careerHeroAccent?: string | null
+    careerHeroDescription?: string | null
+    careerHeroImagePath?: string | null
+    careerHeroButtonLabel?: string | null
+    careerHeroButtonHref?: string | null
+    careerLifeTagline?: string | null
+    careerLifeTitle?: string | null
+    careerLifeAccent?: string | null
+    careerLifeDescription?: string | null
+    careerLifeImagePath?: string | null
+    careerLifeCalloutTitle?: string | null
+    careerLifeCalloutDescription?: string | null
+    careerMetrics?: string | null
+    careerOpportunitiesTagline?: string | null
+    careerOpportunitiesTitle?: string | null
+    careerOpportunitiesAccent?: string | null
+    careerOpportunitiesDescription?: string | null
+    careerBenefitsTagline?: string | null
+    careerBenefitsTitle?: string | null
+    careerBenefitsAccent?: string | null
+    careerBenefitsDescription?: string | null
+    careerBenefits?: string | null
+    careerBenefitStats?: string | null
+    careerCtaTagline?: string | null
+    careerCtaTitle?: string | null
+    careerCtaDescription?: string | null
+    careerCtaButtonLabel?: string | null
+    careerCtaButtonHref?: string | null
+    growthLearningContent?: string | null
+    cultureContent?: string | null
     smtpHost?: string | null
     smtpPort?: string | null
     smtpUsername?: string | null
@@ -27849,18 +30009,43 @@ export namespace Prisma {
     heroTrustTags?: NullableStringFieldUpdateOperationsInput | string | null
     heroTagline?: NullableStringFieldUpdateOperationsInput | string | null
     heroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleSuffix?: NullableStringFieldUpdateOperationsInput | string | null
     heroDescription?: NullableStringFieldUpdateOperationsInput | string | null
     heroBackgroundImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTagline?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
     aboutDescription?: NullableStringFieldUpdateOperationsInput | string | null
     aboutButtons?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutHighlights?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutFeatureCards?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelTitle?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelItems?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaHref?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTagline?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTitle?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsDescription?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsCards?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27885,6 +30070,71 @@ export namespace Prisma {
     eventGalleryDescription?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactTitle?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryCards?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTabs?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeadershipTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeaders?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroPrimaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroSecondaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    contactMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactProcessSteps?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefits?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitStats?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    growthLearningContent?: NullableStringFieldUpdateOperationsInput | string | null
+    cultureContent?: NullableStringFieldUpdateOperationsInput | string | null
     smtpHost?: NullableStringFieldUpdateOperationsInput | string | null
     smtpPort?: NullableStringFieldUpdateOperationsInput | string | null
     smtpUsername?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27935,18 +30185,43 @@ export namespace Prisma {
     heroTrustTags?: NullableStringFieldUpdateOperationsInput | string | null
     heroTagline?: NullableStringFieldUpdateOperationsInput | string | null
     heroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    heroTitleSuffix?: NullableStringFieldUpdateOperationsInput | string | null
     heroDescription?: NullableStringFieldUpdateOperationsInput | string | null
     heroBackgroundImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    heroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTagline?: NullableStringFieldUpdateOperationsInput | string | null
     aboutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutTitleAccent?: NullableStringFieldUpdateOperationsInput | string | null
     aboutDescription?: NullableStringFieldUpdateOperationsInput | string | null
     aboutButtons?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutHighlights?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutFeatureCards?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelTitle?: NullableStringFieldUpdateOperationsInput | string | null
     deliveryModelItems?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceSectionCtaHref?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTagline?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsTitle?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsDescription?: NullableStringFieldUpdateOperationsInput | string | null
     whyClientsCards?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeTestimonialsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    homeCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     globalDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -27971,6 +30246,71 @@ export namespace Prisma {
     eventGalleryDescription?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactTitle?: NullableStringFieldUpdateOperationsInput | string | null
     eventContactDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutStoryCards?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutApproachTabs?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeadershipTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutLeaders?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    aboutPageCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroPrimaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactHeroSecondaryButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    contactPageAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    contactMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    contactStepsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    contactProcessSteps?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerHeroButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeImagePath?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerLifeCalloutDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerOpportunitiesDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsAccent?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitsDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefits?: NullableStringFieldUpdateOperationsInput | string | null
+    careerBenefitStats?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTagline?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonLabel?: NullableStringFieldUpdateOperationsInput | string | null
+    careerCtaButtonHref?: NullableStringFieldUpdateOperationsInput | string | null
+    growthLearningContent?: NullableStringFieldUpdateOperationsInput | string | null
+    cultureContent?: NullableStringFieldUpdateOperationsInput | string | null
     smtpHost?: NullableStringFieldUpdateOperationsInput | string | null
     smtpPort?: NullableStringFieldUpdateOperationsInput | string | null
     smtpUsername?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29451,18 +31791,43 @@ export namespace Prisma {
     heroTrustTags?: SortOrder
     heroTagline?: SortOrder
     heroTitle?: SortOrder
+    heroTitleAccent?: SortOrder
+    heroTitleSuffix?: SortOrder
     heroDescription?: SortOrder
     heroBackgroundImagePath?: SortOrder
+    heroButtonLabel?: SortOrder
+    heroButtonHref?: SortOrder
     aboutTagline?: SortOrder
     aboutTitle?: SortOrder
+    aboutTitleAccent?: SortOrder
     aboutDescription?: SortOrder
     aboutButtons?: SortOrder
+    aboutButtonLabel?: SortOrder
+    aboutButtonHref?: SortOrder
+    aboutHighlights?: SortOrder
+    aboutFeatureCards?: SortOrder
     deliveryModelTitle?: SortOrder
     deliveryModelItems?: SortOrder
+    serviceSectionTagline?: SortOrder
+    serviceSectionTitle?: SortOrder
+    serviceSectionAccent?: SortOrder
+    serviceSectionDescription?: SortOrder
+    serviceSectionCtaLabel?: SortOrder
+    serviceSectionCtaHref?: SortOrder
     whyClientsTagline?: SortOrder
     whyClientsTitle?: SortOrder
     whyClientsDescription?: SortOrder
     whyClientsCards?: SortOrder
+    homeTestimonialsTagline?: SortOrder
+    homeTestimonialsTitle?: SortOrder
+    homeTestimonialsAccent?: SortOrder
+    homeTestimonialsDescription?: SortOrder
+    homeCtaTagline?: SortOrder
+    homeCtaTitle?: SortOrder
+    homeCtaAccent?: SortOrder
+    homeCtaDescription?: SortOrder
+    homeCtaButtonLabel?: SortOrder
+    homeCtaButtonHref?: SortOrder
     globalDeliveryTagline?: SortOrder
     globalDeliveryTitle?: SortOrder
     globalDeliveryDescription?: SortOrder
@@ -29487,6 +31852,71 @@ export namespace Prisma {
     eventGalleryDescription?: SortOrder
     eventContactTitle?: SortOrder
     eventContactDescription?: SortOrder
+    aboutPageHeroTagline?: SortOrder
+    aboutPageHeroTitle?: SortOrder
+    aboutPageHeroAccent?: SortOrder
+    aboutPageHeroDescription?: SortOrder
+    aboutPageHeroImagePath?: SortOrder
+    aboutStoryTagline?: SortOrder
+    aboutStoryTitle?: SortOrder
+    aboutStoryDescription?: SortOrder
+    aboutStoryCards?: SortOrder
+    aboutApproachTagline?: SortOrder
+    aboutApproachTitle?: SortOrder
+    aboutApproachDescription?: SortOrder
+    aboutApproachTabs?: SortOrder
+    aboutLeadershipTitle?: SortOrder
+    aboutLeaders?: SortOrder
+    aboutPageCtaTagline?: SortOrder
+    aboutPageCtaTitle?: SortOrder
+    aboutPageCtaDescription?: SortOrder
+    aboutPageCtaButtonLabel?: SortOrder
+    aboutPageCtaButtonHref?: SortOrder
+    contactHeroTagline?: SortOrder
+    contactHeroTitle?: SortOrder
+    contactHeroAccent?: SortOrder
+    contactHeroDescription?: SortOrder
+    contactHeroPrimaryButtonLabel?: SortOrder
+    contactHeroSecondaryButtonLabel?: SortOrder
+    contactPageEmail?: SortOrder
+    contactPageAddress?: SortOrder
+    contactMetrics?: SortOrder
+    contactStepsTagline?: SortOrder
+    contactStepsTitle?: SortOrder
+    contactStepsDescription?: SortOrder
+    contactProcessSteps?: SortOrder
+    careerHeroTagline?: SortOrder
+    careerHeroTitle?: SortOrder
+    careerHeroAccent?: SortOrder
+    careerHeroDescription?: SortOrder
+    careerHeroImagePath?: SortOrder
+    careerHeroButtonLabel?: SortOrder
+    careerHeroButtonHref?: SortOrder
+    careerLifeTagline?: SortOrder
+    careerLifeTitle?: SortOrder
+    careerLifeAccent?: SortOrder
+    careerLifeDescription?: SortOrder
+    careerLifeImagePath?: SortOrder
+    careerLifeCalloutTitle?: SortOrder
+    careerLifeCalloutDescription?: SortOrder
+    careerMetrics?: SortOrder
+    careerOpportunitiesTagline?: SortOrder
+    careerOpportunitiesTitle?: SortOrder
+    careerOpportunitiesAccent?: SortOrder
+    careerOpportunitiesDescription?: SortOrder
+    careerBenefitsTagline?: SortOrder
+    careerBenefitsTitle?: SortOrder
+    careerBenefitsAccent?: SortOrder
+    careerBenefitsDescription?: SortOrder
+    careerBenefits?: SortOrder
+    careerBenefitStats?: SortOrder
+    careerCtaTagline?: SortOrder
+    careerCtaTitle?: SortOrder
+    careerCtaDescription?: SortOrder
+    careerCtaButtonLabel?: SortOrder
+    careerCtaButtonHref?: SortOrder
+    growthLearningContent?: SortOrder
+    cultureContent?: SortOrder
     smtpHost?: SortOrder
     smtpPort?: SortOrder
     smtpUsername?: SortOrder
@@ -29537,18 +31967,43 @@ export namespace Prisma {
     heroTrustTags?: SortOrder
     heroTagline?: SortOrder
     heroTitle?: SortOrder
+    heroTitleAccent?: SortOrder
+    heroTitleSuffix?: SortOrder
     heroDescription?: SortOrder
     heroBackgroundImagePath?: SortOrder
+    heroButtonLabel?: SortOrder
+    heroButtonHref?: SortOrder
     aboutTagline?: SortOrder
     aboutTitle?: SortOrder
+    aboutTitleAccent?: SortOrder
     aboutDescription?: SortOrder
     aboutButtons?: SortOrder
+    aboutButtonLabel?: SortOrder
+    aboutButtonHref?: SortOrder
+    aboutHighlights?: SortOrder
+    aboutFeatureCards?: SortOrder
     deliveryModelTitle?: SortOrder
     deliveryModelItems?: SortOrder
+    serviceSectionTagline?: SortOrder
+    serviceSectionTitle?: SortOrder
+    serviceSectionAccent?: SortOrder
+    serviceSectionDescription?: SortOrder
+    serviceSectionCtaLabel?: SortOrder
+    serviceSectionCtaHref?: SortOrder
     whyClientsTagline?: SortOrder
     whyClientsTitle?: SortOrder
     whyClientsDescription?: SortOrder
     whyClientsCards?: SortOrder
+    homeTestimonialsTagline?: SortOrder
+    homeTestimonialsTitle?: SortOrder
+    homeTestimonialsAccent?: SortOrder
+    homeTestimonialsDescription?: SortOrder
+    homeCtaTagline?: SortOrder
+    homeCtaTitle?: SortOrder
+    homeCtaAccent?: SortOrder
+    homeCtaDescription?: SortOrder
+    homeCtaButtonLabel?: SortOrder
+    homeCtaButtonHref?: SortOrder
     globalDeliveryTagline?: SortOrder
     globalDeliveryTitle?: SortOrder
     globalDeliveryDescription?: SortOrder
@@ -29573,6 +32028,71 @@ export namespace Prisma {
     eventGalleryDescription?: SortOrder
     eventContactTitle?: SortOrder
     eventContactDescription?: SortOrder
+    aboutPageHeroTagline?: SortOrder
+    aboutPageHeroTitle?: SortOrder
+    aboutPageHeroAccent?: SortOrder
+    aboutPageHeroDescription?: SortOrder
+    aboutPageHeroImagePath?: SortOrder
+    aboutStoryTagline?: SortOrder
+    aboutStoryTitle?: SortOrder
+    aboutStoryDescription?: SortOrder
+    aboutStoryCards?: SortOrder
+    aboutApproachTagline?: SortOrder
+    aboutApproachTitle?: SortOrder
+    aboutApproachDescription?: SortOrder
+    aboutApproachTabs?: SortOrder
+    aboutLeadershipTitle?: SortOrder
+    aboutLeaders?: SortOrder
+    aboutPageCtaTagline?: SortOrder
+    aboutPageCtaTitle?: SortOrder
+    aboutPageCtaDescription?: SortOrder
+    aboutPageCtaButtonLabel?: SortOrder
+    aboutPageCtaButtonHref?: SortOrder
+    contactHeroTagline?: SortOrder
+    contactHeroTitle?: SortOrder
+    contactHeroAccent?: SortOrder
+    contactHeroDescription?: SortOrder
+    contactHeroPrimaryButtonLabel?: SortOrder
+    contactHeroSecondaryButtonLabel?: SortOrder
+    contactPageEmail?: SortOrder
+    contactPageAddress?: SortOrder
+    contactMetrics?: SortOrder
+    contactStepsTagline?: SortOrder
+    contactStepsTitle?: SortOrder
+    contactStepsDescription?: SortOrder
+    contactProcessSteps?: SortOrder
+    careerHeroTagline?: SortOrder
+    careerHeroTitle?: SortOrder
+    careerHeroAccent?: SortOrder
+    careerHeroDescription?: SortOrder
+    careerHeroImagePath?: SortOrder
+    careerHeroButtonLabel?: SortOrder
+    careerHeroButtonHref?: SortOrder
+    careerLifeTagline?: SortOrder
+    careerLifeTitle?: SortOrder
+    careerLifeAccent?: SortOrder
+    careerLifeDescription?: SortOrder
+    careerLifeImagePath?: SortOrder
+    careerLifeCalloutTitle?: SortOrder
+    careerLifeCalloutDescription?: SortOrder
+    careerMetrics?: SortOrder
+    careerOpportunitiesTagline?: SortOrder
+    careerOpportunitiesTitle?: SortOrder
+    careerOpportunitiesAccent?: SortOrder
+    careerOpportunitiesDescription?: SortOrder
+    careerBenefitsTagline?: SortOrder
+    careerBenefitsTitle?: SortOrder
+    careerBenefitsAccent?: SortOrder
+    careerBenefitsDescription?: SortOrder
+    careerBenefits?: SortOrder
+    careerBenefitStats?: SortOrder
+    careerCtaTagline?: SortOrder
+    careerCtaTitle?: SortOrder
+    careerCtaDescription?: SortOrder
+    careerCtaButtonLabel?: SortOrder
+    careerCtaButtonHref?: SortOrder
+    growthLearningContent?: SortOrder
+    cultureContent?: SortOrder
     smtpHost?: SortOrder
     smtpPort?: SortOrder
     smtpUsername?: SortOrder
@@ -29623,18 +32143,43 @@ export namespace Prisma {
     heroTrustTags?: SortOrder
     heroTagline?: SortOrder
     heroTitle?: SortOrder
+    heroTitleAccent?: SortOrder
+    heroTitleSuffix?: SortOrder
     heroDescription?: SortOrder
     heroBackgroundImagePath?: SortOrder
+    heroButtonLabel?: SortOrder
+    heroButtonHref?: SortOrder
     aboutTagline?: SortOrder
     aboutTitle?: SortOrder
+    aboutTitleAccent?: SortOrder
     aboutDescription?: SortOrder
     aboutButtons?: SortOrder
+    aboutButtonLabel?: SortOrder
+    aboutButtonHref?: SortOrder
+    aboutHighlights?: SortOrder
+    aboutFeatureCards?: SortOrder
     deliveryModelTitle?: SortOrder
     deliveryModelItems?: SortOrder
+    serviceSectionTagline?: SortOrder
+    serviceSectionTitle?: SortOrder
+    serviceSectionAccent?: SortOrder
+    serviceSectionDescription?: SortOrder
+    serviceSectionCtaLabel?: SortOrder
+    serviceSectionCtaHref?: SortOrder
     whyClientsTagline?: SortOrder
     whyClientsTitle?: SortOrder
     whyClientsDescription?: SortOrder
     whyClientsCards?: SortOrder
+    homeTestimonialsTagline?: SortOrder
+    homeTestimonialsTitle?: SortOrder
+    homeTestimonialsAccent?: SortOrder
+    homeTestimonialsDescription?: SortOrder
+    homeCtaTagline?: SortOrder
+    homeCtaTitle?: SortOrder
+    homeCtaAccent?: SortOrder
+    homeCtaDescription?: SortOrder
+    homeCtaButtonLabel?: SortOrder
+    homeCtaButtonHref?: SortOrder
     globalDeliveryTagline?: SortOrder
     globalDeliveryTitle?: SortOrder
     globalDeliveryDescription?: SortOrder
@@ -29659,6 +32204,71 @@ export namespace Prisma {
     eventGalleryDescription?: SortOrder
     eventContactTitle?: SortOrder
     eventContactDescription?: SortOrder
+    aboutPageHeroTagline?: SortOrder
+    aboutPageHeroTitle?: SortOrder
+    aboutPageHeroAccent?: SortOrder
+    aboutPageHeroDescription?: SortOrder
+    aboutPageHeroImagePath?: SortOrder
+    aboutStoryTagline?: SortOrder
+    aboutStoryTitle?: SortOrder
+    aboutStoryDescription?: SortOrder
+    aboutStoryCards?: SortOrder
+    aboutApproachTagline?: SortOrder
+    aboutApproachTitle?: SortOrder
+    aboutApproachDescription?: SortOrder
+    aboutApproachTabs?: SortOrder
+    aboutLeadershipTitle?: SortOrder
+    aboutLeaders?: SortOrder
+    aboutPageCtaTagline?: SortOrder
+    aboutPageCtaTitle?: SortOrder
+    aboutPageCtaDescription?: SortOrder
+    aboutPageCtaButtonLabel?: SortOrder
+    aboutPageCtaButtonHref?: SortOrder
+    contactHeroTagline?: SortOrder
+    contactHeroTitle?: SortOrder
+    contactHeroAccent?: SortOrder
+    contactHeroDescription?: SortOrder
+    contactHeroPrimaryButtonLabel?: SortOrder
+    contactHeroSecondaryButtonLabel?: SortOrder
+    contactPageEmail?: SortOrder
+    contactPageAddress?: SortOrder
+    contactMetrics?: SortOrder
+    contactStepsTagline?: SortOrder
+    contactStepsTitle?: SortOrder
+    contactStepsDescription?: SortOrder
+    contactProcessSteps?: SortOrder
+    careerHeroTagline?: SortOrder
+    careerHeroTitle?: SortOrder
+    careerHeroAccent?: SortOrder
+    careerHeroDescription?: SortOrder
+    careerHeroImagePath?: SortOrder
+    careerHeroButtonLabel?: SortOrder
+    careerHeroButtonHref?: SortOrder
+    careerLifeTagline?: SortOrder
+    careerLifeTitle?: SortOrder
+    careerLifeAccent?: SortOrder
+    careerLifeDescription?: SortOrder
+    careerLifeImagePath?: SortOrder
+    careerLifeCalloutTitle?: SortOrder
+    careerLifeCalloutDescription?: SortOrder
+    careerMetrics?: SortOrder
+    careerOpportunitiesTagline?: SortOrder
+    careerOpportunitiesTitle?: SortOrder
+    careerOpportunitiesAccent?: SortOrder
+    careerOpportunitiesDescription?: SortOrder
+    careerBenefitsTagline?: SortOrder
+    careerBenefitsTitle?: SortOrder
+    careerBenefitsAccent?: SortOrder
+    careerBenefitsDescription?: SortOrder
+    careerBenefits?: SortOrder
+    careerBenefitStats?: SortOrder
+    careerCtaTagline?: SortOrder
+    careerCtaTitle?: SortOrder
+    careerCtaDescription?: SortOrder
+    careerCtaButtonLabel?: SortOrder
+    careerCtaButtonHref?: SortOrder
+    growthLearningContent?: SortOrder
+    cultureContent?: SortOrder
     smtpHost?: SortOrder
     smtpPort?: SortOrder
     smtpUsername?: SortOrder

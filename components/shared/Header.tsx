@@ -13,6 +13,22 @@ import {
   UserRound,
   X,
 } from "lucide-react";
+import type { SiteSettings } from "@/lib/generated/prisma";
+
+type HeaderProps = {
+  logoPath?: SiteSettings["headerLogoPath"];
+  siteName?: SiteSettings["siteName"];
+};
+
+function getLogoSource(value: string | null | undefined): string | null {
+  const source = value?.trim();
+  if (!source) return null;
+  if (/^https?:\/\//i.test(source)) return source;
+  if (/^\/?uploads\//i.test(source)) {
+    return `/api/uploads/${source.replace(/^\/?uploads\//i, "")}`;
+  }
+  return source;
+}
 
 type MenuLink = { label: string; href: string };
 type MenuCategory = { label: string; links: MenuLink[] };
@@ -184,7 +200,7 @@ const searchItems: MenuLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Header() {
+export default function Header({ logoPath, siteName }: HeaderProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -234,6 +250,7 @@ export default function Header() {
     (category) => category.label === activeCategory,
   );
   const mobileMegaMenu = megaMenus.find((menu) => menu.label === mobileMenu);
+  const logoSource = getLogoSource(logoPath);
 
   return (
     <header
@@ -243,14 +260,27 @@ export default function Header() {
       <div className="relative mx-auto flex h-[72px] max-w-[1800px] items-center px-5 sm:px-8 xl:h-[58px] xl:px-9">
         <Link
           href="/"
-          aria-label="Pinnacle Serve home"
+          aria-label={`${siteName || "Pinnacle Serve"} home`}
           onClick={closeMobileMenu}
-          className="flex shrink-0 items-baseline gap-1 text-[25px] font-bold tracking-[-0.045em] text-white sm:text-[28px] xl:text-[25px]"
+          className="flex h-full shrink-0 items-center"
         >
-          Pinnacle<span className="text-[#86bc25]">.</span>
-          <span className="ml-1 text-[10px] font-semibold tracking-[0.22em] text-white/75 sm:text-xs">
-            SERVE
-          </span>
+          {logoSource ? (
+            <Image
+              src={logoSource}
+              alt={siteName || "Pinnacle Serve"}
+              width={220}
+              height={58}
+              priority
+              className="h-8 w-auto max-w-[150px] object-contain sm:max-w-[180px]"
+            />
+          ) : (
+            <span className="flex items-baseline gap-1 text-[25px] font-bold tracking-[-0.045em] text-white sm:text-[28px] xl:text-[25px]">
+              Pinnacle<span className="text-[#86bc25]">.</span>
+              <span className="ml-1 text-[10px] font-semibold tracking-[0.22em] text-white/75 sm:text-xs">
+                SERVE
+              </span>
+            </span>
+          )}
         </Link>
 
         <nav

@@ -13,24 +13,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { saveHomePageSettings } from "@/lib/actions/settings-action";
 import type { SiteSettings } from "@/lib/generated/prisma";
 
-function parseList(value: string | null | undefined, fallback: string[] = []) {
-  if (!value) return fallback;
-
-  const trimmed = value.trim();
-  if (!trimmed) return fallback;
-
-  try {
-    const parsed = JSON.parse(trimmed);
-    if (Array.isArray(parsed)) {
-      return parsed.map((item) => String(item).trim()).filter(Boolean);
-    }
-  } catch {
-    // fall through to comma-separated parsing
-  }
-
-  return trimmed.split(",").map((item) => item.trim()).filter(Boolean);
-}
-
 type CardItem = {
   title: string;
   summary: string;
@@ -42,9 +24,44 @@ type MetricItem = {
 };
 
 const metricFallbacks: MetricItem[] = [
-  { key: "Team Members", value: "48" },
-  { key: "Happy Customers", value: "120" },
-  { key: "Operational Support", value: "24" },
+  { key: "Team Members", value: "100+" },
+  { key: "Happy Customers", value: "20+" },
+  { key: "Projects Delivered", value: "25+" },
+  { key: "Certified Professionals", value: "50+" },
+  { key: "Global Time Zone Coverage", value: "24X7" },
+  { key: "C-SAT Index", value: "99.9%" },
+];
+
+const aboutHighlightFallbacks: CardItem[] = [
+  { title: "2024", summary: "Founded" },
+  { title: "Global", summary: "Global delivery" },
+];
+
+const aboutFeatureFallbacks: CardItem[] = [
+  {
+    title: "Global Client Support",
+    summary: "Reliable coverage for teams working across regions and time zones.",
+  },
+  {
+    title: "Operations & IT Consulting",
+    summary: "Connect back-office support with IT guidance and technology care.",
+  },
+  {
+    title: "Smooth Transitions",
+    summary: "Start engagements with clear knowledge transfer and careful handover.",
+  },
+  {
+    title: "Dedicated Operations Teams",
+    summary: "Skilled teams take ownership of daily work and service commitments.",
+  },
+  {
+    title: "Training & Development",
+    summary: "Ongoing learning and certification keep skills current.",
+  },
+  {
+    title: "Flexible, Trained Teams",
+    summary: "Add trained specialists as needs change, with quality built in.",
+  },
 ];
 
 function parseCardList(
@@ -137,27 +154,11 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
     () =>
       parseMetricList(configuration?.heroTrustTags, metricFallbacks),
   );
-  const [aboutButtons, setAboutButtons] = useState<string[]>(
-    () =>
-      parseList(configuration?.aboutButtons, [
-        "Transition",
-        "Operations",
-        "Training",
-        "Scalability",
-      ]),
+  const [aboutHighlights, setAboutHighlights] = useState<CardItem[]>(
+    () => parseCardList(configuration?.aboutHighlights, aboutHighlightFallbacks),
   );
-  const [deliveryModelItems, setDeliveryModelItems] = useState<string[]>(
-    () =>
-      parseList(configuration?.deliveryModelItems, [
-        "Founded in 2024",
-        "Supporting global clients",
-        "Backoffice Operations with IT Consulting & Support",
-        "Specialized Transition team",
-        "Specialized operational support teams",
-        "Specialized Training & Development team",
-        "Trained agents available as factory model",
-        "Focus on quality and scalability",
-      ]),
+  const [aboutFeatureCards, setAboutFeatureCards] = useState<CardItem[]>(
+    () => parseCardList(configuration?.aboutFeatureCards, aboutFeatureFallbacks),
   );
   const [whyCards, setWhyCards] = useState<CardItem[]>(
     () =>
@@ -180,24 +181,12 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
         },
       ]),
   );
-  const [globalDeliveryImagePreview, setGlobalDeliveryImagePreview] = useState<string | null>(
-    getPreviewSrc(configuration?.globalDeliveryImagePath),
-  );
-
   const [heroBackgroundImagePath, setHeroBackgroundImagePath] = useState<string | null>(
     getPreviewSrc(configuration?.heroBackgroundImagePath),
   );
   const [heroBackgroundMediaType, setHeroBackgroundMediaType] = useState<
     string | null
   >(null);
-
-  useEffect(() => {
-    return () => {
-      if (globalDeliveryImagePreview?.startsWith("blob:")) {
-        URL.revokeObjectURL(globalDeliveryImagePreview);
-      }
-    };
-  }, [globalDeliveryImagePreview]);
 
   useEffect(() => {
     return () => {
@@ -210,30 +199,7 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
   const onSubmit = async (formData: FormData) => {
     startTransition(async () => {
       try {
-        const globalDeliveryImage = formData.get("globalDeliveryImagePath");
         const heroBackgroundImage = formData.get("heroBackgroundImagePath");
-
-        if (globalDeliveryImage instanceof File) {
-          if (globalDeliveryImage.size > 0) {
-            const uploadFormData = new FormData();
-            uploadFormData.append("image", globalDeliveryImage);
-
-            const fileUploadRes = await fetch("/api/upload", {
-              method: "POST",
-              body: uploadFormData,
-            });
-
-            const uploadData = await fileUploadRes.json();
-
-            if (!fileUploadRes.ok) {
-              throw new Error(uploadData?.message || "Image upload failed");
-            }
-
-            formData.set("globalDeliveryImagePath", uploadData.url);
-          } else {
-            formData.delete("globalDeliveryImagePath");
-          }
-        }
 
         if (heroBackgroundImage instanceof File) {
           if (heroBackgroundImage.size > 0) {
@@ -270,25 +236,11 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
 
         setConfiguration(nextSetting);
         setTrustMetrics(parseMetricList(nextSetting?.heroTrustTags, metricFallbacks));
-        setAboutButtons(
-          parseList(nextSetting?.aboutButtons, [
-            "Transition",
-            "Operations",
-            "Training",
-            "Scalability",
-          ]),
+        setAboutHighlights(
+          parseCardList(nextSetting?.aboutHighlights, aboutHighlightFallbacks),
         );
-        setDeliveryModelItems(
-          parseList(nextSetting?.deliveryModelItems, [
-            "Founded in 2024",
-            "Supporting global clients",
-            "Backoffice Operations with IT Consulting & Support",
-            "Specialized Transition team",
-            "Specialized operational support teams",
-            "Specialized Training & Development team",
-            "Trained agents available as factory model",
-            "Focus on quality and scalability",
-          ]),
+        setAboutFeatureCards(
+          parseCardList(nextSetting?.aboutFeatureCards, aboutFeatureFallbacks),
         );
         setWhyCards(
           parseCardList(nextSetting?.whyClientsCards, [
@@ -310,10 +262,6 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
             },
           ]),
         );
-        setGlobalDeliveryImagePreview(
-          getPreviewSrc(nextSetting?.globalDeliveryImagePath),
-        );
-
         setHeroBackgroundImagePath(
           getPreviewSrc(nextSetting?.heroBackgroundImagePath),
         );
@@ -348,10 +296,34 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
                 placeholder="Hero Tagline"
               />
               <Field
-                label="Hero Title"
+                label="Hero Heading"
                 id="heroTitle"
                 defaultValue={configuration?.heroTitle}
-                placeholder="A focused operating model built for scale, quality, and steady delivery."
+                placeholder="Make complex work"
+              />
+              <Field
+                label="Highlighted Hero Heading"
+                id="heroTitleAccent"
+                defaultValue={configuration?.heroTitleAccent}
+                placeholder="simpler"
+              />
+              <Field
+                label="Hero Heading Ending"
+                id="heroTitleSuffix"
+                defaultValue={configuration?.heroTitleSuffix}
+                placeholder="and more effective"
+              />
+              <Field
+                label="Hero Button Label"
+                id="heroButtonLabel"
+                defaultValue={configuration?.heroButtonLabel}
+                placeholder="Explore Services"
+              />
+              <Field
+                label="Hero Button Link"
+                id="heroButtonHref"
+                defaultValue={configuration?.heroButtonHref}
+                placeholder="#our-services"
               />
 
               <div className="space-y-3">
@@ -487,12 +459,29 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
                 placeholder="About Pinnacle"
               />
               <Field
-                label="About Title"
+                label="About Heading"
                 id="aboutTitle"
                 defaultValue={configuration?.aboutTitle}
-                placeholder="A focused operating model built for scale, quality, and steady delivery."
+                placeholder="Better operations."
               />
-
+              <Field
+                label="Highlighted About Heading"
+                id="aboutTitleAccent"
+                defaultValue={configuration?.aboutTitleAccent}
+                placeholder="Stronger outcomes."
+              />
+              <Field
+                label="About Button Label"
+                id="aboutButtonLabel"
+                defaultValue={configuration?.aboutButtonLabel}
+                placeholder="Meet Pinnacle Serve"
+              />
+              <Field
+                label="About Button Link"
+                id="aboutButtonHref"
+                defaultValue={configuration?.aboutButtonHref}
+                placeholder="/about"
+              />
             </div>
 
             <div className="space-y-2">
@@ -506,12 +495,28 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
               />
             </div>
 
-            <ListEditor
-              label="Transition / Operations Buttons"
-              name="aboutButtons"
-              items={aboutButtons}
-              onChange={setAboutButtons}
-              placeholder="Transition"
+            <CardListEditor
+              label="About Highlights"
+              name="aboutHighlights"
+              items={aboutHighlights}
+              onChange={setAboutHighlights}
+            />
+            <input
+              type="hidden"
+              name="aboutHighlights"
+              value={JSON.stringify(aboutHighlights)}
+            />
+
+            <CardListEditor
+              label="About Feature Cards"
+              name="aboutFeatureCards"
+              items={aboutFeatureCards}
+              onChange={setAboutFeatureCards}
+            />
+            <input
+              type="hidden"
+              name="aboutFeatureCards"
+              value={JSON.stringify(aboutFeatureCards)}
             />
 
             <div className="flex justify-end">
@@ -536,69 +541,6 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
       <Card className="border-slate-200/80 shadow-sm">
         <CardHeader className="border-b border-slate-200/70 py-4">
           <CardTitle className="text-base font-semibold">
-            Our Delivery Model
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="p-5">
-          <form action={onSubmit} className="space-y-5">
-            <input
-              type="hidden"
-              name="siteName"
-              value={configuration?.siteName ?? "Pinnacle"}
-            />
-            <input type="hidden" name="legalName" value={configuration?.legalName ?? ""} />
-            <input type="hidden" name="aboutTagline" value={configuration?.aboutTagline ?? ""} />
-            <input type="hidden" name="aboutTitle" value={configuration?.aboutTitle ?? ""} />
-            <input type="hidden" name="aboutDescription" value={configuration?.aboutDescription ?? ""} />
-            {aboutButtons.map((item, index) => (
-              <input key={`${item}-${index}`} type="hidden" name="aboutButtons" value={item} />
-            ))}
-            <input type="hidden" name="whyClientsTagline" value={configuration?.whyClientsTagline ?? ""} />
-            <input type="hidden" name="whyClientsTitle" value={configuration?.whyClientsTitle ?? ""} />
-            <input type="hidden" name="whyClientsDescription" value={configuration?.whyClientsDescription ?? ""} />
-            <input type="hidden" name="whyClientsCards" value={configuration?.whyClientsCards ?? ""} />
-            <input type="hidden" name="globalDeliveryTagline" value={configuration?.globalDeliveryTagline ?? ""} />
-            <input type="hidden" name="globalDeliveryTitle" value={configuration?.globalDeliveryTitle ?? ""} />
-            <input type="hidden" name="globalDeliveryDescription" value={configuration?.globalDeliveryDescription ?? ""} />
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <Field
-                label="Delivery Title"
-                id="deliveryModelTitle"
-                defaultValue={configuration?.deliveryModelTitle}
-                placeholder="DELIVERY MODEL"
-              />
-            </div>
-
-            <ListEditor
-              label="Delivery Rows"
-              name="deliveryModelItems"
-              items={deliveryModelItems}
-              onChange={setDeliveryModelItems}
-              placeholder="Founded in 2024"
-            />
-
-            <div className="flex justify-end">
-              <Button
-                type="submit"
-                className="rounded-full px-5"
-                disabled={pending}
-              >
-                {pending ? (
-                  <Loader2 className="mr-2 size-4 animate-spin" />
-                ) : (
-                  <Save className="mr-2 size-4" />
-                )}
-                Save Delivery Model
-              </Button>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
-
-      <Card className="border-slate-200/80 shadow-sm">
-        <CardHeader className="border-b border-slate-200/70 py-4">
-          <CardTitle className="text-base font-semibold">
             Why Clients Choose Us
           </CardTitle>
         </CardHeader>
@@ -609,17 +551,6 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
               name="siteName"
               value={configuration?.siteName ?? "Pinnacle"}
             />
-            <input type="hidden" name="legalName" value={configuration?.legalName ?? ""} />
-            <input type="hidden" name="aboutTagline" value={configuration?.aboutTagline ?? ""} />
-            <input type="hidden" name="aboutTitle" value={configuration?.aboutTitle ?? ""} />
-            <input type="hidden" name="aboutDescription" value={configuration?.aboutDescription ?? ""} />
-            {aboutButtons.map((item, index) => (
-              <input key={`${item}-${index}`} type="hidden" name="aboutButtons" value={item} />
-            ))}
-            <input type="hidden" name="deliveryModelTitle" value={configuration?.deliveryModelTitle ?? ""} />
-            {deliveryModelItems.map((item, index) => (
-              <input key={`${item}-${index}`} type="hidden" name="deliveryModelItems" value={item} />
-            ))}
 
             <div className="grid gap-4 md:grid-cols-2">
               <Field
@@ -680,104 +611,160 @@ export default function Home({ setting }: { setting?: SiteSettings }) {
 
       <Card className="border-slate-200/80 shadow-sm">
         <CardHeader className="border-b border-slate-200/70 py-4">
-          <CardTitle className="text-base font-semibold">
-            Our Global Delivery Model
-          </CardTitle>
+          <CardTitle className="text-base font-semibold">Homepage Services Section</CardTitle>
         </CardHeader>
         <CardContent className="p-5">
           <form action={onSubmit} className="space-y-5">
-            <input
-              type="hidden"
-              name="siteName"
-              value={configuration?.siteName ?? "Pinnacle"}
-            />
-
             <div className="grid gap-4 md:grid-cols-2">
               <Field
-                label="Model Tagline"
-                id="globalDeliveryTagline"
-                defaultValue={configuration?.globalDeliveryTagline}
-                placeholder="OUR GLOBAL DELIVERY MODEL"
+                label="Section Tagline"
+                id="serviceSectionTagline"
+                defaultValue={configuration?.serviceSectionTagline}
+                placeholder="How We Help"
               />
               <Field
-                label="Model Title"
-                id="globalDeliveryTitle"
-                defaultValue={configuration?.globalDeliveryTitle}
-                placeholder="A simple, visual journey from intake to continuous improvement."
+                label="Heading"
+                id="serviceSectionTitle"
+                defaultValue={configuration?.serviceSectionTitle}
+                placeholder="Support for"
+              />
+              <Field
+                label="Highlighted Heading"
+                id="serviceSectionAccent"
+                defaultValue={configuration?.serviceSectionAccent}
+                placeholder="Everyday Progress"
+              />
+              <Field
+                label="Button Label"
+                id="serviceSectionCtaLabel"
+                defaultValue={configuration?.serviceSectionCtaLabel}
+                placeholder="See How We Can Help"
+              />
+              <Field
+                label="Button Link"
+                id="serviceSectionCtaHref"
+                defaultValue={configuration?.serviceSectionCtaHref}
+                placeholder="/contact"
               />
             </div>
-
             <div className="space-y-2">
-              <Label htmlFor="globalDeliveryDescription">Model Content</Label>
+              <Label htmlFor="serviceSectionDescription">Section Description</Label>
               <Textarea
-                id="globalDeliveryDescription"
-                name="globalDeliveryDescription"
-                className="min-h-[120px] rounded-xl"
-                defaultValue={configuration?.globalDeliveryDescription ?? ""}
-                placeholder="This flowchart maps the exact delivery handoff..."
+                id="serviceSectionDescription"
+                name="serviceSectionDescription"
+                className="min-h-[100px] rounded-xl"
+                defaultValue={configuration?.serviceSectionDescription ?? ""}
+                placeholder="Practical services that help teams work accurately, respond faster, and grow with confidence."
               />
             </div>
-
-            <div className="space-y-3">
-              <Label htmlFor="globalDeliveryImagePath">Model Image</Label>
-              <Input
-                id="globalDeliveryImagePath"
-                name="globalDeliveryImagePath"
-                type="file"
-                accept="image/*"
-                onChange={(event) => {
-                  const file = event.target.files?.[0];
-
-                  if (!file) {
-                    setGlobalDeliveryImagePreview(
-                      getPreviewSrc(configuration?.globalDeliveryImagePath),
-                    );
-                    return;
-                  }
-
-                  if (!file.type.startsWith("image/")) {
-                    toast.error("Please select an image file");
-                    return;
-                  }
-
-                  const previewUrl = URL.createObjectURL(file);
-                  setGlobalDeliveryImagePreview(previewUrl);
-                }}
-                className="h-10 rounded-xl"
-              />
-
-              {(() => {
-                const src =
-                  globalDeliveryImagePreview ||
-                  getPreviewSrc(configuration?.globalDeliveryImagePath) ||
-                  "/uploads/12b66e57-bc7f-48bb-bbf8-25fd3e07e3ef.jpg";
-
-                return (
-                  <div className="relative h-[220px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-                    <Image
-                      src={"/api" + src}
-                      alt="Global delivery model preview"
-                      fill
-                      className="object-contain object-center p-3"
-                      sizes="(max-width: 768px) 100vw, 600px"
-                    />
-                  </div>
-                );
-              })()}
-            </div>
-
             <div className="flex justify-end">
-              <Button
-                type="submit"
-                className="rounded-full px-5"
-                disabled={pending}
-              >
-                {pending ? (
-                  <Loader2 className="mr-2 size-4 animate-spin" />
-                ) : (
-                  <Save className="mr-2 size-4" />
-                )}
-                Save Global Delivery Model
+              <Button type="submit" className="rounded-full px-5" disabled={pending}>
+                {pending ? <Loader2 className="mr-2 size-4 animate-spin" /> : <Save className="mr-2 size-4" />}
+                Save Services Section
+              </Button>
+            </div>
+          </form>
+        </CardContent>
+      </Card>
+
+      <Card className="border-slate-200/80 shadow-sm">
+        <CardHeader className="border-b border-slate-200/70 py-4">
+          <CardTitle className="text-base font-semibold">Homepage Testimonials Section</CardTitle>
+        </CardHeader>
+        <CardContent className="p-5">
+          <form action={onSubmit} className="space-y-5">
+            <div className="grid gap-4 md:grid-cols-2">
+              <Field
+                label="Section Tagline"
+                id="homeTestimonialsTagline"
+                defaultValue={configuration?.homeTestimonialsTagline}
+                placeholder="Client Perspectives"
+              />
+              <Field
+                label="Heading"
+                id="homeTestimonialsTitle"
+                defaultValue={configuration?.homeTestimonialsTitle}
+                placeholder="Partnerships That"
+              />
+              <Field
+                label="Highlighted Heading"
+                id="homeTestimonialsAccent"
+                defaultValue={configuration?.homeTestimonialsAccent}
+                placeholder="Move Work Forward"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="homeTestimonialsDescription">Section Description</Label>
+              <Textarea
+                id="homeTestimonialsDescription"
+                name="homeTestimonialsDescription"
+                className="min-h-[100px] rounded-xl"
+                defaultValue={configuration?.homeTestimonialsDescription ?? ""}
+                placeholder="Hear from leaders working across financial services, healthcare, telecom, and retail."
+              />
+            </div>
+            <div className="flex justify-end">
+              <Button type="submit" className="rounded-full px-5" disabled={pending}>
+                {pending ? <Loader2 className="mr-2 size-4 animate-spin" /> : <Save className="mr-2 size-4" />}
+                Save Testimonials Section
+              </Button>
+            </div>
+          </form>
+        </CardContent>
+      </Card>
+
+      <Card className="border-slate-200/80 shadow-sm">
+        <CardHeader className="border-b border-slate-200/70 py-4">
+          <CardTitle className="text-base font-semibold">Footer Call to Action</CardTitle>
+        </CardHeader>
+        <CardContent className="p-5">
+          <form action={onSubmit} className="space-y-5">
+            <div className="grid gap-4 md:grid-cols-2">
+              <Field
+                label="Tagline"
+                id="homeCtaTagline"
+                defaultValue={configuration?.homeCtaTagline}
+                placeholder="Make the next move"
+              />
+              <Field
+                label="Heading"
+                id="homeCtaTitle"
+                defaultValue={configuration?.homeCtaTitle}
+                placeholder="Ready to move your business"
+              />
+              <Field
+                label="Highlighted Heading"
+                id="homeCtaAccent"
+                defaultValue={configuration?.homeCtaAccent}
+                placeholder="forward? Let's get to work."
+              />
+              <Field
+                label="Button Label"
+                id="homeCtaButtonLabel"
+                defaultValue={configuration?.homeCtaButtonLabel}
+                placeholder="Talk with our team"
+              />
+              <Field
+                label="Button Link"
+                id="homeCtaButtonHref"
+                defaultValue={configuration?.homeCtaButtonHref}
+                placeholder="/contact"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="homeCtaDescription">Description</Label>
+              <Textarea
+                id="homeCtaDescription"
+                name="homeCtaDescription"
+                className="min-h-[100px] rounded-xl"
+                defaultValue={configuration?.homeCtaDescription ?? ""}
+                placeholder="Bring us a complex challenge. We'll help turn it into a clear, workable plan."
+              />
+            </div>
+            <div className="flex justify-end">
+              <Button type="submit" className="rounded-full px-5" disabled={pending}>
+                {pending ? <Loader2 className="mr-2 size-4 animate-spin" /> : <Save className="mr-2 size-4" />}
+                Save Footer CTA
               </Button>
             </div>
           </form>
@@ -880,70 +867,6 @@ function MetricEditor({
   );
 }
 
-function ListEditor({
-  label,
-  name,
-  items,
-  onChange,
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  items: string[];
-  onChange: (items: string[]) => void;
-  placeholder?: string;
-}) {
-  const updateItem = (index: number, value: string) => {
-    const next = [...items];
-    next[index] = value;
-    onChange(next);
-  };
-
-  const addItem = () => {
-    onChange([...items, ""]);
-  };
-
-  const removeItem = (index: number) => {
-    const next = items.filter((_, itemIndex) => itemIndex !== index);
-    onChange(next.length ? next : [""]);
-  };
-
-  return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between gap-3">
-        <Label className="text-sm font-semibold">{label}</Label>
-        <Button type="button" variant="outline" className="rounded-full" onClick={addItem}>
-          <Plus className="mr-2 size-4" />
-          Add row
-        </Button>
-      </div>
-
-      <div className="space-y-3">
-        {items.map((item, index) => (
-          <div key={`${name}-${index}`} className="flex items-center gap-2">
-            <Input
-              name={name}
-              value={item}
-              placeholder={placeholder}
-              onChange={(event) => updateItem(index, event.target.value)}
-              className="h-10 rounded-xl"
-            />
-            <Button
-              type="button"
-              variant="ghost"
-              className="shrink-0 rounded-full px-3 text-slate-500 hover:text-red-600"
-              onClick={() => removeItem(index)}
-              aria-label={`Remove ${label} row ${index + 1}`}
-            >
-              <Trash2 className="size-4" />
-            </Button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function CardListEditor({
   label,
   name,
@@ -1023,8 +946,3 @@ function CardListEditor({
     </div>
   );
 }
-
-
-
-
-

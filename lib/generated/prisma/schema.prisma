@@ -116,54 +116,79 @@ model Enquiry {
 model SiteSettings {
   id String @id @default("site-settings")
 
-  siteName                   String
-  legalName                  String?
-  primaryEmail               String?
-  primaryPhone               String?
-  websiteUrl                 String?
-  timezone                   String?
-  officeAddress              String? @db.Text
-  officeHours                String?
-  logoPath                   String?
-  headerLogoPath             String?
-  footerLogoPath             String?
-  faviconPath                String?
-  metaTitle                  String?
-  metaDescription            String? @db.Text
-  metaKeywords               String?
-  gstNumber                  String?
-  cinNumber                  String?
-  mapUrl                     String?
-  teamMembers                String?
-  happyCustomers             String?
-  operationalSupport         String?
-  heroTrustTags              String? @db.Text
-  heroTagline                String?
-  heroTitle                  String?
-  heroDescription            String? @db.Text
-  heroBackgroundImagePath    String?
-  aboutTagline               String?
-  aboutTitle                 String?
-  aboutDescription           String? @db.Text
-  aboutButtons               String? @db.Text
-  deliveryModelTitle         String?
-  deliveryModelItems         String? @db.Text
-  whyClientsTagline          String?
-  whyClientsTitle            String?
-  whyClientsDescription      String? @db.Text
-  whyClientsCards            String? @db.Text
-  globalDeliveryTagline      String?
-  globalDeliveryTitle        String?
-  globalDeliveryDescription  String? @db.Text
-  globalDeliveryImagePath    String?
-  serviceHeroTitle           String?
-  serviceHeroDescription     String? @db.Text
-  serviceDeliveryTagline     String?
-  serviceDeliveryTitle       String?
-  serviceDeliveryDescription String? @db.Text
-  serviceDeliveryCards       String? @db.Text
-  showPhone                  Boolean @default(true)
-  showEmail                  Boolean @default(true)
+  siteName                    String
+  legalName                   String?
+  primaryEmail                String?
+  primaryPhone                String?
+  websiteUrl                  String?
+  timezone                    String?
+  officeAddress               String? @db.Text
+  officeHours                 String?
+  logoPath                    String?
+  headerLogoPath              String?
+  footerLogoPath              String?
+  faviconPath                 String?
+  metaTitle                   String?
+  metaDescription             String? @db.Text
+  metaKeywords                String?
+  gstNumber                   String?
+  cinNumber                   String?
+  mapUrl                      String?
+  teamMembers                 String?
+  happyCustomers              String?
+  operationalSupport          String?
+  heroTrustTags               String? @db.Text
+  heroTagline                 String?
+  heroTitle                   String?
+  heroTitleAccent             String?
+  heroTitleSuffix             String?
+  heroDescription             String? @db.Text
+  heroBackgroundImagePath     String?
+  heroButtonLabel             String?
+  heroButtonHref              String?
+  aboutTagline                String?
+  aboutTitle                  String?
+  aboutTitleAccent            String?
+  aboutDescription            String? @db.Text
+  aboutButtons                String? @db.Text
+  aboutButtonLabel            String?
+  aboutButtonHref             String?
+  aboutHighlights             String? @db.Text
+  aboutFeatureCards           String? @db.Text
+  deliveryModelTitle          String?
+  deliveryModelItems          String? @db.Text
+  serviceSectionTagline       String?
+  serviceSectionTitle         String?
+  serviceSectionAccent        String?
+  serviceSectionDescription   String? @db.Text
+  serviceSectionCtaLabel      String?
+  serviceSectionCtaHref       String?
+  whyClientsTagline           String?
+  whyClientsTitle             String?
+  whyClientsDescription       String? @db.Text
+  whyClientsCards             String? @db.Text
+  homeTestimonialsTagline     String?
+  homeTestimonialsTitle       String?
+  homeTestimonialsAccent      String?
+  homeTestimonialsDescription String? @db.Text
+  homeCtaTagline              String?
+  homeCtaTitle                String?
+  homeCtaAccent               String?
+  homeCtaDescription          String? @db.Text
+  homeCtaButtonLabel          String?
+  homeCtaButtonHref           String?
+  globalDeliveryTagline       String?
+  globalDeliveryTitle         String?
+  globalDeliveryDescription   String? @db.Text
+  globalDeliveryImagePath     String?
+  serviceHeroTitle            String?
+  serviceHeroDescription      String? @db.Text
+  serviceDeliveryTagline      String?
+  serviceDeliveryTitle        String?
+  serviceDeliveryDescription  String? @db.Text
+  serviceDeliveryCards        String? @db.Text
+  showPhone                   Boolean @default(true)
+  showEmail                   Boolean @default(true)
 
   eventHeroTagline             String?
   eventHeroTitle               String?
@@ -180,6 +205,74 @@ model SiteSettings {
 
   eventContactTitle       String?
   eventContactDescription String?
+
+  aboutPageHeroTagline     String?
+  aboutPageHeroTitle       String?
+  aboutPageHeroAccent      String?
+  aboutPageHeroDescription String? @db.Text
+  aboutPageHeroImagePath   String?
+  aboutStoryTagline        String?
+  aboutStoryTitle          String?
+  aboutStoryDescription    String? @db.Text
+  aboutStoryCards          String? @db.Text
+  aboutApproachTagline     String?
+  aboutApproachTitle       String?
+  aboutApproachDescription String? @db.Text
+  aboutApproachTabs        String? @db.Text
+  aboutLeadershipTitle     String?
+  aboutLeaders             String? @db.Text
+  aboutPageCtaTagline      String?
+  aboutPageCtaTitle        String?
+  aboutPageCtaDescription  String? @db.Text
+  aboutPageCtaButtonLabel  String?
+  aboutPageCtaButtonHref   String?
+
+  contactHeroTagline              String?
+  contactHeroTitle                String?
+  contactHeroAccent               String?
+  contactHeroDescription          String? @db.Text
+  contactHeroPrimaryButtonLabel   String?
+  contactHeroSecondaryButtonLabel String?
+  contactPageEmail                String?
+  contactPageAddress              String? @db.Text
+  contactMetrics                  String? @db.Text
+  contactStepsTagline             String?
+  contactStepsTitle               String?
+  contactStepsDescription         String? @db.Text
+  contactProcessSteps             String? @db.Text
+
+  careerHeroTagline              String?
+  careerHeroTitle                String?
+  careerHeroAccent               String?
+  careerHeroDescription          String? @db.Text
+  careerHeroImagePath            String?
+  careerHeroButtonLabel          String?
+  careerHeroButtonHref           String?
+  careerLifeTagline              String?
+  careerLifeTitle                String?
+  careerLifeAccent               String?
+  careerLifeDescription          String? @db.Text
+  careerLifeImagePath            String?
+  careerLifeCalloutTitle         String?
+  careerLifeCalloutDescription   String?
+  careerMetrics                  String? @db.Text
+  careerOpportunitiesTagline     String?
+  careerOpportunitiesTitle       String?
+  careerOpportunitiesAccent      String?
+  careerOpportunitiesDescription String? @db.Text
+  careerBenefitsTagline          String?
+  careerBenefitsTitle            String?
+  careerBenefitsAccent           String?
+  careerBenefitsDescription      String? @db.Text
+  careerBenefits                 String? @db.Text
+  careerBenefitStats             String? @db.Text
+  careerCtaTagline               String?
+  careerCtaTitle                 String?
+  careerCtaDescription           String? @db.Text
+  careerCtaButtonLabel           String?
+  careerCtaButtonHref            String?
+  growthLearningContent          String? @db.Text
+  cultureContent                 String? @db.Text
 
   smtpHost            String?
   smtpPort            String?

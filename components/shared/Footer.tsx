@@ -1,9 +1,64 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, FileText, MessageSquare } from "lucide-react";
+import { ArrowUpRight, MessageSquare } from "lucide-react";
 import Image from "next/image";
+import {
+    FaFacebookF,
+    FaInstagram,
+    FaLinkedinIn,
+    FaYoutube,
+} from "react-icons/fa";
+import type { SiteSettings } from "@/lib/generated/prisma";
 
-export default function Footer() {
+function getLogoSource(value: string | null | undefined): string | null {
+    const source = value?.trim();
+    if (!source) return null;
+    if (/^https?:\/\//i.test(source)) return source;
+    if (/^\/?uploads\//i.test(source)) {
+        return `/api/uploads/${source.replace(/^\/?uploads\//i, "")}`;
+    }
+    return source;
+}
+
+type FooterSettings = Pick<
+    SiteSettings,
+    | "siteName"
+    | "legalName"
+    | "primaryEmail"
+    | "footerLogoPath"
+    | "logoPath"
+    | "homeCtaTagline"
+    | "homeCtaTitle"
+    | "homeCtaAccent"
+    | "homeCtaDescription"
+    | "homeCtaButtonLabel"
+    | "homeCtaButtonHref"
+    | "facebookUrl"
+    | "instagramUrl"
+    | "linkedinUrl"
+    | "youtubeUrl"
+    | "socialBio"
+    | "showSocialIcons"
+    | "showEmail"
+>;
+
+function getExternalHref(value: string | null | undefined): string | null {
+    const href = value?.trim();
+    if (!href) return null;
+    if (/^https?:\/\//i.test(href)) return href;
+    if (/^[\w.-]+\.[a-z]{2,}(\/\S*)?$/i.test(href)) return `https://${href}`;
+    return null;
+}
+
+export default function Footer({ settings }: { settings?: FooterSettings }) {
+    const footerLogo = getLogoSource(settings?.footerLogoPath || settings?.logoPath) || "/logo-white.png";
+    const socialLinks = [
+        { label: "Facebook", href: getExternalHref(settings?.facebookUrl), Icon: FaFacebookF },
+        { label: "Instagram", href: getExternalHref(settings?.instagramUrl), Icon: FaInstagram },
+        { label: "LinkedIn", href: getExternalHref(settings?.linkedinUrl), Icon: FaLinkedinIn },
+        { label: "YouTube", href: getExternalHref(settings?.youtubeUrl), Icon: FaYoutube },
+    ];
+
     return (
         <>
 
@@ -28,26 +83,27 @@ export default function Footer() {
                     <div className="flex flex-col items-center text-center pb-20 border-b border-slate-800/80">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-[#f06425] text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
                             <span className="w-2 h-2 rounded-full bg-[#f06425] animate-pulse" />
-                            <span>Make the Next Move</span>
+                            <span>{settings?.homeCtaTagline || "Make the Next Move"}</span>
                         </div>
 
                         <h2 className="font-serif text-3xl lg:text-5xl font-bold tracking-tight text-white max-w-3xl leading-[1.12]">
-                            Ready to move your business forward? <br />
+                            {settings?.homeCtaTitle || "Ready to move your business"}{" "}
                             <span className="bg-gradient-to-r from-[#f06425] via-amber-400 to-[#38bdf8] bg-clip-text text-transparent">
-                                Let&apos;s get to work.
+                                {settings?.homeCtaAccent || "forward? Let’s get to work."}
                             </span>
                         </h2>
 
                         <p className="mt-6 text-slate-400 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
-                            Bring us a complex challenge. We&apos;ll help turn it into a clear, workable plan.
+                            {settings?.homeCtaDescription ||
+                                "Bring us a complex challenge. We’ll help turn it into a clear, workable plan."}
                         </p>
 
                         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                             <Link
-                                href="/contact"
+                                href={getInternalHref(settings?.homeCtaButtonHref, "/contact")}
                                 className="group inline-flex items-center gap-2 bg-[#e36a1e] hover:bg-[#cc5c15] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg shadow-orange-950/50 hover:shadow-orange-500/30 transition-all duration-200"
                             >
-                                <span>Talk with our team</span>
+                                <span>{settings?.homeCtaButtonLabel || "Talk with our team"}</span>
                                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                             </Link>
                         </div>
@@ -59,8 +115,8 @@ export default function Footer() {
                         <div className="lg:col-span-2 flex flex-col items-start pr-4">
                             <Link href="/" className="flex items-center gap-3 select-none mb-5">
                                 <Image
-                                    src="/logo-white.png"
-                                    alt="Pinnacle Serve"
+                                    src={footerLogo}
+                                    alt={settings?.siteName || "Pinnacle Serve"}
                                     width={875}
                                     height={980}
                                     className="h-40 w-60 rounded-md p-1 object-contain"
@@ -93,7 +149,8 @@ export default function Footer() {
                         {/* Connect */}
                         <div className="flex flex-col gap-3">
                             <h4 className="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">Connect</h4>
-                            <div className="flex items-center gap-3 mb-2">
+                            {!settings && (
+                                <div className="flex items-center gap-3 mb-2">
                                 <a
                                     href="https://linkedin.com"
                                     target="_blank"
@@ -127,20 +184,48 @@ export default function Footer() {
                                         <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
                                     </svg>
                                 </a>
-                            </div>
-                            <a
-                                href="mailto:contact@pinnacleserve.com"
-                                className="text-slate-300 hover:text-orange-400 text-xs sm:text-sm transition font-mono"
-                            >
-                                contact@pinnacleserve.com
-                            </a>
+                                </div>
+                            )}
+                            {settings?.socialBio && (
+                                <p className="max-w-xs text-sm leading-relaxed text-slate-400">
+                                    {settings.socialBio}
+                                </p>
+                            )}
+                            {settings?.showSocialIcons && socialLinks.some((link) => link.href) && (
+                                <div className="flex items-center gap-3">
+                                    {socialLinks.map(({ label, href, Icon }) =>
+                                        href ? (
+                                            <a
+                                                key={label}
+                                                href={href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={label}
+                                                className="flex size-8 items-center justify-center rounded-full border border-slate-800 bg-slate-900 text-slate-400 transition hover:border-slate-700 hover:text-white"
+                                            >
+                                                <Icon className="size-4" aria-hidden="true" />
+                                            </a>
+                                        ) : null,
+                                    )}
+                                </div>
+                            )}
+                            {settings?.showEmail && settings.primaryEmail && (
+                                <a
+                                    href={`mailto:${settings.primaryEmail}`}
+                                    className="text-slate-300 hover:text-orange-400 text-xs sm:text-sm transition font-mono"
+                                >
+                                    {settings.primaryEmail}
+                                </a>
+                            )}
                         </div>
 
                     </div>
 
                     {/* Bottom copyright & legal */}
                     <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-light">
-                        <p>© 2026 Pinnacle Serve. All rights reserved.</p>
+                        <p>
+                            © {new Date().getFullYear()} {settings?.legalName || settings?.siteName || "Pinnacle Serve"}. All rights reserved.
+                        </p>
                         <div className="flex items-center gap-6">
                             <Link href="/terms-and-conditions" className="hover:text-slate-300 transition">Terms &amp; Conditions</Link>
                             <Link href="/privacy-policy" className="hover:text-slate-300 transition">Privacy Policy</Link>
@@ -152,4 +237,11 @@ export default function Footer() {
         </>
 
     );
+}
+
+function getInternalHref(value: string | null | undefined, fallback: string): string {
+    const href = value?.trim();
+    return href && (href.startsWith("/") || href.startsWith("#")) && !href.startsWith("//")
+        ? href
+        : fallback;
 }

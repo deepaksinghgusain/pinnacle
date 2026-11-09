@@ -6,6 +6,9 @@ import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
 import Event from "./Event";
+import Career from "./Career";
+import Growthandlearing from "./Growthandlearing";
+import Culture from "./Culture";
 
 export default async function Page() {
   const setting = await getSettings();
@@ -20,8 +23,13 @@ export default async function Page() {
         <Tabs defaultValue="home" className="gap-4">
           <TabsList variant="line" className="w-full justify-start">
             <TabsTrigger value="home">Home Page</TabsTrigger>
+            <TabsTrigger value="about">About Page</TabsTrigger>
             <TabsTrigger value="services">Service Page</TabsTrigger>
             <TabsTrigger value="events">Event Page</TabsTrigger>
+            <TabsTrigger value="contact">Contact Page</TabsTrigger>
+            <TabsTrigger value="career">Career Page</TabsTrigger>
+            <TabsTrigger value="growth-learning">Growth and Learning</TabsTrigger>
+            <TabsTrigger value="culture">Culture</TabsTrigger>
 
           </TabsList>
 
@@ -30,7 +38,7 @@ export default async function Page() {
               <Home setting={setting} />
             </TabsContent>
             <TabsContent value="about">
-              <About />
+              <About setting={setting} />
             </TabsContent>
             <TabsContent value="services">
               <Services setting={setting} />
@@ -39,7 +47,16 @@ export default async function Page() {
               <Event setting={setting} />
             </TabsContent>
             <TabsContent value="contact">
-              <Contact />
+              <Contact setting={setting} />
+            </TabsContent>
+            <TabsContent value="career">
+              <Career setting={setting} />
+            </TabsContent>
+            <TabsContent value="growth-learning">
+              <Growthandlearing setting={setting} />
+            </TabsContent>
+            <TabsContent value="culture">
+              <Culture setting={setting} />
             </TabsContent>
           </div>
         </Tabs>

@@ -31,7 +31,7 @@ import {
 const data = {
   user: {
     name: "Admin",
-    email: "admin@asservices.in",
+    email: "admin@pinnacle.in",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
@@ -66,11 +66,6 @@ const data = {
       icon: <BriefcaseBusiness />,
     },
     {
-      title: "Newsletter",
-      url: "/admin/newsletter",
-      icon: <Mails />,
-    },
-    {
       title: "Testimonials",
       url: "/admin/testimonial",
       icon: <ClipboardPenLine />,
@@ -79,16 +74,6 @@ const data = {
       title: "Users",
       url: "/admin/user",
       icon: <UsersIcon />,
-    },
-    {
-      title: "Banner",
-      url: "/admin/banner",
-      icon: <BarChart3 />,
-    },
-    {
-      title: "Events",
-      url: "/admin/upcomming-events",
-      icon: <CalendarClock />,
     },
     {
       title: "Page",
