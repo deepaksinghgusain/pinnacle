@@ -25,7 +25,6 @@ export default async function Page() {
             <TabsTrigger value="home">Home Page</TabsTrigger>
             <TabsTrigger value="about">About Page</TabsTrigger>
             <TabsTrigger value="services">Service Page</TabsTrigger>
-            <TabsTrigger value="events">Event Page</TabsTrigger>
             <TabsTrigger value="contact">Contact Page</TabsTrigger>
             <TabsTrigger value="career">Career Page</TabsTrigger>
             <TabsTrigger value="growth-learning">Growth and Learning</TabsTrigger>
