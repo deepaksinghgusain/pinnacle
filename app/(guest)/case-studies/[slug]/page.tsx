@@ -1,4 +1,9 @@
+import { connection } from "next/server";
 import { notFound } from "next/navigation";
+import { Status } from "@/lib/generated/prisma";
+import { getCaseStudyBySlug } from "@/lib/editorial-data";
+import { parseCaseStudyContent } from "@/lib/editorial-content";
+import CaseStudyTemplate from "@/components/shared/CaseStudyTemplate";
 import EditorialPage from "@/components/shared/EditorialPage";
 
 const caseStudies = {
@@ -123,7 +128,20 @@ export default async function CaseStudyPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  await connection();
   const { slug } = await params;
+  const result = await getCaseStudyBySlug(slug);
+  if (result.databaseAvailable) {
+    const savedCaseStudy = result.data;
+    if (!savedCaseStudy || savedCaseStudy.status !== Status.ACTIVE) notFound();
+    return (
+      <CaseStudyTemplate
+        name={savedCaseStudy.name}
+        content={parseCaseStudyContent(savedCaseStudy.content)}
+      />
+    );
+  }
+
   const caseStudy = caseStudies[slug as keyof typeof caseStudies];
 
   if (!caseStudy) notFound();

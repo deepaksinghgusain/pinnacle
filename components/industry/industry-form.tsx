@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { createIndustry, updateIndustry } from "@/lib/actions/industry-action";
 import {
-  defaultIndustryContent,
   parseIndustryContent,
   type IndustryContent,
   type IndustryInput,
@@ -21,6 +20,27 @@ import type { Industry, Status } from "@/lib/generated/prisma";
 
 type Props = {
   industry?: Industry;
+};
+
+const emptyIndustryContent: IndustryContent = {
+  heroTitle: "",
+  heroDescription: "",
+  heroImagePath: "",
+  heroPrimaryLabel: "",
+  heroPrimaryHref: "",
+  heroSecondaryLabel: "",
+  heroSecondaryHref: "",
+  overviewTitle: "",
+  overviewDescription: "",
+  challengesTitle: "",
+  challenges: [],
+  solutionsTitle: "",
+  solutionsDescription: "",
+  solutions: [],
+  capabilitiesTitle: "",
+  capabilities: [],
+  outcomesTitle: "",
+  outcomes: [],
 };
 
 function toSlug(value: string) {
@@ -50,7 +70,7 @@ export default function IndustryForm({ industry }: Props) {
   const [content, setContent] = useState<IndustryContent>(() => {
     return industry
       ? parseIndustryContent(industry.content)
-      : defaultIndustryContent;
+      : emptyIndustryContent;
   });
 
   const updateContent = <K extends keyof IndustryContent>(
@@ -271,7 +291,7 @@ export default function IndustryForm({ industry }: Props) {
 }
 
 function contentHeroPath(industry?: Industry) {
-  if (!industry) return defaultIndustryContent.heroImagePath;
+  if (!industry) return "";
   return parseIndustryContent(industry.content).heroImagePath;
 }
 

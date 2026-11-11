@@ -1,4 +1,9 @@
+import { connection } from "next/server";
 import { notFound } from "next/navigation";
+import { Status } from "@/lib/generated/prisma";
+import { getInsightBySlug } from "@/lib/editorial-data";
+import { parseInsightContent } from "@/lib/editorial-content";
+import InsightTemplate from "@/components/shared/InsightTemplate";
 import EditorialPage from "@/components/shared/EditorialPage";
 
 const pages = {
@@ -104,7 +109,20 @@ export default async function InsightPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  await connection();
   const { slug } = await params;
+  const result = await getInsightBySlug(slug);
+  if (result.databaseAvailable) {
+    const savedInsight = result.data;
+    if (!savedInsight || savedInsight.status !== Status.ACTIVE) notFound();
+    return (
+      <InsightTemplate
+        name={savedInsight.name}
+        content={parseInsightContent(savedInsight.content)}
+      />
+    );
+  }
+
   const page = pages[slug as keyof typeof pages];
 
   if (!page) notFound();

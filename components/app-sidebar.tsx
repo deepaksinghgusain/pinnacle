@@ -24,6 +24,7 @@ import {
   ClipboardPenLine,
   BookOpen,
   Layers3,
+  Lightbulb,
 } from "lucide-react"
 
 const data = {
@@ -52,6 +53,16 @@ const data = {
       title: "Industries",
       url: "/admin/industry",
       icon: <Layers3 />,
+    },
+    {
+      title: "Case Studies",
+      url: "/admin/case-studies",
+      icon: <BookOpen />,
+    },
+    {
+      title: "Insights",
+      url: "/admin/insights",
+      icon: <Lightbulb />,
     },
     {
       title: "Leads",

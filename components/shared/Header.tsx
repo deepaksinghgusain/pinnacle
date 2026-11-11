@@ -19,6 +19,8 @@ type HeaderProps = {
   logoPath?: SiteSettings["headerLogoPath"];
   siteName?: SiteSettings["siteName"];
   industryItems?: MenuLink[] | null;
+  caseStudyItems?: MenuLink[] | null;
+  insightItems?: MenuLink[] | null;
 };
 
 function getLogoSource(value: string | null | undefined): string | null {
@@ -194,7 +196,13 @@ const searchItems: MenuLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Header({ logoPath, siteName, industryItems }: HeaderProps) {
+export default function Header({
+  logoPath,
+  siteName,
+  industryItems,
+  caseStudyItems,
+  insightItems,
+}: HeaderProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -224,6 +232,16 @@ export default function Header({ logoPath, siteName, industryItems }: HeaderProp
   }, [mobileMenuOpen]);
 
   const resolvedIndustryLinks = industryItems ?? industryLinks;
+  const resolvedCaseStudyLinks = caseStudyItems?.length
+    ? [{ label: "All case studies", href: "/case-studies" }, ...caseStudyItems]
+    : caseStudyLinks;
+  const resolvedInsightLinks = insightItems?.length
+    ? [{ label: "All insights", href: "/insights" }, ...insightItems]
+    : [
+        { label: "AI and automation", href: "/insights/ai-and-automation" },
+        { label: "Digital transformation", href: "/insights/digital-transformation" },
+        { label: "Cloud and data", href: "/insights/cloud-and-data" },
+      ];
   const navigationMenus = megaMenus.map((menu) =>
     menu.label === "What we do"
       ? {
@@ -231,12 +249,28 @@ export default function Header({ logoPath, siteName, industryItems }: HeaderProp
           categories: menu.categories.map((category) =>
             category.label === "Industry"
               ? { ...category, links: resolvedIndustryLinks }
-              : category,
+              : category.label === "Case Studies"
+                ? { ...category, links: resolvedCaseStudyLinks }
+                : category,
           ),
         }
-      : menu,
+      : menu.label === "Our Thinking"
+        ? {
+            ...menu,
+            categories: menu.categories.map((category) =>
+              category.label === "Insights"
+                ? { ...category, links: resolvedInsightLinks }
+                : category,
+            ),
+          }
+        : menu,
   );
-  const filteredSearchItems = [...searchItems, ...resolvedIndustryLinks].filter((item) =>
+  const filteredSearchItems = [
+    ...searchItems,
+    ...resolvedIndustryLinks,
+    ...resolvedCaseStudyLinks,
+    ...resolvedInsightLinks,
+  ].filter((item) =>
     item.label.toLowerCase().includes(searchQuery.trim().toLowerCase()),
   );
 

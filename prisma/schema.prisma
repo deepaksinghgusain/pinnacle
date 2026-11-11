@@ -109,6 +109,28 @@ model Industry {
   updatedAt DateTime @updatedAt @db.Timestamp(6)
 }
 
+model CaseStudy {
+  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name    String
+  slug    String @unique
+  status  Status @default(ACTIVE)
+  content String @db.Text
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
+model Insight {
+  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name    String
+  slug    String @unique
+  status  Status @default(ACTIVE)
+  content String @db.Text
+
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+}
+
 model Enquiry {
   id          String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   fullName    String
