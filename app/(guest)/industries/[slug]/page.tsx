@@ -1,5 +1,10 @@
+import { connection } from "next/server";
 import { notFound } from "next/navigation";
+import { Status } from "@/lib/generated/prisma";
 import EditorialPage from "@/components/shared/EditorialPage";
+import IndustryTemplate from "@/components/shared/IndustryTemplate";
+import { parseIndustryContent } from "@/lib/industry-content";
+import { getIndustryBySlug } from "@/lib/industry-data";
 
 const industries = {
   healthcare: {
@@ -114,16 +119,25 @@ const industries = {
   },
 } as const;
 
-export function generateStaticParams() {
-  return Object.keys(industries).map((slug) => ({ slug }));
-}
-
 export default async function IndustryPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  await connection();
   const { slug } = await params;
+  const result = await getIndustryBySlug(slug);
+  if (result.databaseAvailable) {
+    const savedIndustry = result.industry;
+    if (!savedIndustry || savedIndustry.status !== Status.ACTIVE) notFound();
+    return (
+      <IndustryTemplate
+        name={savedIndustry.name}
+        content={parseIndustryContent(savedIndustry.content)}
+      />
+    );
+  }
+
   const industry = industries[slug as keyof typeof industries];
 
   if (!industry) notFound();

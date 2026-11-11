@@ -18,6 +18,7 @@ import type { SiteSettings } from "@/lib/generated/prisma";
 type HeaderProps = {
   logoPath?: SiteSettings["headerLogoPath"];
   siteName?: SiteSettings["siteName"];
+  industryItems?: MenuLink[] | null;
 };
 
 function getLogoSource(value: string | null | undefined): string | null {
@@ -140,14 +141,6 @@ const megaMenus: MegaMenu[] = [
     href: "/customer-delight",
     categories: [
       {
-        label: "Client outcomes",
-        links: caseStudyLinks,
-      },
-      {
-        label: "Industry perspectives",
-        links: industryLinks,
-      },
-      {
         label: "Insights",
         links: [
           { label: "AI and automation", href: "/insights/ai-and-automation" },
@@ -192,15 +185,16 @@ const megaMenus: MegaMenu[] = [
 ];
 
 const searchItems: MenuLink[] = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
   ...serviceLinks,
-  ...industryLinks,
   { label: "Case Studies", href: "/customer-delight#case-studies" },
   { label: "Our Company", href: "/about" },
   { label: "Careers", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Header({ logoPath, siteName }: HeaderProps) {
+export default function Header({ logoPath, siteName, industryItems }: HeaderProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -229,7 +223,20 @@ export default function Header({ logoPath, siteName }: HeaderProps) {
     };
   }, [mobileMenuOpen]);
 
-  const filteredSearchItems = searchItems.filter((item) =>
+  const resolvedIndustryLinks = industryItems ?? industryLinks;
+  const navigationMenus = megaMenus.map((menu) =>
+    menu.label === "What we do"
+      ? {
+          ...menu,
+          categories: menu.categories.map((category) =>
+            category.label === "Industry"
+              ? { ...category, links: resolvedIndustryLinks }
+              : category,
+          ),
+        }
+      : menu,
+  );
+  const filteredSearchItems = [...searchItems, ...resolvedIndustryLinks].filter((item) =>
     item.label.toLowerCase().includes(searchQuery.trim().toLowerCase()),
   );
 
@@ -245,11 +252,11 @@ export default function Header({ logoPath, siteName }: HeaderProps) {
     setMobileCategory(null);
   };
 
-  const activeMegaMenu = megaMenus.find((menu) => menu.label === activeMenu);
+  const activeMegaMenu = navigationMenus.find((menu) => menu.label === activeMenu);
   const activeMegaCategory = activeMegaMenu?.categories.find(
     (category) => category.label === activeCategory,
   );
-  const mobileMegaMenu = megaMenus.find((menu) => menu.label === mobileMenu);
+  const mobileMegaMenu = navigationMenus.find((menu) => menu.label === mobileMenu);
   const logoSource = getLogoSource(logoPath);
 
   return (
@@ -287,7 +294,19 @@ export default function Header({ logoPath, siteName }: HeaderProps) {
           aria-label="Main navigation"
           className="ml-10 hidden h-full items-center gap-3 xl:flex 2xl:gap-6"
         >
-          {megaMenus.map((menu) => (
+          <Link
+            href="/"
+            className="flex h-full items-center whitespace-nowrap text-sm text-white/90 transition-colors hover:text-white"
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            className="flex h-full items-center whitespace-nowrap text-sm text-white/90 transition-colors hover:text-white"
+          >
+            About Us
+          </Link>
+          {navigationMenus.map((menu) => (
             <button
               key={menu.label}
               type="button"
@@ -537,7 +556,23 @@ export default function Header({ logoPath, siteName }: HeaderProps) {
             <nav aria-label="Main menu" className="w-full pt-5 sm:pt-8">
               {!mobileMenu ? (
                 <>
-                  {megaMenus.map((menu) => (
+                  <Link
+                    href="/"
+                    onClick={closeMobileMenu}
+                    className="flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-white"
+                  >
+                    Home
+                    <ChevronRight className="h-6 w-6 shrink-0 text-white" strokeWidth={1.8} />
+                  </Link>
+                  <Link
+                    href="/about"
+                    onClick={closeMobileMenu}
+                    className="flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-white"
+                  >
+                    About Us
+                    <ChevronRight className="h-6 w-6 shrink-0 text-white" strokeWidth={1.8} />
+                  </Link>
+                  {navigationMenus.map((menu) => (
                     <button
                       key={menu.label}
                       type="button"

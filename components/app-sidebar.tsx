@@ -14,7 +14,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import {
-  BarChart3,
   BriefcaseBusiness,
   Command,
   Database,
@@ -22,10 +21,9 @@ import {
   Mail,
   Settings,
   UsersIcon,
-  Mails,
   ClipboardPenLine,
   BookOpen,
-  CalendarClock
+  Layers3,
 } from "lucide-react"
 
 const data = {
@@ -49,6 +47,11 @@ const data = {
       title: "Service",
       url: "/admin/service",
       icon: <Database />,
+    },
+    {
+      title: "Industries",
+      url: "/admin/industry",
+      icon: <Layers3 />,
     },
     {
       title: "Leads",

@@ -13,6 +13,7 @@ import {
 } from "../lib/generated/prisma/client";
 import { defaultGrowthLearningContent } from "../lib/growth-learning-content";
 import { defaultCultureContent } from "../lib/culture-content";
+import { defaultIndustryContent } from "../lib/industry-content";
 
 function parseEnvFile(content: string) {
   const values: Record<string, string> = {};
@@ -272,6 +273,44 @@ const seedBanners = [
     description:
       "Flexible delivery designed to help teams handle change, close gaps quickly, and stay steady under pressure.",
     image: "/hero-consulting.svg",
+  },
+];
+
+const seedIndustries = [
+  {
+    name: "Healthcare",
+    slug: "healthcare",
+    heroTitle: "Transforming Healthcare Operations",
+    overview:
+      "Healthcare workflows span patient access, claims, coding, authorization, and follow-up. Organizations need reliable processes that protect sensitive information and keep clinical and financial decisions with the appropriate people.",
+  },
+  {
+    name: "Banking",
+    slug: "banking",
+    heroTitle: "Advancing Banking Operations",
+    overview:
+      "Financial organizations coordinate customer service, onboarding, fraud review, compliance, and account operations in a highly controlled business environment. Clear workflows and reliable information help teams deliver consistent service.",
+  },
+  {
+    name: "Telecom",
+    slug: "telecom",
+    heroTitle: "Connecting Telecom Operations",
+    overview:
+      "Telecom operations span network management, customer care, field service, and always-on infrastructure. Teams need current information and clear ownership to coordinate requests and resolve issues efficiently.",
+  },
+  {
+    name: "Retail",
+    slug: "retail",
+    heroTitle: "Improving Retail Operations",
+    overview:
+      "Retail organizations bring together stores, digital channels, fulfillment, inventory, and customer service. Connected systems and dependable processes help teams adapt to changing demand and expectations.",
+  },
+  {
+    name: "Manufacturing",
+    slug: "manufacturing",
+    heroTitle: "Strengthening Manufacturing Operations",
+    overview:
+      "Manufacturing teams coordinate production, quality, maintenance, and supply-chain activity. Timely operational information and consistent workflows help identify exceptions and keep work moving.",
   },
 ];
 
@@ -969,6 +1008,25 @@ async function seedContent() {
     await prisma.banner.upsert({
       where: { id: seedUuid("banner", banner.title) },
       create: { id: seedUuid("banner", banner.title), ...data },
+      update: data,
+    });
+  }
+
+  for (const industry of seedIndustries) {
+    const id = seedUuid("industry", industry.slug);
+    const data = {
+      name: industry.name,
+      slug: industry.slug,
+      status: active,
+      content: JSON.stringify({
+        ...defaultIndustryContent,
+        heroTitle: industry.heroTitle,
+        overviewDescription: industry.overview,
+      }),
+    };
+    await prisma.industry.upsert({
+      where: { id },
+      create: { id, ...data },
       update: data,
     });
   }
