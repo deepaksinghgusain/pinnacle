@@ -50,7 +50,13 @@ function getExternalHref(value: string | null | undefined): string | null {
     return null;
 }
 
-export default function Footer({ settings }: { settings?: FooterSettings }) {
+export default function Footer({
+    settings,
+    serviceItems,
+}: {
+    settings?: FooterSettings;
+    serviceItems?: { label: string; href: string }[] | null;
+}) {
     const footerLogo = getLogoSource(settings?.footerLogoPath || settings?.logoPath) || "/logo-white.png";
     const socialLinks = [
         { label: "Facebook", href: getExternalHref(settings?.facebookUrl), Icon: FaFacebookF },
@@ -139,11 +145,15 @@ export default function Footer({ settings }: { settings?: FooterSettings }) {
                         {/* Services */}
                         <div className="flex flex-col gap-3">
                             <h4 className="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">Services</h4>
-                            <Link href="/what-we-offer/ai-services" className="text-slate-400 hover:text-white text-sm transition">AI & Machine Learning</Link>
-                            <Link href="/what-we-offer/cloud-engineering" className="text-slate-400 hover:text-white text-sm transition">Cloud Solutions</Link>
-                            <Link href="/what-we-offer/digital-product-engineering" className="text-slate-400 hover:text-white text-sm transition">Digital Product Engineering</Link>
-                            <Link href="/what-we-offer/data-services" className="text-slate-400 hover:text-white text-sm transition">Data Services</Link>
-                            <Link href="/what-we-offer/managed-services" className="text-slate-400 hover:text-white text-sm transition">Managed Services</Link>
+                            {serviceItems?.map((service) => (
+                                <Link
+                                    key={service.href}
+                                    href={service.href}
+                                    className="text-slate-400 hover:text-white text-sm transition"
+                                >
+                                    {service.label}
+                                </Link>
+                            ))}
                         </div>
 
                         {/* Connect */}

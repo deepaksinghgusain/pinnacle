@@ -36,15 +36,6 @@ const defaultValues: EnquiryValues = {
   message: "",
 }
 
-const subjectOptions = [
-  "Back Office Operations",
-  "Data Analytics & Dashboards",
-  "Technical Support Services",
-  "IT Consulting Services",
-  "IT Managed Services",
-  "Recovery Support Services",
-  "General Enquiry",
-]
 
 function FieldLabel({
   children,

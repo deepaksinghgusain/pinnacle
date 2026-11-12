@@ -18,6 +18,7 @@ import type { SiteSettings } from "@/lib/generated/prisma";
 type HeaderProps = {
   logoPath?: SiteSettings["headerLogoPath"];
   siteName?: SiteSettings["siteName"];
+  serviceItems?: MenuLink[] | null;
   industryItems?: MenuLink[] | null;
   caseStudyItems?: MenuLink[] | null;
   insightItems?: MenuLink[] | null;
@@ -42,94 +43,14 @@ type MegaMenu = {
   featured: { eyebrow: string; title: string; href: string; image: string };
 };
 
-const serviceLinks: MenuLink[] = [
-  { label: "AI Services", href: "/service/ai-services" },
-  { label: "Digital Product Engineering", href: "/service/digital-product-engineering" },
-  { label: "Cloud Engineering", href: "/service/cloud-engineering" },
-  { label: "Data Services", href: "/service/data-services" },
-  { label: "RCM as a Service", href: "/service/rcm" },
-  { label: "Automation Services", href: "/service/automation-services" },
-  { label: "Managed Services", href: "/service/managed-services" },
-  { label: "Property Operations", href: "/service/utilities-management" },
-  { label: "Intelligent Backoffice Operations", href: "/service/intelligent-backoffice-operations" },
-  { label: "Reporting & Analytics", href: "/service/reporting-analytics" },
-  { label: "Technical Support", href: "/service/technical-support" },
-  { label: "Process Management", href: "/service/process-management" },
-  { label: "Banking Finance Support", href: "/service/banking-finance-support" },
-];
-
-const industryLinks: MenuLink[] = [
-  { label: "Healthcare", href: "/industries/healthcare" },
-  { label: "Banking", href: "/industries/banking" },
-  { label: "Telecom", href: "/industries/telecom" },
-  { label: "Retail", href: "/industries/retail" },
-  { label: "Manufacturing", href: "/industries/manufacturing" },
-];
-
-const caseStudyLinks: MenuLink[] = [
-  { label: "Healthcare outcomes", href: "/case-studies/healthcare" },
-  { label: "Banking outcomes", href: "/case-studies/banking" },
-  { label: "Telecom outcomes", href: "/case-studies/telecom" },
-  { label: "Retail outcomes", href: "/case-studies/retail" },
-  { label: "Manufacturing outcomes", href: "/case-studies/manufacturing" },
-];
-
 const megaMenus: MegaMenu[] = [
-  // {
-  //   label: "Who we are",
-  //   href: "/about",
-  //   categories: [
-  //     {
-  //       label: "Purpose & Values",
-  //       links: [
-  //         { label: "What we believe in", href: "/about/beliefs" },
-  //         { label: "Future vision", href: "/about/future-vision" },
-  //       ],
-  //     },
-  //     {
-  //       label: "Our People",
-  //       links: [
-  //         { label: "Meet our team", href: "/about/team" },
-  //         { label: "Careers at Pinnacle", href: "/career" },
-  //       ],
-  //     },
-  //     {
-  //       label: "Governance",
-  //       links: [
-  //         { label: "Responsible technology", href: "/about/responsible-technology" },
-  //         { label: "Privacy & security", href: "/about/privacy-security" },
-  //       ],
-  //     },
-  //     {
-  //       label: "Recognition",
-  //       links: [
-  //         { label: "Client outcomes", href: "/customer-delight" },
-  //         { label: "Our work", href: "/customer-delight#case-studies" },
-  //       ],
-  //     },
-  //     {
-  //       label: "Press room",
-  //       links: [{ label: "Latest updates", href: "/insights/latest-updates" }],
-  //     },
-  //     {
-  //       label: "Contact Us",
-  //       links: [{ label: "Get in touch", href: "/contact" }],
-  //     },
-  //   ],
-  //   featured: {
-  //     eyebrow: "About Us",
-  //     title: "Together makes progress",
-  //     href: "/about",
-  //     image: "/welcoming-moments.png",
-  //   },
-  // },
   {
     label: "What we do",
     href: "/#our-services",
     categories: [
-      { label: "Services", links: serviceLinks },
-      { label: "Industry", links: industryLinks },
-      { label: "Case Studies", links: caseStudyLinks },
+      { label: "Services", links: [] },
+      { label: "Industry", links: [] },
+      { label: "Case Studies", links: [] },
     ],
     featured: {
       eyebrow: "Our Services",
@@ -144,11 +65,7 @@ const megaMenus: MegaMenu[] = [
     categories: [
       {
         label: "Insights",
-        links: [
-          { label: "AI and automation", href: "/insights/ai-and-automation" },
-          { label: "Digital transformation", href: "/insights/digital-transformation" },
-          { label: "Cloud and data", href: "/insights/cloud-and-data" },
-        ],
+        links: [],
       },
     ],
     featured: {
@@ -189,8 +106,6 @@ const megaMenus: MegaMenu[] = [
 const searchItems: MenuLink[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  ...serviceLinks,
-  { label: "Case Studies", href: "/customer-delight#case-studies" },
   { label: "Our Company", href: "/about" },
   { label: "Careers", href: "/career" },
   { label: "Contact", href: "/contact" },
@@ -199,6 +114,7 @@ const searchItems: MenuLink[] = [
 export default function Header({
   logoPath,
   siteName,
+  serviceItems,
   industryItems,
   caseStudyItems,
   insightItems,
@@ -231,27 +147,28 @@ export default function Header({
     };
   }, [mobileMenuOpen]);
 
-  const resolvedIndustryLinks = industryItems ?? industryLinks;
-  const resolvedCaseStudyLinks = caseStudyItems?.length
-    ? [{ label: "All case studies", href: "/case-studies" }, ...caseStudyItems]
-    : caseStudyLinks;
-  const resolvedInsightLinks = insightItems?.length
-    ? [{ label: "All insights", href: "/insights" }, ...insightItems]
-    : [
-        { label: "AI and automation", href: "/insights/ai-and-automation" },
-        { label: "Digital transformation", href: "/insights/digital-transformation" },
-        { label: "Cloud and data", href: "/insights/cloud-and-data" },
-      ];
+  const resolvedServiceLinks = serviceItems ?? [];
+  const resolvedIndustryLinks = industryItems ?? [];
+  const resolvedCaseStudyLinks = [
+    { label: "All case studies", href: "/case-studies" },
+    ...(caseStudyItems ?? []),
+  ];
+  const resolvedInsightLinks = [
+    { label: "All insights", href: "/insights" },
+    ...(insightItems ?? []),
+  ];
   const navigationMenus = megaMenus.map((menu) =>
     menu.label === "What we do"
       ? {
           ...menu,
           categories: menu.categories.map((category) =>
-            category.label === "Industry"
-              ? { ...category, links: resolvedIndustryLinks }
-              : category.label === "Case Studies"
-                ? { ...category, links: resolvedCaseStudyLinks }
-                : category,
+            category.label === "Services"
+              ? { ...category, links: resolvedServiceLinks }
+              : category.label === "Industry"
+                ? { ...category, links: resolvedIndustryLinks }
+                : category.label === "Case Studies"
+                  ? { ...category, links: resolvedCaseStudyLinks }
+                  : category,
           ),
         }
       : menu.label === "Our Thinking"
@@ -267,6 +184,7 @@ export default function Header({
   );
   const filteredSearchItems = [
     ...searchItems,
+    ...resolvedServiceLinks,
     ...resolvedIndustryLinks,
     ...resolvedCaseStudyLinks,
     ...resolvedInsightLinks,
@@ -370,7 +288,7 @@ export default function Header({
         </nav>
 
         <div className="ml-auto hidden h-full items-center gap-4 xl:flex 2xl:gap-6">
-          <button
+          {/* <button
             type="button"
             aria-label={searchOpen ? "Close search" : "Search"}
             aria-expanded={searchOpen}
@@ -386,16 +304,7 @@ export default function Header({
               <Search className="h-5 w-5" strokeWidth={1.6} />
             )}
             <span>Search</span>
-          </button>
-          <button
-            type="button"
-            aria-label="Location and language: India, English"
-            className="flex items-center gap-2 whitespace-nowrap text-sm text-white/90 transition hover:text-white"
-          >
-            <Globe2 className="h-5 w-5" strokeWidth={1.7} />
-            <span>IN - EN</span>
-            <ChevronDown className="h-4 w-4" strokeWidth={1.8} />
-          </button>
+          </button> */}
           <Link
             href="/contact"
             aria-label="Let's connect"
