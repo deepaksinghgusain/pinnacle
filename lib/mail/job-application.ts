@@ -23,6 +23,7 @@ type JobApplicationMailPayload = {
   experience: string;
   location: string;
   resume: string;
+  portfolioUrl: string | null;
   message: string;
 };
 
@@ -122,6 +123,7 @@ export async function sendJobApplicationEmails({
           `Phone: ${application.phone}`,
           `Experience: ${application.experience}`,
           `Location: ${application.location}`,
+          `LinkedIn / Portfolio: ${application.portfolioUrl || "Not provided"}`,
           `Resume: ${application.resume}`,
           `Message: ${application.message || "Not provided"}`,
         ].join("\n"),
@@ -133,6 +135,7 @@ export async function sendJobApplicationEmails({
           <p><strong>Phone:</strong> ${escapeHtml(application.phone)}</p>
           <p><strong>Experience:</strong> ${escapeHtml(application.experience)}</p>
           <p><strong>Location:</strong> ${escapeHtml(application.location)}</p>
+          <p><strong>LinkedIn / Portfolio:</strong> ${escapeHtml(application.portfolioUrl || "Not provided")}</p>
           <p><strong>Message:</strong><br />${escapeHtml(application.message || "Not provided")}</p>
         `,
         attachments: resumeAttachment ? [resumeAttachment] : undefined,

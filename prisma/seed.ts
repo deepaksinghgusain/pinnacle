@@ -13,6 +13,10 @@ import {
 } from "../lib/generated/prisma/client";
 import { defaultGrowthLearningContent } from "../lib/growth-learning-content";
 import { defaultCultureContent } from "../lib/culture-content";
+import {
+  defaultCaseStudyContent,
+  defaultInsightContent,
+} from "../lib/editorial-content";
 import { defaultIndustryContent } from "../lib/industry-content";
 
 function parseEnvFile(content: string) {
@@ -311,6 +315,156 @@ const seedIndustries = [
     heroTitle: "Strengthening Manufacturing Operations",
     overview:
       "Manufacturing teams coordinate production, quality, maintenance, and supply-chain activity. Timely operational information and consistent workflows help identify exceptions and keep work moving.",
+  },
+];
+
+const seedCaseStudies = [
+  {
+    name: "Improving Healthcare Operations",
+    slug: "improving-healthcare-operations",
+    content: {
+      ...defaultCaseStudyContent,
+      industryLabel: "Healthcare Operations",
+      heroTitle: "Building a More Dependable Healthcare Workflow",
+      summary:
+        "A representative engagement focused on improving workflow consistency, visibility, and operational capacity.",
+      clientOverview:
+        "The client is an anonymized healthcare organization coordinating high-volume administrative work across multiple teams.",
+      challenge:
+        "Manual processing and unclear handoffs made it difficult to maintain consistent turnaround times and identify exceptions.",
+      objectives:
+        "Improve process ownership, make exceptions easier to track, and give teams clearer visibility into daily work.",
+      solution:
+        "We documented the operating workflow, introduced clear queue ownership and quality checks, and established reporting for recurring exceptions.",
+      results: [
+        {
+          title: "Clearer ownership",
+          description: "Teams had a consistent view of priorities and next steps.",
+        },
+        {
+          title: "Improved visibility",
+          description: "Reporting made recurring delays and exceptions easier to review.",
+        },
+        {
+          title: "More consistent delivery",
+          description: "Standard checkpoints helped teams follow the same process.",
+        },
+      ],
+      takeaways:
+        "Clear process ownership, practical quality checks, and useful operational reporting helped teams make steady improvements.",
+    },
+  },
+  {
+    name: "Making Operational Reporting Actionable",
+    slug: "actionable-operational-reporting",
+    content: {
+      ...defaultCaseStudyContent,
+      industryLabel: "Business Operations",
+      heroTitle: "Turning Operational Data into Clearer Decisions",
+      summary:
+        "A representative reporting engagement that helped an operations team spend less time assembling reports and more time acting on them.",
+      clientOverview:
+        "The client is an anonymized service organization with reporting needs across several operational teams.",
+      challenge:
+        "Reports were assembled from disconnected sources, making it difficult to compare performance and follow up on issues.",
+      objectives:
+        "Create a dependable reporting cadence, align on shared measures, and make exceptions easier to identify.",
+      solution:
+        "We mapped reporting requirements, standardized key measures, and created a review cadence with clear owners for follow-up.",
+      results: [
+        {
+          title: "Shared measures",
+          description: "Teams worked from a clearer and more consistent set of metrics.",
+        },
+        {
+          title: "Faster review",
+          description: "A regular cadence helped surface trends and exceptions sooner.",
+        },
+        {
+          title: "Actionable follow-up",
+          description: "Owners and next steps were easier to track after each review.",
+        },
+      ],
+      takeaways:
+        "Useful reporting starts with clear questions, consistent definitions, and an agreed process for acting on what the data shows.",
+    },
+  },
+];
+
+const seedInsights = [
+  {
+    name: "A Practical Framework for Responsible AI at Work",
+    slug: "responsible-ai-business-workflows",
+    content: {
+      ...defaultInsightContent,
+      category: "AI and Automation",
+      heroTitle: "A Practical Framework for Responsible AI at Work",
+      summary:
+        "A grounded approach to selecting AI use cases, evaluating outcomes, and keeping people accountable for important decisions.",
+      executiveSummary:
+        "Responsible AI adoption begins with a defined business need and a clear understanding of the workflow. Organizations should evaluate performance, establish controls, and keep accountable people involved wherever decisions require judgment.",
+      introduction:
+        "AI can assist with selected tasks, but value depends on how well a use case fits the work. Teams need to understand data, user needs, risks, and the practical steps required to monitor results over time.",
+      trends: [
+        {
+          title: "Workflow-first adoption",
+          description:
+            "Organizations are increasingly evaluating AI in the context of complete workflows rather than isolated demonstrations.",
+          source: "",
+        },
+        {
+          title: "Evaluation and monitoring",
+          description:
+            "Teams are defining measurable quality criteria and reviewing system performance after deployment.",
+          source: "",
+        },
+        {
+          title: "Human accountability",
+          description:
+            "Clear review and escalation paths help ensure people remain responsible for consequential decisions.",
+          source: "",
+        },
+      ],
+      viewpoint:
+        "Begin with a specific need, test against representative work, define acceptable quality and escalation rules, and monitor the outcome with accountable owners.",
+    },
+  },
+  {
+    name: "Building Better Operational Data Visibility",
+    slug: "operational-data-visibility",
+    content: {
+      ...defaultInsightContent,
+      category: "Data and Analytics",
+      heroTitle: "Building Better Operational Data Visibility",
+      summary:
+        "How clear metrics, reliable data, and a consistent review cadence can help teams understand and improve day-to-day operations.",
+      executiveSummary:
+        "Operational visibility is most useful when measures are defined consistently, connected to team responsibilities, and reviewed on a reliable cadence. Better dashboards alone are not enough; teams also need ownership and a practical way to act on exceptions.",
+      introduction:
+        "Many organizations have access to more operational data than ever, yet teams can still struggle to answer basic questions about workload, quality, and progress. Clear definitions and fit-for-purpose reporting help turn available information into a shared view of work.",
+      trends: [
+        {
+          title: "Common metric definitions",
+          description:
+            "Shared definitions help teams compare performance and reduce conflicting interpretations.",
+          source: "",
+        },
+        {
+          title: "Exception-focused reporting",
+          description:
+            "Well-designed reports help people focus attention on outliers and decisions that need follow-up.",
+          source: "",
+        },
+        {
+          title: "Connected review routines",
+          description:
+            "Regular review meetings connect reporting to ownership, action, and continuous improvement.",
+          source: "",
+        },
+      ],
+      viewpoint:
+        "Start with the decisions teams need to make, then define the smallest reliable set of measures and a review process that turns insight into action.",
+    },
   },
 ];
 
@@ -1031,6 +1185,36 @@ async function seedContent() {
     });
   }
 
+  for (const caseStudy of seedCaseStudies) {
+    const id = seedUuid("case-study", caseStudy.slug);
+    const data = {
+      name: caseStudy.name,
+      slug: caseStudy.slug,
+      status: active,
+      content: JSON.stringify(caseStudy.content),
+    };
+    await prisma.caseStudy.upsert({
+      where: { slug: caseStudy.slug },
+      create: { id, ...data },
+      update: data,
+    });
+  }
+
+  for (const insight of seedInsights) {
+    const id = seedUuid("insight", insight.slug);
+    const data = {
+      name: insight.name,
+      slug: insight.slug,
+      status: active,
+      content: JSON.stringify(insight.content),
+    };
+    await prisma.insight.upsert({
+      where: { slug: insight.slug },
+      create: { id, ...data },
+      update: data,
+    });
+  }
+
   const categoryByName = new Map<string, { id: string }>();
   for (const category of seedCategories) {
     const id = seedUuid("service-category", category.name);
@@ -1179,6 +1363,29 @@ async function seedContent() {
       jobId: seedUuid("job", "Operations Associate"),
       status: ApplicationStatus.PENDING,
     },
+  });
+
+  const testingApplicationId = seedUuid(
+    "career-application",
+    "technical-support-specialist-testing",
+  );
+  const testingApplication = {
+    fullName: "testing",
+    email: "testin@tmail.com",
+    phone: "12121212121",
+    role: "Technical Support Specialist",
+    experience: "Not provided",
+    location: "India",
+    resume: "",
+    portfolioUrl: "http://localhost:3000/career",
+    message: "2112121",
+    jobId: seedUuid("job", "Technical Support Specialist"),
+    status: ApplicationStatus.PENDING,
+  };
+  await prisma.careerApplication.upsert({
+    where: { id: testingApplicationId },
+    create: { id: testingApplicationId, ...testingApplication },
+    update: testingApplication,
   });
 
   for (const event of seedEvents) {

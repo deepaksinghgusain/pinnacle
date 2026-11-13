@@ -189,6 +189,7 @@ export const applicationSchema = z.object({
   location: z.string().min(1, "Location is required"),
   jobId: z.string().min(1, "Please select a job"),
   resume: z.union([z.instanceof(File), z.string().nullable()]),
+  portfolioUrl: z.union([z.string().url(), z.literal(""), z.null()]).optional(),
   message: z.string().optional(),
   status: z.enum(Object.values(ApplicationStatus)).default(ApplicationStatus.PENDING),
   createdAt: z.date().nullable().optional(),

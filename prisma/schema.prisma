@@ -475,20 +475,21 @@ model Job {
 }
 
 model CareerApplication {
-  id         String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  fullName   String
-  email      String
-  phone      String
-  role       String
-  experience String
-  location   String
-  resume     String
-  message    String            @db.Text
-  jobId      String            @db.Uuid
-  status     ApplicationStatus @default(PENDING)
+  id           String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  fullName     String
+  email        String
+  phone        String
+  role         String
+  experience   String
+  location     String
+  resume       String
+  portfolioUrl String?
+  message      String            @db.Text
+  jobId        String            @db.Uuid
+  status       ApplicationStatus @default(PENDING)
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
 
   job Job? @relation(fields: [jobId], references: [id], onDelete: Cascade)
 }

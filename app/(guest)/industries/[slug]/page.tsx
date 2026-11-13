@@ -144,7 +144,7 @@ export default async function IndustryPage({
 
   return (
     <EditorialPage
-      breadcrumb={{ label: "Industry", href: "/customer-delight#case-studies" }}
+      breadcrumb={{ label: "Industry", href: "/industries" }}
       eyebrow="Industry experience"
       {...industry}
     />

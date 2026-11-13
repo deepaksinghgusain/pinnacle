@@ -49,6 +49,7 @@ export async function createApplication(data: z.infer<typeof applicationSchema>)
         experience: application.experience,
         location: application.location,
         resume: application.resume as string,
+        portfolioUrl: application.portfolioUrl?.trim() || null,
         message: application.message || "",
         jobId: application.jobId,
         status: application.status,
@@ -127,6 +128,9 @@ export async function updateApplication(
       experience: application.experience,
       location: application.location,
       resume: imageValue ?? "",
+      ...(application.portfolioUrl !== undefined
+        ? { portfolioUrl: application.portfolioUrl?.trim() || null }
+        : {}),
       message: application.message || "",
       jobId: application.jobId,
       status: application.status,

@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
             <nav aria-label="Breadcrumb" className="mb-9 text-sm text-white/65">
-              <Link href="/#service-back-office" className="transition hover:text-white">
+              <Link href="/service" className="transition hover:text-white">
                 Services
               </Link>
               <span className="mx-2 text-white/35">/</span>
@@ -271,7 +271,7 @@ export default async function ServiceDetailPage({
                 </h2>
               </div>
               <Link
-                href="/#service-back-office"
+                href="/service"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#142b58] transition hover:text-orange-700"
               >
                 All services <ArrowRight className="h-4 w-4" />

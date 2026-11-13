@@ -147,8 +147,14 @@ export default function Header({
     };
   }, [mobileMenuOpen]);
 
-  const resolvedServiceLinks = serviceItems ?? [];
-  const resolvedIndustryLinks = industryItems ?? [];
+  const resolvedServiceLinks = [
+    { label: "All services", href: "/service" },
+    ...(serviceItems ?? []),
+  ];
+  const resolvedIndustryLinks = [
+    { label: "All industries", href: "/industries" },
+    ...(industryItems ?? []),
+  ];
   const resolvedCaseStudyLinks = [
     { label: "All case studies", href: "/case-studies" },
     ...(caseStudyItems ?? []),
@@ -248,13 +254,13 @@ export default function Header({
         >
           <Link
             href="/"
-            className="flex h-full items-center whitespace-nowrap text-sm text-white/90 transition-colors hover:text-white"
+            className="flex h-full items-center whitespace-nowrap text-sm text-white/90 transition-colors hover:text-[#86bc25]"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="flex h-full items-center whitespace-nowrap text-sm text-white/90 transition-colors hover:text-white"
+            className="flex h-full items-center whitespace-nowrap text-sm text-white/90 transition-colors hover:text-[#86bc25]"
           >
             About Us
           </Link>
@@ -273,7 +279,7 @@ export default function Header({
               className={`flex h-full items-center gap-1 whitespace-nowrap text-sm transition-colors ${
                 activeMenu === menu.label
                   ? "text-[#86bc25]"
-                  : "text-white/90 hover:text-white"
+                  : "text-white/90 hover:text-[#86bc25]"
               }`}
             >
               {menu.label}
@@ -296,7 +302,7 @@ export default function Header({
               setSearchOpen((open) => !open);
               setActiveMenu(null);
             }}
-            className="flex items-center gap-2 whitespace-nowrap text-sm text-white/90 transition hover:text-white"
+            className="flex items-center gap-2 whitespace-nowrap text-sm text-white/90 transition hover:text-[#86bc25]"
           >
             {searchOpen ? (
               <X className="h-5 w-5" strokeWidth={1.6} />
@@ -308,14 +314,14 @@ export default function Header({
           <Link
             href="/contact"
             aria-label="Let's connect"
-            className="flex h-10 w-7 items-center justify-center text-white/85 transition hover:text-white"
+            className="flex h-10 w-7 items-center justify-center text-white/85 transition hover:text-[#86bc25]"
           >
             <Mail className="h-5 w-5" strokeWidth={1.5} />
           </Link>
           <Link
             href="/contact"
             aria-label="Account"
-            className="flex h-10 w-7 items-center justify-center text-white/85 transition hover:text-white"
+            className="flex h-10 w-7 items-center justify-center text-white/85 transition hover:text-[#86bc25]"
           >
             <UserRound className="h-6 w-6" strokeWidth={1.5} />
           </Link>
@@ -330,7 +336,7 @@ export default function Header({
               setSearchOpen((open) => !open);
               setMobileMenuOpen(false);
             }}
-            className="flex h-11 w-11 items-center justify-center text-white/85 transition hover:text-white"
+            className="flex h-11 w-11 items-center justify-center text-white/85 transition hover:text-[#86bc25]"
           >
             {searchOpen ? (
               <X className="h-6 w-6" strokeWidth={1.6} />
@@ -341,7 +347,7 @@ export default function Header({
           <Link
             href="/contact"
             aria-label="Let's connect"
-            className="flex h-11 w-11 items-center justify-center text-white/85 transition hover:text-white"
+            className="flex h-11 w-11 items-center justify-center text-white/85 transition hover:text-[#86bc25]"
           >
             <UserRound className="h-6 w-6" strokeWidth={1.5} />
           </Link>
@@ -356,7 +362,7 @@ export default function Header({
               setMobileCategory(null);
               setSearchOpen(false);
             }}
-            className="flex h-11 w-11 items-center justify-center text-white/90 transition hover:text-white"
+            className="flex h-11 w-11 items-center justify-center text-white/90 transition hover:text-[#86bc25]"
           >
             {mobileMenuOpen ? (
               <X className="h-7 w-7" strokeWidth={1.6} />
@@ -387,7 +393,7 @@ export default function Header({
                 className={`group mb-1 flex min-h-[54px] w-full items-center justify-between gap-3 px-4 text-left text-base font-light transition-colors 2xl:min-h-[54px] 2xl:px-5 2xl:text-[19px] ${
                   activeCategory === category.label
                     ? "bg-[#171819] text-[#86bc25]"
-                    : "text-white/80 hover:bg-[#202223] hover:text-white"
+                    : "text-white/80 hover:bg-[#202223] hover:text-[#86bc25]"
                 }`}
               >
                 <span>{category.label}</span>
@@ -474,7 +480,7 @@ export default function Header({
                     key={`${item.label}-${item.href}`}
                     href={item.href}
                     onClick={() => setSearchOpen(false)}
-                    className="border-b border-white/10 py-3 text-base text-white/75 transition hover:text-white"
+                    className="border-b border-white/10 py-3 text-base text-white/75 transition hover:text-[#86bc25]"
                   >
                     {item.label}
                   </Link>
@@ -502,18 +508,18 @@ export default function Header({
                   <Link
                     href="/"
                     onClick={closeMobileMenu}
-                    className="flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-white"
+                    className="group flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-[#86bc25]"
                   >
                     Home
-                    <ChevronRight className="h-6 w-6 shrink-0 text-white" strokeWidth={1.8} />
+                    <ChevronRight className="h-6 w-6 shrink-0 text-white group-hover:text-[#86bc25]" strokeWidth={1.8} />
                   </Link>
                   <Link
                     href="/about"
                     onClick={closeMobileMenu}
-                    className="flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-white"
+                    className="group flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-[#86bc25]"
                   >
                     About Us
-                    <ChevronRight className="h-6 w-6 shrink-0 text-white" strokeWidth={1.8} />
+                    <ChevronRight className="h-6 w-6 shrink-0 text-white group-hover:text-[#86bc25]" strokeWidth={1.8} />
                   </Link>
                   {navigationMenus.map((menu) => (
                     <button
@@ -523,10 +529,10 @@ export default function Header({
                         setMobileMenu(menu.label);
                         setMobileCategory(null);
                       }}
-                      className="group flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-left text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-white"
+                      className="group flex w-full items-center justify-between gap-6 border-b border-white/15 py-5 text-left text-[clamp(1.6rem,6vw,2.35rem)] font-light leading-tight text-white/85 transition-colors hover:text-[#86bc25]"
                     >
                       <span>{menu.label}</span>
-                      <ChevronRight className="h-6 w-6 shrink-0 text-white" strokeWidth={1.8} />
+                      <ChevronRight className="h-6 w-6 shrink-0 text-white group-hover:text-[#86bc25]" strokeWidth={1.8} />
                     </button>
                   ))}
                 </>
@@ -538,7 +544,7 @@ export default function Header({
                       setMobileMenu(null);
                       setMobileCategory(null);
                     }}
-                    className="mb-4 flex items-center gap-3 py-2 text-sm text-white/65 transition hover:text-white"
+                    className="mb-4 flex items-center gap-3 py-2 text-sm text-white/65 transition hover:text-[#86bc25]"
                   >
                     <ChevronRight className="h-4 w-4 rotate-180" />
                     Main Menu
@@ -549,7 +555,7 @@ export default function Header({
                   <Link
                     href={mobileMegaMenu?.href ?? "/"}
                     onClick={closeMobileMenu}
-                    className="mb-4 inline-flex items-center gap-2 text-sm text-[#86bc25] transition hover:text-white"
+                    className="mb-4 inline-flex items-center gap-2 text-sm text-[#86bc25] transition hover:text-[#86bc25]"
                   >
                     Explore {mobileMenu}
                     <ChevronRight className="h-4 w-4" />
@@ -567,7 +573,7 @@ export default function Header({
                         className={`group flex w-full items-center justify-between gap-4 py-4 text-left text-lg font-light transition-colors ${
                           mobileCategory === category.label
                             ? "text-[#86bc25]"
-                            : "text-white/85 hover:text-white"
+                            : "text-white/85 hover:text-[#86bc25]"
                         }`}
                       >
                         <span>{category.label}</span>
@@ -584,10 +590,10 @@ export default function Header({
                               <Link
                                 href={item.href}
                                 onClick={closeMobileMenu}
-                                className="flex items-center justify-between gap-3 border-t border-white/10 py-3 pl-3 text-base font-light text-white/75 transition hover:text-white"
+                                className="group flex items-center justify-between gap-3 border-t border-white/10 py-3 pl-3 text-base font-light text-white/75 transition hover:text-[#86bc25]"
                               >
                                 {item.label}
-                                <ChevronRight className="h-4 w-4 shrink-0 text-white/50" />
+                                <ChevronRight className="h-4 w-4 shrink-0 text-white/50 group-hover:text-[#86bc25]" />
                               </Link>
                             </li>
                           ))}
@@ -599,7 +605,7 @@ export default function Header({
                     <Link
                       href={mobileMegaMenu.featured.href}
                       onClick={closeMobileMenu}
-                      className="mt-6 flex items-center gap-4 border border-white/15 p-3"
+                      className="group mt-6 flex items-center gap-4 border border-white/15 p-3"
                     >
                       <div className="relative h-[76px] w-28 shrink-0 overflow-hidden">
                         <Image
@@ -614,7 +620,7 @@ export default function Header({
                         <span className="block text-xs text-white/60">
                           {mobileMegaMenu.featured.eyebrow}
                         </span>
-                        <span className="mt-1 block text-sm text-white">
+                        <span className="mt-1 block text-sm text-white transition group-hover:text-[#86bc25]">
                           {mobileMegaMenu.featured.title}
                         </span>
                       </span>
@@ -633,7 +639,7 @@ export default function Header({
                 <Link
                   href="/contact"
                   onClick={closeMobileMenu}
-                  className="flex items-center gap-4 text-base transition hover:text-white"
+                  className="flex items-center gap-4 text-base transition hover:text-[#86bc25]"
                 >
                   <Mail className="h-6 w-6" strokeWidth={1.6} aria-hidden="true" />
                   <span>Let&apos;s Connect</span>

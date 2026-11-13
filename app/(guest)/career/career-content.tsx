@@ -17,8 +17,12 @@ import {
     Users,
     X,
     Upload,
+    LoaderCircle,
 } from "lucide-react";
 import type { SiteSettings } from "@/lib/generated/prisma";
+import { createApplication } from "@/lib/actions/application-action";
+import { ApplicationStatus } from "@/lib/types";
+import { toast } from "sonner";
 
 const benefits = [
     {
@@ -198,6 +202,9 @@ export default function CareerPage({
     const [selectedRole, setSelectedRole] = useState<CareerRole | null>(null);
     const [applicant, setApplicant] = useState(emptyApplicantDetails);
     const [resumeName, setResumeName] = useState("");
+    const [resumeFile, setResumeFile] = useState<File | null>(null);
+    const [resumeError, setResumeError] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const pageSize = 6;
     const pageCount = Math.max(1, Math.ceil(jobs.length / pageSize));
     const visibleRoles = jobs.slice((currentPage - 1) * pageSize, currentPage * pageSize);
@@ -218,7 +225,7 @@ export default function CareerPage({
 
         const previousOverflow = document.body.style.overflow;
         const closeOnEscape = (event: KeyboardEvent) => {
-            if (event.key === "Escape") setSelectedRole(null);
+            if (event.key === "Escape" && !isSubmitting) setSelectedRole(null);
         };
 
         document.body.style.overflow = "hidden";
@@ -228,11 +235,13 @@ export default function CareerPage({
             document.body.style.overflow = previousOverflow;
             window.removeEventListener("keydown", closeOnEscape);
         };
-    }, [selectedRole]);
+    }, [selectedRole, isSubmitting]);
 
     const openApplication = (role: CareerRole) => {
         setApplicant(emptyApplicantDetails);
         setResumeName("");
+        setResumeFile(null);
+        setResumeError(null);
         setSelectedRole(role);
     };
 
@@ -243,27 +252,78 @@ export default function CareerPage({
         setApplicant((current) => ({ ...current, [name]: value }));
     };
 
-    const handleApplicationSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleApplicationSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        if (!selectedRole) return;
+        if (!selectedRole || !resumeFile || isSubmitting) return;
 
-        const subject = encodeURIComponent(`Application: ${selectedRole.title}`);
-        const body = encodeURIComponent(
-            [
-                `Role: ${selectedRole.title}`,
-                `Team: ${selectedRole.team}`,
-                `Name: ${applicant.fullName}`,
-                `Email: ${applicant.email}`,
-                `Phone: ${applicant.phone || "Not provided"}`,
-                `LinkedIn / Portfolio: ${applicant.portfolio || "Not provided"}`,
-                `Resume: ${resumeName} (please attach the file before sending)`,
-                "",
-                "Why I am a great fit:",
-                applicant.fit,
-            ].join("\n"),
-        );
+        setIsSubmitting(true);
+        setResumeError(null);
 
-        window.location.href = `mailto:contact@pinnacleserve.com?subject=${subject}&body=${body}`;
+        try {
+            const formData = new FormData();
+            formData.append("file", resumeFile);
+
+            const uploadResponse = await fetch("/api/upload", {
+                method: "POST",
+                body: formData,
+            });
+            const uploadResult: unknown = await uploadResponse.json();
+
+            if (
+                !uploadResponse.ok ||
+                !uploadResult ||
+                typeof uploadResult !== "object" ||
+                !("url" in uploadResult) ||
+                typeof uploadResult.url !== "string"
+            ) {
+                const message =
+                    uploadResult &&
+                    typeof uploadResult === "object" &&
+                    "message" in uploadResult &&
+                    typeof uploadResult.message === "string"
+                        ? uploadResult.message
+                        : "Resume upload failed. Please try again.";
+                throw new Error(message);
+            }
+
+            const result = await createApplication({
+                fullName: applicant.fullName,
+                email: applicant.email,
+                phone: applicant.phone || "Not provided",
+                role: selectedRole.title,
+                experience: "Not provided",
+                location: selectedRole.team,
+                jobId: selectedRole.id,
+                resume: uploadResult.url,
+                portfolioUrl: applicant.portfolio.trim() || undefined,
+                message: applicant.fit,
+                status: ApplicationStatus.PENDING,
+            });
+
+            if (!result.success) {
+                toast.error("Unable to submit application", {
+                    description: result.message,
+                });
+                return;
+            }
+
+            toast.success("Application submitted", {
+                description: "Your application has been saved successfully.",
+            });
+            setSelectedRole(null);
+            setApplicant(emptyApplicantDetails);
+            setResumeName("");
+            setResumeFile(null);
+        } catch (error) {
+            toast.error("Unable to submit application", {
+                description:
+                    error instanceof Error
+                        ? error.message
+                        : "Please try again.",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -512,7 +572,9 @@ export default function CareerPage({
                 <div
                     className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/55 p-3 backdrop-blur-[2px] sm:p-6"
                     onMouseDown={(event) => {
-                        if (event.target === event.currentTarget) setSelectedRole(null);
+                        if (!isSubmitting && event.target === event.currentTarget) {
+                            setSelectedRole(null);
+                        }
                     }}
                 >
                     <section
@@ -532,6 +594,7 @@ export default function CareerPage({
                             <button
                                 type="button"
                                 onClick={() => setSelectedRole(null)}
+                                disabled={isSubmitting}
                                 aria-label="Close this application"
                                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-[#f8f9fc] text-slate-600 transition hover:border-slate-300 hover:bg-slate-100"
                             >
@@ -621,29 +684,44 @@ export default function CareerPage({
                                         name="resume"
                                         accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                                         required
+                                        disabled={isSubmitting}
                                         onChange={(event) => {
                                             const file = event.currentTarget.files?.[0];
                                             if (file && file.size > 10 * 1024 * 1024) {
                                                 event.currentTarget.value = "";
+                                                setResumeFile(null);
                                                 setResumeName("");
+                                                setResumeError("Resume must be 10 MB or smaller.");
                                                 return;
                                             }
+                                            setResumeFile(file ?? null);
                                             setResumeName(file?.name ?? "");
+                                            setResumeError(null);
                                         }}
                                     />
+                                    {resumeError ? (
+                                        <span role="alert" className="mt-2 block text-sm text-red-600">
+                                            {resumeError}
+                                        </span>
+                                    ) : null}
                                 </label>
                             </div>
 
                             <footer className="shrink-0 border-t border-slate-200 bg-white px-6 py-4 sm:px-9 sm:py-5">
                                 <p className="mb-3 text-center text-xs text-slate-500">
-                                    Your email app will open. Remember to attach your resume before sending.
+                                    Your application and resume will be submitted to our team.
                                 </p>
                                 <button
                                     type="submit"
-                                    className="inline-flex h-[60px] w-full items-center justify-center gap-2 rounded-full bg-[#1e3d91] px-6 text-base font-semibold text-white transition hover:bg-[#18347d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3d91]"
+                                    disabled={isSubmitting}
+                                    className="inline-flex h-[60px] w-full items-center justify-center gap-2 rounded-full bg-[#1e3d91] px-6 text-base font-semibold text-white transition hover:bg-[#18347d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3d91] disabled:cursor-not-allowed disabled:opacity-70"
                                 >
-                                    Continue with application
-                                    <Send className="h-4 w-4" />
+                                    {isSubmitting ? "Submitting application..." : "Submit application"}
+                                    {isSubmitting ? (
+                                        <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                                    ) : (
+                                        <Send className="h-4 w-4" aria-hidden="true" />
+                                    )}
                                 </button>
                             </footer>
                         </form>
