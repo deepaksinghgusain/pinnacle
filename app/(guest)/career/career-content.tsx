@@ -164,6 +164,9 @@ function parseList<T extends object>(
 function getMediaSource(value: string | null | undefined, fallback: string): string {
   const source = value?.trim();
   if (!source) return fallback;
+  if (/^\/?uploads\//i.test(source)) {
+    return `/api/uploads/${source.replace(/^\/?uploads\//i, "")}`;
+  }
   if (/^(https?:\/\/|\/)/i.test(source)) return source;
   return `/${source}`;
 }

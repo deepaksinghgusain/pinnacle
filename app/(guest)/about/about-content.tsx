@@ -220,6 +220,9 @@ function parseLeaders(value: string | null): Leader[] {
 function getMediaSource(value: string | null | undefined): string | null {
   const source = value?.trim();
   if (!source) return null;
+  if (/^\/?uploads\//i.test(source)) {
+    return `/api/uploads/${source.replace(/^\/?uploads\//i, "")}`;
+  }
   if (/^(https?:\/\/|\/)/i.test(source)) return source;
   return `/${source}`;
 }
