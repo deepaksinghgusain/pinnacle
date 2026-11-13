@@ -229,7 +229,7 @@ export default function Header({
           onClick={closeMobileMenu}
           className="flex h-full shrink-0 items-center"
         >
-          {logoSource ? (
+          {/* {logoSource ? (
             <Image
               src={logoSource}
               alt={siteName || "Pinnacle Serve"}
@@ -245,7 +245,14 @@ export default function Header({
                 SERVE
               </span>
             </span>
-          )}
+          )} */}
+
+          <span className="flex items-baseline gap-1 text-[25px] font-bold tracking-[-0.045em] text-white sm:text-[28px] xl:text-[25px]">
+              Pinnacle<span className="text-[#86bc25]">.</span>
+              <span className="ml-1 text-[10px] font-semibold tracking-[0.22em] text-white/75 sm:text-xs">
+                SERVE
+              </span>
+            </span>
         </Link>
 
         <nav

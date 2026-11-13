@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import type { SiteSettings } from "@/lib/generated/prisma";
 import {
@@ -164,6 +164,7 @@ function formatMetric(value: string, progress: number): string {
 
 export default function Home({ settings, services, testimonials }: HomeProps) {
   const [metricProgress, setMetricProgress] = useState(0);
+  const metricsRef = useRef<HTMLDivElement>(null);
   const metrics = parseMetrics(settings?.heroTrustTags ?? null);
   const aboutHighlights = parseCards(settings?.aboutHighlights ?? null, [
     { title: "2024", summary: "Founded" },
@@ -224,26 +225,48 @@ export default function Home({ settings, services, testimonials }: HomeProps) {
   const whyIcons = [Users, BarChart3, Cog, LineChart];
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const frameId = requestAnimationFrame(() => setMetricProgress(1));
-      return () => cancelAnimationFrame(frameId);
-    }
+    const metricsElement = metricsRef.current;
+    if (!metricsElement) return;
 
-    const duration = 1600;
-    const startTime = performance.now();
-    let frameId: number;
+    let frameId: number | null = null;
 
-    const animate = (time: number) => {
-      const progress = Math.min((time - startTime) / duration, 1);
-      setMetricProgress(progress);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
 
-      if (progress < 1) {
+        if (frameId !== null) cancelAnimationFrame(frameId);
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          setMetricProgress(1);
+          return;
+        }
+
+        setMetricProgress(0);
+        const startTime = performance.now();
+        const duration = 1600;
+
+        const animate = (time: number) => {
+          const progress = Math.min((time - startTime) / duration, 1);
+          setMetricProgress(progress);
+
+          if (progress < 1) {
+            frameId = requestAnimationFrame(animate);
+          } else {
+            frameId = null;
+          }
+        };
+
         frameId = requestAnimationFrame(animate);
-      }
-    };
+      },
+      { threshold: 0 },
+    );
 
-    frameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frameId);
+    observer.observe(metricsElement);
+
+    return () => {
+      observer.disconnect();
+      if (frameId !== null) cancelAnimationFrame(frameId);
+    };
   }, []);
 
   const scrollToNextSection = () => {
@@ -342,7 +365,10 @@ export default function Home({ settings, services, testimonials }: HomeProps) {
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-300/80">
                   Trust Metrics
                 </p>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                <div
+                  ref={metricsRef}
+                  className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
+                >
                   {metrics.map((metric) => (
                 <div
                   key={metric.key}
