@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import EditorialTable from "../editorial-table";
 import { listInsights } from "@/lib/editorial-data";
+import { parseInsightContent } from "@/lib/editorial-content";
 
 export default async function InsightsAdminPage() {
   await connection();
@@ -17,7 +18,17 @@ export default async function InsightsAdminPage() {
         <div><h1 className="text-2xl font-bold text-slate-950">Insights</h1><p className="mt-1 text-sm text-slate-600">Manage thought leadership and insight pages.</p></div>
         <Button asChild nativeButton={false}><Link href="/admin/insights/create"><Plus className="mr-2 size-4" />Add insight</Link></Button>
       </div>
-      <EditorialTable kind="insights" data={result.data.map(({ id, name, slug, status, updatedAt }) => ({ id, name, slug, status, updatedAt: updatedAt.toISOString() }))} />
+      <EditorialTable
+        kind="insights"
+        data={result.data.map(({ id, name, slug, status, updatedAt, content }) => ({
+          id,
+          name,
+          slug,
+          status,
+          updatedAt: updatedAt.toISOString(),
+          imagePath: parseInsightContent(content).heroImagePath,
+        }))}
+      />
     </div>
   );
 }

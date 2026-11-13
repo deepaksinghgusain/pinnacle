@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getIndustries } from "@/lib/industry-data";
+import { parseIndustryContent } from "@/lib/industry-content";
 import IndustryTable from "./industry-table";
 
 export default async function IndustryAdminPage() {
@@ -29,8 +30,13 @@ export default async function IndustryAdminPage() {
           <Link href="/admin/industry/create"><Plus className="mr-2 size-4" />Add industry</Link>
         </Button>
       </div>
-      <IndustryTable data={result.data.map(({ id, name, slug, status, updatedAt }) => ({
-        id, name, slug, status, updatedAt: updatedAt.toISOString(),
+      <IndustryTable data={result.data.map(({ id, name, slug, status, updatedAt, content }) => ({
+        id,
+        name,
+        slug,
+        status,
+        updatedAt: updatedAt.toISOString(),
+        imagePath: parseIndustryContent(content).heroImagePath,
       }))} />
     </div>
   );
