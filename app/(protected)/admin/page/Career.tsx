@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import ImageUploadField from "@/components/shared/ImageUploadField";
 import { saveCareerPageSettings } from "@/lib/actions/settings-action";
 import type { SiteSettings } from "@/lib/generated/prisma";
 
@@ -77,6 +78,7 @@ function parseList<T extends object>(
 
 export default function Career({ setting }: { setting?: SiteSettings }) {
   const [pending, startTransition] = useTransition();
+  const [uploadingImages, setUploadingImages] = useState(0);
   const [metrics, setMetrics] = useState(() =>
     parseList<Metric>(setting?.careerMetrics, defaultMetrics, ["value", "label"]),
   );
@@ -98,6 +100,9 @@ export default function Career({ setting }: { setting?: SiteSettings }) {
       toast.success("Career page content saved");
     });
   };
+  const handleImageUploadingChange = (uploading: boolean) => {
+    setUploadingImages((count) => Math.max(0, count + (uploading ? 1 : -1)));
+  };
 
   return (
     <form action={onSubmit} className="space-y-5">
@@ -108,7 +113,12 @@ export default function Career({ setting }: { setting?: SiteSettings }) {
         <CardContent className="space-y-5 p-5">
           <div className="grid gap-4 md:grid-cols-2">
             <Field label="Eyebrow" id="careerHeroTagline" value={setting?.careerHeroTagline} placeholder="Work with us" />
-            <Field label="Hero background image path or URL" id="careerHeroImagePath" value={setting?.careerHeroImagePath} placeholder="/api/uploads/career-team.jpg" />
+            <ImageUploadField
+              label="Hero background image"
+              name="careerHeroImagePath"
+              value={setting?.careerHeroImagePath}
+              onUploadingChange={handleImageUploadingChange}
+            />
             <Field label="Heading" id="careerHeroTitle" value={setting?.careerHeroTitle} placeholder="Help shape the future of" />
             <Field label="Highlighted heading" id="careerHeroAccent" value={setting?.careerHeroAccent} placeholder="enterprise technology" />
             <Field label="Button label" id="careerHeroButtonLabel" value={setting?.careerHeroButtonLabel} placeholder="Meet the team" />
@@ -125,7 +135,12 @@ export default function Career({ setting }: { setting?: SiteSettings }) {
         <CardContent className="space-y-5 p-5">
           <div className="grid gap-4 md:grid-cols-2">
             <Field label="Eyebrow" id="careerLifeTagline" value={setting?.careerLifeTagline} placeholder="Life at Pinnacle Serve" />
-            <Field label="Image path or URL" id="careerLifeImagePath" value={setting?.careerLifeImagePath} placeholder="/api/uploads/career-life.jpg" />
+            <ImageUploadField
+              label="Career life image"
+              name="careerLifeImagePath"
+              value={setting?.careerLifeImagePath}
+              onUploadingChange={handleImageUploadingChange}
+            />
             <Field label="Heading" id="careerLifeTitle" value={setting?.careerLifeTitle} placeholder="Put your skills to work on" />
             <Field label="Highlighted heading" id="careerLifeAccent" value={setting?.careerLifeAccent} placeholder="meaningful challenges" />
             <Field label="Image callout title" id="careerLifeCalloutTitle" value={setting?.careerLifeCalloutTitle} placeholder="Room to grow" />
@@ -188,7 +203,7 @@ export default function Career({ setting }: { setting?: SiteSettings }) {
       </Card>
 
       <div className="flex justify-end">
-        <Button type="submit" className="rounded-full px-5" disabled={pending}>
+        <Button type="submit" className="rounded-full px-5" disabled={pending || uploadingImages > 0}>
           {pending ? <Loader2 className="mr-2 size-4 animate-spin" /> : <Save className="mr-2 size-4" />}
           Save Career Page
         </Button>

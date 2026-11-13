@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import ImageUploadField from "@/components/shared/ImageUploadField";
 import { saveAboutPageSettings } from "@/lib/actions/settings-action";
 import type { SiteSettings } from "@/lib/generated/prisma";
 
@@ -190,6 +191,7 @@ function getLeaders(value?: string | null): Leader[] {
 
 export default function About({ setting }: { setting?: SiteSettings }) {
   const [pending, startTransition] = useTransition();
+  const [uploadingImages, setUploadingImages] = useState(0);
   const [storyCardItems, setStoryCardItems] = useState<StoryCard[]>(() =>
     getStoryCards(setting?.aboutStoryCards),
   );
@@ -199,6 +201,9 @@ export default function About({ setting }: { setting?: SiteSettings }) {
   const [leaderItems, setLeaderItems] = useState<Leader[]>(() =>
     getLeaders(setting?.aboutLeaders),
   );
+  const handleImageUploadingChange = (uploading: boolean) => {
+    setUploadingImages((count) => Math.max(0, count + (uploading ? 1 : -1)));
+  };
 
   const onSubmit = (formData: FormData) => {
     startTransition(async () => {
@@ -222,7 +227,12 @@ export default function About({ setting }: { setting?: SiteSettings }) {
           <form action={onSubmit} className="space-y-5">
             <div className="grid gap-4 md:grid-cols-2">
               <Field label="Eyebrow" id="aboutPageHeroTagline" value={setting?.aboutPageHeroTagline} placeholder="About Pinnacle Serve" />
-              <Field label="Background image path or URL" id="aboutPageHeroImagePath" value={setting?.aboutPageHeroImagePath} placeholder="/api/uploads/about-team.jpg" />
+              <ImageUploadField
+                label="Background image"
+                name="aboutPageHeroImagePath"
+                value={setting?.aboutPageHeroImagePath}
+                onUploadingChange={handleImageUploadingChange}
+              />
               <Field label="Heading" id="aboutPageHeroTitle" value={setting?.aboutPageHeroTitle} placeholder="Practical change for" />
               <Field label="Highlighted heading" id="aboutPageHeroAccent" value={setting?.aboutPageHeroAccent} placeholder="complex operations" />
             </div>
@@ -232,7 +242,7 @@ export default function About({ setting }: { setting?: SiteSettings }) {
               value={setting?.aboutPageHeroDescription}
               placeholder="We bring operational support and modern technology together..."
             />
-            <SaveButton pending={pending} />
+            <SaveButton pending={pending} disabled={uploadingImages > 0} />
           </form>
         </CardContent>
       </Card>
@@ -264,7 +274,7 @@ export default function About({ setting }: { setting?: SiteSettings }) {
                 })),
               )}
             />
-            <SaveButton pending={pending} />
+            <SaveButton pending={pending} disabled={uploadingImages > 0} />
           </form>
         </CardContent>
       </Card>
@@ -297,7 +307,11 @@ export default function About({ setting }: { setting?: SiteSettings }) {
                 })),
               )}
             />
-            <LeadershipEditor items={leaderItems} onChange={setLeaderItems} />
+            <LeadershipEditor
+              items={leaderItems}
+              onChange={setLeaderItems}
+              onUploadingChange={handleImageUploadingChange}
+            />
             <input
               type="hidden"
               name="aboutLeaders"
@@ -310,7 +324,7 @@ export default function About({ setting }: { setting?: SiteSettings }) {
                 })),
               )}
             />
-            <SaveButton pending={pending} />
+            <SaveButton pending={pending} disabled={uploadingImages > 0} />
           </form>
         </CardContent>
       </Card>
@@ -333,7 +347,7 @@ export default function About({ setting }: { setting?: SiteSettings }) {
               value={setting?.aboutPageCtaDescription}
               placeholder="Tell us what you're working toward..."
             />
-            <SaveButton pending={pending} />
+            <SaveButton pending={pending} disabled={uploadingImages > 0} />
           </form>
         </CardContent>
       </Card>
@@ -536,9 +550,11 @@ function ApproachTabsEditor({
 function LeadershipEditor({
   items,
   onChange,
+  onUploadingChange,
 }: {
   items: Leader[];
   onChange: (items: Leader[]) => void;
+  onUploadingChange: (uploading: boolean) => void;
 }) {
   const updateLeader = (index: number, key: "name" | "role" | "imagePath", value: string) => {
     onChange(items.map((leader, leaderIndex) => (
@@ -633,16 +649,12 @@ function LeadershipEditor({
                   className="h-10 rounded-xl"
                 />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor={`leader-${leaderIndex}-imagePath`}>Image path or URL</Label>
-                <Input
-                  id={`leader-${leaderIndex}-imagePath`}
-                  value={leader.imagePath}
-                  onChange={(event) => updateLeader(leaderIndex, "imagePath", event.target.value)}
-                  placeholder="/api/uploads/leader.jpg"
-                  className="h-10 rounded-xl"
-                />
-              </div>
+              <ImageUploadField
+                label={`Leader ${leaderIndex + 1} image`}
+                value={leader.imagePath}
+                onChange={(value) => updateLeader(leaderIndex, "imagePath", value)}
+                onUploadingChange={onUploadingChange}
+              />
             </div>
 
             <div className="space-y-3">
@@ -769,10 +781,16 @@ function StoryCardsEditor({
   );
 }
 
-function SaveButton({ pending }: { pending: boolean }) {
+function SaveButton({
+  pending,
+  disabled = false,
+}: {
+  pending: boolean;
+  disabled?: boolean;
+}) {
   return (
     <div className="flex justify-end">
-      <Button type="submit" className="rounded-full px-5" disabled={pending}>
+      <Button type="submit" className="rounded-full px-5" disabled={pending || disabled}>
         {pending ? <Loader2 className="mr-2 size-4 animate-spin" /> : <Save className="mr-2 size-4" />}
         Save About Page
       </Button>

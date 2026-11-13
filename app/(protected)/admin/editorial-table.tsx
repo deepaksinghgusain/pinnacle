@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Pencil, Trash2 } from "lucide-react";
@@ -18,7 +19,23 @@ import {
 import { deleteCaseStudy, deleteInsight } from "@/lib/actions/editorial-action";
 
 type EditorialKind = "case-studies" | "insights";
-type Row = { id: string; name: string; slug: string; status: string; updatedAt: string };
+type Row = {
+  id: string;
+  name: string;
+  slug: string;
+  status: string;
+  updatedAt: string;
+  imagePath?: string;
+};
+
+function getImageSource(value: string | undefined) {
+  const source = value?.trim() ?? "";
+  if (/^\/?uploads\//i.test(source)) {
+    return `/api/uploads/${source.replace(/^\/?uploads\//i, "")}`;
+  }
+  if (/^(https?:\/\/|\/)/i.test(source)) return source;
+  return "/welcoming-moments.png";
+}
 
 export default function EditorialTable({
   kind,
@@ -55,7 +72,9 @@ export default function EditorialTable({
           <thead className="border-b bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
             <tr>
               <th className="px-5 py-3 font-semibold">Name</th>
-              <th className="px-5 py-3 font-semibold">URL</th>
+              <th className="px-5 py-3 font-semibold">
+                {kind === "case-studies" ? "Image" : "URL"}
+              </th>
               <th className="px-5 py-3 font-semibold">Status</th>
               <th className="px-5 py-3 font-semibold">Last updated</th>
               <th className="px-5 py-3 text-right font-semibold">Actions</th>
@@ -66,9 +85,31 @@ export default function EditorialTable({
               <tr key={row.id} className="hover:bg-slate-50/70">
                 <td className="px-5 py-4 font-medium text-slate-900">{row.name}</td>
                 <td className="px-5 py-4">
-                  <Link href={`/${kind}/${row.slug}`} target="_blank" className="text-blue-700 hover:underline">
-                    /{kind}/{row.slug}
-                  </Link>
+                  {kind === "case-studies" ? (
+                    <Link
+                      href={`/${kind}/${row.slug}`}
+                      target="_blank"
+                      aria-label={`Open ${row.name}`}
+                      className="relative block h-14 w-24 overflow-hidden rounded border bg-slate-100"
+                    >
+                      <Image
+                        src={getImageSource(row.imagePath)}
+                        alt=""
+                        fill
+                        unoptimized
+                        sizes="96px"
+                        className="object-cover"
+                      />
+                    </Link>
+                  ) : (
+                    <Link
+                      href={`/${kind}/${row.slug}`}
+                      target="_blank"
+                      className="text-blue-700 hover:underline"
+                    >
+                      /{kind}/{row.slug}
+                    </Link>
+                  )}
                 </td>
                 <td className="px-5 py-4">
                   <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${row.status === "ACTIVE" ? "bg-emerald-50 text-emerald-700" : "bg-slate-100 text-slate-600"}`}>

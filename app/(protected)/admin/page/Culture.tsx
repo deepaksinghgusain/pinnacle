@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import ImageUploadField from "@/components/shared/ImageUploadField";
 import { saveCulturePageSettings } from "@/lib/actions/settings-action";
 import {
   defaultCultureContent,
@@ -24,6 +25,7 @@ export default function Culture({
   setting?: Pick<SiteSettings, "cultureContent">;
 }) {
   const [pending, startTransition] = useTransition();
+  const [uploadingImage, setUploadingImage] = useState(false);
   const [content, setContent] = useState(() =>
     parseCultureContent(setting?.cultureContent),
   );
@@ -62,7 +64,12 @@ export default function Culture({
             <Field label="Primary button link" value={content.heroPrimaryHref} onChange={(value) => update("heroPrimaryHref", value)} />
             <Field label="Secondary button label" value={content.heroSecondaryLabel} onChange={(value) => update("heroSecondaryLabel", value)} />
             <Field label="Secondary button link / section ID" value={content.heroSecondaryHref} onChange={(value) => update("heroSecondaryHref", value)} />
-            <Field label="Hero image path or URL" value={content.heroImagePath} onChange={(value) => update("heroImagePath", value)} placeholder="/uploads/team.jpg" />
+            <ImageUploadField
+              label="Hero image"
+              value={content.heroImagePath}
+              onChange={(value) => update("heroImagePath", value)}
+              onUploadingChange={setUploadingImage}
+            />
             <Field label="Hero image alt text" value={content.heroImageAlt} onChange={(value) => update("heroImageAlt", value)} />
             <Field label="Image badge" value={content.heroImageBadge} onChange={(value) => update("heroImageBadge", value)} />
             <Field label="Image card title" value={content.heroImageCardTitle} onChange={(value) => update("heroImageCardTitle", value)} />
@@ -133,7 +140,7 @@ export default function Culture({
         >
           Restore default content
         </Button>
-        <Button type="submit" className="rounded-full px-5" disabled={pending}>
+        <Button type="submit" className="rounded-full px-5" disabled={pending || uploadingImage}>
           {pending ? <Loader2 className="mr-2 size-4 animate-spin" /> : <Save className="mr-2 size-4" />}
           Save Culture Page
         </Button>

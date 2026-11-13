@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import EditorialTable from "../editorial-table";
 import { listCaseStudies } from "@/lib/editorial-data";
+import { parseCaseStudyContent } from "@/lib/editorial-content";
 
 export default async function CaseStudiesAdminPage() {
   await connection();
@@ -17,7 +18,17 @@ export default async function CaseStudiesAdminPage() {
         <div><h1 className="text-2xl font-bold text-slate-950">Case Studies</h1><p className="mt-1 text-sm text-slate-600">Manage case study pages and engagement outcomes.</p></div>
         <Button asChild nativeButton={false}><Link href="/admin/case-studies/create"><Plus className="mr-2 size-4" />Add case study</Link></Button>
       </div>
-      <EditorialTable kind="case-studies" data={result.data.map(({ id, name, slug, status, updatedAt }) => ({ id, name, slug, status, updatedAt: updatedAt.toISOString() }))} />
+      <EditorialTable
+        kind="case-studies"
+        data={result.data.map(({ id, name, slug, status, updatedAt, content }) => ({
+          id,
+          name,
+          slug,
+          status,
+          updatedAt: updatedAt.toISOString(),
+          imagePath: parseCaseStudyContent(content).heroImagePath,
+        }))}
+      />
     </div>
   );
 }
