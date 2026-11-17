@@ -93,6 +93,7 @@ export const servicePageSettingsSchema = z.object({
   siteName: z.string().min(1, "Site name is required"),
   serviceHeroTitle: nullableOptionalString,
   serviceHeroDescription: nullableOptionalString,
+  serviceHeroImagePath: nullableOptionalString,
   serviceDeliveryTagline: nullableOptionalString,
   serviceDeliveryTitle: nullableOptionalString,
   serviceDeliveryDescription: nullableOptionalString,

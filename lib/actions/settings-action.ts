@@ -160,6 +160,7 @@ export async function saveServicePageSettings(formData: FormData): Promise<Actio
     siteName: String(formData.get("siteName") ?? "").trim(),
     serviceHeroTitle: getOptionalString(formData, "serviceHeroTitle"),
     serviceHeroDescription: getOptionalString(formData, "serviceHeroDescription"),
+    serviceHeroImagePath: getOptionalString(formData, "serviceHeroImagePath"),
     serviceDeliveryTagline: getOptionalString(formData, "serviceDeliveryTagline"),
     serviceDeliveryTitle: getOptionalString(formData, "serviceDeliveryTitle"),
     serviceDeliveryDescription: getOptionalString(formData, "serviceDeliveryDescription"),

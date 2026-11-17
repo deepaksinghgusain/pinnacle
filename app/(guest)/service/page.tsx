@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -13,7 +14,9 @@ import {
 } from "lucide-react";
 
 import { getServices } from "@/lib/actions/service-action";
+import { getSettings } from "@/lib/actions/settings-action";
 import { Status } from "@/lib/types";
+import { getMediaSrc } from "@/lib/media-url";
 
 export const metadata: Metadata = {
   title: "Services | Pinnacle Serve",
@@ -33,14 +36,27 @@ const serviceIcons = [
 export default async function ServicesPage() {
   await connection();
 
-  const allServices = await getServices();
+  const [allServices, settings] = await Promise.all([getServices(), getSettings()]);
   const services = allServices.filter(
     (service) => service.status === Status.ACTIVE,
   );
+  const heroImageSrc = getMediaSrc(settings?.serviceHeroImagePath);
 
   return (
     <div className="w-full bg-[#050f21] text-white">
       <section className="relative isolate overflow-hidden border-b border-white/10 px-6 pb-16 pt-32 sm:px-10 sm:pb-20 sm:pt-36 lg:px-16">
+        {heroImageSrc ? (
+          <Image
+            src={heroImageSrc}
+            alt=""
+            fill
+            unoptimized
+            fetchPriority="high"
+            sizes="100vw"
+            className="pointer-events-none -z-10 object-cover opacity-70"
+          />
+        ) : null}
+        <div className="absolute inset-0 -z-10 bg-[#050f21]/50" />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_80%_10%,rgba(240,100,37,0.16),transparent_35%),radial-gradient(ellipse_at_10%_90%,rgba(37,99,235,0.12),transparent_40%)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
 

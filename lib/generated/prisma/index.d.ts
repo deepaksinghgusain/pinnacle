@@ -11665,6 +11665,7 @@ export namespace Prisma {
     globalDeliveryImagePath: string | null
     serviceHeroTitle: string | null
     serviceHeroDescription: string | null
+    serviceHeroImagePath: string | null
     serviceDeliveryTagline: string | null
     serviceDeliveryTitle: string | null
     serviceDeliveryDescription: string | null
@@ -11841,6 +11842,7 @@ export namespace Prisma {
     globalDeliveryImagePath: string | null
     serviceHeroTitle: string | null
     serviceHeroDescription: string | null
+    serviceHeroImagePath: string | null
     serviceDeliveryTagline: string | null
     serviceDeliveryTitle: string | null
     serviceDeliveryDescription: string | null
@@ -12017,6 +12019,7 @@ export namespace Prisma {
     globalDeliveryImagePath: number
     serviceHeroTitle: number
     serviceHeroDescription: number
+    serviceHeroImagePath: number
     serviceDeliveryTagline: number
     serviceDeliveryTitle: number
     serviceDeliveryDescription: number
@@ -12195,6 +12198,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: true
     serviceHeroTitle?: true
     serviceHeroDescription?: true
+    serviceHeroImagePath?: true
     serviceDeliveryTagline?: true
     serviceDeliveryTitle?: true
     serviceDeliveryDescription?: true
@@ -12371,6 +12375,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: true
     serviceHeroTitle?: true
     serviceHeroDescription?: true
+    serviceHeroImagePath?: true
     serviceDeliveryTagline?: true
     serviceDeliveryTitle?: true
     serviceDeliveryDescription?: true
@@ -12547,6 +12552,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: true
     serviceHeroTitle?: true
     serviceHeroDescription?: true
+    serviceHeroImagePath?: true
     serviceDeliveryTagline?: true
     serviceDeliveryTitle?: true
     serviceDeliveryDescription?: true
@@ -12796,6 +12802,7 @@ export namespace Prisma {
     globalDeliveryImagePath: string | null
     serviceHeroTitle: string | null
     serviceHeroDescription: string | null
+    serviceHeroImagePath: string | null
     serviceDeliveryTagline: string | null
     serviceDeliveryTitle: string | null
     serviceDeliveryDescription: string | null
@@ -12989,6 +12996,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: boolean
     serviceHeroTitle?: boolean
     serviceHeroDescription?: boolean
+    serviceHeroImagePath?: boolean
     serviceDeliveryTagline?: boolean
     serviceDeliveryTitle?: boolean
     serviceDeliveryDescription?: boolean
@@ -13165,6 +13173,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: boolean
     serviceHeroTitle?: boolean
     serviceHeroDescription?: boolean
+    serviceHeroImagePath?: boolean
     serviceDeliveryTagline?: boolean
     serviceDeliveryTitle?: boolean
     serviceDeliveryDescription?: boolean
@@ -13341,6 +13350,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: boolean
     serviceHeroTitle?: boolean
     serviceHeroDescription?: boolean
+    serviceHeroImagePath?: boolean
     serviceDeliveryTagline?: boolean
     serviceDeliveryTitle?: boolean
     serviceDeliveryDescription?: boolean
@@ -13517,6 +13527,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: boolean
     serviceHeroTitle?: boolean
     serviceHeroDescription?: boolean
+    serviceHeroImagePath?: boolean
     serviceDeliveryTagline?: boolean
     serviceDeliveryTitle?: boolean
     serviceDeliveryDescription?: boolean
@@ -13624,7 +13635,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type SiteSettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "siteName" | "legalName" | "primaryEmail" | "primaryPhone" | "websiteUrl" | "timezone" | "officeAddress" | "officeHours" | "logoPath" | "headerLogoPath" | "footerLogoPath" | "faviconPath" | "metaTitle" | "metaDescription" | "metaKeywords" | "gstNumber" | "cinNumber" | "mapUrl" | "teamMembers" | "happyCustomers" | "operationalSupport" | "heroTrustTags" | "heroTagline" | "heroTitle" | "heroTitleAccent" | "heroTitleSuffix" | "heroDescription" | "heroBackgroundImagePath" | "heroButtonLabel" | "heroButtonHref" | "aboutTagline" | "aboutTitle" | "aboutTitleAccent" | "aboutDescription" | "aboutButtons" | "aboutButtonLabel" | "aboutButtonHref" | "aboutHighlights" | "aboutFeatureCards" | "deliveryModelTitle" | "deliveryModelItems" | "serviceSectionTagline" | "serviceSectionTitle" | "serviceSectionAccent" | "serviceSectionDescription" | "serviceSectionCtaLabel" | "serviceSectionCtaHref" | "whyClientsTagline" | "whyClientsTitle" | "whyClientsDescription" | "whyClientsCards" | "homeTestimonialsTagline" | "homeTestimonialsTitle" | "homeTestimonialsAccent" | "homeTestimonialsDescription" | "homeCtaTagline" | "homeCtaTitle" | "homeCtaAccent" | "homeCtaDescription" | "homeCtaButtonLabel" | "homeCtaButtonHref" | "globalDeliveryTagline" | "globalDeliveryTitle" | "globalDeliveryDescription" | "globalDeliveryImagePath" | "serviceHeroTitle" | "serviceHeroDescription" | "serviceDeliveryTagline" | "serviceDeliveryTitle" | "serviceDeliveryDescription" | "serviceDeliveryCards" | "showPhone" | "showEmail" | "eventHeroTagline" | "eventHeroTitle" | "eventHeroDescription" | "eventHeroBackgroundImagePath" | "eventUpcommingTagline" | "eventUpcommingTitle" | "eventUpcommingDescription" | "eventGalleryTagline" | "eventGalleryTitle" | "eventGalleryDescription" | "eventContactTitle" | "eventContactDescription" | "aboutPageHeroTagline" | "aboutPageHeroTitle" | "aboutPageHeroAccent" | "aboutPageHeroDescription" | "aboutPageHeroImagePath" | "aboutStoryTagline" | "aboutStoryTitle" | "aboutStoryDescription" | "aboutStoryCards" | "aboutApproachTagline" | "aboutApproachTitle" | "aboutApproachDescription" | "aboutApproachTabs" | "aboutLeadershipTitle" | "aboutLeaders" | "aboutPageCtaTagline" | "aboutPageCtaTitle" | "aboutPageCtaDescription" | "aboutPageCtaButtonLabel" | "aboutPageCtaButtonHref" | "contactHeroTagline" | "contactHeroTitle" | "contactHeroAccent" | "contactHeroDescription" | "contactHeroPrimaryButtonLabel" | "contactHeroSecondaryButtonLabel" | "contactPageEmail" | "contactPageAddress" | "contactMetrics" | "contactStepsTagline" | "contactStepsTitle" | "contactStepsDescription" | "contactProcessSteps" | "careerHeroTagline" | "careerHeroTitle" | "careerHeroAccent" | "careerHeroDescription" | "careerHeroImagePath" | "careerHeroButtonLabel" | "careerHeroButtonHref" | "careerLifeTagline" | "careerLifeTitle" | "careerLifeAccent" | "careerLifeDescription" | "careerLifeImagePath" | "careerLifeCalloutTitle" | "careerLifeCalloutDescription" | "careerMetrics" | "careerOpportunitiesTagline" | "careerOpportunitiesTitle" | "careerOpportunitiesAccent" | "careerOpportunitiesDescription" | "careerBenefitsTagline" | "careerBenefitsTitle" | "careerBenefitsAccent" | "careerBenefitsDescription" | "careerBenefits" | "careerBenefitStats" | "careerCtaTagline" | "careerCtaTitle" | "careerCtaDescription" | "careerCtaButtonLabel" | "careerCtaButtonHref" | "growthLearningContent" | "cultureContent" | "smtpHost" | "smtpPort" | "smtpUsername" | "smtpPassword" | "fromName" | "fromEmail" | "replyToEmail" | "supportInbox" | "emailSignature" | "enableNotifications" | "storeDrafts" | "facebookUrl" | "instagramUrl" | "linkedinUrl" | "youtubeUrl" | "whatsappUrl" | "messengerUrl" | "socialBio" | "showSocialIcons" | "openLinksNewTab" | "createdAt" | "updatedAt", ExtArgs["result"]["siteSettings"]>
+  export type SiteSettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "siteName" | "legalName" | "primaryEmail" | "primaryPhone" | "websiteUrl" | "timezone" | "officeAddress" | "officeHours" | "logoPath" | "headerLogoPath" | "footerLogoPath" | "faviconPath" | "metaTitle" | "metaDescription" | "metaKeywords" | "gstNumber" | "cinNumber" | "mapUrl" | "teamMembers" | "happyCustomers" | "operationalSupport" | "heroTrustTags" | "heroTagline" | "heroTitle" | "heroTitleAccent" | "heroTitleSuffix" | "heroDescription" | "heroBackgroundImagePath" | "heroButtonLabel" | "heroButtonHref" | "aboutTagline" | "aboutTitle" | "aboutTitleAccent" | "aboutDescription" | "aboutButtons" | "aboutButtonLabel" | "aboutButtonHref" | "aboutHighlights" | "aboutFeatureCards" | "deliveryModelTitle" | "deliveryModelItems" | "serviceSectionTagline" | "serviceSectionTitle" | "serviceSectionAccent" | "serviceSectionDescription" | "serviceSectionCtaLabel" | "serviceSectionCtaHref" | "whyClientsTagline" | "whyClientsTitle" | "whyClientsDescription" | "whyClientsCards" | "homeTestimonialsTagline" | "homeTestimonialsTitle" | "homeTestimonialsAccent" | "homeTestimonialsDescription" | "homeCtaTagline" | "homeCtaTitle" | "homeCtaAccent" | "homeCtaDescription" | "homeCtaButtonLabel" | "homeCtaButtonHref" | "globalDeliveryTagline" | "globalDeliveryTitle" | "globalDeliveryDescription" | "globalDeliveryImagePath" | "serviceHeroTitle" | "serviceHeroDescription" | "serviceHeroImagePath" | "serviceDeliveryTagline" | "serviceDeliveryTitle" | "serviceDeliveryDescription" | "serviceDeliveryCards" | "showPhone" | "showEmail" | "eventHeroTagline" | "eventHeroTitle" | "eventHeroDescription" | "eventHeroBackgroundImagePath" | "eventUpcommingTagline" | "eventUpcommingTitle" | "eventUpcommingDescription" | "eventGalleryTagline" | "eventGalleryTitle" | "eventGalleryDescription" | "eventContactTitle" | "eventContactDescription" | "aboutPageHeroTagline" | "aboutPageHeroTitle" | "aboutPageHeroAccent" | "aboutPageHeroDescription" | "aboutPageHeroImagePath" | "aboutStoryTagline" | "aboutStoryTitle" | "aboutStoryDescription" | "aboutStoryCards" | "aboutApproachTagline" | "aboutApproachTitle" | "aboutApproachDescription" | "aboutApproachTabs" | "aboutLeadershipTitle" | "aboutLeaders" | "aboutPageCtaTagline" | "aboutPageCtaTitle" | "aboutPageCtaDescription" | "aboutPageCtaButtonLabel" | "aboutPageCtaButtonHref" | "contactHeroTagline" | "contactHeroTitle" | "contactHeroAccent" | "contactHeroDescription" | "contactHeroPrimaryButtonLabel" | "contactHeroSecondaryButtonLabel" | "contactPageEmail" | "contactPageAddress" | "contactMetrics" | "contactStepsTagline" | "contactStepsTitle" | "contactStepsDescription" | "contactProcessSteps" | "careerHeroTagline" | "careerHeroTitle" | "careerHeroAccent" | "careerHeroDescription" | "careerHeroImagePath" | "careerHeroButtonLabel" | "careerHeroButtonHref" | "careerLifeTagline" | "careerLifeTitle" | "careerLifeAccent" | "careerLifeDescription" | "careerLifeImagePath" | "careerLifeCalloutTitle" | "careerLifeCalloutDescription" | "careerMetrics" | "careerOpportunitiesTagline" | "careerOpportunitiesTitle" | "careerOpportunitiesAccent" | "careerOpportunitiesDescription" | "careerBenefitsTagline" | "careerBenefitsTitle" | "careerBenefitsAccent" | "careerBenefitsDescription" | "careerBenefits" | "careerBenefitStats" | "careerCtaTagline" | "careerCtaTitle" | "careerCtaDescription" | "careerCtaButtonLabel" | "careerCtaButtonHref" | "growthLearningContent" | "cultureContent" | "smtpHost" | "smtpPort" | "smtpUsername" | "smtpPassword" | "fromName" | "fromEmail" | "replyToEmail" | "supportInbox" | "emailSignature" | "enableNotifications" | "storeDrafts" | "facebookUrl" | "instagramUrl" | "linkedinUrl" | "youtubeUrl" | "whatsappUrl" | "messengerUrl" | "socialBio" | "showSocialIcons" | "openLinksNewTab" | "createdAt" | "updatedAt", ExtArgs["result"]["siteSettings"]>
 
   export type $SiteSettingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "SiteSettings"
@@ -13698,6 +13709,7 @@ export namespace Prisma {
       globalDeliveryImagePath: string | null
       serviceHeroTitle: string | null
       serviceHeroDescription: string | null
+      serviceHeroImagePath: string | null
       serviceDeliveryTagline: string | null
       serviceDeliveryTitle: string | null
       serviceDeliveryDescription: string | null
@@ -14294,6 +14306,7 @@ export namespace Prisma {
     readonly globalDeliveryImagePath: FieldRef<"SiteSettings", 'String'>
     readonly serviceHeroTitle: FieldRef<"SiteSettings", 'String'>
     readonly serviceHeroDescription: FieldRef<"SiteSettings", 'String'>
+    readonly serviceHeroImagePath: FieldRef<"SiteSettings", 'String'>
     readonly serviceDeliveryTagline: FieldRef<"SiteSettings", 'String'>
     readonly serviceDeliveryTitle: FieldRef<"SiteSettings", 'String'>
     readonly serviceDeliveryDescription: FieldRef<"SiteSettings", 'String'>
@@ -29439,6 +29452,7 @@ export namespace Prisma {
     globalDeliveryImagePath: 'globalDeliveryImagePath',
     serviceHeroTitle: 'serviceHeroTitle',
     serviceHeroDescription: 'serviceHeroDescription',
+    serviceHeroImagePath: 'serviceHeroImagePath',
     serviceDeliveryTagline: 'serviceDeliveryTagline',
     serviceDeliveryTitle: 'serviceDeliveryTitle',
     serviceDeliveryDescription: 'serviceDeliveryDescription',
@@ -30523,6 +30537,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: StringNullableFilter<"SiteSettings"> | string | null
     serviceHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
     serviceHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceHeroImagePath?: StringNullableFilter<"SiteSettings"> | string | null
     serviceDeliveryTagline?: StringNullableFilter<"SiteSettings"> | string | null
     serviceDeliveryTitle?: StringNullableFilter<"SiteSettings"> | string | null
     serviceDeliveryDescription?: StringNullableFilter<"SiteSettings"> | string | null
@@ -30699,6 +30714,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: SortOrderInput | SortOrder
     serviceHeroTitle?: SortOrderInput | SortOrder
     serviceHeroDescription?: SortOrderInput | SortOrder
+    serviceHeroImagePath?: SortOrderInput | SortOrder
     serviceDeliveryTagline?: SortOrderInput | SortOrder
     serviceDeliveryTitle?: SortOrderInput | SortOrder
     serviceDeliveryDescription?: SortOrderInput | SortOrder
@@ -30878,6 +30894,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: StringNullableFilter<"SiteSettings"> | string | null
     serviceHeroTitle?: StringNullableFilter<"SiteSettings"> | string | null
     serviceHeroDescription?: StringNullableFilter<"SiteSettings"> | string | null
+    serviceHeroImagePath?: StringNullableFilter<"SiteSettings"> | string | null
     serviceDeliveryTagline?: StringNullableFilter<"SiteSettings"> | string | null
     serviceDeliveryTitle?: StringNullableFilter<"SiteSettings"> | string | null
     serviceDeliveryDescription?: StringNullableFilter<"SiteSettings"> | string | null
@@ -31054,6 +31071,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: SortOrderInput | SortOrder
     serviceHeroTitle?: SortOrderInput | SortOrder
     serviceHeroDescription?: SortOrderInput | SortOrder
+    serviceHeroImagePath?: SortOrderInput | SortOrder
     serviceDeliveryTagline?: SortOrderInput | SortOrder
     serviceDeliveryTitle?: SortOrderInput | SortOrder
     serviceDeliveryDescription?: SortOrderInput | SortOrder
@@ -31236,6 +31254,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     serviceHeroTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     serviceHeroDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
+    serviceHeroImagePath?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     serviceDeliveryTagline?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     serviceDeliveryTitle?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
     serviceDeliveryDescription?: StringNullableWithAggregatesFilter<"SiteSettings"> | string | null
@@ -32977,6 +32996,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: string | null
     serviceHeroTitle?: string | null
     serviceHeroDescription?: string | null
+    serviceHeroImagePath?: string | null
     serviceDeliveryTagline?: string | null
     serviceDeliveryTitle?: string | null
     serviceDeliveryDescription?: string | null
@@ -33153,6 +33173,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: string | null
     serviceHeroTitle?: string | null
     serviceHeroDescription?: string | null
+    serviceHeroImagePath?: string | null
     serviceDeliveryTagline?: string | null
     serviceDeliveryTitle?: string | null
     serviceDeliveryDescription?: string | null
@@ -33329,6 +33350,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33505,6 +33527,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33681,6 +33704,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: string | null
     serviceHeroTitle?: string | null
     serviceHeroDescription?: string | null
+    serviceHeroImagePath?: string | null
     serviceDeliveryTagline?: string | null
     serviceDeliveryTitle?: string | null
     serviceDeliveryDescription?: string | null
@@ -33857,6 +33881,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -34033,6 +34058,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceHeroDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    serviceHeroImagePath?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTagline?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryTitle?: NullableStringFieldUpdateOperationsInput | string | null
     serviceDeliveryDescription?: NullableStringFieldUpdateOperationsInput | string | null
@@ -35736,6 +35762,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: SortOrder
     serviceHeroTitle?: SortOrder
     serviceHeroDescription?: SortOrder
+    serviceHeroImagePath?: SortOrder
     serviceDeliveryTagline?: SortOrder
     serviceDeliveryTitle?: SortOrder
     serviceDeliveryDescription?: SortOrder
@@ -35912,6 +35939,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: SortOrder
     serviceHeroTitle?: SortOrder
     serviceHeroDescription?: SortOrder
+    serviceHeroImagePath?: SortOrder
     serviceDeliveryTagline?: SortOrder
     serviceDeliveryTitle?: SortOrder
     serviceDeliveryDescription?: SortOrder
@@ -36088,6 +36116,7 @@ export namespace Prisma {
     globalDeliveryImagePath?: SortOrder
     serviceHeroTitle?: SortOrder
     serviceHeroDescription?: SortOrder
+    serviceHeroImagePath?: SortOrder
     serviceDeliveryTagline?: SortOrder
     serviceDeliveryTitle?: SortOrder
     serviceDeliveryDescription?: SortOrder

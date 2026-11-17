@@ -9,6 +9,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import ImageUploadField from "@/components/shared/ImageUploadField";
+import { getMediaSrc } from "@/lib/media-url";
 import { saveServicePageSettings } from "@/lib/actions/settings-action";
 
 type CardItem = {
@@ -46,6 +48,7 @@ type ServicePageSetting = {
   siteName?: string | null;
   serviceHeroTitle?: string | null;
   serviceHeroDescription?: string | null;
+  serviceHeroImagePath?: string | null;
   serviceDeliveryTagline?: string | null;
   serviceDeliveryTitle?: string | null;
   serviceDeliveryDescription?: string | null;
@@ -54,7 +57,11 @@ type ServicePageSetting = {
 
 export default function Services({ setting }: { setting?: ServicePageSetting }) {
   const [pending, startTransition] = useTransition();
+  const [imageUploading, setImageUploading] = useState(false);
   const [configuration, setConfiguration] = useState<ServicePageSetting | undefined>(setting);
+  const [serviceHeroImagePath, setServiceHeroImagePath] = useState(
+    getMediaSrc(setting?.serviceHeroImagePath),
+  );
   const [deliveryCards, setDeliveryCards] = useState<CardItem[]>(() =>
     parseCardList(setting?.serviceDeliveryCards, [
       {
@@ -97,6 +104,9 @@ export default function Services({ setting }: { setting?: ServicePageSetting }) 
         const nextConfiguration = res.data as ServicePageSetting | null | undefined;
 
         setConfiguration(nextConfiguration ?? undefined);
+        setServiceHeroImagePath(
+          getMediaSrc(nextConfiguration?.serviceHeroImagePath),
+        );
         setDeliveryCards(
           parseCardList(nextConfiguration?.serviceDeliveryCards, [
             {
@@ -163,11 +173,19 @@ export default function Services({ setting }: { setting?: ServicePageSetting }) 
               />
             </div>
 
+            <ImageUploadField
+              label="Hero banner image"
+              name="serviceHeroImagePath"
+              value={serviceHeroImagePath}
+              onChange={(value) => setServiceHeroImagePath(getMediaSrc(value))}
+              onUploadingChange={setImageUploading}
+            />
+
             <div className="flex justify-end">
               <Button
                 type="submit"
                 className="rounded-full px-5"
-                disabled={pending}
+                disabled={pending || imageUploading}
               >
                 {pending ? (
                   <Loader2 className="mr-2 size-4 animate-spin" />
@@ -196,6 +214,7 @@ export default function Services({ setting }: { setting?: ServicePageSetting }) 
             />
             <input type="hidden" name="serviceHeroTitle" value={configuration?.serviceHeroTitle ?? ""} />
             <input type="hidden" name="serviceHeroDescription" value={configuration?.serviceHeroDescription ?? ""} />
+            <input type="hidden" name="serviceHeroImagePath" value={serviceHeroImagePath} />
 
             <div className="grid gap-4 md:grid-cols-2">
               <Field
@@ -233,7 +252,7 @@ export default function Services({ setting }: { setting?: ServicePageSetting }) 
               <Button
                 type="submit"
                 className="rounded-full px-5"
-                disabled={pending}
+                disabled={pending || imageUploading}
               >
                 {pending ? (
                   <Loader2 className="mr-2 size-4 animate-spin" />

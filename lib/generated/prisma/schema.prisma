@@ -216,6 +216,7 @@ model SiteSettings {
   globalDeliveryImagePath     String?
   serviceHeroTitle            String?
   serviceHeroDescription      String? @db.Text
+  serviceHeroImagePath        String?
   serviceDeliveryTagline      String?
   serviceDeliveryTitle        String?
   serviceDeliveryDescription  String? @db.Text
