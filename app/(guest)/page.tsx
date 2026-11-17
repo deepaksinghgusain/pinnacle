@@ -62,13 +62,14 @@ export default async function HomePage() {
 
   const testimonials = allTestimonials
     .filter((testimonial) => testimonial.status === Status.ACTIVE)
-    .map(({ id, name, designation, company, content, tag }) => ({
+    .map(({ id, name, designation, company, content, tag, image }) => ({
       id: id ?? `${name}-${company}`,
       name,
       designation,
       company,
       content,
       tag,
+      image: typeof image === "string" ? image : null,
     }));
 
   return (

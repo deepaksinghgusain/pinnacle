@@ -8,6 +8,8 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import { toast } from "sonner";
+import { createEnquiry } from "@/lib/actions/enquiry-action";
 import type { SiteSettings } from "@/lib/generated/prisma";
 
 export type ContactPageSettings = Pick<
@@ -36,6 +38,11 @@ type EnquiryValues = {
   timeline: string;
   message: string;
   consent: boolean;
+};
+
+type ContactService = {
+  id: string;
+  title: string;
 };
 
 const initialValues: EnquiryValues = {
@@ -102,8 +109,15 @@ function parseItems<T extends object>(
 const inputClassName =
   "mt-2 h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10";
 
-export default function ContactPage({ settings }: { settings: ContactPageSettings | null }) {
+export default function ContactPage({
+  settings,
+  services,
+}: {
+  settings: ContactPageSettings | null;
+  services: ContactService[];
+}) {
   const [values, setValues] = useState(initialValues);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const requiredCount = [
     values.fullName,
     values.organisation,
@@ -132,23 +146,43 @@ export default function ContactPage({ settings }: { settings: ContactPageSetting
     }) as EnquiryValues);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const subject = encodeURIComponent(`Enquiry from ${values.fullName}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${values.fullName}`,
-        `Organisation: ${values.organisation}`,
-        `Phone: ${values.phone}`,
-        `Email: ${values.email}`,
-        `Service interest: ${values.service}`,
-        `Preferred timeline: ${values.timeline}`,
-        "",
-        values.message,
-      ].join("\n"),
-    );
+    setIsSubmitting(true);
 
-    window.location.href = `mailto:contact@pinnacleserve.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await createEnquiry({
+        fullName: values.fullName,
+        companyName: values.organisation,
+        phoneNumber: values.phone,
+        email: values.email,
+        subject: `Contact form: ${values.service} - ${values.timeline}`,
+        message: [
+          `Service interest: ${values.service}`,
+          `Preferred timeline: ${values.timeline}`,
+          `Consent to contact: ${values.consent ? "Yes" : "No"}`,
+          "",
+          values.message,
+        ].join("\n"),
+      });
+
+      if (!response.success) {
+        toast.error("Enquiry could not be submitted", {
+          description: response.message,
+        });
+        return;
+      }
+
+      toast.success("Enquiry submitted successfully");
+      setValues(initialValues);
+    } catch (error) {
+      toast.error("Enquiry could not be submitted", {
+        description:
+          error instanceof Error ? error.message : "Unexpected error",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -299,13 +333,12 @@ export default function ContactPage({ settings }: { settings: ContactPageSetting
                     Service Interest <span className="text-orange-600">*</span>
                     <select className={inputClassName} name="service" value={values.service} onChange={handleChange} required>
                       <option value="" disabled>Select a service</option>
-                      <option>AI &amp; Machine Learning</option>
-                      <option>Digital Product Engineering</option>
-                      <option>Cloud Engineering</option>
-                      <option>Data Services</option>
-                      <option>Automation Services</option>
-                      <option>Managed Services</option>
-                      <option>Other</option>
+                      {services.map((service) => (
+                        <option key={service.id} value={service.title}>
+                          {service.title}
+                        </option>
+                      ))}
+                      <option value="Other">Other</option>
                     </select>
                   </label>
                   <label className="text-sm font-medium text-slate-700">
@@ -337,10 +370,10 @@ export default function ContactPage({ settings }: { settings: ContactPageSetting
               </label>
 
               <div className="mt-7 flex flex-col gap-3 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-xs leading-5 text-slate-500">Your email app will open with these details ready to send.</p>
-                <button type="submit" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#e87924] px-7 text-sm font-semibold text-white shadow-md shadow-orange-900/15 transition hover:bg-[#d66d1e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
-                  Continue by Email
-                  <ArrowUpRight className="h-4 w-4" />
+                <p className="text-xs leading-5 text-slate-500">Our team will follow up about your enquiry.</p>
+                <button type="submit" disabled={isSubmitting} className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#e87924] px-7 text-sm font-semibold text-white shadow-md shadow-orange-900/15 transition hover:bg-[#d66d1e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 disabled:cursor-not-allowed disabled:opacity-60">
+                  {isSubmitting ? "Submitting..." : "Submit Enquiry"}
+                  {!isSubmitting ? <ArrowUpRight className="h-4 w-4" /> : null}
                 </button>
               </div>
             </form>

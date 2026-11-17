@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { SiteSettings } from "@/lib/generated/prisma";
 import {
   ArrowDown,
@@ -68,6 +69,7 @@ export type HomeTestimonial = {
   company: string;
   content: string;
   tag: string;
+  image: string | null;
 };
 
 type HomeProps = {
@@ -669,11 +671,14 @@ export default function Home({ settings, services, testimonials }: HomeProps) {
 
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {testimonials.map((t) => (
-              <div
-                key={t.id}
-                className="group relative bg-[#091526]/80 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-7 sm:p-9 transition-all duration-300 shadow-lg flex flex-col justify-between"
-              >
+            {testimonials.map((t) => {
+              const avatarSrc = getMediaSource(t.image);
+
+              return (
+                <div
+                  key={t.id}
+                  className="group relative bg-[#091526]/80 hover:bg-[#0c1d36] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-7 sm:p-9 transition-all duration-300 shadow-lg flex flex-col justify-between"
+                >
                 <div className="mb-6">
                   {t.tag ? (
                     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-orange-300">
@@ -687,14 +692,25 @@ export default function Home({ settings, services, testimonials }: HomeProps) {
                 </div>
 
                 <div className="flex items-center gap-4 pt-4 border-t border-slate-800/60">
-                  <div aria-hidden="true" className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-orange-400/30 bg-gradient-to-br from-orange-400/25 to-blue-500/25 text-xs font-semibold tracking-wide text-orange-100">
-                    {t.name
-                      .split(/\s+/)
-                      .slice(0, 2)
-                      .map((part) => part[0])
-                      .join("")
-                      .toUpperCase()}
-                  </div>
+                  {avatarSrc ? (
+                    <Image
+                      src={avatarSrc}
+                      alt={t.name}
+                      width={44}
+                      height={44}
+                      unoptimized
+                      className="h-11 w-11 flex-shrink-0 rounded-full border border-orange-400/30 object-cover"
+                    />
+                  ) : (
+                    <div aria-hidden="true" className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-orange-400/30 bg-gradient-to-br from-orange-400/25 to-blue-500/25 text-xs font-semibold tracking-wide text-orange-100">
+                      {t.name
+                        .split(/\s+/)
+                        .slice(0, 2)
+                        .map((part) => part[0])
+                        .join("")
+                        .toUpperCase()}
+                    </div>
+                  )}
                   <div>
                     <h5 className="text-white font-semibold text-sm sm:text-base">
                       {t.name}
@@ -704,8 +720,9 @@ export default function Home({ settings, services, testimonials }: HomeProps) {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

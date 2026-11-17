@@ -1,10 +1,18 @@
 import { connection } from "next/server";
+import { getServices } from "@/lib/actions/service-action";
 import { getSettings } from "@/lib/actions/settings-action";
+import { Status } from "@/lib/types";
 import ContactContent, { type ContactPageSettings } from "./contact-content";
 
 export default async function ContactPage() {
   await connection();
-  const settings = await getSettings();
+  const [settings, allServices] = await Promise.all([
+    getSettings(),
+    getServices(),
+  ]);
+  const services = allServices
+    .filter((service) => service.status === Status.ACTIVE)
+    .map(({ id, title }) => ({ id, title }));
 
   const contactSettings: ContactPageSettings | null = settings
     ? {
@@ -24,5 +32,5 @@ export default async function ContactPage() {
       }
     : null;
 
-  return <ContactContent settings={contactSettings} />;
+  return <ContactContent settings={contactSettings} services={services} />;
 }
