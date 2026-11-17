@@ -54,7 +54,7 @@ export default async function ServiceDetailPage({
     <div className="w-full bg-white text-slate-900">
       <section className="relative isolate overflow-hidden bg-[#071323] px-6 pb-16 pt-36 text-white sm:px-10 sm:pb-20 sm:pt-40 lg:px-16">
         <Image
-          src={image}
+          src={"/api" + image}
           alt={service.title}
           fill
           priority
