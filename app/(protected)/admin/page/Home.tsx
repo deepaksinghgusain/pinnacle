@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { saveHomePageSettings } from "@/lib/actions/settings-action";
 import type { SiteSettings } from "@/lib/generated/prisma";
+import { getMediaSrc } from "@/lib/media-url";
 
 type CardItem = {
   title: string;
@@ -122,6 +123,10 @@ function getPreviewSrc(value: string | null | undefined) {
   const normalized = value.trim();
   if (!normalized) return null;
 
+  if (/^\/?(?:api\/)?uploads\//i.test(normalized)) {
+    return getMediaSrc(normalized);
+  }
+
   if (
     normalized.startsWith("blob:") ||
     normalized.startsWith("/") ||
@@ -129,10 +134,6 @@ function getPreviewSrc(value: string | null | undefined) {
     normalized.startsWith("https://")
   ) {
     return normalized;
-  }
-
-  if (normalized.startsWith("uploads/")) {
-    return `/${normalized}`;
   }
 
   return null;
