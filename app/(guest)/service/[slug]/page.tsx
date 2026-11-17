@@ -97,7 +97,7 @@ export default async function ServiceDetailPage({
 
           <div className="relative min-h-[280px] overflow-hidden border border-white/15 sm:min-h-[390px]">
             <Image
-              src={image}
+              src={"/api" +image}
               alt={service.title}
               fill
               priority
