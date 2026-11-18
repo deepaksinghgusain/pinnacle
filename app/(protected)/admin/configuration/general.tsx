@@ -236,6 +236,11 @@ export default function GeneralComponent({
               defaultValue={configuration?.siteName}
             />
             <Field
+              label="Copyright name"
+              id="legalName"
+              defaultValue={configuration?.legalName}
+            />
+            <Field
               label="Primary email"
               id="primaryEmail"
               type="email"

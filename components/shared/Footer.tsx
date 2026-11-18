@@ -234,7 +234,7 @@ export default function Footer({
                     {/* Bottom copyright & legal */}
                     <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-light">
                         <p>
-                            © {new Date().getFullYear()} {settings?.legalName || settings?.siteName || "Pinnacle Serve"}. All rights reserved.
+                            {settings?.legalName}
                         </p>
                         <div className="flex items-center gap-6">
                             <Link href="/terms-and-conditions" className="hover:text-slate-300 transition">Terms &amp; Conditions</Link>

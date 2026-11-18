@@ -156,7 +156,7 @@ export default function ContactPage({
         companyName: values.organisation,
         phoneNumber: values.phone,
         email: values.email,
-        subject: `Contact form: ${values.service} - ${values.timeline}`,
+        subject: `Contact form: ${values.service}`,
         message: [
           `Service interest: ${values.service}`,
           `Preferred timeline: ${values.timeline}`,
@@ -339,17 +339,6 @@ export default function ContactPage({
                         </option>
                       ))}
                       <option value="Other">Other</option>
-                    </select>
-                  </label>
-                  <label className="text-sm font-medium text-slate-700">
-                    Preferred Timeline <span className="text-orange-600">*</span>
-                    <select className={inputClassName} name="timeline" value={values.timeline} onChange={handleChange} required>
-                      <option value="" disabled>Select a timeline</option>
-                      <option>Immediately</option>
-                      <option>Within 1 month</option>
-                      <option>1-3 months</option>
-                      <option>3-6 months</option>
-                      <option>Exploring options</option>
                     </select>
                   </label>
                 </div>
