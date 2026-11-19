@@ -29,12 +29,8 @@ type SiteSettingsPayload = {
 function getOptionalString(formData: FormData, key: string): string | undefined {
   const value = formData.get(key)
 
-  if (value == null) {
-    return undefined
-  }
-
   const text = String(value).trim()
-  return text === "" ? undefined : text
+  return text === "" ? "" : text
 }
 
 function getStringList(formData: FormData, key: string): string | undefined {
